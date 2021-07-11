@@ -24,14 +24,14 @@ function Home() {
         <p>
           Edit <code>src/App.jsx</code> and save to reload.
         </p>
-          <a
-            className={styles['App-link']}
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <a
+          className={`${styles['App-link']} m-top-96`}
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
       </header>
     </div>
   );

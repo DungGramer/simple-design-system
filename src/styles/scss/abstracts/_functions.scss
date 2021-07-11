@@ -1,0 +1,10 @@
+@use "sass:math";
+
+@function stripUnit($num) {
+  @return #{$num / ($num * 0 + 1)};
+}
+
+@function toRem($pxValue: 0) {
+  // @return #{stripUnit($pxValue) / stripUnit($font-base)} + rem;
+  @return math.div($pxValue, 16px);
+}

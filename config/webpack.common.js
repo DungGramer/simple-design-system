@@ -56,7 +56,7 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            configFile: resolvePath("config/babel.config.js"),
+            configFile: resolvePath('config/babel.config.js'),
           },
         },
       },
@@ -107,7 +107,16 @@ module.exports = {
             },
           },
           postCSS,
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              // Prefer `dart-sass`
+              implementation: require("sass"),
+              sassOptions: {
+                fiber: false,
+              },
+            },
+          },
         ],
         sideEffects: true,
       },
@@ -127,7 +136,16 @@ module.exports = {
             },
           },
           postCSS,
-          'sass-loader',
+          {
+            loader: 'sass-loader',
+            options: {
+              // Prefer `dart-sass`
+              implementation: require("sass"),
+              sassOptions: {
+                fiber: false,
+              },
+            },
+          },
         ],
       },
     ],

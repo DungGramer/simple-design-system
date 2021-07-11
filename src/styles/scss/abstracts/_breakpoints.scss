@@ -1,0 +1,29 @@
+/* Mobile-landscape | Small > 576px */
+@mixin mobile {
+  @media only screen and (min-width: 36em) {
+    @content;
+  }
+}
+
+/* Tablet-portrait | Medium > 768px */
+@mixin tablet {
+  @media only screen and (min-width: 48em) {
+    @content;
+  }
+}
+
+/* Tablet-landscape | Large > 992px */
+@mixin tablet-land {
+  @media only screen and (min-width: 62em) {
+    @content;
+  }
+}
+
+/* Laptops | Extra Large - > 1200px */
+@mixin desktop {
+  @media only screen and (min-width: 75em) {
+    @content;
+  }
+}
+
+
