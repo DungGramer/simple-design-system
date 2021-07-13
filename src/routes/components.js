@@ -25,7 +25,7 @@ import TextField from '@pages/text-field/TextField';
 import Toggle from '@pages/toggle/Toggle';
 import Tooltip from '@pages/tooltip/Tooltip';
 
-export const components = [
+const components = [
   {
     title: 'Avatar',
     path: 'avatar',
@@ -157,3 +157,5 @@ export const components = [
     component: Tooltip,
   },
 ];
+
+export default components;

@@ -6,8 +6,8 @@ import Routes from './routes';
 function App() {
   return (
     <Switch>
-      <Routes />
-      <Route path="/" exact component={Home} />
+      {Routes}
+      {/* <Route path="/" exact component={Home} /> */}
     </Switch>
   );
 }
