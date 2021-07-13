@@ -8,6 +8,13 @@
 
     //Update this path as necessary
     "paths": {
+      "@atoms/*": ["src/components/UI/atoms/*"],
+      "@molecules/*": ["src/components/UI/molecules/*"],
+      "@organisms/*": ["src/components/UI/organisms/*"],
+
+      "@pages/*": ["src/components/pages/*"],
+      "@templates/*": ["src/components/templates/*"],
+
       "@components/*": ["src/components/*"],
       "~/*": ["src/*"]
     }

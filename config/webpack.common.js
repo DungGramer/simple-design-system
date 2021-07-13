@@ -111,7 +111,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               // Prefer `dart-sass`
-              implementation: require("sass"),
+              implementation: require('sass'),
               sassOptions: {
                 fiber: false,
               },
@@ -140,7 +140,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               // Prefer `dart-sass`
-              implementation: require("sass"),
+              implementation: require('sass'),
               sassOptions: {
                 fiber: false,
               },
@@ -157,6 +157,11 @@ module.exports = {
     alias: {
       '~': paths.root,
       '@components': resolvePath('src/components'),
+      '@pages': resolvePath('src/components/pages'),
+      '@templates': resolvePath('src/components/templates'),
+      '@atoms': resolvePath('src/components/UI/atoms'),
+      '@molecules': resolvePath('src/components/UI/molecules'),
+      '@organisms': resolvePath('src/components/UI/organisms'),
     },
   },
 

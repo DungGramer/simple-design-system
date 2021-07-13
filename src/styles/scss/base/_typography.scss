@@ -28,6 +28,10 @@ h6, .h6 {
   letter-spacing: -0.69px;
 }
 
+h6, .h6, .h7, .h8, .h9 {
+  padding-top: 1em;
+}
+
 h5, .h5,
 h4, .h4,
 h3, .h3,
@@ -39,24 +43,38 @@ h1, .h1 {
 h5, .h5 {
   font-size: 3rem;
   letter-spacing: -1.07px;
+
+  padding-top: 1.1111em;
 }
 
 h4, .h4 {
   font-size: 3.75rem;
   letter-spacing: -1.25px;
+
+  padding-top: 1em;
+	margin-bottom: 1em;
 }
 
 h3, .h3 {
   font-size: 4.5rem;
   letter-spacing: -1.43px;
+
+  padding-top: 1em;
+	margin-bottom: 0.7em;
 }
 
 h2, .h2 {
   font-size: 6rem;
   letter-spacing: -2.14px;
+
+  padding-top: 0.8333em;
+	margin-bottom: 0.7em;
 }
 
 h1, .h1 {
   font-size: 8rem;
   letter-spacing: -2.85px;
+
+  padding-top: 1em;
+	margin-bottom: 0.3em;
 }
