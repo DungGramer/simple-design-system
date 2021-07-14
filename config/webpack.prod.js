@@ -59,7 +59,6 @@ module.exports = merge(common, {
   /// There will be one main bundle, and one file per asynchronous chunk.
   output: {
     path: paths.dist,
-    publicPath: paths.dist,
     filename: '[name].[contenthash:8].js',
     clean: true,
   },
@@ -115,5 +114,21 @@ module.exports = merge(common, {
   optimization: {
     minimize: true,
     minimizer: [new CssMinimizerPlugin()],
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+        vendor: {
+          chunks: 'initial',
+          test: 'vendor',
+          name: 'vendor',
+          enforce: true,
+        },
+      },
+    },
   },
 });

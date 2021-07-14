@@ -4,7 +4,7 @@ import components from './components';
 const Routes = components.map(route => (
   <Route
     key={route.path}
-    // exact
+    exact
     path={`/${route.path}`}
     component={route.component}
   />

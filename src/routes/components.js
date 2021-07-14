@@ -28,7 +28,7 @@ import Tooltip from '@pages/tooltip/Tooltip';
 const components = [
   {
     title: 'Avatar',
-    path: 'avatar',
+    path: '/',
     component: Avatar,
   },
   {
