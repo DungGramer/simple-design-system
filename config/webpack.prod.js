@@ -7,7 +7,6 @@ const CopyPlugin = require('copy-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const { paths, regex, postCSS, formatFileName, resolvePath } = require('./untils');
@@ -15,40 +14,45 @@ const { paths, regex, postCSS, formatFileName, resolvePath } = require('./untils
 module.exports = merge(common, {
   mode: 'production',
   target: ['web', 'es5'],
+
+  output: {
+    filename: 'assets/js/[name].[contenthash:8].js',
+  },
+
   plugins: [
-    new HtmlWebpackPlugin(
-      Object.assign(
-        {},
-        {
-          inject: true,
-          template: paths.indexHTML,
-        },
-        {
-          minify: {
-            removeComments: true,
-            collapseWhitespace: true,
-            removeRedundantAttributes: true,
-            useShortDoctype: true,
-            removeEmptyAttributes: true,
-            removeStyleLinkTypeAttributes: true,
-            keepClosingSlash: true,
-            minifyJS: true,
-            minifyCSS: true,
-            minifyURLs: true,
-          },
-        },
-      ),
-    ),
+    // new HtmlWebpackPlugin(
+    //   Object.assign(
+    //     {},
+    //     {
+    //       inject: true,
+    //       template: paths.indexHTML,
+    //     },
+    //     {
+    //       minify: {
+    //         removeComments: true,
+    //         collapseWhitespace: true,
+    //         removeRedundantAttributes: true,
+    //         useShortDoctype: true,
+    //         removeEmptyAttributes: true,
+    //         removeStyleLinkTypeAttributes: true,
+    //         keepClosingSlash: true,
+    //         minifyJS: true,
+    //         minifyCSS: true,
+    //         minifyURLs: true,
+    //       },
+    //     },
+    //   ),
+    // ),
     new MiniCssExtractPlugin({
       filename: 'assets/css/[name].[contenthash:8].css',
       chunkFilename: 'assets/css/[id].[contenthash:8].css',
     }),
-    new CopyPlugin({
-      patterns: [
-        // { from: 'public/assets/images', to: 'assets/images' },
-        { from: 'public/favicon.ico', to: '' },
-      ],
-    }),
+    // new CopyPlugin({
+    //   patterns: [
+    //     // { from: 'public/assets/images', to: 'assets/images' },
+    //     { from: 'public/favicon.ico', to: '' },
+    //   ],
+    // }),
     new CleanWebpackPlugin(),
   ],
   devtool: 'source-map',
@@ -56,12 +60,6 @@ module.exports = merge(common, {
   // Stop compilation early in production
   bail: false,
 
-  /// There will be one main bundle, and one file per asynchronous chunk.
-  output: {
-    path: paths.dist,
-    filename: '[name].[contenthash:8].js',
-    clean: true,
-  },
   module: {
     rules: [
       {
@@ -110,25 +108,5 @@ module.exports = merge(common, {
         ],
       },
     ],
-  },
-  optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-        vendor: {
-          chunks: 'initial',
-          test: 'vendor',
-          name: 'vendor',
-          enforce: true,
-        },
-      },
-    },
   },
 });

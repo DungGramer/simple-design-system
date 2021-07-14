@@ -8,6 +8,9 @@ const port = process.env.PORT || 3090;
 module.exports = merge(common, {
   mode: 'development',
   devtool: 'inline-source-map',
+  output: {
+    filename: '[name].[contenthash:8].js',
+  },
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
     port,
@@ -18,6 +21,7 @@ module.exports = merge(common, {
     open: true,
     compress: true,
     hot: true,
+
     contentBase: paths.public,
     watchContentBase: true,
   },

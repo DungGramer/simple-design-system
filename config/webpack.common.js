@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { paths, regex, resolvePath, formatFileName, postCSS, } = require('./untils');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';
 
@@ -8,6 +10,15 @@ const sizeLimit = parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT || '10000');
 module.exports = {
   // Rules of how webpack will take our files, compile & bundle them for the browser
   entry: ['core-js/stable', paths.indexJS],
+
+  /// There will be one main bundle, and one file per asynchronous chunk.
+  output: {
+    path: paths.dist,
+    publicPath: '/',
+    // clean: true,
+    // libraryTarget: 'commonjs2',
+  },
+
   target: 'web',
   module: {
     rules: [
@@ -152,7 +163,7 @@ module.exports = {
   },
 
   resolve: {
-    modules: ['node_modules', '../src'],
+    modules: [resolvePath('node_modules'), '../src'],
     extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {
       '~': paths.root,
@@ -169,6 +180,29 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: paths.indexHTML,
       filename: 'index.html',
+      favicon: 'public/favicon.ico',
+      inject: 'body',
     }),
   ],
+
+  optimization: {
+    minimize: true,
+    minimizer: [new CssMinimizerPlugin()],
+    splitChunks: {
+      cacheGroups: {
+        styles: {
+          name: 'styles',
+          test: /\.css$/,
+          chunks: 'all',
+          enforce: true,
+        },
+        vendor: {
+          chunks: 'initial',
+          test: 'vendor',
+          name: 'vendor',
+          enforce: true,
+        },
+      },
+    },
+  },
 };
