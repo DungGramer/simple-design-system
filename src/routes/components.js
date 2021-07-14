@@ -8,7 +8,7 @@ import Code from '@pages/code/Code';
 import DropdownMenu from '@pages/dropdown-menu/DropdownMenu';
 import Flag from '@pages/flag/Flag';
 import InlineMessage from '@pages/inline-message/InlineMessage';
-import Lozenge from '@pages/lozenge/lozenge';
+import Lozenge from '@pages/lozenge/Lozenge';
 import ModalDialog from '@pages/modal-dialog/ModalDialog';
 import Pagination from '@pages/pagination/Pagination';
 import ProgressIndicator from '@pages/progress-indicator/ProgressIndicator';

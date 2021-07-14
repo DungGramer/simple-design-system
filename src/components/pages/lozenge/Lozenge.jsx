@@ -1,4 +1,4 @@
-import './Lozenge.module';
+import './Lozenge.module.scss';
 import PropTypes from 'prop-types';
 
 function Lozenge(props) {
