@@ -1,11 +1,16 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { paths, regex, resolvePath, formatFileName, postCSS, } = require('./untils');
+const {
+  paths,
+  regex,
+  resolvePath,
+  formatFileName,
+  postCSS,
+} = require('./untils');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
-
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';
 
-const sizeLimit = parseInt(process.env.IMAGE_INLINE_SIZE_LIMIT || '10000');
+const sizeLimit = 10000;
 
 module.exports = {
   // Rules of how webpack will take our files, compile & bundle them for the browser
@@ -15,8 +20,6 @@ module.exports = {
   output: {
     path: paths.dist,
     publicPath: '/',
-    // clean: true,
-    // libraryTarget: 'commonjs2',
   },
 
   target: 'web',
@@ -181,7 +184,6 @@ module.exports = {
       template: paths.indexHTML,
       filename: 'index.html',
       favicon: 'public/favicon.ico',
-      inject: 'body',
     }),
   ],
 
