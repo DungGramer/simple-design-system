@@ -1,0 +1,9 @@
+
+.nav {
+  width: 17rem;
+
+  .nav-item {
+    display: block;
+    @include padding-vertical(8px);
+  }
+}

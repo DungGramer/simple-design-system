@@ -1,0 +1,17 @@
+{
+  "configurations": [
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:3090",
+      "webRoot": "${workspaceFolder}"
+    },
+    {
+      "name": "Launch Microsoft Edge and open the Edge DevTools",
+      "request": "launch",
+      "type": "vscode-edge-devtools.debug",
+      "url": "http://localhost:3090/"
+    }
+  ]
+}

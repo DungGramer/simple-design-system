@@ -1,14 +1,16 @@
-import { Route, Switch } from 'react-router-dom';
 import './App.scss';
-import Home from '@components/Home/Home';
+
+import { Switch } from 'react-router-dom';
+
 import Routes from './routes';
+import { Sidebar } from '@templates/Sidebar/Sidebar';
 
 function App() {
   return (
-    <Switch>
-      {Routes}
-      <Route path="/" exact component={Home} />
-    </Switch>
+    <>
+      <Sidebar />
+      <Switch>{Routes}</Switch>
+    </>
   );
 }
 

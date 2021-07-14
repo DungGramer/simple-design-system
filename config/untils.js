@@ -5,6 +5,7 @@ const resolvePath = (relativePath) =>
 
 const paths = {
   root: resolvePath(''),
+  src: resolvePath('src'),
   public: resolvePath('public/'),
   dist: resolvePath('dist/'),
   indexHTML: resolvePath('public/index.html'),

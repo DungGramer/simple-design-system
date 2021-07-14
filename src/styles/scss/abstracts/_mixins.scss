@@ -117,6 +117,43 @@
   }
 }
 
+@mixin padding-vertical($top, $bottom: false) {
+  padding-top: $top;
+  @if $bottom {
+    padding-bottom: $bottom;
+  }
+  else {
+    padding-bottom: $top;
+  }
+}
+
+@mixin padding-horizontal($left, $right: false) {
+  padding-left: $left;
+  @if $right {
+    padding-right: $right;
+  } else {
+    padding-right: $left;
+  }
+}
+
+@mixin margin-vertical($top, $bottom: false) {
+  margin-top: $top;
+  @if $bottom {
+    margin-bottom: $bottom;
+  } else {
+    margin-bottom: $top;
+  }
+}
+
+@mixin margin-horizontal($left, $right: false) {
+  margin-left: $left;
+  @if $right {
+    margin-right: $right;
+  } else {
+    margin-right: $left;
+  }
+}
+
 /*
  * Using for Retina Screen - x2 Image
  background: url("my-image.png") no-repeat;
@@ -142,23 +179,18 @@
     left: $right;
     right: $right;
     bottom: $bottom;
-  }
-
-  @else if ($top and $right and $bottom == false and $left == false) {
+  } @else if ($top and $right and $bottom == false and $left == false) {
     top: $top;
     bottom: $top;
     left: $right;
     right: $right;
-  }
-
-  @else if ($top and $right == false and $bottom == false and $left == false) {
+  } @else if ($top and $right == false and $bottom == false and $left == false)
+  {
     top: $top;
     right: $top;
     bottom: $top;
     left: $top;
-  }
-
-  @else {
+  } @else {
     top: $top;
     right: $right;
     bottom: $bottom;
@@ -174,34 +206,41 @@
 */
 
 @mixin arrow($direction: down, $size: 5px, $color: #555) {
-   width: 0;
-   height: 0;
-   @if ($direction == left) {
-      border-top: $size solid transparent;
-      border-bottom: $size solid transparent;
-      border-right: $size solid $color;
-   }
-   @else if ($direction == right) {
-      border-top: $size solid transparent;
-      border-bottom: $size solid transparent;
-      border-left: $size solid $color;
-   }
-   @else if ($direction == down) {
-      border-left: $size solid transparent;
-      border-right: $size solid transparent;
-      border-top: $size solid $color;
-   }
-   @else {
-      border-left: $size solid transparent;
-      border-right: $size solid transparent;
-      border-bottom: $size solid $color;
-   }
+  width: 0;
+  height: 0;
+  @if ($direction == left) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  } @else if ($direction == right) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if ($direction == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  } @else {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
 }
 
 @mixin input-placeholder {
-    &.placeholder { @content; }
-    &:-moz-placeholder { @content; }
-    &::-moz-placeholder { @content; }
-    &:-ms-input-placeholder { @content; }
-    &::-webkit-input-placeholder { @content; }
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
 }

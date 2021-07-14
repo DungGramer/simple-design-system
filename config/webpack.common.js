@@ -153,6 +153,8 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
+              additionalData: '@import "~/styles/scss/styles.scss";',
+
               // Prefer `dart-sass`
               implementation: require('sass'),
               sassOptions: {
@@ -169,7 +171,7 @@ module.exports = {
     modules: [resolvePath('node_modules'), '../src'],
     extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {
-      '~': paths.root,
+      '~': paths.src,
       '@components': resolvePath('src/components'),
       '@pages': resolvePath('src/components/pages'),
       '@templates': resolvePath('src/components/templates'),
