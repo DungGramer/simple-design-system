@@ -1,14 +1,17 @@
-
 .nav {
   width: 17rem;
+  border-right: thin solid $gray-100;
 
   .nav-item {
     display: block;
-    padding: .5rem 1.25rem .5rem 2rem;
+    padding: 0.5rem 1.25rem 0.5rem 2rem;
   }
   .nav-item:hover,
   .nav-item.active {
     color: $primary-500;
     background-color: $primary-100;
+  }
+  .nav-item.active {
+    border-right: .1875rem solid $primary-500;
   }
 }
