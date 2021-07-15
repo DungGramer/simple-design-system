@@ -119,38 +119,38 @@
 
 @mixin padding-vertical($top, $bottom: false) {
   padding-top: $top;
-  @if $bottom {
-    padding-bottom: $bottom;
+  @if $bottom == false{
+    padding-bottom: $top;
   }
   else {
-    padding-bottom: $top;
+    padding-bottom: $bottom;
   }
 }
 
 @mixin padding-horizontal($left, $right: false) {
   padding-left: $left;
-  @if $right {
-    padding-right: $right;
-  } else {
+  @if $right == false {
     padding-right: $left;
+  } else {
+    padding-right: $right;
   }
 }
 
 @mixin margin-vertical($top, $bottom: false) {
   margin-top: $top;
-  @if $bottom {
-    margin-bottom: $bottom;
-  } else {
+  @if $bottom == false {
     margin-bottom: $top;
+  } else {
+    margin-bottom: $bottom;
   }
 }
 
 @mixin margin-horizontal($left, $right: false) {
   margin-left: $left;
-  @if $right {
-    margin-right: $right;
-  } else {
+  @if $right == false {
     margin-right: $left;
+  } else {
+    margin-right: $right;
   }
 }
 
