@@ -119,10 +119,9 @@
 
 @mixin padding-vertical($top, $bottom: false) {
   padding-top: $top;
-  @if $bottom == false{
+  @if $bottom == false {
     padding-bottom: $top;
-  }
-  else {
+  } @else {
     padding-bottom: $bottom;
   }
 }
@@ -131,7 +130,7 @@
   padding-left: $left;
   @if $right == false {
     padding-right: $left;
-  } else {
+  } @else {
     padding-right: $right;
   }
 }
@@ -140,7 +139,7 @@
   margin-top: $top;
   @if $bottom == false {
     margin-bottom: $top;
-  } else {
+  } @else {
     margin-bottom: $bottom;
   }
 }
@@ -149,7 +148,7 @@
   margin-left: $left;
   @if $right == false {
     margin-right: $left;
-  } else {
+  } @else {
     margin-right: $right;
   }
 }

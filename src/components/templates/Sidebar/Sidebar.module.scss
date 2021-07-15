@@ -4,6 +4,11 @@
 
   .nav-item {
     display: block;
-    @include padding-vertical(8px);
+    padding: .5rem 1.25rem .5rem 2rem;
+  }
+  .nav-item:hover,
+  .nav-item.active {
+    color: $primary-500;
+    background-color: $primary-100;
   }
 }

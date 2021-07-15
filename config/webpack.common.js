@@ -153,7 +153,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData: '@import "~/styles/scss/abstracts/_mixins";',
+              additionalData: '@import "~/styles/scss/abstracts/__abstracts-dir";',
 
               // Prefer `dart-sass`
               implementation: require('sass'),
@@ -168,7 +168,7 @@ module.exports = {
   },
 
   resolve: {
-    modules: [resolvePath('node_modules'), '../src'],
+    modules: ['node_modules', '../src'],
     extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {
       '~': paths.src,
@@ -185,28 +185,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: paths.indexHTML,
       filename: 'index.html',
-      favicon: 'public/favicon.ico',
     }),
   ],
-
-  optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-        vendor: {
-          chunks: 'initial',
-          test: 'vendor',
-          name: 'vendor',
-          enforce: true,
-        },
-      },
-    },
-  },
 };
