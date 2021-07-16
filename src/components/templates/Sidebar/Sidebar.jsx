@@ -5,7 +5,7 @@ import styles from './Sidebar.module';
 
 export const Sidebar = () => {
   return (
-    <nav className={styles.nav}>
+    <aside className={styles.nav}>
       {components.map(({ title, path }) => (
         <NavLink
           className={styles['nav-item']}
@@ -16,6 +16,6 @@ export const Sidebar = () => {
           {title}
         </NavLink>
       ))}
-    </nav>
+    </aside>
   );
 };

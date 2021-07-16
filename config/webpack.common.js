@@ -61,7 +61,8 @@ module.exports = {
       },
       {
         test: regex.svg,
-        type: 'asset/inline', // Load svg inside HTML
+        // type: 'asset/inline', // Load svg inside HTML
+        use: ['@svgr/webpack?-svgo,+titleProp,+ref![path]'],
       },
 
       {
@@ -153,7 +154,8 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData: '@import "~/styles/scss/abstracts/__abstracts-dir";',
+              additionalData:
+                '@import "~/styles/scss/abstracts/__abstracts-dir";',
 
               // Prefer `dart-sass`
               implementation: require('sass'),
@@ -172,6 +174,7 @@ module.exports = {
     extensions: ['*', '.js', '.jsx', '.scss'],
     alias: {
       '~': paths.src,
+      '@public': resolvePath('public'),
       '@components': resolvePath('src/components'),
       '@pages': resolvePath('src/components/pages'),
       '@templates': resolvePath('src/components/templates'),

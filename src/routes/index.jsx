@@ -5,7 +5,7 @@ const Routes = components.map(route => (
   <Route
     key={route.path}
     exact
-    path={`/${route.path}`}
+    path={route.path}
     component={route.component}
   />
 ));

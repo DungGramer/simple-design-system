@@ -25,135 +25,139 @@ import TextField from '@pages/text-field/TextField';
 import Toggle from '@pages/toggle/Toggle';
 import Tooltip from '@pages/tooltip/Tooltip';
 
+import baseURL from './base';
+
+const basePath = baseURL.components;
+
 const components = [
   {
     title: 'Avatar',
-    path: 'avatar',
+    path: `${basePath}/avatar`,
     component: Avatar,
   },
   {
     title: 'Badge',
-    path: 'badge',
+    path: `${basePath}/badge`,
     component: Badge,
   },
   {
     title: 'Banner',
-    path: 'banner',
+    path: `${basePath}/banner`,
     component: Banner,
   },
   {
     title: 'Breadcrumb',
-    path: 'breadcrumb',
+    path: `${basePath}/breadcrumb`,
     component: Breadcrumb,
   },
   {
     title: 'Button',
-    path: 'button',
+    path: `${basePath}/button`,
     component: Button,
   },
   {
     title: 'Checkbox',
-    path: 'checkbox',
+    path: `${basePath}/checkbox`,
     component: Checkbox,
   },
   {
     title: 'Code',
-    path: 'code',
+    path: `${basePath}/code`,
     component: Code,
   },
   {
     title: 'Dropdown menu',
-    path: 'dropdown-menu',
+    path: `${basePath}/dropdown-menu`,
     component: DropdownMenu,
   },
   {
     title: 'Flag',
-    path: 'flag',
+    path: `${basePath}/flag`,
     component: Flag,
   },
   {
     title: 'Inline Message',
-    path: 'inline-message',
+    path: `${basePath}/inline-message`,
     component: InlineMessage,
   },
   {
     title: 'Lozenge',
-    path: 'lozenge',
+    path: `${basePath}/lozenge`,
     component: Lozenge,
   },
   {
     title: 'Modal dialog',
-    path: 'Modal-dialog',
+    path: `${basePath}/Modal-dialog`,
     component: ModalDialog,
   },
   {
     title: 'Pagination',
-    path: 'pagination',
+    path: `${basePath}/pagination`,
     component: Pagination,
   },
   {
     title: 'Progress indicator',
-    path: 'progress-indicator',
+    path: `${basePath}/progress-indicator`,
     component: ProgressIndicator,
   },
   {
     title: 'Progress tracker',
-    path: 'progress-tracker',
+    path: `${basePath}/progress-tracker`,
     component: ProgressTracker,
   },
   {
     title: 'Radio',
-    path: 'radio',
+    path: `${basePath}/radio`,
     component: Radio,
   },
   {
     title: 'Range',
-    path: 'range',
+    path: `${basePath}/range`,
     component: Range,
   },
   {
     title: 'Section Message',
-    path: 'section-message',
+    path: `${basePath}/section-message`,
     component: SectionMessage,
   },
   {
     title: 'Select',
-    path: 'select',
+    path: `${basePath}/select`,
     component: Select,
   },
   {
     title: 'Spinner',
-    path: 'spinner',
+    path: `${basePath}/spinner`,
     component: Spinner,
   },
   {
     title: 'Tabs',
-    path: 'tabs',
+    path: `${basePath}/tabs`,
     component: Tabs,
   },
   {
     title: 'Tag',
-    path: 'tag',
+    path: `${basePath}/tag`,
     component: Tag,
   },
   {
     title: 'Text-area',
-    path: 'text-area',
+    path: `${basePath}/text-area`,
     component: TextArea,
   },
   {
     title: 'Text field',
-    path: 'text-field',
+    path: `${basePath}/text-field`,
     component: TextField,
   },
   {
     title: 'Toggle',
-    path: 'toggle',
+    path: `${basePath}/toggle`,
     component: Toggle,
   },
   {
     title: 'Tooltip',
-    path: 'tooltip',
+    path: `${basePath}/tooltip`,
     component: Tooltip,
   },
 ];

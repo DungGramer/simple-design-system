@@ -44,6 +44,16 @@ body[theme="dark"] {
   }
 }
 
+.container {
+  @include padding-horizontal(2.5rem);
+  @include margin-horizontal(auto);
+  max-width: 1200px;
+}
+
+.container-fluid {
+  @include padding-horizontal(1.5rem);
+}
+
 // Root Color
 :root {
   --primary-100: hsl(210, 100%, 96%);
