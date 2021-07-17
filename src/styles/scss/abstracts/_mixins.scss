@@ -153,6 +153,12 @@
   }
 }
 
+@mixin disable-action() {
+  cursor: context-menu;
+  pointer-events: none;
+  user-select: none;
+}
+
 /*
  * Using for Retina Screen - x2 Image
  background: url("my-image.png") no-repeat;
@@ -174,7 +180,8 @@
   width: $width;
   @if $height != false {
     height: $height;
-  } else {
+  }
+  else {
     height: $width;
   }
 }

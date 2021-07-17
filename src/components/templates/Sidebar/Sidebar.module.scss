@@ -13,5 +13,6 @@
   }
   .nav-item.active {
     border-right: .1875rem solid $primary-500;
+    @include disable-action;
   }
 }
