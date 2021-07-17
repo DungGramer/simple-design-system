@@ -170,8 +170,23 @@
   }
 }
 
+@mixin size($width, $height: false) {
+  width: $width;
+  @if $height != false {
+    height: $height;
+  } else {
+    height: $width;
+  }
+}
+
+@mixin absolute() {
+  position: absolute;
+  content: '';
+}
+
 @mixin position-abs($top: false, $right: false, $bottom: false, $left: false) {
   position: absolute;
+  content: '';
 
   @if ($top and $right and $bottom and $left == false) {
     top: $top;

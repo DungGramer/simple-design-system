@@ -1,0 +1,54 @@
+.header {
+  position: sticky;
+  top: 0;
+  background-color: $white;
+  box-shadow: $shadow-ms;
+
+  > .container {
+    @include desktop {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 1.25rem;
+      height: 4.5rem;
+      min-height: 4.5rem;
+      max-height: 4.5rem;
+    }
+  }
+}
+
+.nav-links > ul {
+  display: none;
+
+
+  @include desktop {
+    display: flex;
+    margin: 0;
+
+    li + li {
+      margin-left: 3rem;
+    }
+
+    li {
+      position: relative;
+    }
+  }
+}
+
+.active::after {
+  @include desktop {
+    @include absolute();
+    left: 0;
+    top: 190%;
+    transform: translateY(-100%);
+    @include size(100%, 2px);
+    background-color: $primary-500;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: .75rem;
+}

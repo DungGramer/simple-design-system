@@ -1,26 +1,46 @@
-import './Header.module';
+import styles from './Header.module';
 import PropTypes from 'prop-types';
 import Logo from '@public/assets/images/logo.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
+
+const NavLinks = () => {
+  const paths = [
+    {
+      location: '/components',
+      name: 'Components',
+    },
+    {
+      location: '/blog',
+      name: 'Blog',
+    },
+  ];
+  return (
+    <ul>
+      {paths.map(path => (
+        <li key={path.name}>
+          <NavLink to={path.location} activeClassName={styles.active}>
+            {path.name}
+          </NavLink>
+        </li>
+      ))}
+    </ul>
+  );
+};
 
 function Header(props) {
   return (
-    <header>
-      <div>
-        <div className="logo">
+    <header className={styles.header}>
+      <div className={styles.container}>
+        <div className={styles.logo}>
           <Link to="/">
             <Logo width="50" height="50" />
           </Link>
         </div>
 
-        <nav className="nav-links">
-          <li>
-            <Link to="/">Design System</Link>
-          </li>
-          <li>
-            <Link to="/">Blog</Link>
-          </li>
+        <nav className={styles['nav-links']}>
+          <NavLinks />
         </nav>
+        <i className="fal fa-bars"></i>
       </div>
     </header>
   );
