@@ -1,0 +1,16 @@
+.backdrop.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+
+  @include desktop {
+    display: none;
+  }
+}
+
+.backdrop.dim {
+  background-color: $black-300;
+}

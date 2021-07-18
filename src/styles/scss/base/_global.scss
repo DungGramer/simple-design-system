@@ -1,42 +1,38 @@
+/*------------------------------------*
+  # Scrollbar
+*------------------------------------*/
+
 :root {
   // Support Firefox
   scrollbar-width: thin;
   scrollbar-color: $gray-500 transparent;
 }
 
-body {
-  // Support IE
-  scrollbar-face-color: $gray-500;
-  scrollbar-shadow-color: transparent;
-  scrollbar-highlight-color: $gray-600;
-
-  // Support Chrome
-  &::-webkit-scrollbar {
-    width: 0.5rem;
-    height: 0.5rem;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background: $gray-500;
-    border-radius: 100px;
-    &:hover {
-      background: $gray-600;
-    }
-  }
-
-  // Support Safari
-  &::-webkit-scrollbar-corner {
-    background: $gray-500;
-  }
-  &::-webkit-scrollbar-corner:horizontal {
-    background: $gray-500;
+// Support Chrome
+::-webkit-scrollbar {
+  width: 0.5rem;
+  height: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: $gray-500;
+  border-radius: 100px;
+  :hover {
+    background: $gray-600;
   }
 }
 
-body[theme="dark"] {
-    &::-webkit-scrollbar-thumb {
+// Support Safari
+::-webkit-scrollbar-corner, ::-webkit-scrollbar-corner:horizontal, ::-webkit-scrollbar-corner:vertical {
+  background: $gray-500;
+}
+
+
+
+body[theme='dark'] {
+  &::-webkit-scrollbar-thumb {
     background: $gray-700;
     border-radius: 100px;
     &:hover {

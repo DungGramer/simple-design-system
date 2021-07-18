@@ -1,5 +1,5 @@
 import { useCallback, useState } from 'react';
-import logo from '/public/assets/images/logo.svg';
+import Logo from '/public/assets/images/logo.svg';
 import styles from './Home.module';
 
 function Home() {
@@ -14,7 +14,7 @@ function Home() {
   return (
     <div className={styles.App}>
       <header className={styles['App-header']}>
-        <img src={logo} className={styles['App-logo']} alt="logo" />
+        <Logo className={styles['App-logo']} alt="logo" />
         <p>Hello React!</p>
         <p>
           <button type="button" onClick={handleCount}>

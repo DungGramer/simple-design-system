@@ -20,6 +20,7 @@ module.exports = {
   output: {
     path: paths.dist,
     publicPath: '/',
+    // libraryTarget: 'commonjs2',
   },
 
   target: 'web',
@@ -72,6 +73,10 @@ module.exports = {
           loader: 'babel-loader',
           options: {
             configFile: resolvePath('config/babel.config.js'),
+            cacheDirectory: true,
+            cacheCompression: false,
+            sourceMaps: true,
+            inputSourceMap: true,
           },
         },
       },

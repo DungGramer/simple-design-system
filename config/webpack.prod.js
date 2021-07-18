@@ -107,7 +107,7 @@ module.exports = merge(common, {
   },
   optimization: {
     minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
+    // minimizer: [new CssMinimizerPlugin()],
     splitChunks: {
       cacheGroups: {
         styles: {

@@ -178,11 +178,11 @@
 
 @mixin size($width, $height: false) {
   width: $width;
-  @if $height != false {
-    height: $height;
-  }
-  else {
+  @if $height == false {
     height: $width;
+  }
+  @else {
+    height: $height;
   }
 }
 

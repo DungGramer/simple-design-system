@@ -8,6 +8,8 @@ module.exports = {
           esmodules: true,
         },
         useBuiltIns: 'usage',
+        debug: true,
+        // modules: 'commonjs',
       },
     ],
     [
@@ -17,5 +19,6 @@ module.exports = {
       },
     ],
   ],
+  plugins: [['@babel/transform-runtime']],
   sourceType: 'unambiguous',
 };

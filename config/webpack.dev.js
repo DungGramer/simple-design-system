@@ -24,6 +24,8 @@ module.exports = merge(common, {
 
     contentBase: paths.public,
     watchContentBase: true,
+
+    // injectClient: true,
   },
 
   plugins: [

@@ -1,8 +1,9 @@
 .header {
   position: sticky;
+  z-index: 9;
   top: 0;
   background-color: $white;
-  box-shadow: $shadow-ms;
+  box-shadow: $shadow-s;
 
   > .container {
     padding: 0 1.25rem;
@@ -18,11 +19,27 @@
   }
 }
 
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem;
+
+  .menu {
+    cursor: pointer;
+    font-size: 1.4rem;
+
+    @include desktop {
+      display: none;
+    }
+  }
+}
+
 .nav-list {
   display: none;
   padding: 0;
   width: max-content;
-  z-index: 1;
+  z-index: 10;
   margin-left: auto;
   background-color: $white;
   box-shadow: $shadow-ms;
@@ -30,8 +47,21 @@
   white-space: nowrap;
   user-select: none;
 
+  &.open {
+    display: block;
+    @include desktop {
+      display: flex;
+    }
+  }
+
   @include desktop {
+    display: flex;
+    margin: 0;
     box-shadow: none;
+
+    li + li {
+      margin-left: 3rem;
+    }
   }
 
   > li a {
@@ -47,22 +77,10 @@
     }
 
     @include desktop {
-      &:first-child, &:last-child {
+      &:first-child,
+      &:last-child {
         padding: 0;
       }
-    }
-  }
-
-  &.open {
-    display: block;
-  }
-
-  @include desktop {
-    display: flex;
-    margin: 0;
-
-    li + li {
-      margin-left: 3rem;
     }
   }
 }
@@ -86,22 +104,6 @@
       top: 190%;
       @include size(100%, 2px);
       transform: translateY(-100%);
-    }
-  }
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0.75rem;
-
-  .menu {
-    cursor: pointer;
-    font-size: 1.4rem;
-
-    @include desktop {
-      display: none;
     }
   }
 }

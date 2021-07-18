@@ -1,18 +1,104 @@
-.nav {
-  width: 17rem;
+.sidebar {
+  width: 0;
+  position: fixed;
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
   border-right: thin solid $gray-100;
+
+  & ul {
+    z-index: 9;
+    background-color: $white;
+    overflow-y: auto;
+    height: 100vh;
+
+    @include desktop {
+      overflow-y: unset;
+      height: unset;
+    }
+  }
+
+  &.open {
+    width: 17rem;
+  }
+
+  @include desktop {
+    width: 17rem;
+  }
 
   .nav-item {
     display: block;
     padding: 0.5rem 1.25rem 0.5rem 2rem;
+
+    &:hover,
+    &.active {
+      color: $primary-500;
+      background-color: $primary-100;
+    }
+    &.active {
+      border-right: 0.1875rem solid $primary-500;
+      @include disable-action;
+    }
   }
-  .nav-item:hover,
-  .nav-item.active {
-    color: $primary-500;
-    background-color: $primary-100;
+}
+
+.aside-burger {
+  $size: 24px;
+  $burger-color: $gray-500;
+
+  @include size($size);
+  background-color: $primary-800;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9;
+  padding: 1.5rem;
+  border-radius: 100%;
+
+  @include desktop {
+    display: none;
   }
-  .nav-item.active {
-    border-right: .1875rem solid $primary-500;
-    @include disable-action;
+
+  .item {
+    transition-duration: 0.5s;
+    position: absolute;
+    height: ($size / 12);
+    width: ($size - 6px);
+    background-color: $burger-color;
+
+    &::after,
+    &::before {
+      @include absolute;
+      left: 0;
+      height: ($size / 12);
+      width: ($size - 6px);
+      background-color: $burger-color;
+      transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &::before {
+      top: 5px;
+    }
+    &::after {
+      top: -5px;
+    }
+  }
+  &.open .item {
+    background-color: transparent;
+    &::after,
+    &::before {
+      top: 0;
+      transition: top 0.3s cubic-bezier(0.23, 1, 0.32, 1),
+        transform 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    &::before {
+      transform: rotate(-45deg);
+    }
+    &::after {
+      transform: rotate(45deg);
+    }
   }
 }
