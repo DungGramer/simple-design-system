@@ -1,3 +1,4 @@
+@use "sass:math";
 //Credits to : http://codepen.io/absolutholz/post/flex-box-grid-with-sass-mixins
 //for this awesome port of Kristopher Joseph's
 //awesome www.http://flexboxgrid.com/
@@ -52,8 +53,8 @@ $viewport-layouts: (
   display: flex;
   flex: 0 1 auto;
   flex-wrap: wrap;
-  margin-right: floor(($gutter-width / -2));
-  margin-left: ceil(($gutter-width / -2));
+  margin-right: floor( math.div($gutter-width, -2));
+  margin-left: ceil( math.div($gutter-width, -2));
 }
 
 @mixin grid-row-direction($reverse: false) {
@@ -107,8 +108,8 @@ $viewport-layouts: (
   flex: 0 0 auto;
   min-height: 1px;
   position: relative;
-  padding-right: floor(($gutter-width / 2));
-  padding-left: ceil(($gutter-width / 2));
+  padding-right: floor(math.div($gutter-width, 2));
+  padding-left: ceil(math.div($gutter-width, 2));
 }
 
 @mixin grid-column-direction($reverse: false) {
@@ -128,13 +129,13 @@ $viewport-layouts: (
     flex-basis: 0;
     max-width: 100%;
   } @else {
-    flex-basis: percentage(($columns-to-span / $total-columns-in-row));
-    max-width: percentage(($columns-to-span / $total-columns-in-row));
+    flex-basis: percentage(math.div($columns-to-span, $total-columns-in-row));
+    max-width: percentage(math.div($columns-to-span, $total-columns-in-row));
   }
 }
 
 @mixin grid-column-offset($columns-to-offset, $total-columns-in-row: 12) {
-  margin-left: percentage(($columns-to-offset / $total-columns-in-row));
+  margin-left: percentage(math.div($columns-to-offset, $total-columns-in-row));
 }
 
 @mixin grid-column-order($position) {
@@ -148,18 +149,18 @@ $viewport-layouts: (
 }
 
 @mixin grid-column-push($columns-to-push, $total-columns-in-row: 12) {
-  left: percentage(($columns-to-push / $total-columns-in-row));
+  left: percentage(math.div($columns-to-push, $total-columns-in-row));
 }
 
 @mixin grid-column-pull($columns-to-pull, $total-columns-in-row: 12) {
-  right: percentage(($columns-to-pull / $total-columns-in-row));
+  right: percentage(math.div($columns-to-pull, $total-columns-in-row));
 }
 
 @mixin container-fixed() {
   margin-right: auto;
   margin-left: auto;
-  padding-right: floor(($gutter-width / 2));
-  padding-left: ceil(($gutter-width / 2));
+  padding-right: floor(math.div($gutter-width, 2));
+  padding-left: ceil(math.div($gutter-width, 2));
   @include clearfix;
 }
 .container {
