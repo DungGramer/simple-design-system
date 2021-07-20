@@ -1,3 +1,5 @@
+const isDevelopment = process.env.NODE_ENV !== 'production';
+
 module.exports = {
   presets: [
     [
@@ -19,6 +21,9 @@ module.exports = {
       },
     ],
   ],
-  plugins: [['@babel/transform-runtime']],
+  plugins: [
+    ['@babel/transform-runtime'],
+    isDevelopment && require('react-refresh/babel'),
+  ],
   sourceType: 'unambiguous',
 };

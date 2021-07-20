@@ -1,7 +1,9 @@
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 const { paths } = require('./untils.js');
 const port = process.env.PORT || 3090;
 
@@ -33,6 +35,8 @@ module.exports = merge(common, {
       filename: '[name].css',
       chunkFilename: '[id].css',
     }),
+    new webpack.HotModuleReplacementPlugin(),
+    new ReactRefreshWebpackPlugin(),
   ],
 
   output: { publicPath: '/' },
