@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
   paths,
   regex,
@@ -188,11 +187,4 @@ module.exports = {
       '@organisms': resolvePath('src/components/UI/organisms'),
     },
   },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: paths.indexHTML,
-      filename: 'index.html',
-    }),
-  ],
 };
