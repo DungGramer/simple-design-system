@@ -1,5 +1,6 @@
 const path = require('path');
 
+
 const resolvePath = (relativePath) =>
   path.join(__dirname, '../', relativePath);
 
@@ -38,4 +39,10 @@ const postCSS = {
   },
 };
 
-module.exports = { paths, regex, formatFileName, resolvePath, postCSS };
+module.exports = {
+  paths,
+  regex,
+  formatFileName,
+  resolvePath,
+  postCSS,
+};

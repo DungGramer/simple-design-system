@@ -5,7 +5,7 @@ const {
   formatFileName,
   postCSS,
 } = require('./untils');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';
 

@@ -5,7 +5,7 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const { paths } = require('./untils.js');
+const { paths, regex, resolvePath } = require('./untils.js');
 const port = process.env.PORT || 3090;
 
 module.exports = merge(common, {
@@ -29,6 +29,28 @@ module.exports = merge(common, {
     watchContentBase: true,
 
     // injectClient: true,
+  },
+
+  module: {
+    rules: [
+            {
+        test: regex.js,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            configFile: resolvePath('config/babel.config.js'),
+            cacheDirectory: true,
+            cacheCompression: false,
+            sourceMaps: true,
+            inputSourceMap: true,
+            plugins: [
+              require('react-refresh/babel'),
+            ]
+          },
+        },
+      },
+    ]
   },
 
   plugins: [
