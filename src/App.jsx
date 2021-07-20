@@ -1,4 +1,4 @@
-import './App.scss';
+import styles from './App.module';
 
 import { Switch } from 'react-router-dom';
 
@@ -10,8 +10,10 @@ function App() {
   return (
     <>
       <Header />
-      <Sidebar />
-      <Switch>{Routes}</Switch>
+      <main className={styles['main-container']}>
+        <Sidebar />
+        <section className={styles.main}>{Routes}</section>
+      </main>
     </>
   );
 }

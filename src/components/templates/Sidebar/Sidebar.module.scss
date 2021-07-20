@@ -5,6 +5,11 @@
   transition: width 0.3s ease-in-out;
   border-right: thin solid $gray-100;
 
+  @include desktop {
+    width: 17rem;
+    position: static;
+  }
+
   & ul {
     z-index: 9;
     background-color: $white;
@@ -21,9 +26,7 @@
     width: 17rem;
   }
 
-  @include desktop {
-    width: 17rem;
-  }
+
 
   .nav-item {
     display: block;
