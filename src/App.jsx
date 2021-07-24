@@ -12,7 +12,7 @@ function App() {
       <Header />
       <main className={styles['main-container']}>
         <Sidebar />
-        <section className={styles.main}><h1>{Routes}</h1></section>
+        <section className={styles.main}>{Routes}</section>
       </main>
     </>
   );
