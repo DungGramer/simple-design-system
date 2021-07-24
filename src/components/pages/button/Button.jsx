@@ -2,7 +2,12 @@ import './Button.module';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight';
 import '/node_modules/highlight.js/styles/a11y-light.css';
+
 import CopyToClipboard from '@atoms/copy-to-clipboard/CopyToClipboard';
+import Tabs from '@molecules/Tabs/Tabs';
+import Checkbox from '@pages/checkbox/Checkbox';
+import Code from '@pages/code/Code';
+import Flag from '@pages/flag/Flag';
 
 
 const data = `<!DOCTYPE html>
@@ -24,7 +29,14 @@ function Button(props) {
     <div>
       <h1>Button</h1>
       <Highlight className="html">{data}</Highlight>
-      <CopyToClipboard text={data} />
+      {/* <CopyToClipboard text={data} /> */}
+
+      <Tabs title={['check Box', 'Code', 'Flag']}>
+        <Checkbox />
+        <Code />
+        <Flag />
+      </Tabs>
+
     </div>
   );
 }
