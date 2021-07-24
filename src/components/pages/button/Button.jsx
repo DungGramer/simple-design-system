@@ -2,13 +2,10 @@ import './Button.module';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight';
 import '/node_modules/highlight.js/styles/a11y-light.css';
+import CopyToClipboard from '@atoms/copy-to-clipboard/CopyToClipboard';
 
-function Button(props) {
-  return (
-    <div>
-      Button
-      <Highlight className="html">
-        {`<!DOCTYPE html>
+
+const data = `<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -19,8 +16,15 @@ function Button(props) {
 <body>
 
 </body>
-</html>`}
-      </Highlight>
+</html>`;
+
+function Button(props) {
+
+  return (
+    <div>
+      <h1>Button</h1>
+      <Highlight className="html">{data}</Highlight>
+      <CopyToClipboard text={data} />
     </div>
   );
 }

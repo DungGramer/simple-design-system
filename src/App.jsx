@@ -1,18 +1,18 @@
-import styles from './App.module';
+import 'App.scss';
 
 import { Switch } from 'react-router-dom';
 
 import Routes from './routes';
-import { Sidebar } from '@templates/Sidebar/Sidebar';
-import Header from '@templates/Header/Header';
+import { Sidebar } from '@organisms/Sidebar/Sidebar';
+import Header from '@organisms/Header/Header';
 
 function App() {
   return (
     <>
       <Header />
-      <main className={styles['main-container']}>
+      <main className='main-container'>
         <Sidebar />
-        <section className={styles.main}>{Routes}</section>
+        <section className='main'>{Routes}</section>
       </main>
     </>
   );

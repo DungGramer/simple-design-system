@@ -33,10 +33,10 @@ else
 fi
 
 # Import the component
-echo "import './$fileName.module';" > $fileName.jsx
+echo "import styles from './$fileName.module';" > $fileName.jsx
 echo "import PropTypes from 'prop-types';" >> $fileName.jsx
 echo "" >> $fileName.jsx
-echo "function $fileName(props) {" >> $fileName.jsx
+echo "function $fileName({}) {" >> $fileName.jsx
 echo "  return <div>$fileName</div>;" >> $fileName.jsx
 echo "}" >> $fileName.jsx
 echo "" >> $fileName.jsx
