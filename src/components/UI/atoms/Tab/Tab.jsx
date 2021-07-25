@@ -1,7 +1,7 @@
 import styles from './Tab.module';
 import PropTypes from 'prop-types';
 
-function Tab({ activeTab, index, onClick, title, active }) {
+function Tab({ onClick, title, active }) {
   return (
     <li
       className={`${styles['tab-list-item']} ${
@@ -14,6 +14,10 @@ function Tab({ activeTab, index, onClick, title, active }) {
   );
 }
 
-Tab.propTypes = {};
+Tab.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
+  active: PropTypes.bool.isRequired
+};
 
 export default Tab;

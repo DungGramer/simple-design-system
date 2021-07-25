@@ -1,48 +1,43 @@
 import styles from './Tabs.module';
 import PropTypes from 'prop-types';
 import Tab from '@atoms/Tab/Tab';
-import { useCallback, useEffect, useReducer, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import boxModel from '~/constants/boxModel';
 
-const splitUnit = value => {
-  return parseFloat(value) || 0;
-};
-
-function Tabs({ children, type, title, showAll = false }) {
+function Tabs({ children, title, showAll = false }) {
   const [activeTab, setActiveTab] = useState(0);
   const [widthTab, setWidthTab] = useState(0);
   const [locationTab, setLocationTab] = useState(0);
-  const [top, setTop] = useState(0)
 
   const tabList = useRef();
 
   const getWidthTab = () => {
     const tab = tabList.current.children[activeTab];
     const width = tab.clientWidth;
-    const getStyle = getComputedStyle(tab);
 
-    const marginLeft = splitUnit(getStyle.marginLeft);
-    const marginRight = splitUnit(getStyle.marginRight);
+    const { margin, padding } = boxModel(tab);
 
-    setWidthTab(width + marginLeft + marginRight + 'px');
+    const widthTab =
+      width - margin.horizontal - padding.horizontal;
+
+    setWidthTab(widthTab + 'px');
   };
 
   const getLocation = () => {
     const tab = tabList.current.children[activeTab];
-    const getStyle = getComputedStyle(tab);
+    const baseTab = tabList.current.children[0];
 
-    const marginLeft = splitUnit(getStyle.marginLeft);
-    const location =  tab.getBoundingClientRect();
+    const { margin, padding } = boxModel(tab);
 
-    setLocationTab((location.left - marginLeft));
+
+    const location = ele => ele.getBoundingClientRect().left;
+
+    setLocationTab(location(tab) - location(baseTab) + margin.left + padding.left + 'px');
   };
 
   const updateTabs = index => {
-    setActiveTab(() => index);
+    setActiveTab(index);
   };
-
-  useEffect(() => {
-    setTop(tabList.current.getBoundingClientRect().bottom);
-  }, []);
 
   useEffect(() => {
     getWidthTab();
@@ -55,7 +50,6 @@ function Tabs({ children, type, title, showAll = false }) {
         {title.map((item, index) => (
           <Tab
             key={index}
-            index={index}
             active={activeTab === index}
             onClick={() => updateTabs(index)}
             title={item}
@@ -63,7 +57,7 @@ function Tabs({ children, type, title, showAll = false }) {
         ))}
         <div
           className={styles['tabs-ink-bar']}
-          style={{ width: widthTab, left: locationTab, top  }}
+          style={{ width: widthTab, left: locationTab }}
         ></div>
       </ul>
 
@@ -72,6 +66,9 @@ function Tabs({ children, type, title, showAll = false }) {
   );
 }
 
-Tabs.propTypes = {};
+Tabs.propTypes = {
+  children: PropTypes.node.isRequired,
+  title: PropTypes.array.isRequired,
+};
 
 export default Tabs;
