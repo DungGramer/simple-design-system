@@ -1,5 +1,13 @@
 import styles from './ClickableEffect.module';
 
+/**
+ * Create an Ripple effect that will make the element clickable.
+ * @param {window.event} event
+ *
+ * @example
+ * <button className={clickableEffect.styles} onclick={clickableEffect.handle}>Click me!</button>
+ */
+
 function createRipple(event) {
   const button = event.currentTarget;
   const diameter = Math.max(button.clientWidth, button.clientHeight);

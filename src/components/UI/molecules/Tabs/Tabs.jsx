@@ -4,6 +4,12 @@ import Tab from '@atoms/Tab/Tab';
 import { useEffect, useRef, useState } from 'react';
 import boxModel from '~/constants/boxModel';
 
+/**
+ * @function Tabs
+ *
+ * @param {object} children
+ * @param {array} title
+ */
 function Tabs({ children, title, showAll = false }) {
   const [activeTab, setActiveTab] = useState(0);
   const [widthTab, setWidthTab] = useState(0);
@@ -17,8 +23,7 @@ function Tabs({ children, title, showAll = false }) {
 
     const { margin, padding } = boxModel(tab);
 
-    const widthTab =
-      width - margin.horizontal - padding.horizontal;
+    const widthTab = width - margin.horizontal - padding.horizontal;
 
     setWidthTab(widthTab + 'px');
   };
@@ -29,10 +34,11 @@ function Tabs({ children, title, showAll = false }) {
 
     const { margin, padding } = boxModel(tab);
 
-
     const location = ele => ele.getBoundingClientRect().left;
 
-    setLocationTab(location(tab) - location(baseTab) + margin.left + padding.left + 'px');
+    setLocationTab(
+      location(tab) - location(baseTab) + margin.left + padding.left + 'px',
+    );
   };
 
   const updateTabs = index => {
