@@ -1,6 +1,6 @@
 import styles from './Backdrop.module';
 import PropTypes from 'prop-types';
-import useMediaQuery from '@components/custom-hook/useMediaQuery';
+import useMediaQuery from '@components/hooks/useMediaQuery';
 import breakpoint from '~/constants/mediaQuery';
 
 /**

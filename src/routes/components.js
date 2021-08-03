@@ -1,29 +1,32 @@
-import Avatar from '@pages/avatar/Avatar';
-import Badge from '@pages/badge/Badge';
-import Banner from '@pages/banner/Banner';
-import Breadcrumb from '@pages/breadcrumb/Breadcrumb';
-import Button from '@pages/button/Button';
-import Checkbox from '@pages/checkbox/Checkbox';
-import Code from '@pages/code/Code';
-import DropdownMenu from '@pages/dropdown-menu/DropdownMenu';
-import Flag from '@pages/flag/Flag';
-import InlineMessage from '@pages/inline-message/InlineMessage';
-import Lozenge from '@pages/lozenge/Lozenge';
-import ModalDialog from '@pages/modal-dialog/ModalDialog';
-import Pagination from '@pages/pagination/Pagination';
-import ProgressIndicator from '@pages/progress-indicator/ProgressIndicator';
-import ProgressTracker from '@pages/progress-tracker/ProgressTracker';
-import Radio from '@pages/radio/Radio';
-import Range from '@pages/range/Range';
-import SectionMessage from '@pages/section-message/SectionMessage';
-import Select from '@pages/select/Select';
-import Spinner from '@pages/spinner/Spinner';
-import Tabs from '@pages/tabs/Tabs';
-import Tag from '@pages/tag/Tag';
-import TextArea from '@pages/text-area/TextArea';
-import TextField from '@pages/text-field/TextField';
-import Toggle from '@pages/toggle/Toggle';
-import Tooltip from '@pages/tooltip/Tooltip';
+import { lazy } from 'react';
+
+const Avatar = lazy(() => import('@pages/avatar/Avatar'));
+const Badge = lazy(() => import('@pages/badge/Badge'));
+const Banner = lazy(() => import('@pages/banner/Banner'));
+const Breadcrumb = lazy(() => import('@pages/breadcrumb/Breadcrumb'));
+const Button = lazy(() => import('@pages/button/Button'));
+const Checkbox = lazy(() => import('@pages/checkbox/Checkbox'));
+const Code = lazy(() => import('@pages/code/Code'));
+const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenu'));
+const Flag = lazy(() => import('@pages/flag/Flag'));
+const ImagePage = lazy(() => import('@pages/image-page/ImagePage'));
+const InlineMessage = lazy(() => import('@pages/inline-message/InlineMessage'));
+const Lozenge = lazy(() => import('@pages/lozenge/Lozenge'));
+const ModalDialog = lazy(() => import('@pages/modal-dialog/ModalDialog'));
+const Pagination = lazy(() => import('@pages/pagination/Pagination'));
+const ProgressIndicator = lazy(() => import('@pages/progress-indicator/ProgressIndicator'));
+const ProgressTracker = lazy(() => import('@pages/progress-tracker/ProgressTracker'));
+const Radio = lazy(() => import('@pages/radio/Radio'));
+const Range = lazy(() => import('@pages/range/Range'));
+const SectionMessage = lazy(() => import('@pages/section-message/SectionMessage'));
+const Select = lazy(() => import('@pages/select/Select'));
+const Spinner = lazy(() => import('@pages/spinner/Spinner'));
+const Tabs = lazy(() => import('@pages/tabs/Tabs'));
+const Tag = lazy(() => import('@pages/tag/Tag'));
+const TextArea = lazy(() => import('@pages/text-area/TextArea'));
+const TextField = lazy(() => import('@pages/text-field/TextField'));
+const Toggle = lazy(() => import('@pages/toggle/Toggle'));
+const Tooltip = lazy(() => import('@pages/tooltip/Tooltip'));
 
 import baseURL from './base';
 
@@ -74,6 +77,11 @@ const components = [
     title: 'Flag',
     path: `${basePath}/flag`,
     component: Flag,
+  },
+  {
+    title: 'Image',
+    path: `${basePath}/image`,
+    component: ImagePage,
   },
   {
     title: 'Inline Message',

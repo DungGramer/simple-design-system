@@ -7,7 +7,8 @@ import { Sidebar } from '@organisms/Sidebar/Sidebar';
 import Header from '@organisms/Header/Header';
 
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { useRef } from 'react';
+import { Suspense, useRef } from 'react';
+import Loading from '@atoms/loading/Loading';
 
 function App() {
   const location = useLocation();
@@ -26,7 +27,9 @@ function App() {
               timeout={{ enter: 250, exit: 0 }}
             >
               <Switch location={location}>
+              <Suspense fallback={<Loading />}>
                 {Routes}
+              </Suspense>
               </Switch>
             </CSSTransition>
           </TransitionGroup>

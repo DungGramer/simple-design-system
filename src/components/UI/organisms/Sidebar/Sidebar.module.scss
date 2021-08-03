@@ -8,6 +8,8 @@
 
   @include desktop {
     width: 17rem;
+    min-width: 17rem;
+    max-width: 17rem;
     position: static;
   }
 
