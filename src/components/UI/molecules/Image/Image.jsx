@@ -15,7 +15,7 @@ const Image = ({ src, alt, lazy, width, height, type, decoding, srcset }) => {
       loading={lazy && 'lazy'}
       type={convertTypeImage(type)}
       decoding={decoding}
-      srcset={srcset}
+      srcSet={srcset}
     />
   );
 };

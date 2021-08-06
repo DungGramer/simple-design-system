@@ -12,7 +12,7 @@ import Loading from '@atoms/loading/Loading';
 
 function App() {
   const location = useLocation();
-  let nodeRef = useRef(null);
+  // const nodeRef = useRef(null);
   return (
     <>
       <Header />
@@ -21,15 +21,14 @@ function App() {
         <section className="main">
           <TransitionGroup appear>
             <CSSTransition
+              // nodeRef={nodeRef}
               unmountOnExit
               key={location.key}
               classNames="fade"
               timeout={{ enter: 250, exit: 0 }}
             >
               <Switch location={location}>
-              <Suspense fallback={<Loading />}>
-                {Routes}
-              </Suspense>
+                <Suspense fallback={<Loading />}>{Routes}</Suspense>
               </Switch>
             </CSSTransition>
           </TransitionGroup>

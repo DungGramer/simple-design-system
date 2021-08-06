@@ -50,6 +50,7 @@
 
 .aside-burger {
   $size: 24px;
+  touch-action: manipulation;
   $burger-color: $gray-500;
 
   @include size($size);

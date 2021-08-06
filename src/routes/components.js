@@ -1,7 +1,7 @@
 import { lazy } from 'react';
 
 const Avatar = lazy(() => import('@pages/avatar/Avatar'));
-const Badge = lazy(() => import('@pages/badge/Badge'));
+const Badge = lazy(() => import('@pages/badge-page/BadgePage'));
 const Banner = lazy(() => import('@pages/banner/Banner'));
 const Breadcrumb = lazy(() => import('@pages/breadcrumb/Breadcrumb'));
 const Button = lazy(() => import('@pages/button/Button'));
