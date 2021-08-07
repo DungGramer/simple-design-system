@@ -1,5 +1,8 @@
 import styles from './Badge.module';
 import PropTypes from 'prop-types';
+import { spaceToDash } from '~/constants/converter';
+import { useEffect, useRef } from 'react';
+import useSetRelativeParent from '@components/hooks/useSetRelativeParent';
 
 function switchPrefix(appearance) {
   switch (appearance) {
@@ -20,13 +23,35 @@ function switchPrefix(appearance) {
   }
 }
 
-function Badge({ children, appearance, max, size, icon }) {
-
+function Badge({ children, appearance, max, size, icon, direction, offset }) {
   const prefix = switchPrefix(appearance);
   const suffix = max < Number(children) ? `${max}+` : children;
 
+  const badgeRef = useRef(null);
+
+  // If have direction, set relative position for parent
+  useSetRelativeParent(badgeRef, direction);
+
+  const [direction1, direction2] = direction.split(/ |\-/);
+
+  const setOffset = () => {
+    if (!offset) return;
+
+    badgeRef.current.style[direction1] = offset?.[0] + 'px' || '';
+    badgeRef.current.style[direction2] = offset?.[1] + 'px' || "";
+  }
+
+  useEffect(() => {
+    setOffset();
+  }, [direction, offset]);
+
   return (
-    <span className={`${styles[appearance]} ${styles.badge} ${styles[size]}`}>
+    <span
+      ref={badgeRef}
+      className={`${styles[appearance]} ${styles.badge || ''} ${
+        styles[size] || ''
+      } ${styles[direction] || ''} ${styles[spaceToDash(direction)]}`}
+    >
       {icon || prefix} {suffix}
     </span>
   );
@@ -44,9 +69,37 @@ Badge.propTypes = {
     'error',
     'danger',
     'warning',
+    'dot',
   ]),
   max: PropTypes.number,
   size: PropTypes.oneOf(['small', 'large']),
+  icon: PropTypes.string,
+  direction: PropTypes.oneOf([
+    'left-top',
+    'left top',
+    'top-left',
+    'top left',
+
+    'top-right',
+    'top right',
+    'right-top',
+    'right top',
+
+    'right-bottom',
+    'right bottom',
+    'bottom-right',
+    'bottom right',
+
+    'bottom-left',
+    'bottom left',
+    'left-bottom',
+    'left bottom',
+  ]),
+  offset: PropTypes.array,
+};
+
+Badge.defaultProps = {
+  appearance: 'primary',
 };
 
 export default Badge;

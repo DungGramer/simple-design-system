@@ -45,4 +45,10 @@ const convertTypeImage = type => {
   return `image/${imageType}`;
 };
 
-export default convertTypeImage;
+const spaceToDash = str => {
+  if (!str) return '';
+  return str.replace(/\s+/g, '-');
+}
+
+exports.convertTypeImage = convertTypeImage;
+exports.spaceToDash = spaceToDash;

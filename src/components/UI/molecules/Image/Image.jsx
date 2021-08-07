@@ -1,6 +1,6 @@
 import styles from './Image.module';
 import PropTypes from 'prop-types';
-import convertTypeImage from '~/constants/convertTypeImage';
+import convertTypeImage from '~/constants/converter';
 
 // components lazy load image
 
