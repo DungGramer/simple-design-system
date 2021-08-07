@@ -4,7 +4,7 @@ import Highlight from 'react-highlight';
 import '/node_modules/highlight.js/styles/a11y-light.css';
 
 import CopyToClipboard from '@atoms/copy-to-clipboard/CopyToClipboard';
-import Tabs from '@molecules/Tabs/Tabs';
+import Tabs from '@molecules/tabs/Tabs';
 import Checkbox from '@pages/checkbox/Checkbox';
 import Code from '@pages/code/Code';
 import Flag from '@pages/flag/Flag';

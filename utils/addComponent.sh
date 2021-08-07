@@ -10,15 +10,21 @@ dashToCamelCase() {
   echo "$1" | sed -r 's/(^|_|-)([a-z])/\U\2/g'
 }
 
+lowerCase() {
+    echo "$1" | tr '[:upper:]' '[:lower:]'
+}
+
 getPath() {
-  echo "$1" | sed -r 's/([^\/])*$/\ /g'
+  echo "$1" | sed -r 's/([^\/])*$/\ /g' | xargs
 }
 
 
 # Set up variables
 path=$(getPath "$1")
 lastFolder=${1##*\/}
-fileName=$(dashToCamelCase "$lastFolder")
+
+lowerFolder=$(lowerCase "$lastFolder") # Folder name
+fileName=$(dashToCamelCase "$lowerFolder") # File name
 
 
 # Create the folder if it doesn't exist
@@ -27,8 +33,8 @@ if [ -d "src/components/$1" ]; then
   cd "src/components/$1"
 else
   cd src/components/$path
-  mkdir $lastFolder
-  cd $lastFolder
+  mkdir $lowerFolder
+  cd $lowerFolder
   touch $fileName.jsx $fileName.module.scss
 fi
 
@@ -36,13 +42,18 @@ fi
 echo "import styles from './$fileName.module';" > $fileName.jsx
 echo "import PropTypes from 'prop-types';" >> $fileName.jsx
 echo "" >> $fileName.jsx
-echo "function $fileName({}) {" >> $fileName.jsx
-echo "  return <div>$fileName</div>;" >> $fileName.jsx
+echo "const $fileName = ({}) => {" >> $fileName.jsx
+echo "  return <div className={styles[$lowerFolder]}>$fileName</div>;" >> $fileName.jsx
 echo "}" >> $fileName.jsx
 echo "" >> $fileName.jsx
 echo "$fileName.propTypes = {};" >> $fileName.jsx
 echo "" >> $fileName.jsx
 echo "export default $fileName;" >> $fileName.jsx
 
-title "Component created in src/components/$1"
+# Import the styles
+echo ".$lowerFolder {" >> $fileName.module.scss
+echo "}" >> $fileName.module.scss
+
+
+title "Component created in src/components/$path$lowerFolder"
 

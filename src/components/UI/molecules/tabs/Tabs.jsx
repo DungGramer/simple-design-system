@@ -1,6 +1,6 @@
 import styles from './Tabs.module';
 import PropTypes from 'prop-types';
-import Tab from '@atoms/Tab/Tab';
+import Tab from '@atoms/tab/Tab';
 import { useEffect, useRef, useState } from 'react';
 import boxModel from '~/constants/boxModel';
 

@@ -1,6 +1,6 @@
 import styles from './BadgePage.module';
 import PropTypes from 'prop-types';
-import Badge from '@atoms/Badge/Badge';
+import Badge from '@atoms/badge/Badge';
 
 function BadgePage({}) {
   return (
