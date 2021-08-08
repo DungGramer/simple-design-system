@@ -69,7 +69,6 @@ function DropdownMenu(props) {
       <button
         ref={btnRef}
         onClick={toggleOpen}
-        style={{ position: 'relative' }}
       >
         Click me
       </button>
