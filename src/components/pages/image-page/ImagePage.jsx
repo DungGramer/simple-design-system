@@ -1,6 +1,6 @@
 import styles from './ImagePage.module';
 import PropTypes from 'prop-types';
-import Image from '@molecules/Image/Image';
+import Image from '@molecules/image/Image';
 import imageMockup from '~/mock/imageMockup';
 
 const imgs = imageMockup(1920, 1080, 50);

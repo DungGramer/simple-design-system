@@ -4,11 +4,15 @@ import Logo from '@public/assets/images/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import Backdrop from '@atoms/backdrop/Backdrop';
+import useMediaQuery from '@components/hooks/useMediaQuery';
+import breakpoint from '~/constants/mediaQuery';
 
 function Header(props) {
   const [open, setOpen] = useState(false);
-  const openClass = open ? styles.open : '';
   const toggleOpen = () => setOpen(!open);
+
+  const maxDesktop = useMediaQuery(breakpoint.m_desktop);
+
   const paths = [
     {
       location: '/components',
@@ -21,8 +25,13 @@ function Header(props) {
   ];
 
   return (
-    <header className={styles.header}>
-      <Backdrop isOpen={open} onClick={toggleOpen} onDrag={toggleOpen} />
+    <header id="header" className={styles.header}>
+      <Backdrop
+        isOpen={open}
+        onClick={toggleOpen}
+        onDrag={toggleOpen}
+        condition={maxDesktop}
+      />
       <div className={styles.container}>
         <div className={styles.logo}>
           <Link to="/">

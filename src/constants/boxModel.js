@@ -46,6 +46,8 @@ const boxModel = ele => {
     size: {
       width: splitUnit(width),
       height: splitUnit(height),
+      maxWidth: splitUnit(paddingLeft) + splitUnit(paddingRight) + splitUnit(width) + splitUnit(marginLeft) + splitUnit(marginRight) + splitUnit(borderLeftWidth) + splitUnit(borderRightWidth),
+      maxHeight: splitUnit(paddingTop) + splitUnit(paddingBottom) + splitUnit(height) + splitUnit(marginTop) + splitUnit(marginBottom) + splitUnit(borderTopWidth) + splitUnit(borderBottomWidth),
     },
   };
 };

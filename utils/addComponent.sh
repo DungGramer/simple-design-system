@@ -43,7 +43,7 @@ echo "import styles from './$fileName.module';" > $fileName.jsx
 echo "import PropTypes from 'prop-types';" >> $fileName.jsx
 echo "" >> $fileName.jsx
 echo "const $fileName = ({}) => {" >> $fileName.jsx
-echo "  return <div className={styles[$lowerFolder]}>$fileName</div>;" >> $fileName.jsx
+echo "  return <div className={styles['$lowerFolder']}>$fileName</div>;" >> $fileName.jsx
 echo "}" >> $fileName.jsx
 echo "" >> $fileName.jsx
 echo "$fileName.propTypes = {};" >> $fileName.jsx

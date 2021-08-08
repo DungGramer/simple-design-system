@@ -1,0 +1,14 @@
+.menu {
+  padding: .375rem .75rem;
+  white-space: nowrap;
+  background-color: $white;
+
+  &:hover {
+    background-color: $gray-100;
+  }
+
+  > a {
+    min-width: 100%;
+    display: inline-block;
+  }
+}

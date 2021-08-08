@@ -1,6 +1,8 @@
 import Backdrop from '@atoms/backdrop/Backdrop';
+import useMediaQuery from '@components/hooks/useMediaQuery';
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
+import breakpoint from '~/constants/mediaQuery';
 import components from '~/routes/components';
 
 import styles from './Sidebar.module';
@@ -8,7 +10,10 @@ import styles from './Sidebar.module';
 export const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const openClass = open ? styles.open : '';
+
   const toggleOpen = () => setOpen(!open);
+  const maxDesktop = useMediaQuery(breakpoint.m_desktop);
+
 
   return (
     <aside className={`${styles.sidebar} ${openClass}`}>
@@ -16,6 +21,7 @@ export const Sidebar = () => {
         isOpen={open}
         onClick={toggleOpen}
         onDrag={toggleOpen}
+        condition={maxDesktop}
         dimBackground
       />
 

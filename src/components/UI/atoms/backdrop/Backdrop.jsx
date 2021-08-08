@@ -10,22 +10,23 @@ import breakpoint from '~/constants/mediaQuery';
  * @param {Boolean} dimBackground - Dim the background
  * @param {Function} onClick - Callback function
  * @param {Function} onDrag - Callback function
+ * @param {useMediaQuery} condition - Condition to show the backdrop
  *
  * @example
- *  <Backdrop isOpen={open} onClick={toggleOpen} onDrag={toggleOpen} />
+ *  <Backdrop isOpen={open} onClick={toggleOpen} onDrag={toggleOpen} condition={maxDesktop} dimBackground />
  */
-const Backdrop = ({ isOpen, dimBackground, onClick, onDrag }) => {
-  let maxDesktop = useMediaQuery(breakpoint.m_desktop);
-
+const Backdrop = ({ isOpen, dimBackground, onClick, onDrag, condition, zIndex}) => {
   return (
     <>
-      {maxDesktop && (
+      {condition && (
         <div
           className={`${styles.backdrop} ${dimBackground && styles.dim} ${
             isOpen ? styles.open : ''
           }`}
           onClick={onClick}
           onDrag={onDrag}
+
+          style={{ zIndex }}
         />
       )}
     </>
@@ -37,11 +38,14 @@ Backdrop.propTypes = {
   dimBackground: PropTypes.bool,
   onClick: PropTypes.func,
   onDrag: PropTypes.func,
+  zIndex: PropTypes.number,
 };
 
 Backdrop.defaultProps = {
   isOpen: false,
   dimBackground: false,
+  condition: true,
+  zIndex: -1,
 };
 
 export default Backdrop;
