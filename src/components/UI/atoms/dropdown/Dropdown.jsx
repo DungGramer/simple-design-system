@@ -21,7 +21,7 @@ import boxModel from '~/constants/boxModel';
 const Dropdown = ({ overlay, parentRef, isOpen, onClick }) => {
   const dropdownRef = useRef();
 
-  const setUp = () => {
+  const setVisible = () => {
     if (dropdownRef.current && parentRef.current) {
       const dropdownStyle = dropdownRef.current.style;
       dropdownStyle.opacity = 1;
@@ -31,34 +31,34 @@ const Dropdown = ({ overlay, parentRef, isOpen, onClick }) => {
     }
   };
 
-  const scrollHandle = () => {
+  const handleScroll = () => {
     if (dropdownRef.current && parentRef.current) {
-      const { spaceTop, spaceBottom, maxSpaceHorizontal } = getLocation(parentRef);
+      const { spaceTop, spaceBottom } = getLocation(parentRef);
       const { size } = boxModel(parentRef.current);
       const dropdownStyle = dropdownRef.current.style;
 
       if (spaceTop > spaceBottom) {
-        dropdownStyle.bottom = `calc(100% + ${size.maxHeight}px)`;
         dropdownStyle.top = 'auto';
+        dropdownStyle.bottom = `calc(100% + ${size.maxHeight}px)`;
+        dropdownStyle.maxHeight = `${spaceTop - 20}px`;
       } else {
         dropdownStyle.top = '100%';
         dropdownStyle.bottom = 'auto';
+        dropdownStyle.maxHeight = `${spaceBottom - 20}px`;
       }
-
-      dropdownStyle.maxHeight = `${maxSpaceHorizontal - 20}px`;
     }
   };
 
   useEffect(() => {
-    setUp();
-    scrollHandle();
+    setVisible();
+    handleScroll();
 
     if (isOpen) {
-      window.addEventListener('mousewheel', scrollHandle);
+      window.addEventListener('scroll', handleScroll);
     }
 
     return () => {
-      window.removeEventListener('mousewheel', scrollHandle);
+      window.removeEventListener('scroll', handleScroll);
     };
   }, [isOpen]);
 

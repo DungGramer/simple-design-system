@@ -1,4 +1,8 @@
+import boxModel from "./boxModel";
+
 const getLocation = (ref) => {
+  const { size } = boxModel(ref.current);
+
   if (!ref.current || !ref) return;
 
   if (ref.current) {
@@ -21,9 +25,9 @@ const getLocation = (ref) => {
       heightScreen: innerHeight,
 
       spaceTop: Math.abs(top - heightHeader),
-      spaceBottom: Math.abs(innerHeight - y),
+      spaceBottom: Math.abs(innerHeight - y - size.maxHeight),
       spaceLeft: x,
-      spaceRight: innerWidth - x,
+      spaceRight: Math.abs(innerWidth - x - size.maxWidth),
 
       maxSpaceHorizontal: Math.max(innerHeight - y, top - heightHeader),
       minSpaceHorizontal: Math.min(innerHeight - y, top - heightHeader),
