@@ -6,6 +6,7 @@ const common = require('./webpack.common.js');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const WebpackCdnPlugin = require('webpack-cdn-plugin');
 
 const { paths, regex, postCSS } = require('./untils');
 
@@ -15,6 +16,13 @@ module.exports = merge(common, {
 
   output: {
     filename: 'assets/js/[name].[contenthash:8].js',
+  },
+
+  externals: {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'react-router': 'ReactRouter',
+    'react-router-dom': 'ReactRouterDOM',
   },
 
   plugins: [
@@ -40,6 +48,31 @@ module.exports = merge(common, {
       filename: 'assets/css/[name].[contenthash:8].css',
       chunkFilename: 'assets/css/[id].[contenthash:8].css',
     }),
+    new WebpackCdnPlugin({
+      modules: [
+        {
+          name: 'react',
+          var: 'React',
+          path: 'umd/react.production.min.js',
+        },
+        {
+          name: 'react-dom',
+          var: 'ReactDOM',
+          path: 'umd/react-dom.production.min.js',
+        },
+        {
+          name: 'react-router',
+          var: 'ReactRouter',
+          path: 'umd/react-router.min.js',
+        },
+        {
+          name: 'react-router-dom',
+          var: 'ReactRouterDOM',
+          path: 'umd/react-router-dom.min.js',
+        },
+      ],
+      publicPath: '/node_modules',
+    }),
     // new CopyPlugin({
     //   patterns: [
     //     // { from: 'public/assets/images', to: 'assets/images' },
@@ -50,6 +83,7 @@ module.exports = merge(common, {
   ],
   output: {
     clean: true,
+    // libraryTarget: 'umd',
   },
   devtool: 'source-map',
 
