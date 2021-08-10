@@ -1,0 +1,26 @@
+$border-color: $gray-200;
+
+.code-box {
+  margin: 0 0 1rem;
+  border: thin solid $border-color;
+
+  > section {
+    @include padding-horizontal(24px);
+  }
+
+  .component {
+    border-bottom: thin solid $border-color;
+    @include padding-vertical(2.5rem, 3rem);
+  }
+
+  .code-highlight {
+    position: relative;
+    padding: 0;
+
+    > i {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+}

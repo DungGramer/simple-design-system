@@ -18,16 +18,22 @@ import boxModel from '~/constants/boxModel';
  *
  * */
 
-const Dropdown = ({ overlay, parentRef, isOpen, onClick }) => {
+const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction }) => {
   const dropdownRef = useRef();
 
   const setVisible = () => {
     if (dropdownRef.current && parentRef.current) {
       const dropdownStyle = dropdownRef.current.style;
+
       dropdownStyle.opacity = 1;
 
       // Set position relative to the parent
       parentRef.current.style.position = 'relative';
+
+      if (direction === 'right') {
+        dropdownStyle.right = 0;
+        dropdownStyle.textAlign = 'right';
+      }
     }
   };
 
@@ -79,6 +85,7 @@ Dropdown.propTypes = {
   onClick: PropTypes.func.isRequired,
   overlay: PropTypes.node.isRequired,
   parentRef: PropTypes.object.isRequired,
+  direction: PropTypes.oneOf(['right']),
 };
 
 export default Dropdown;

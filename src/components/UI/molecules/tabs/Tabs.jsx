@@ -48,7 +48,7 @@ function Tabs({ children, title, showAll = false }) {
   useEffect(() => {
     getWidthTab();
     getLocation();
-  }, [activeTab]);
+  }, [activeTab, getWidthTab, getLocation]);
 
   return (
     <div className={`${styles.tabs}`}>

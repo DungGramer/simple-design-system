@@ -6,7 +6,7 @@ import '/node_modules/highlight.js/styles/a11y-light.css';
 import CopyToClipboard from '@atoms/copy-to-clipboard/CopyToClipboard';
 import Tabs from '@molecules/tabs/Tabs';
 import Checkbox from '@pages/checkbox/Checkbox';
-import Code from '@pages/code/Code';
+import CodePage from '@pages/code-page/CodePage';
 import Flag from '@pages/flag/Flag';
 
 
@@ -33,7 +33,7 @@ function Button(props) {
 
       <Tabs title={['check Box', 'Code', 'Flag']}>
         <Checkbox />
-        <Code />
+        <CodePage />
         <Flag />
       </Tabs>
 

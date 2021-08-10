@@ -1,0 +1,18 @@
+{
+  "Hello": "Xin chào",
+  "Example": "Ví dụ",
+  "Default": "Mặc định",
+
+  "Components": "Thành phần",
+  "Blog": "Bài viết",
+  "Language": "Ngôn ngữ",
+
+  "Examples": "Ví dụ",
+  "Code": "Code",
+  "Usage": "Sử dụng",
+
+  "dropdown": {
+    "title": "Menu thả xuống",
+    "description": "Menu thả xuống hiển thị danh sách các hành động hoặc tùy chọn cho người dùng."
+  }
+}

@@ -9,6 +9,7 @@ import Header from '@organisms/header/Header';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import { Suspense, useRef } from 'react';
 import Loading from '@atoms/loading/Loading';
+import './translations/i18n';
 
 function App() {
   const location = useLocation();
@@ -19,7 +20,7 @@ function App() {
       <main className="main-container">
         <Sidebar />
         <section className="main">
-          <TransitionGroup appear>
+          <TransitionGroup appear className="transition-group">
             <CSSTransition
               // nodeRef={nodeRef}
               unmountOnExit

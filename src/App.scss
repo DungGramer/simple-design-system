@@ -9,6 +9,7 @@ body {
   display: flex;
 
   .main {
+    width: 100%;
     @include padding-vertical(3rem);
     padding-left: 5rem;
     padding-right: 1.25rem;
@@ -35,4 +36,8 @@ body {
     transform: translateY(-4px);
     transition: all 250ms ease-in;
   }
+}
+
+.transition-group {
+  width: 100%;
 }

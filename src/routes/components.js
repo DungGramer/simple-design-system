@@ -6,7 +6,7 @@ const Banner = lazy(() => import('@pages/banner/Banner'));
 const Breadcrumb = lazy(() => import('@pages/breadcrumb/Breadcrumb'));
 const Button = lazy(() => import('@pages/button/Button'));
 const Checkbox = lazy(() => import('@pages/checkbox/Checkbox'));
-const Code = lazy(() => import('@pages/code/Code'));
+const CodePage = lazy(() => import('@pages/code-page/CodePage'));
 const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenu'));
 const Flag = lazy(() => import('@pages/flag/Flag'));
 const ImagePage = lazy(() => import('@pages/image-page/ImagePage'));
@@ -66,7 +66,7 @@ const components = [
   {
     title: 'Code',
     path: `${basePath}/code`,
-    component: Code,
+    component: CodePage,
   },
   {
     title: 'Dropdown menu',

@@ -59,7 +59,7 @@
     margin: 0;
     box-shadow: none;
 
-    li + li {
+    > li + li {
       margin-left: 3rem;
     }
   }
@@ -106,4 +106,8 @@
       transform: translateY(-100%);
     }
   }
+}
+
+.language {
+  cursor: pointer;
 }
