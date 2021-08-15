@@ -29,11 +29,6 @@ const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction }) => {
 
       // Set position relative to the parent
       parentRef.current.style.position = 'relative';
-
-      if (direction === 'right') {
-        dropdownStyle.right = 0;
-        dropdownStyle.textAlign = 'right';
-      }
     }
   };
 
@@ -72,7 +67,10 @@ const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction }) => {
     <div className={styles['dropdown']}>
       <Backdrop isOpen={isOpen} onClick={onClick} onDrag={onClick} zIndex={1} />
       {isOpen && (
-        <ul ref={dropdownRef} className={styles['dropdown-container']}>
+        <ul
+          ref={dropdownRef}
+          className={`${styles['dropdown-container']} ${styles[direction]} `}
+        >
           {overlay}
         </ul>
       )}

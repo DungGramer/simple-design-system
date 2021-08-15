@@ -7,15 +7,19 @@ import { Sidebar } from '@organisms/sidebar/Sidebar';
 import Header from '@organisms/header/Header';
 
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
-import { Suspense, useRef } from 'react';
+import { Suspense } from 'react';
 import Loading from '@atoms/loading/Loading';
 import './translations/i18n';
+import { ThemeProvider } from './context/themeContext/themeContext';
 
 function App() {
   const location = useLocation();
   // const nodeRef = useRef(null);
+
+
   return (
     <>
+    <ThemeProvider>
       <Header />
       <main className="main-container">
         <Sidebar />
@@ -35,6 +39,7 @@ function App() {
           </TransitionGroup>
         </section>
       </main>
+      </ThemeProvider>
     </>
   );
 }

@@ -12,7 +12,7 @@
 .span-ripple {
   position: absolute;
   border-radius: 50%;
-  background-color: $black-600;
+  background-color: var(--black-600);
   opacity: 0.6;
 
   animation: ripple 700ms;
@@ -20,7 +20,7 @@
 }
 
 .ripple.dark .span-ripple {
-  background-color: $white-600;
+  background-color: var(--white-600);
 }
 
 @keyframes ripple {

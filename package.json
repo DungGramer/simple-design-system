@@ -63,6 +63,7 @@
     "prettier": "^2.3.2",
     "react-highlight": "^0.14.0",
     "react-i18next": "^11.11.4",
+    "react-intersection-observer": "^8.32.0",
     "react-refresh": "^0.10.0",
     "sass": "^1.35.2",
     "sass-loader": "^12.1.0",

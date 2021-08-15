@@ -3,7 +3,7 @@
   cursor: pointer;
   user-select: none;
   font-weight: 500;
-  color: $black-600;
+  color: var(--black-600);
 
   &:first-letter {
     text-transform: capitalize;
@@ -11,7 +11,7 @@
 }
 
 .tab-list-active {
-  color: $black-800;
+  color: var(--black-800);
   transition: $tab-transition;
   transition-property: color;
   pointer-events: none;

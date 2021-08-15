@@ -32,13 +32,15 @@ function Badge({ children, appearance, max, size, icon, direction, offset }) {
   // If have direction, set relative position for parent
   useSetRelativeParent(badgeRef, direction);
 
-  const [direction1, direction2] = direction.split(/ |\-/);
+  const [direction1, direction2] = direction?.split(/ |\-/) || [null, null];
 
   const setOffset = () => {
-    if (!offset) return;
+    if (!offset || direction1 === null && direction2 === null) {
+      return;
+    }
 
-    badgeRef.current.style[direction1] = offset?.[0] + 'px' || '';
-    badgeRef.current.style[direction2] = offset?.[1] + 'px' || "";
+    badgeRef.current.style[direction1] = offset?.[0] + 'px';
+    badgeRef.current.style[direction2] = offset?.[1] + 'px';
   }
 
   useEffect(() => {
@@ -48,9 +50,7 @@ function Badge({ children, appearance, max, size, icon, direction, offset }) {
   return (
     <span
       ref={badgeRef}
-      className={`${styles[appearance]} ${styles.badge || ''} ${
-        styles[size] || ''
-      } ${styles[direction] || ''} ${styles[spaceToDash(direction)]}`}
+      className={`${styles[appearance]} ${styles.badge || ''} ${styles[size] || ''} ${styles[direction] || ''} ${styles[spaceToDash(direction)] || ''}`}
     >
       {icon || prefix} {suffix}
     </span>
@@ -94,7 +94,7 @@ Badge.propTypes = {
     'bottom left',
     'left-bottom',
     'left bottom',
-  ]),
+  ]).isRequired,
   offset: PropTypes.array,
 };
 

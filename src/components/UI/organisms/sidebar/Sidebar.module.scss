@@ -4,7 +4,7 @@
   position: fixed;
   overflow: hidden;
   transition: width 0.3s ease-in-out;
-  border-right: thin solid $gray-100;
+  border-right: thin solid var(--gray-100);
 
   @include desktop {
     width: 17rem;
@@ -15,7 +15,7 @@
 
   & ul {
     z-index: 9;
-    background-color: $white;
+    background-color: var(--background-menu);
     overflow-y: auto;
     height: 100vh;
 
@@ -38,23 +38,23 @@
 
     &:hover,
     &.active {
-      color: $primary-500;
-      background-color: $primary-100;
+      color: var(--primary-500);
+      background-color: var(--primary-100);
     }
     &.active {
-      border-right: 0.1875rem solid $primary-500;
+      border-right: 0.1875rem solid var(--primary-500);
       @include disable-action;
     }
   }
 }
 
 .aside-burger {
-  $size: 24px;
+  --size: 24px;
   touch-action: manipulation;
-  $burger-color: $gray-500;
+  --burger-color: var(--gray-500);
 
-  @include size($size);
-  background-color: $primary-800;
+  @include size(var(--size));
+  background-color: var(--primary-800);
   position: fixed;
   right: 20px;
   bottom: 20px;
@@ -73,17 +73,17 @@
   .item {
     transition-duration: 0.5s;
     position: absolute;
-    height: ($size / 12);
-    width: ($size - 6px);
-    background-color: $burger-color;
+    height: calc(var(--size) / 12);
+    width: calc(var(--size) - 6px);
+    background-color: var(--burger-color);
 
     &::after,
     &::before {
       @include absolute;
       left: 0;
-      height: ($size / 12);
-      width: ($size - 6px);
-      background-color: $burger-color;
+      height: calc(var(--size) / 12);
+      width: calc(var(--size) - 6px);
+      background-color: var(--burger-color);
       transition: top 0.3s 0.3s cubic-bezier(0.23, 1, 0.32, 1),
         transform 0.3s cubic-bezier(0.23, 1, 0.32, 1);
     }

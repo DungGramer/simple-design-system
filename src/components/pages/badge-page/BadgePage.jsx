@@ -23,6 +23,12 @@ function BadgePage({}) {
         A badge is a visual indicator for numeric values such as tallies and
         scores.
       </p>
+
+      <p>
+        <Badge appearance="success">
+          Hello
+        </Badge>
+      </p>
     </div>
   );
 }

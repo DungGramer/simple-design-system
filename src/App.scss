@@ -10,9 +10,11 @@ body {
 
   .main {
     width: 100%;
-    @include padding-vertical(3rem);
-    padding-left: 5rem;
-    padding-right: 1.25rem;
+    padding: 3rem 1.25rem;
+
+    @include desktop {
+      padding-left: 5rem;
+    }
   }
 }
 

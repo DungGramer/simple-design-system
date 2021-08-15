@@ -8,7 +8,7 @@ import Tabs from '@molecules/tabs/Tabs';
 import Checkbox from '@pages/checkbox/Checkbox';
 import CodePage from '@pages/code-page/CodePage';
 import Flag from '@pages/flag/Flag';
-
+import { useThemeContext } from '~/context/themeContext/themeContext';
 
 const data = `<!DOCTYPE html>
 <html lang="en">
@@ -24,6 +24,7 @@ const data = `<!DOCTYPE html>
 </html>`;
 
 function Button(props) {
+  const { changeTheme } = useThemeContext();
 
   return (
     <div>
@@ -37,6 +38,7 @@ function Button(props) {
         <Flag />
       </Tabs>
 
+      <button onClick={changeTheme}>Change theme</button>
     </div>
   );
 }
@@ -44,4 +46,3 @@ function Button(props) {
 Button.propTypes = {};
 
 export default Button;
-

@@ -1,9 +1,9 @@
 .copy {
   cursor: pointer;
   padding: 1rem;
-  color: $font-color;
+  color: var(--font-color);
 
   &:active {
-    color: lighten($font-color, 20%);
+    color: rgba(var(--font-color), 20%);
   }
 }

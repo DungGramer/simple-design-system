@@ -1,15 +1,14 @@
-$border-color: $gray-200;
-
 .code-box {
+  --border-color: var(--gray-200);
   margin: 0 0 1rem;
-  border: thin solid $border-color;
+  border: thin solid var(--border-color);
 
   > section {
     @include padding-horizontal(24px);
   }
 
   .component {
-    border-bottom: thin solid $border-color;
+    border-bottom: thin solid var(--border-color);
     @include padding-vertical(2.5rem, 3rem);
   }
 

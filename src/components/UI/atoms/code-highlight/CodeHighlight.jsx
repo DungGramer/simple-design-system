@@ -1,8 +1,8 @@
-import styles from './CodeHighlight.module';
+import './CodeHighlight.scss';
 import PropTypes from 'prop-types';
 import Highlight from 'react-highlight';
 
-import '/node_modules/highlight.js/styles/atom-one-light.css';
+// import '/node_modules/highlight.js/styles/atom-one-light.css';
 
 
 /**

@@ -16,7 +16,12 @@
 
   border-radius: 8px;
 
-  background-color: $white;
+  background-color: var(--white);
 
-  box-shadow: $shadow-drop;
+  box-shadow: var(--shadow-drop);
+
+  &.right {
+    right: 0;
+    text-align: right;
+  }
 }
