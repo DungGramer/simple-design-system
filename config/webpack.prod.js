@@ -1,7 +1,7 @@
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
-// const CopyPlugin = require('copy-webpack-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -73,12 +73,13 @@ module.exports = merge(common, {
       ],
       publicPath: '/node_modules',
     }),
-    // new CopyPlugin({
-    //   patterns: [
-    //     // { from: 'public/assets/images', to: 'assets/images' },
-    //     { from: 'public/favicon.ico', to: '' },
-    //   ],
-    // }),
+    new CopyPlugin({
+      patterns: [
+        // { from: 'public/assets/images', to: 'assets/images' },
+        // { from: 'public/favicon.ico', to: '' },
+        { from: 'public/.htaccess', to: '' },
+      ],
+    }),
     new CleanWebpackPlugin(),
   ],
   output: {
