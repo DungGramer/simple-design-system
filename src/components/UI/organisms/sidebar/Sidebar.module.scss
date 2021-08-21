@@ -5,6 +5,8 @@
   overflow: hidden;
   transition: width 0.3s ease-in-out;
   border-right: thin solid var(--gray-100);
+  background-color: var(--background-menu);
+
 
   @include desktop {
     width: 17rem;
@@ -15,7 +17,6 @@
 
   & ul {
     z-index: 9;
-    background-color: var(--background-menu);
     overflow-y: auto;
     height: 100vh;
 

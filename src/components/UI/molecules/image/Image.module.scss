@@ -1,7 +1,24 @@
-.img {
-  user-select: none;
+picture {
+  min-width: 100%;
+  max-width: 100%;
+  display: block;
+}
+picture .img {
+  opacity: 0;
+  // animation: fade-loading 0.3s forwards ease-out;
 }
 
-// .loaded {
-//   filter: opacity(1);
-// }
+.img {
+  user-select: none;
+  width: 100%;
+}
+
+.loaded {
+  opacity: 1;
+}
+
+svg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}

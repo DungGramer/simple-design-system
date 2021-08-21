@@ -1,6 +1,5 @@
 import './Button.module';
 import PropTypes from 'prop-types';
-import Highlight from 'react-highlight';
 import '/node_modules/highlight.js/styles/a11y-light.css';
 
 import CopyToClipboard from '@atoms/copy-to-clipboard/CopyToClipboard';
@@ -9,6 +8,7 @@ import Checkbox from '@pages/checkbox/Checkbox';
 import CodePage from '@pages/code-page/CodePage';
 import Flag from '@pages/flag/Flag';
 import { useThemeContext } from '~/context/themeContext/themeContext';
+import CodeHighlight from '@atoms/code-highlight/CodeHighlight';
 
 const data = `<!DOCTYPE html>
 <html lang="en">
@@ -29,7 +29,7 @@ function Button(props) {
   return (
     <div>
       <h1>Button</h1>
-      <Highlight className="html">{data}</Highlight>
+      <CodeHighlight data={data} />
       {/* <CopyToClipboard text={data} /> */}
 
       <Tabs title={['check Box', 'Code', 'Flag']}>

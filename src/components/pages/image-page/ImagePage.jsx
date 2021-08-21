@@ -1,17 +1,32 @@
-import styles from './ImagePage.module';
-import PropTypes from 'prop-types';
 import Image from '@molecules/image/Image';
 import imageMockup from '~/mock/imageMockup';
 
-const imgs = imageMockup(1920, 1080, 50);
+
+const imgs = imageMockup(1920, 1080, 30);
+
+const ImageGroup = () => {
+
+  return (
+    <>
+      {imgs.map((img, index) => (
+        <Image
+          key={index}
+          src={img.url}
+          alt={img.alt}
+          lazy
+          aspectRatio="3/4"
+          width={320}
+        />
+      ))}
+    </>
+  );
+};
 
 function ImagePage({}) {
   return (
     <div>
       <h1>Image</h1>
-      {imgs.map(img => (
-        <Image key={img.id} src={img.url} alt={img.alt} lazy={true} />
-      ))}
+      <ImageGroup />
     </div>
   );
 }

@@ -27,6 +27,10 @@ i18n
     fallbackLng: 'en',
     debug: true,
 
+    react: {
+      useSuspense: false,
+    },
+
     detection: {
       order: ['querystring', 'cookie', 'localStorage', 'navigator'],
       caches: ['cookie'],
