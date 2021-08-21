@@ -25,7 +25,6 @@ const ImageGroup = () => {
 function ImagePage({}) {
   return (
     <div>
-      <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"></meta>
       <h1>Image</h1>
       <ImageGroup />
     </div>

@@ -78,6 +78,7 @@ module.exports = merge(common, {
         // { from: 'public/assets/images', to: 'assets/images' },
         // { from: 'public/favicon.ico', to: '' },
         { from: 'public/.htaccess', to: '' },
+        { from: 'public/_redirects', to: '' },
       ],
     }),
     new CleanWebpackPlugin(),
