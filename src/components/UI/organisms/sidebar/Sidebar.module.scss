@@ -19,6 +19,7 @@
     z-index: 9;
     overflow-y: auto;
     height: 100vh;
+    background-color: inherit;
 
     @include desktop {
       overflow-y: unset;

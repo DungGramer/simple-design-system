@@ -174,8 +174,8 @@ module.exports = {
   },
 
   resolve: {
-    modules: ['node_modules', '../src'],
-    extensions: ['*', '.js', '.jsx', '.scss'],
+    modules: [paths.src, 'node_modules'],
+    extensions: ['*', '.js', '.jsx', '.json', '.scss', '.css'],
     alias: {
       '~': paths.src,
       '@public': resolvePath('public'),

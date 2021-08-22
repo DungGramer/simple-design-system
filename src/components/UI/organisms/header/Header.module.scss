@@ -22,8 +22,13 @@
 .logo {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   padding: 0.75rem;
+  padding-right: 0;
+  flex: 1;
+
+  > a {
+    margin-right: auto;
+  }
 
   .menu {
     cursor: pointer;
@@ -56,6 +61,7 @@
 
   @include desktop {
     display: flex;
+    align-items: center;
     margin: 0;
     box-shadow: none;
 

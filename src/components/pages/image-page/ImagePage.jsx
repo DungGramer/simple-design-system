@@ -14,7 +14,7 @@ const ImageGroup = () => {
           src={img.url}
           alt={img.alt}
           lazy
-          aspectRatio="3/4"
+          aspectRatio="16/9"
           width={320}
         />
       ))}

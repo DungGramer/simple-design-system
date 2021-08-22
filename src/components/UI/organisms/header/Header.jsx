@@ -10,6 +10,7 @@ import Dropdown from '@atoms/dropdown/Dropdown';
 import Menu from '@atoms/menu/Menu';
 import changeLanguage from '~/translations/changeLanguage';
 import { useTranslation } from 'react-i18next';
+import ChangeTheme from './change-theme/ChangeTheme';
 
 const languages = [
   {
@@ -32,18 +33,22 @@ const paths = [
     name: 'Blog',
   },
 ];
-function Header(props) {
-  const [open, setOpen] = useState(false);
-  const toggleOpen = () => maxDesktop && setOpen(!open);
 
-  const [openLang, setOpenLang] = useState(false);
-  const toggleOpenLang = () => setOpenLang(!openLang);
+const LogoSection = ({ toggleOpen }) => (
+  <div className={styles.logo}>
+    <Link to="/">
+      <Logo width="50" height="50" />
+    </Link>
+    <ChangeTheme />
+    <i className={`${styles.menu} far fa-bars`} onClick={toggleOpen} />
+  </div>
+);
 
+const Languages = ({t}) => {
   const languageRef = useRef(null);
+  const [openLang, setOpenLang] = useState(false);
 
-  const maxDesktop = useMediaQuery(breakpoint.m_desktop);
-
-  const { t } = useTranslation();
+  const toggleOpenLang = () => setOpenLang(!openLang);
 
   const languagesDropdown = (
     <>
@@ -62,6 +67,35 @@ function Header(props) {
   );
 
   return (
+    <>
+      <span
+        className={styles.language}
+        ref={languageRef}
+        onClick={() => setOpenLang(!openLang)}
+      >
+        {t('Language')}
+      </span>
+      <Dropdown
+        parentRef={languageRef}
+        overlay={languagesDropdown}
+        isOpen={openLang}
+        onClick={toggleOpenLang}
+        direction="right"
+      />
+    </>
+  );
+};
+
+function Header(props) {
+  const [open, setOpen] = useState(false);
+  const toggleOpen = () => maxDesktop && setOpen(!open);
+
+
+  const maxDesktop = useMediaQuery(breakpoint.m_desktop);
+
+  const { t } = useTranslation();
+
+  return (
     <header id="header" className={styles.header}>
       <Backdrop
         isOpen={open}
@@ -70,12 +104,7 @@ function Header(props) {
         condition={maxDesktop}
       />
       <div className={styles.container}>
-        <div className={styles.logo}>
-          <Link to="/">
-            <Logo width="50" height="50" />
-          </Link>
-          <i className={`${styles.menu} far fa-bars`} onClick={toggleOpen} />
-        </div>
+        <LogoSection toggleOpen={toggleOpen} />
 
         <nav className={styles['nav-container']}>
           <ul className={`${styles['nav-list']} ${open ? styles.open : ''}`}>
@@ -91,16 +120,7 @@ function Header(props) {
               </li>
             ))}
             <li>
-              <span className={styles.language} ref={languageRef} onClick={() => setOpenLang(!openLang)}>
-                {t('Language')}
-              </span>
-              <Dropdown
-                parentRef={languageRef}
-                overlay={languagesDropdown}
-                isOpen={openLang}
-                onClick={toggleOpenLang}
-                direction="right"
-              />
+              <Languages t={t} />
             </li>
           </ul>
         </nav>

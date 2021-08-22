@@ -11,6 +11,7 @@ picture .img {
 .img {
   user-select: none;
   width: 100%;
+  background-color: var(--gray-300);
 }
 
 .loaded {

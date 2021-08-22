@@ -1,0 +1,40 @@
+.toggle-button {
+  position: relative;
+  width: 40px;
+  height: 22px;
+  margin-right: 0.5rem;
+  display: inline-block;
+  cursor: pointer;
+  > * {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    font-size: 0.6rem;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+  }
+
+
+  input[type="radio"]:checked + .toggle-status {
+    transform: translateX(100%);
+  }
+}
+
+.icon-false {
+  right: 6px;
+}
+.icon-true {
+  left: 6px;
+}
+
+.toggle-status {
+  width: 18px;
+  height: 18px;
+  background-color: white;
+  border-radius: 50px;
+  left: 2px;
+  top: 2px;
+
+  transition: transform 0.2s ease;
+}
