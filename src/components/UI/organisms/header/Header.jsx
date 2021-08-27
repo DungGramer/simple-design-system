@@ -44,7 +44,7 @@ const LogoSection = ({ toggleOpen }) => (
   </div>
 );
 
-const Languages = ({t}) => {
+const Languages = ({ t, toggleOpen }) => {
   const languageRef = useRef(null);
   const [openLang, setOpenLang] = useState(false);
 
@@ -120,7 +120,7 @@ function Header(props) {
               </li>
             ))}
             <li>
-              <Languages t={t} />
+              <Languages t={t} toggleOpen={toggleOpen} />
             </li>
           </ul>
         </nav>

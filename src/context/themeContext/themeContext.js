@@ -19,7 +19,7 @@ const ThemeProvider = ({ children }) => {
   useEffect(() => {
     window.localStorage.setItem('theme', theme);
     document.documentElement.setAttribute('theme', theme);
-  }, [changeTheme]);
+  }, [theme, changeTheme]);
 
   return (
     <ThemeContext.Provider value={{ theme, changeTheme }}>

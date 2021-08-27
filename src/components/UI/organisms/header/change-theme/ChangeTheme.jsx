@@ -1,10 +1,10 @@
 import styles from './ChangeTheme.module';
-import { useEffect, useState } from 'react';
+import { memo, useCallback, useEffect, useState } from 'react';
 // import lottie from 'lottie-web/build/player/lottie_light';
 import Lottie from 'react-lottie';
 import { useThemeContext } from '~/context/themeContext/themeContext';
-import lightToDark from './images/dark-to-light.json';
-import darkToLight from './images/light-to-dark.json';
+import darkToLight from './images/dark-to-light.json';
+import lightToDark from './images/light-to-dark.json';
 
 const ChangeTheme = () => {
   const { theme, changeTheme } = useThemeContext();
@@ -13,10 +13,13 @@ const ChangeTheme = () => {
 
   const [animationData, setAnimationData] = useState(changeIcon);
 
-  const toggleAnimationData = () => setAnimationData(changeIcon);
+  const toggleAnimationData = useCallback(
+    () => setAnimationData(changeIcon),
+    [theme],
+  );
 
   return (
-    <picture
+    <div
       onClick={() => {
         toggleAnimationData();
         changeTheme();
@@ -30,8 +33,8 @@ const ChangeTheme = () => {
           animationData,
         }}
       />
-    </picture>
+    </div>
   );
 };
 
-export default ChangeTheme;
+export default memo(ChangeTheme);
