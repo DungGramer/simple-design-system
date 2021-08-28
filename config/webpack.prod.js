@@ -23,6 +23,7 @@ module.exports = merge(common, {
     'react-dom': 'ReactDOM',
     'react-router': 'ReactRouter',
     'react-router-dom': 'ReactRouterDOM',
+    'lottie-web': 'Lottie',
   },
 
   plugins: [
@@ -69,6 +70,11 @@ module.exports = merge(common, {
           name: 'react-router-dom',
           var: 'ReactRouterDOM',
           path: 'umd/react-router-dom.min.js',
+        },
+        {
+          name: 'lottie-web',
+          var: 'Lottie',
+          path: 'build/player/lottie_light.min.js',
         },
       ],
       publicPath: '/node_modules',

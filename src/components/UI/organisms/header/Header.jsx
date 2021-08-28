@@ -2,7 +2,7 @@ import styles from './Header.module';
 import PropTypes from 'prop-types';
 import Logo from '@public/assets/images/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
-import { useRef, useState } from 'react';
+import { memo, useRef, useState } from 'react';
 import Backdrop from '@atoms/backdrop/Backdrop';
 import useMediaQuery from '@components/hooks/useMediaQuery';
 import breakpoint from '~/constants/mediaQuery';
@@ -86,7 +86,7 @@ const Languages = ({ t, toggleOpen }) => {
   );
 };
 
-function Header(props) {
+const Header = () => {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => maxDesktop && setOpen(!open);
 
@@ -131,4 +131,4 @@ function Header(props) {
 
 Header.propTypes = {};
 
-export default Header;
+export default memo(Header);

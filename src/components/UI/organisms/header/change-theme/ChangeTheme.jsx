@@ -1,39 +1,43 @@
 import styles from './ChangeTheme.module';
-import { memo, useCallback, useEffect, useState } from 'react';
-// import lottie from 'lottie-web/build/player/lottie_light';
-import Lottie from 'react-lottie';
+import { memo, useEffect, useRef, useState } from 'react';
+import lottie from 'lottie-web/build/player/lottie_light';
+
 import { useThemeContext } from '~/context/themeContext/themeContext';
-import darkToLight from './images/dark-to-light.json';
-import lightToDark from './images/light-to-dark.json';
+
+import dayNight from './animation/day-night.json'; //0 -> 9: day, 10 -> 19: night
 
 const ChangeTheme = () => {
   const { theme, changeTheme } = useThemeContext();
+  const iconRef = useRef();
 
-  const changeIcon = theme === 'light' ? lightToDark : darkToLight;
+  const [animationData, setAnimationData] = useState(dayNight);
 
-  const [animationData, setAnimationData] = useState(changeIcon);
+  useEffect(() => {
+    setAnimationData(
+      lottie.loadAnimation({
+        container: iconRef.current,
+        loop: false,
+        autoplay: false,
+        animationData,
+        name: 'day-night',
+      }),
+    );
 
-  const toggleAnimationData = useCallback(
-    () => setAnimationData(changeIcon),
-    [theme],
-  );
+    // Set state icon when loading
+    lottie.goToAndStop(theme === 'light' ? 0 : 9, true, 'day-night');
+  }, []);
+
+  const handleClick = () => {
+    changeTheme();
+    animationData.playSegments(theme === 'light' ? [0, 9] : [10, 19], true);
+  };
 
   return (
     <div
-      onClick={() => {
-        toggleAnimationData();
-        changeTheme();
-      }}
+      ref={iconRef}
+      onClick={handleClick}
       className={styles['change-theme']}
-    >
-      <Lottie
-        options={{
-          loop: false,
-          autoplay: false,
-          animationData,
-        }}
-      />
-    </div>
+    />
   );
 };
 

@@ -3,7 +3,7 @@ import 'App.scss';
 import { Switch, useLocation } from 'react-router-dom';
 
 import Routes from './routes';
-import { Sidebar } from '@organisms/sidebar/Sidebar';
+import Sidebar from '@organisms/sidebar/Sidebar';
 import Header from '@organisms/header/Header';
 
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
@@ -15,7 +15,6 @@ import { ThemeProvider } from './context/themeContext/themeContext';
 function App() {
   const location = useLocation();
   // const nodeRef = useRef(null);
-
 
   return (
     <>

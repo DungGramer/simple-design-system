@@ -1,13 +1,13 @@
 import Backdrop from '@atoms/backdrop/Backdrop';
 import useMediaQuery from '@components/hooks/useMediaQuery';
-import { useState } from 'react';
+import { memo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import breakpoint from '~/constants/mediaQuery';
 import components from '~/routes/components';
 
 import styles from './Sidebar.module';
 
-export const Sidebar = () => {
+const Sidebar = () => {
   const [open, setOpen] = useState(false);
   const openClass = open ? styles.open : '';
 
@@ -32,7 +32,7 @@ export const Sidebar = () => {
         aria-expanded="false"
         onClick={toggleOpen}
       >
-        <div className={styles.item} aria-hidden="true"></div>
+        <div className={styles['icon-menu']} aria-hidden="true"></div>
       </div>
       <ul onClick={toggleOpen}>
         {components.map(({ title, path }) => (
@@ -50,3 +50,5 @@ export const Sidebar = () => {
     </aside>
   );
 };
+
+export default memo(Sidebar);

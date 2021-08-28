@@ -72,7 +72,7 @@
     display: none;
   }
 
-  .item {
+  .icon-menu {
     transition-duration: 0.5s;
     position: absolute;
     height: calc(var(--size) / 12);
@@ -96,7 +96,7 @@
       top: -5px;
     }
   }
-  &.open .item {
+  &.open .icon-menu {
     background-color: transparent;
     &::after,
     &::before {
