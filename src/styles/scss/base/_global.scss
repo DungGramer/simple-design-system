@@ -29,6 +29,9 @@
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
 
 // Support Safari
 // ::-webkit-scrollbar-corner, ::-webkit-scrollbar-corner:horizontal, ::-webkit-scrollbar-corner:vertical {
@@ -57,4 +60,16 @@ html {
 
 .container-fluid {
   @include padding-horizontal(1.5rem);
+}
+
+
+// Sizes
+html {
+  --xxsmall: 16px;
+  --xsmall: 20px;
+  --small: 24px;
+  --medium: 32px;
+  --large: 40px;
+  --xlarge: 96px;
+  --xxlarge: 128px;
 }

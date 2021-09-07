@@ -1,10 +1,10 @@
 import { lazy } from 'react';
 
-const Avatar = lazy(() => import('@pages/avatar/Avatar'));
+const AvatarPage = lazy(() => import('@pages/avatar-page/AvatarPage'));
 const Badge = lazy(() => import('@pages/badge-page/BadgePage'));
 const Banner = lazy(() => import('@pages/banner/Banner'));
 const Breadcrumb = lazy(() => import('@pages/breadcrumb/Breadcrumb'));
-const Button = lazy(() => import('@pages/button/Button'));
+const Button = lazy(() => import('@pages/button-page/ButtonPage'));
 const Checkbox = lazy(() => import('@pages/checkbox/Checkbox'));
 const CodePage = lazy(() => import('@pages/code-page/CodePage'));
 const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenu'));
@@ -36,7 +36,7 @@ const components = [
   {
     title: 'Avatar',
     path: `${basePath}/avatar`,
-    component: Avatar,
+    component: AvatarPage,
   },
   {
     title: 'Badge',

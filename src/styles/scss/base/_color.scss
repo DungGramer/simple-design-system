@@ -89,6 +89,7 @@ html, html[theme="light"] {
   --font-color: var(--black-800);
   --background-html: #fff;
   --background-menu: #fff;
+  --background-image-color: hsl(220, 16%, 96%);
 
   --scrollbar-color: var(--gray-500);
   --scrollbar-hover-color: var(--gray-600);
@@ -251,6 +252,8 @@ html[theme="dark"] {
   --font-color: #fff;
   --background-html: #1D1C2A;
   --background-menu: #222433;
+  --background-image-color: hsl(195, 6%, 12%);
+
 
   /*------------------------------------*
     # Shadow

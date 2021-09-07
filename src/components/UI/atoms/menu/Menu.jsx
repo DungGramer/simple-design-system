@@ -1,6 +1,7 @@
 import styles from './Menu.module';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { isURL } from '~/constants/validates';
 
 /**
  * Menu component
@@ -14,20 +15,30 @@ import { Link } from 'react-router-dom';
  * <Menu content="Home" to="/">
  * */
 
-const Menu = ({ content, href, to, onClick }) => {
+const Menu = ({ content, icon, href, to, onClick }) => {
+  const Wrapper = () => {
+    if (to) {
+      return <Link to={to}>{content}</Link>;
+    } else if (href) {
+      return <a href={href}>{content}</a>;
+    }
+    return <span onClick={onClick}>{content}</span>;
+  };
+
+  const Icon = () => {
+    if (isURL(icon)) {
+      return <img src={icon} alt="avatar" />;
+    }
+    return <i className={`${icon}`} />;
+  };
+
+
   return (
     <li className={styles['menu']}>
-      {href ? (
-        <a href={href} onClick={onClick}>
-          {content}
-        </a>
-      ) : to ? (
-        <Link to={to} onClick={onClick}>
-          {content}
-        </Link>
-      ) : (
-        <span onClick={onClick}>{content}</span>
-      )}
+      <Wrapper>
+        {icon && <Icon />}
+        {content && <span>{content}</span>}
+      </Wrapper>
     </li>
   );
 };
