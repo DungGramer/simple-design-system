@@ -1,2 +1,6 @@
 .button-page {
 }
+
+.code-box-container * + * {
+  margin-left: 8px;
+}

@@ -113,7 +113,7 @@ class HttpClient {
   }
 }
 
-let httpClient = HttpClient.create('https://jsonplaceholder.typicode.com');
+// let httpClient = HttpClient.create('https://jsonplaceholder.typicode.com');
 
 // POST and using onDownloadProgress and onUploadProgress
 // httpClient.xhr.upload.onprogress = (event) => {
@@ -122,14 +122,10 @@ let httpClient = HttpClient.create('https://jsonplaceholder.typicode.com');
 //     console.log(`${Math.round(percentComplete, 2)}% uploaded`);
 //   }
 // };
-let result = httpClient.post('/posts', {
-  title: 'foo',
-  body: 'bar',
-  userId: 1,
-}, {
-  headers: {
-    'Content-Type': 'application/json',
-  },
-});
+// let result = httpClient.post('/posts', {
+//   title: 'foo',
+//   body: 'bar',
+//   userId: 1,
+// });
 
-// export default HttpClient;
+export default HttpClient;

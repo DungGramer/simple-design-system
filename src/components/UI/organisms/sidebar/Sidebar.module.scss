@@ -1,5 +1,6 @@
+$zIndex: 10;
 .sidebar {
-  z-index: 1;
+  z-index: $zIndex;
   width: 0;
   position: fixed;
   overflow: hidden;
@@ -16,7 +17,7 @@
   }
 
   & ul {
-    z-index: 9;
+    z-index: $zIndex + 1;
     overflow-y: auto;
     height: 100vh;
     background-color: inherit;

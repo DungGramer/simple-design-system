@@ -18,4 +18,14 @@ export const en = {
     description:
       'A dropdown menu displays a list of actions or options to a user.',
   },
+
+  // Buttons
+  Button: 'Button',
+  Buttons: 'Buttons',
+  button: {
+    title: 'Button',
+    description:
+      'A button triggers an event or action. They let users know what will happen next.',
+  },
+
 };

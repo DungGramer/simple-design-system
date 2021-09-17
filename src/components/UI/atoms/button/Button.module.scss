@@ -1,2 +1,124 @@
-.button {
+@mixin changeColor($color) {
+  background-color: $color;
+  border-color: $color;
 }
+
+.button {
+  appearance: button;
+  outline: 0;
+  border-style: solid;
+  transition: 0.3s cubic-bezier(.645,.045,.355,1);
+  transition-property: width, height, background-color, border-color, box-shadow;
+  cursor: pointer;
+  border-radius: 2px;
+  border: thin solid transparent;
+  user-select: none;
+  touch-action: manipulation;
+  border-color: var(--gray-300);
+  background-color: var(--white);
+  color: var(--font-color);
+  position: relative;
+  padding: 2px 8px;
+
+  & > :not(i) {
+    :global(.button) {
+    }
+  }
+
+  /**
+   * Type
+   */
+  &.default, &.dashed {
+    &:hover {
+      color: var(--primary-500);
+      border-color: var(--primary-500);
+    }
+  }
+
+  &.dashed {
+    border-style: dashed;
+  }
+
+  &.primary {
+    color: var(--white);
+    @include changeColor(var(--primary-500));
+    text-shadow: var(--black-200);
+    box-shadow: 0 2px var(--black-50);
+
+    &:hover {
+      @include changeColor(var(--primary-400));
+    }
+    &:active {
+      @include changeColor(var(--primary-600));
+    }
+  }
+
+  &.text, &.link {
+    border-color: transparent;
+    &:hover {
+      background-color: var(--black-50);
+    }
+  }
+  &.link {
+    color: var(--primary-500);
+  }
+
+  /**
+   * Shape
+   */
+
+  &.circle {
+    border-radius: 1000px;
+  }
+
+  /**
+   * Icon
+   */
+
+  i {
+    padding: 2px;
+    font-size: 14px;
+  }
+
+  i + span {
+    margin-left: 8px;
+    transition: margin-left .15s cubic-bezier(.645,.045,.355,1);
+  }
+
+  /**
+   * Loading
+   */
+
+  &.loading {
+    pointer-events: none;
+    &:before {
+      @include position-abs(-1px);
+      background-color: white;
+      opacity: 0.35;
+    }
+
+    > span {
+
+    }
+  }
+
+  /**
+   * Size
+   */
+
+   &.large {
+     height: 40px;
+     padding: 4px 24px;
+   }
+
+  /**
+   * Disabled
+   */
+
+  &.disabled {
+    pointer-events: none !important;
+    opacity: 0.5 !important;
+  }
+}
+
+
