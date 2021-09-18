@@ -1,4 +1,4 @@
-import { abbreviations } from "./variables";
+// import { abbreviations } from "./variables";
 
 export const spaceToDash = str => {
   if (!str) return '';
@@ -126,4 +126,57 @@ export const objToSlugParam = (obj) => {
   return str.slice(0, -1);
 }
 
+/**
+ * Canalize first letter string
+ * @param {string} str
+ * @returns {string}
+ *
+ * @example
+ * toSentenceCase('hello world') // 'Hello world'
+ */
+export const toSentenceCase = (str) => {
+  if (!str || typeof str !== 'string') return str;
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+/**
+ * Convert Object to Props
+ * @param {Object} obj
+ * @return {String}
+ *
+ * @example
+ * toProps({ name: 'John Doe', age: 30}) // name="John Doe" age="30"
+ */
+export const objectToProps = obj => {
+  if (!obj) return {};
+  return Object.keys(obj).reduce((acc, key) => {
+    switch (typeof obj[key]) {
+      case 'number':
+        return (acc += `${key}={${obj[key]}} `);
+      case 'string':
+        return (acc += `${key}="${obj[key]}" `);
+      case 'object':
+        return (acc += `${key}={${JSON.stringify(obj[key])}} `);
+      default:
+        return (acc += `${key}={${obj[key]}} `);
+    }
+  }, '');
+};
+
+
+/**
+ * Convert string to Function
+ * @param {string} str
+ * @returns {function}
+ *
+ * @example
+ * stringToFunction('function(a, b) { return a + b; }');
+ * stringToFunction('a()');
+ */
+export const stringToFunction = (str) => {
+  const isFunction = /\(.+|\)/.exec(str);
+  if (!isFunction) return str;
+
+  return new Function(`return ${str}`)();
+}
 

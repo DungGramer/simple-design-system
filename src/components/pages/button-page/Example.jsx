@@ -2,18 +2,15 @@ import Button from '@atoms/button/Button';
 import CodeBox from '@molecules/code-box/CodeBox';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import pathExample from '~/routes/example-components';
 import styles from './ButtonPage.module.scss';
+import ButtonType from './examples/ButtonType';
 
 const Type = () => {
   const { t } = useTranslation();
+  console.log('zxczx \n', require('!!raw-loader!./Template.jsx').default);
 
-  const typeButton = `
-  <Button title="Click me" />
-  <Button title="Click me" type="primary" />
-  <Button title="Click me" type="dashed" />
-  <Button title="Click me" type="text" />
-  <Button title="Click me" type="link" />
-  `;
+  const typeButton = pathExample.button[0].path;
 
   return (
     <section>
@@ -21,11 +18,7 @@ const Type = () => {
       <CodeBox
         component={
           <div className={styles['code-box-container']}>
-            <Button title="Click me" />
-            <Button title="Click me" type="primary" />
-            <Button title="Click me" type="dashed" />
-            <Button title="Click me" type="text" />
-            <Button title="Click me" type="link" />
+            <ButtonType  />
           </div>
         }
         data={typeButton}
