@@ -3,11 +3,12 @@
 
 html,
 html[theme='light'] {
+
   .hljs {
     display: block;
     overflow-x: auto;
     padding: 0.5em;
-    color: #383a42;
+    color: #575f66;
     background: #fafafa;
   }
 
@@ -20,7 +21,7 @@ html[theme='light'] {
   .hljs-doctag,
   .hljs-keyword,
   .hljs-formula {
-    color: #a626a4;
+    color: #a173ff;
   }
 
   .hljs-section,
@@ -40,7 +41,7 @@ html[theme='light'] {
   .hljs-addition,
   .hljs-attribute,
   .hljs-meta-string {
-    color: #50a14f;
+    color: #a173ff;
   }
 
   .hljs-built_in,
@@ -56,7 +57,7 @@ html[theme='light'] {
   .hljs-selector-attr,
   .hljs-selector-pseudo,
   .hljs-number {
-    color: #986801;
+    color: #14b8a6;
   }
 
   .hljs-symbol,
@@ -79,23 +80,31 @@ html[theme='light'] {
   .hljs-link {
     text-decoration: underline;
   }
+
+  .hljs-function {
+    color: rgb(230, 180, 34);
+  }
 }
 
 html[theme='dark'] {
   .hljs {
-    color: #abb2bf;
-    background: #282c34;
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #cbccc6;
+    background: #232834;
   }
 
   .hljs-comment,
   .hljs-quote {
     color: #5c6370;
+    font-style: italic;
   }
 
   .hljs-doctag,
   .hljs-keyword,
   .hljs-formula {
-    color: #c678dd;
+    color: #a173ff;
   }
 
   .hljs-section,
@@ -103,7 +112,7 @@ html[theme='dark'] {
   .hljs-selector-tag,
   .hljs-deletion,
   .hljs-subst {
-    color: #e06c75;
+    color: #78a9ff;
   }
 
   .hljs-literal {
@@ -115,7 +124,7 @@ html[theme='dark'] {
   .hljs-addition,
   .hljs-attribute,
   .hljs-meta-string {
-    color: #98c379;
+    color: #f29e74;
   }
 
   .hljs-built_in,
@@ -131,7 +140,7 @@ html[theme='dark'] {
   .hljs-selector-attr,
   .hljs-selector-pseudo,
   .hljs-number {
-    color: #d19a66;
+    color: #9ef0f0;
   }
 
   .hljs-symbol,

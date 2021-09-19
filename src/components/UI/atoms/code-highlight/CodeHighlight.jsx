@@ -16,7 +16,7 @@ import Highlight from 'react-highlight';
  **/
 
 const CodeHighlight = ({ data, language }) => {
-  return <Highlight language={language}>{data}</Highlight>;
+  return <Highlight className={language}>{data}</Highlight>;
 };
 
 CodeHighlight.propTypes = {
@@ -24,8 +24,8 @@ CodeHighlight.propTypes = {
   language: PropTypes.string,
 };
 
-PropTypes.defaultProps = {
-  language: 'react',
+CodeHighlight.defaultProps = {
+  language: 'javascript',
 };
 
 export default CodeHighlight;

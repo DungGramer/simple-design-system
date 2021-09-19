@@ -1,29 +1,31 @@
 import Button from '@atoms/button/Button';
+import ExampleSection from '@molecules/example-section/ExampleSection';
 import CodeBox from '@molecules/code-box/CodeBox';
 import { useCallback, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import pathExample from '~/routes/example-components';
 import styles from './ButtonPage.module.scss';
-import ButtonType from './examples/ButtonType';
+import { ButtonType } from './examples/ButtonType';
 
 const Type = () => {
   const { t } = useTranslation();
-  console.log('zxczx \n', require('!!raw-loader!./Template.jsx').default);
+  console.log('zxczx \n', require('!!raw-loader!./Template.jsx'));
 
   const typeButton = pathExample.button[0].path;
 
   return (
-    <section>
-      <h3>{t('Type')}</h3>
-      <CodeBox
-        component={
-          <div className={styles['code-box-container']}>
-            <ButtonType  />
-          </div>
-        }
-        data={typeButton}
-      />
-    </section>
+    // <section>
+    //   <h3>{t(`type`)}</h3>
+    //   <CodeBox
+    //     component={
+    //       <div className={styles['code-box-container']}>
+    //         <ButtonType  />
+    //       </div>
+    //     }
+    //     data={typeButton}
+    //   />
+    // </section>
+    <ExampleSection item={pathExample.button[0]} />
   );
 };
 
@@ -131,10 +133,13 @@ const Disabled = () => {
 
 export const Example = () => {
   return <div>
-    <Type />
+    {/* <Type />
     <Size />
     <Icon />
     <Loading />
-    <Disabled />
+    <Disabled /> */}
+    {pathExample.button.map((item, index) => {
+      return <ExampleSection key={index} item={item} />
+    })}
   </div>;
 };
