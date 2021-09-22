@@ -1,6 +1,6 @@
 import styles from './TablePage.module';
 import PropTypes from 'prop-types';
-import Table from '@molecules/table/Table';
+import Table, { Cell, HeaderCell, Column } from '@molecules/table/Table';
 import { useTranslation } from 'react-i18next';
 
 
@@ -164,8 +164,31 @@ const TablePage = ({}) => {
   ];
 
   return <div className={styles['table-page']}>
-    <Table data={driversData} headers={['number', 'name', 'team', 'country', 'dob', 'place Of Birth']}>
-
+    <Table data={driversData}>
+      <Column>
+        <HeaderCell>#</HeaderCell>
+        <Cell dataKey="number" />
+      </Column>
+      <Column>
+        <HeaderCell>Name</HeaderCell>
+        <Cell dataKey="name" />
+      </Column>
+      <Column>
+        <HeaderCell>team</HeaderCell>
+        <Cell dataKey="team" />
+      </Column>
+      <Column>
+        <HeaderCell>country</HeaderCell>
+        <Cell dataKey="country" />
+      </Column>
+      <Column>
+        <HeaderCell>dob</HeaderCell>
+        <Cell dataKey="dob" />
+      </Column>
+      <Column>
+        <HeaderCell>place Of Birth</HeaderCell>
+        <Cell dataKey="placeOfBirth" />
+      </Column>
     </Table>
   </div>;
 }
