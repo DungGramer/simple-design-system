@@ -6,8 +6,8 @@ import { useThemeContext } from '~/context/themeContext/themeContext';
 
 import dayNight from './animation/day-night.json'; //0 -> 9: day, 10 -> 19: night
 
-const ChangeTheme = () => {
-  const { theme, changeTheme } = useThemeContext();
+const ChangeThemeButton = () => {
+  const { changeTheme, switchTheme } = useThemeContext();
   const iconRef = useRef();
 
   const [animationData, setAnimationData] = useState(dayNight);
@@ -24,12 +24,12 @@ const ChangeTheme = () => {
     );
 
     // Set state icon when loading
-    lottie.goToAndStop(theme === 'light' ? 0 : 9, true, 'day-night');
+    lottie.goToAndStop(switchTheme(0, 9), true, 'day-night');
   }, []);
 
   const handleClick = () => {
     changeTheme();
-    animationData.playSegments(theme === 'light' ? [0, 9] : [10, 19], true);
+    animationData.playSegments(switchTheme([0, 9], [10, 19]), true);
   };
 
   return (
@@ -41,4 +41,4 @@ const ChangeTheme = () => {
   );
 };
 
-export default memo(ChangeTheme);
+export default memo(ChangeThemeButton);

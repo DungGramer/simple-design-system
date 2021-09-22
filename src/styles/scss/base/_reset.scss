@@ -201,12 +201,12 @@ textarea {
     vertical-align: top; /* 2 */
 }
 
-code {
+code:not([class]) {
   font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
   font-size: .9em;
   margin: 0 1px;
   padding: 0.2em 0.4em;
   background-color: #f1f3f4;
   border-radius: 3px;
-  // border: thin solid #f0f0f0;
+  border: thin solid #f0f0f0;
 }

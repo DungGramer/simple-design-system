@@ -4,7 +4,9 @@ import { objectToProps, toSentenceCase } from '~/constants/converter';
 const defaultProps = {
   title: 'Click me',
 };
-
+/**
+ * @deprecated
+ */
 const ButtonTemplate = args => <Button {...defaultProps} {...args} />;
 const ButtonTemplateString = args => `<Button ${objectToProps(args)}/>`;
 

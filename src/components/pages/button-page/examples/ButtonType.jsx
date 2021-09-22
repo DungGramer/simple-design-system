@@ -5,7 +5,6 @@ const ButtonType = () => {
     <>
       <Button title="Click me" />
       <Button title="Click me" type="primary" />
-      <Button title="Click me" type="secondary" />
       <Button title="Click me" type="dashed" />
       <Button title="Click me" type="text" />
       <Button title="Click me" type="link" />

@@ -10,7 +10,7 @@ import Dropdown from '@atoms/dropdown/Dropdown';
 import Menu from '@atoms/menu/Menu';
 import changeLanguage from '~/translations/changeLanguage';
 import { useTranslation } from 'react-i18next';
-import ChangeTheme from './change-theme/ChangeTheme';
+import ChangeThemeButton from './change-theme/ChangeTheme';
 
 const languages = [
   {
@@ -39,7 +39,7 @@ const LogoSection = ({ toggleOpen }) => (
     <Link to="/">
       <Logo width="50" height="50" />
     </Link>
-    <ChangeTheme />
+    <ChangeThemeButton />
     <i className={`${styles.menu} far fa-bars`} onClick={toggleOpen} />
   </div>
 );

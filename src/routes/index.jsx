@@ -1,5 +1,5 @@
 import { Redirect, Route, Switch } from 'react-router-dom';
-import components from './components';
+import components from './components.route';
 
 const Routes = (
   <Switch>

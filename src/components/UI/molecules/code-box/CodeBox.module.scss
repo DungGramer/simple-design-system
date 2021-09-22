@@ -2,9 +2,11 @@
   --border-color: var(--gray-200);
   margin: 0 0 1rem;
   border: thin solid var(--border-color);
+  display: block;
 
   > section {
     @include padding-horizontal(24px);
+    @include padding-vertical(12px);
   }
 
   .component {
@@ -14,7 +16,7 @@
 
   .code-highlight {
     position: relative;
-    padding: 0;
+    // padding: 0;
 
     > i {
       position: absolute;

@@ -1,4 +1,3 @@
-import styles from './ButtonPage.module';
 import { Example } from './Example';
 import { API } from './API';
 import { Usage } from './Usage';
@@ -9,7 +8,7 @@ const ButtonPage = ({}) => {
   const { t } = useTranslation();
 
   return (
-    <div className={styles['button-page']}>
+    <div>
       <h1>{t('button.title')}</h1>
       <p>{t('button.description')}</p>
 

@@ -1,9 +1,11 @@
 import './CodeHighlight.scss';
 import PropTypes from 'prop-types';
-import Highlight from 'react-highlight';
-
-// import '/node_modules/highlight.js/styles/atom-one-light.css';
-
+import { PrismLight as SyntaxHighlighter } from 'react-syntax-highlighter';
+import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
+import { materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { useThemeContext } from '~/context/themeContext/themeContext';
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
 /**
  *  Highlight code on the page
@@ -15,17 +17,34 @@ import Highlight from 'react-highlight';
  * <CodeHight language='html' data={`<h1>Hello World</h1>`} />
  **/
 
+SyntaxHighlighter.registerLanguage('jsx', jsx);
+
 const CodeHighlight = ({ data, language }) => {
-  return <Highlight className={language}>{data}</Highlight>;
+	const { switchTheme } = useThemeContext();
+
+	return (
+		<SyntaxHighlighter
+			style={switchTheme(materialLight, materialDark)}
+			language={language}
+      customStyle={{
+        margin: '0',
+        padding: '0',
+        border: 'none',
+        background: 'none',
+      }}
+		>
+			{data}
+		</SyntaxHighlighter>
+	);
 };
 
 CodeHighlight.propTypes = {
-  data: PropTypes.string.isRequired,
-  language: PropTypes.string,
+	data: PropTypes.string.isRequired,
+	language: PropTypes.string,
 };
 
 CodeHighlight.defaultProps = {
-  language: 'javascript',
+	language: 'jsx',
 };
 
 export default CodeHighlight;

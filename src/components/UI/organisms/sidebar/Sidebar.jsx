@@ -3,7 +3,7 @@ import useMediaQuery from '@components/hooks/useMediaQuery';
 import { memo, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 import breakpoint from '~/constants/mediaQuery';
-import components from '~/routes/components';
+import components from '~/routes/components.route';
 
 import styles from './Sidebar.module';
 

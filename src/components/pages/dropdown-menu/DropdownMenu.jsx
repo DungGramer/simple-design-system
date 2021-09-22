@@ -5,15 +5,11 @@ import Menu from '@atoms/menu/Menu';
 import { useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import Tabs from '@molecules/tabs/Tabs';
-import Highlight from 'react-highlight';
-// import '/node_modules/highlight.js/styles/atelier-sulphurpool-light.css';
-// import '/node_modules/highlight.js/styles/github.css';
-import '/node_modules/highlight.js/styles/atom-one-light.css';
-import CodeHighlight from '@atoms/code-highlight/CodeHighlight';
+
 import CodeBox from '@molecules/code-box/CodeBox';
 import Button from '@atoms/button/Button';
 import useToggle from '@components/hooks/useToggle';
-// import '/node_modules/highlight.js/styles/stackoverflow-light.css';
+
 import { Cell, Column, HeaderCell, Table } from 'rsuite-table';
 import 'rsuite-table/dist/css/rsuite-table.css';
 
