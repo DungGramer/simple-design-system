@@ -17,8 +17,10 @@ html[theme='dark'] {
 
 .table {
   width: 100%;
-  border-collapse: collapse;
   border: 1px solid var(--border-color);
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 4px;
 
   thead {
     tr {
@@ -41,6 +43,10 @@ html[theme='dark'] {
     background-color: var(--tr-color);
   }
 
+  .heading-mobile {
+    display: none;
+  }
+
   @include mx-tablet-land {
     thead {
       display: none;
@@ -48,30 +54,55 @@ html[theme='dark'] {
 
     tr {
       display: block;
-      margin-bottom: 6px;
+      border-bottom: 1px solid var(--border-color);
+
+      &:first-child {
+        border-top: none;
+      }
+      &:last-child {
+        border-bottom: none;
+      }
     }
 
     td {
-      display: block;
+      $gap: 12px;
+
       position: relative;
-      padding-left: 130px;
+      // padding-left: 130px;
       text-align: left;
       border-bottom: 0;
 
-      &::before {
-        content: attr(data-heading);
-        position: absolute;
-        left: 0;
-        top: 0;
-        width: 120px;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        background-color: var(--tr-mobile-color);
-        padding: 0 6px;
-        font-weight: 500;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      word-break: break-word;
+
+      &:first-child {
+        padding-top: $gap;
+      }
+      &:last-child {
+        padding-bottom: $gap;
       }
 
+      .heading-mobile {
+        display: inline-block;
+        flex-grow: 1;
+        padding-right: 24px;
+        max-width: 40%;
+        flex-basis: 40%;
+        min-width: 120px;
+
+        font-size: 0.8em;
+        font-weight: 700;
+        text-transform: capitalize;
+      }
+
+      .content {
+        flex-grow: 1;
+        max-width: 60%;
+        flex-basis: 60%;
+        line-height: 2;
+      }
     }
   }
 }
