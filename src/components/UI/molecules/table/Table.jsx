@@ -1,7 +1,7 @@
 import styles from './Table.module';
 import PropTypes from 'prop-types';
 import { useContext, createContext, memo } from 'react';
-import { findNameComponents } from '~/constants/variables';
+import { findNameComponents, findPropsChildren } from '~/constants/variables';
 import Column from './Column';
 import HeaderCell from './HeaderCell';
 import Row from './Row';
@@ -20,8 +20,8 @@ const Table = ({ children, data, size = 'medium' }) => {
 
 		columnsData.push({
 			...props,
-			header: findNameComponents(column, 'HeaderCell')?.props?.children,
-			key: findNameComponents(column, 'Cell')?.props?.dataKey,
+			header: findPropsChildren(column, 'header'),
+			key: findPropsChildren(column, 'dataKey'),
 			...column,
 		});
 	});
@@ -30,13 +30,14 @@ const Table = ({ children, data, size = 'medium' }) => {
 		(row) => row.children && delete row.children
 	);
 
+
 	return (
 		<TableContext.Provider value={{ data, columnsData }}>
 			<table className={`${styles['table']} ${styles['size']}`}>
 				<thead>
 					<tr>
 						{columnsData.map(({ header }, index) => {
-							return <HeaderCell key={index}>{header}</HeaderCell>;
+							return <HeaderCell key={index} header={header} />;
 						})}
 					</tr>
 				</thead>
@@ -53,7 +54,6 @@ const Table = ({ children, data, size = 'medium' }) => {
 
 Table.propTypes = {
 	data: PropTypes.arrayOf(PropTypes.object).isRequired,
-	headers: PropTypes.arrayOf(PropTypes.string).isRequired,
 	size: PropTypes.oneOf(['small', 'medium', 'large']),
 };
 

@@ -1,5 +1,5 @@
-const HeaderCell = ({ children }) => {
-	return <th>{children}</th>;
+const HeaderCell = ({ header }) => {
+	return <th>{header}</th>;
 };
 
 export default HeaderCell;
