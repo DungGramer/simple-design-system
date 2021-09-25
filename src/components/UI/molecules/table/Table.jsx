@@ -1,11 +1,11 @@
 import styles from './Table.module';
 import PropTypes from 'prop-types';
 import { useContext, createContext, memo } from 'react';
-import { findNameComponents, findPropsChildren } from '~/constants/variables';
 import Column from './Column';
 import HeaderCell from './HeaderCell';
 import Row from './Row';
 import Cell from './Cell';
+import { findPropsChildren } from '~/helpers/reactComponent';
 
 const TableContext = createContext();
 
