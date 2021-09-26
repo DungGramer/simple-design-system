@@ -10,9 +10,9 @@ $zIndex: 10;
 
 
   @include desktop {
-    width: 17rem;
-    min-width: 17rem;
-    max-width: 17rem;
+    width: var(--nav-width);
+    min-width: var(--nav-width);
+    max-width: var(--nav-width);
     position: static;
   }
 

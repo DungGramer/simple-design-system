@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 import useToggle from '@components/hooks/useToggle';
 import { forwardRef } from 'react';
 
-const Button = forwardRef(({title, type, icon, size, loading, block, danger, shape, disabled, onClick}, ref) => {
-
+const Button = forwardRef(({title, type, icon, size, loading, block, danger, shape, disabled, onClick, href}, ref) => {
+  const Component = href ? 'a' : 'button';
   return (
-    <button
+    <Component
       ref={ref}
       className={`${styles['button']} ${styles[type]} ${styles[shape]} ${styles[size]} ${disabled ? styles.disabled : ''} ${
         loading ? styles.loading : ''
       }`}
       onClick={onClick}
+      href={href}
     >
       {loading && <i className="fal fa-spinner-third fa-spin" />}
       {icon && !loading && <i className={icon} />}
       {title && <span>{title}</span>}
-    </button>
+    </Component>
   );
 });
 

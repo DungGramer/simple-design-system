@@ -9,7 +9,7 @@ body {
   display: flex;
 
   .main {
-    width: 100%;
+    width: calc(100% - var(--nav-width));
     padding: 3rem 1.25rem;
 
     @include desktop {
