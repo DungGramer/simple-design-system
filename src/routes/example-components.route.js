@@ -1,35 +1,55 @@
-import ButtonDisabled from '@pages/button-page/examples/ButtonDisabled';
-import ButtonIcon from '@pages/button-page/examples/ButtonIcon';
-import ButtonLoading from '@pages/button-page/examples/ButtonLoading';
-import ButtonSize from '@pages/button-page/examples/ButtonSize';
-import ButtonType from '@pages/button-page/examples/ButtonType';
+import * as Avatar from '@pages/avatar/examples';
+import * as Button from '@pages/button/examples';
+
 
 const pathExample = {
+  avatar: [
+    {
+      heading: 'Appearance',
+      component: Avatar.AvatarAppearance,
+      path: require('!!raw-loader!@pages/avatar/examples/AvatarAppearance').default,
+    },
+    {
+      heading: 'Sizes',
+      component: Avatar.AvatarSize,
+      path: require('!!raw-loader!@pages/avatar/examples/AvatarSize').default,
+    },
+    {
+      heading: 'Status',
+      component: Avatar.AvatarStatus,
+      path: require('!!raw-loader!@pages/avatar/examples/AvatarStatus').default,
+    },
+    {
+      heading: 'Avatar Group',
+      component: Avatar.AvatarGroup,
+      path: require('!!raw-loader!@pages/avatar/examples/AvatarGroup').default,
+    }
+  ],
   button: [
     {
       heading: 'Type',
-      component: ButtonType,
-      path: require('!!raw-loader!@pages/button-page/examples/ButtonType.jsx').default,
+      component: Button.ButtonType,
+      path: require('!!raw-loader!@pages/button/examples/ButtonType.jsx').default,
     },
     {
       heading: 'Size',
-      component: ButtonSize,
-      path: require('!!raw-loader!@pages/button-page/examples/ButtonSize.jsx').default,
+      component: Button.ButtonSize,
+      path: require('!!raw-loader!@pages/button/examples/ButtonSize.jsx').default,
     },
     {
       heading: 'Icon',
-      component: ButtonIcon,
-      path: require('!!raw-loader!@pages/button-page/examples/ButtonIcon.jsx').default,
+      component: Button.ButtonIcon,
+      path: require('!!raw-loader!@pages/button/examples/ButtonIcon.jsx').default,
     },
     {
       heading: 'Loading',
-      component: ButtonLoading,
-      path: require('!!raw-loader!@pages/button-page/examples/ButtonLoading.jsx').default,
+      component: Button.ButtonLoading,
+      path: require('!!raw-loader!@pages/button/examples/ButtonLoading.jsx').default,
     },
     {
       heading: 'Disabled',
-      component: ButtonDisabled,
-      path: require('!!raw-loader!@pages/button-page/examples/ButtonDisabled.jsx').default,
+      component: Button.ButtonDisabled,
+      path: require('!!raw-loader!@pages/button/examples/ButtonDisabled.jsx').default,
     }
   ]
 }

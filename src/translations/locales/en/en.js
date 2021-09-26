@@ -19,6 +19,12 @@ export const en = {
       'A dropdown menu displays a list of actions or options to a user.',
   },
 
+  // Avatar
+  avatar: {
+    title: 'Avatar',
+    description: 'An avatar is a visual representation of a user or entity.',
+  },
+
   // Buttons
   Button: 'Button',
   Buttons: 'Buttons',

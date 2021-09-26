@@ -9,10 +9,11 @@ body {
   display: flex;
 
   .main {
-    width: calc(100% - var(--nav-width));
     padding: 3rem 1.25rem;
+    width: 100%;
 
     @include desktop {
+      width: calc(100% - var(--nav-width));
       padding-left: 5rem;
     }
   }

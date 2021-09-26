@@ -7,9 +7,13 @@ export const vi = {
   Type: 'Loại',
   API: 'API',
   Size: 'Kích thước',
+  Sizes: 'Kích thước',
   Icon: 'Biểu tượng',
   Loading: 'Đang tải',
   Disabled: 'Vô hiệu hóa',
+  Appearance: 'Hình dáng',
+  Status: 'Trạng thái',
+  'Avatar Group': 'Nhóm Avatar',
 
   // Header
   Components: 'Thành phần',
@@ -25,6 +29,12 @@ export const vi = {
     title: 'Menu thả xuống',
     description:
       'Menu thả xuống hiển thị danh sách các hành động hoặc tùy chọn cho người dùng.',
+  },
+
+  // Avatar
+  avatar: {
+    title: 'Avatar',
+    description: 'Hiển thị một hình ảnh và tên người dùng.',
   },
 
   // Button
@@ -52,4 +62,10 @@ export const vi = {
   'perform an action': 'thực hiện một hành động',
   'open a modal dialog': 'mở một hộp thoại modal',
   'submit a form': 'gửi một form',
+
+  // Avatar API
+  'Indicates the shape of the avatar': 'Chỉ ra hình dạng của avatar',
+  'Defines the size of the avatar': 'Xác định kích thước của avatar',
+  "Indicates a user's online status": 'Chỉ ra trạng thái trực tuyến của người dùng',
+  'Defines the number of avatars you want show': 'Xác định số lượng avatar bạn muốn hiển thị',
 };

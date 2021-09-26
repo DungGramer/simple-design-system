@@ -79,7 +79,7 @@ Avatar.propTypes = {
     'xxlarge',
   ]),
   status: PropTypes.oneOf(['online', 'offline', 'busy']),
-  src: PropTypes.string.isRequired,
+  src: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
 };
 
 Avatar.defaultProps = {
