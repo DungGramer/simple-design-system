@@ -11,6 +11,7 @@ import { Suspense } from 'react';
 import Loading from '@atoms/loading/Loading';
 import './translations/i18n';
 import { ThemeProvider } from './context/themeContext/themeContext';
+import ScrollToTop from './helpers/scrollToTop';
 
 function App() {
   const location = useLocation();
@@ -18,6 +19,7 @@ function App() {
 
   return (
     <>
+    <ScrollToTop />
     <ThemeProvider>
       <Header />
       <main className="main-container">
