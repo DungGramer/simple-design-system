@@ -1,5 +1,6 @@
 import * as Avatar from '@pages/avatar/examples';
 import * as Button from '@pages/button/examples';
+import * as Banner from '@pages/banner/examples';
 
 
 const pathExample = {
@@ -50,6 +51,13 @@ const pathExample = {
       heading: 'Disabled',
       component: Button.ButtonDisabled,
       path: require('!!raw-loader!@pages/button/examples/ButtonDisabled.jsx').default,
+    }
+  ],
+  banner: [
+    {
+      heading: 'Default',
+      component: Banner.BannerDefault,
+      path: require('!!raw-loader!@pages/banner/examples/BannerDefault').default,
     }
   ]
 }

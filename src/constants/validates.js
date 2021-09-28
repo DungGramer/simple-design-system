@@ -25,7 +25,6 @@ export const isPhoneVN = (str) => {
 }
 
 export const isFalsy = (value) => {
-  const falsy = [undefined, 'undefined', null, 'null', false, 'false', '', 0, -0, '0', '0.0', 0n, NaN, 'NaN', ' ', '\t', '\n', '\r', '\f', '\v', '\u00A0', '\u2028', '\u2029', '\uFEFF', '\u200B', '\u180E'];
 
   if (Boolean(value) === false) {
     return true;
@@ -42,6 +41,7 @@ export const isFalsy = (value) => {
     return true;
   }
 
+  const falsy = [undefined, 'undefined', null, 'null', false, 'false', '', 0, -0, '0', '0.0', 0n, NaN, 'NaN', ' ', '\t', '\n', '\r', '\f', '\v', '\u00A0', '\u2028', '\u2029', '\uFEFF', '\u200B', '\u180E'];
   if (falsy.includes(value)) {
     return true;
   }
