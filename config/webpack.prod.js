@@ -79,15 +79,17 @@ module.exports = merge(common, {
       ],
       publicPath: '/node_modules',
     }),
+    new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
         // { from: 'public/assets/images', to: 'assets/images' },
         // { from: 'public/favicon.ico', to: '' },
         { from: 'public/.htaccess', to: '' },
         { from: 'public/_redirects', to: '' },
+        { from: 'public/robots.txt', to: '' },
+        { from: 'public/security.txt', to: '' },
       ],
     }),
-    new CleanWebpackPlugin(),
   ],
   output: {
     clean: true,

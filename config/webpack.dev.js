@@ -57,7 +57,7 @@ module.exports = merge(common, {
     new HtmlWebpackPlugin({
       template: paths.indexHTML,
       filename: 'index.html',
-      favicon: 'public/favicon.ico',
+      // favicon: 'public/favicon.ico',
     }),
     new MiniCssExtractPlugin({
       filename: '[name].css',
