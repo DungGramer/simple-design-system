@@ -1,13 +1,45 @@
 import styles from './Banner.module';
 import PropTypes from 'prop-types';
 
-const Banner = ({ icon, content, type }) => {
+/**
+ * Banner displays a message to the user.
+ *
+ * @param {string} icon - icon class name
+ * @param {string} children - text to display
+ * @param {string} type - type of banner
+ *
+ * @example
+ * <Banner type="error">Error goes here</Banner>
+ */
+
+const Banner = ({ icon, children, type }) => {
 	return (
 		<div className={`${styles['banner']} ${styles[type]}`}>
-			<i className={icon} />
-			<p>{content}</p>
+			<div className={styles.container}>
+				<IconType type={type} icon={icon} />
+				<p>{children}</p>
+			</div>
 		</div>
 	);
+};
+
+const IconType = ({ icon, type }) => {
+	let iconClass = icon || null;
+
+	if (iconClass === null) {
+		switch (type) {
+			case 'error':
+				iconClass = 'fas fa-exclamation-circle';
+				break;
+			case 'warning':
+				iconClass = 'fas fa-exclamation-triangle';
+				break;
+			default:
+				iconClass = '';
+				break;
+		}
+	}
+	return <i className={iconClass} />;
 };
 
 Banner.propTypes = {

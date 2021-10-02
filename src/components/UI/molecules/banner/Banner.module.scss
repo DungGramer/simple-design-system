@@ -1,4 +1,34 @@
 .banner {
-  display: flex;
+	font-weight: 500;
+	border-radius: 4px;
 
+	&.warning {
+		background-color: var(--warning-color);
+	}
+  &.error {
+    background-color: var(--error-color);
+    color: var(--font-color-invert);
+  }
+  &.announcement {
+    background-color: var(--info-color);
+    color: var(--font-color-invert);
+  }
+
+	.container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		padding: 12px;
+
+		p {
+      margin: 0;
+			padding: 4px;
+			padding-left: 8px;
+			flex: 0 1 auto;
+
+			overflow: hidden;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+		}
+	}
 }

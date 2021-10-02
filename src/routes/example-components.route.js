@@ -55,10 +55,25 @@ const pathExample = {
   ],
   banner: [
     {
-      heading: 'Default',
-      component: Banner.BannerDefault,
-      path: require('!!raw-loader!@pages/banner/examples/BannerDefault').default,
-    }
+      heading: 'Warning',
+      component: Banner.BannerWarning,
+      path: require('!!raw-loader!@pages/banner/examples/BannerWarning').default,
+    },
+    {
+      heading: 'Error',
+      component: Banner.BannerError,
+      path: require('!!raw-loader!@pages/banner/examples/BannerError').default,
+    },
+    {
+      heading: 'Announcement',
+      component: Banner.BannerAnnouncement,
+      path: require('!!raw-loader!@pages/banner/examples/BannerAnnouncement').default,
+    },
+    {
+      heading: 'Icon',
+      component: Banner.BannerIcon,
+      path: require('!!raw-loader!@pages/banner/examples/BannerIcon').default,
+    },
   ]
 }
 

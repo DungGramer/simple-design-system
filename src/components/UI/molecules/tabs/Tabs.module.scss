@@ -6,6 +6,11 @@
   position: relative;
   border-bottom: thin solid var(--gray-200);
   margin-bottom: 1rem;
+  overflow-x: auto;
+  &::-webkit-scrollbar {
+    height: 2px;
+  }
+
 
   > * {
     &:first-child {

@@ -31,6 +31,7 @@ const CodeHighlight = ({ data, language }) => {
         padding: '0',
         border: 'none',
         background: 'none',
+        paddingBottom: '1rem',
       }}
 		>
 			{data}

@@ -1,4 +1,4 @@
-import ExampleSection from '@molecules/example-section/ExampleSection';
+import ExampleSection from '@templates/example-section/ExampleSection';
 import pathExample from '~/routes/example-components.route';
 
 export const Example = () => {

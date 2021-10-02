@@ -36,6 +36,13 @@ export const vi = {
     title: 'Avatar',
     description: 'Hiển thị một hình ảnh và tên người dùng.',
   },
+  // Avatar API
+  'Indicates the shape of the avatar': 'Chỉ ra hình dạng của avatar',
+  'Defines the size of the avatar': 'Xác định kích thước của avatar',
+  "Indicates a user's online status": 'Chỉ ra trạng thái trực tuyến của người dùng',
+  'Defines the number of avatars you want show': 'Xác định số lượng avatar bạn muốn hiển thị',
+
+
 
   // Button
   Button: 'Button',
@@ -63,9 +70,10 @@ export const vi = {
   'open a modal dialog': 'mở một hộp thoại modal',
   'submit a form': 'gửi một form',
 
-  // Avatar API
-  'Indicates the shape of the avatar': 'Chỉ ra hình dạng của avatar',
-  'Defines the size of the avatar': 'Xác định kích thước của avatar',
-  "Indicates a user's online status": 'Chỉ ra trạng thái trực tuyến của người dùng',
-  'Defines the number of avatars you want show': 'Xác định số lượng avatar bạn muốn hiển thị',
+
+  // Banner
+  banner: {
+    title: 'Banner',
+    description: 'Banner hiển thị thông báo nổi bật ở đầu màn hình.',
+  }
 };

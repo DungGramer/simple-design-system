@@ -37,56 +37,40 @@ else
   cd src/components/pages/$path
   mkdir $lowerFolder
   cd $lowerFolder
-  touch "${fileName}Page".jsx $fileName.module.scss API.jsx Example.jsx Usage.jsx
+  touch "${fileName}Page".jsx $fileName.module.scss API.jsx Example.jsx Usage.
+  mkdir examples && cd examples && touch index.js && cd ..
 fi
 
 # Import API.jsx
-echo "import { useTranslation } from 'react-i18next';" > API.jsx
-echo "import Table, { Cell, HeaderCell, Column } from '@molecules/table/Table';
+echo "import { useTranslation } from 'react-i18next';
+import TableAPI from '@templates/TableAPI/TableAPI';
 
 export const API = () => {
-  const { t } = useTranslation();
-  const data = [
-    {
-      property: <code>title</code>,
-      description: t('The title of the button'),
-      type: 'string',
-      default: 'default',
-    },
-  ];
+	const { t } = useTranslation();
+	const data = [
+		{
+			property: <code>title</code>,
+			description: t('The title of the button'),
+			type: 'string',
+			default: 'default',
+		},
+	];
+	return (
+		<div>
+			<h3>{t('API')}</h3>
+			<p>
+				{t(
+					`Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, consectetur?`
+				)}
+			</p>
 
-  return (
-    <div>
-      <h3>{t('API')}</h3>
-      <p>
-        {t(
-          'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, quaerat?',
-        )}
-      </p>
-      <Table data={data}>
-        <Column>
-          <HeaderCell header={t('Property')} />
-          <Cell dataKey='property' />
-        </Column>
-        <Column>
-          <HeaderCell header={t('Description')} />
-          <Cell dataKey='description' />
-        </Column>
-        <Column>
-          <HeaderCell header={t('Type')} />
-          <Cell dataKey='type' />
-        </Column>
-        <Column>
-          <HeaderCell header={t('Default')} />
-          <Cell dataKey='default' />
-        </Column>
-      </Table>
-    </div>
-  );
-};" >> API.jsx
+			<TableAPI data={data} />
+		</div>
+	);
+};" > API.jsx
 
 # Import Example.jsx
-echo "import ExampleSection from '@molecules/example-section/ExampleSection';
+echo "import ExampleSection from '@templates/example-section/ExampleSection';
 import pathExample from '~/routes/example-components.route';
 
 export const Example = () => {

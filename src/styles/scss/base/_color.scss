@@ -85,8 +85,10 @@ html, html[theme="light"] {
   --info-color: hsl(188, 78%, 41%);
   --info-color-background: hsla(188, 78%, 41%, 0.1);
 
+
   // Font
   --font-color: var(--black-800);
+  --font-color-invert: var(--white);
   --background-html: #fff;
   --background-menu: #fff;
   --background-image-color: hsl(220, 16%, 96%);
@@ -258,6 +260,7 @@ html[theme="dark"] {
 
   // Font
   --font-color: #fff;
+  --font-color-invert: var(--black-800);
   --background-html: #1D1C2A;
   --background-menu: #222433;
   --background-image-color: hsl(195, 6%, 12%);

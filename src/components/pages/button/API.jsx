@@ -1,6 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import Table, { Cell, HeaderCell, Column } from '@molecules/table/Table';
-import TableAPI from '@templates/TableAPI';
+import TableAPI from '@templates/TableAPI/TableAPI';
 
 export const API = () => {
 	const { t } = useTranslation();

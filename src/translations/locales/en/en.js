@@ -34,4 +34,10 @@ export const en = {
       'A button triggers an event or action. They let users know what will happen next.',
   },
 
+  // Banner
+  banner: {
+    title: 'Banner',
+    description: 'A banner displays a prominent message at the top of the screen.',
+  },
+
 };
