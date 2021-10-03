@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
-import TableAPI from '@templates/TableAPI/TableAPI';
+import TableAPI from '@templates/tableAPI/TableAPI';
+import CodeColumn from '@templates/tableAPI/CodeColumn';
 
 export const API = () => {
 	const { t } = useTranslation();
@@ -13,12 +14,7 @@ export const API = () => {
 		{
 			property: <code>type</code>,
 			description: t('The type of the button'),
-			type: (
-				<span>
-					<code>primary</code> | <code>default</code> | <code>dashed</code> |{' '}
-					<code>text</code> | <code>link</code>
-				</span>
-			),
+      type: <CodeColumn data={['primary', 'default', 'dashed', 'text', 'link']} />,
 			default: 'default',
 		},
 		{
@@ -29,11 +25,7 @@ export const API = () => {
 		{
 			property: <code>size</code>,
 			description: t('The size of the button'),
-			type: (
-				<span>
-					<code>small</code> | <code>large</code>
-				</span>
-			),
+      type: <CodeColumn data={['small', 'large']} />,
 		},
 		{
 			property: <code>shape</code>,

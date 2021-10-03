@@ -75,5 +75,23 @@ export const vi = {
   banner: {
     title: 'Banner',
     description: 'Banner hiển thị thông báo nổi bật ở đầu màn hình.',
-  }
+  },
+  'Content to be shown': 'Nội dung sẽ được hiển thị',
+  'Visual style to be used for the banner': 'Kiểu hiển thị để sử dụng cho banner',
+  'Show icon of banner': 'Hiển thị biểu tượng của banner',
+
+  // Badge
+  badge: {
+    title: 'Badge',
+    description: 'Giá trị số hoặc mô tả trạng thái cho các phần tử.',
+  },
+  'The children you want to show badge': 'Phần tử con muốn hiển thị badge',
+  'Affects the visual style of the badge': 'Kiểu hiển thị của badge',
+  'The maximum number of number to display': 'Số lượng tối đa có thể hiển thị',
+  'The size of the badge': 'Kích thước của badge',
+  'The icon to display': 'Biểu tượng để hiển thị',
+  'The direction of the badge': 'Hướng của badge',
+  'The position of the badge': 'Toạ độ của badge',
+
+
 };

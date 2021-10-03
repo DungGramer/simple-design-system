@@ -1,6 +1,7 @@
 import * as Avatar from '@pages/avatar/examples';
 import * as Button from '@pages/button/examples';
 import * as Banner from '@pages/banner/examples';
+import * as Badge from '@pages/badge/examples';
 
 
 const pathExample = {
@@ -73,6 +74,33 @@ const pathExample = {
       heading: 'Icon',
       component: Banner.BannerIcon,
       path: require('!!raw-loader!@pages/banner/examples/BannerIcon').default,
+    },
+  ],
+  badge: [
+    {
+      heading: 'Basic',
+      component: Badge.BadgeBasic,
+      path: require('!!raw-loader!@pages/badge/examples/BadgeBasic').default,
+    },
+    {
+      heading: 'Overflow',
+      component: Badge.BadgeOverflow,
+      path: require('!!raw-loader!@pages/badge/examples/BadgeOverflow').default,
+    },
+    {
+      heading: 'Status',
+      component: Badge.BadgeStatus,
+      path: require('!!raw-loader!@pages/badge/examples/BadgeStatus').default,
+    },
+    {
+      heading: 'Offset',
+      component: Badge.BadgeOffset,
+      path: require('!!raw-loader!@pages/badge/examples/BadgeOffset').default,
+    },
+    {
+      heading: 'Size',
+      component: Badge.BadgeSize,
+      path: require('!!raw-loader!@pages/badge/examples/BadgeSize').default,
     },
   ]
 }

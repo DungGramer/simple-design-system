@@ -40,4 +40,10 @@ export const en = {
     description: 'A banner displays a prominent message at the top of the screen.',
   },
 
+  // Badge
+  badge: {
+    title: 'Badge',
+    description: 'Small numerical value or status descriptor for UI elements.',
+  },
+
 };

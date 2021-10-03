@@ -1,5 +1,5 @@
-import Avatar from "@atoms/avatar/Avatar";
-import { picsumURL } from "~/mock/imageMockup";
+import Avatar from '@atoms/avatar/Avatar';
+import { picsumURL } from '~/mock/imageMockup';
 
 const AvatarAppearance = () => (
   <>

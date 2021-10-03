@@ -1,6 +1,7 @@
 .banner {
 	font-weight: 500;
 	border-radius: 4px;
+  max-width: 100%;
 
 	&.warning {
 		background-color: var(--warning-color);

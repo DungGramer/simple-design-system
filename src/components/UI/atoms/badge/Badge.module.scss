@@ -2,14 +2,19 @@
   # Base
 *------------------------------------*/
 
+.badge-container {
+  position: relative;
+}
+
 .badge {
   display: inline-block;
   vertical-align: middle;
 
   font-weight: normal;
   line-height: 1;
-  text-align: center;
   font-size: 0.9375rem;
+
+  text-align: center;
   white-space: nowrap;
 
   background-color: var(--gray-300);
@@ -19,6 +24,8 @@
   min-width: 6px;
   min-height: 6px;
   padding: 0.1875rem 0.375rem;
+
+  z-index: 9;
 }
 
 /*------------------------------------*
@@ -43,7 +50,7 @@
 
 .removed {
   color: var(--error-color);
-  background-color: rgba(var(--error-color), 45%);
+  background-color: hsla(347, 82, 48, 10%);
 }
 
 .added,
@@ -64,6 +71,7 @@
 
 .dot {
   background-color: hsl(359, 100%, 65%);
+  color: var(--font-color-invert);
   padding: 0;
 }
 

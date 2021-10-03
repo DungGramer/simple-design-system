@@ -37,9 +37,8 @@ else
   cd src/components/pages/$path
   mkdir $lowerFolder
   cd $lowerFolder
-  touch "${fileName}Page".jsx $fileName.module.scss API.jsx Example.jsx Usage.
+  touch "${fileName}Page".jsx $fileName.module.scss API.jsx Example.jsx Usage.jsx
   mkdir examples && cd examples && touch index.js && cd ..
-fi
 
 # Import API.jsx
 echo "import { useTranslation } from 'react-i18next';
@@ -60,7 +59,7 @@ export const API = () => {
 			<h3>{t('API')}</h3>
 			<p>
 				{t(
-					`Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, consectetur?`
+					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, consectetur'
 				)}
 			</p>
 
@@ -123,3 +122,6 @@ const "${namePage}" = ({}) => {
 "${namePage}".propTypes = {};
 
 export default "${namePage}";" > $namePage.jsx
+
+code src/routes/example-components.route.js
+fi
