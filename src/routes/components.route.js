@@ -3,7 +3,7 @@ import { lazy } from 'react';
 const AvatarPage = lazy(() => import('@pages/avatar/AvatarPage'));
 const Badge = lazy(() => import('@pages/badge/BadgePage'));
 const Banner = lazy(() => import('@pages/banner/BannerPage'));
-const Breadcrumb = lazy(() => import('@pages/breadcrumb/Breadcrumb'));
+const Breadcrumb = lazy(() => import('@pages/breadcrumb/BreadcrumbPage'));
 const Button = lazy(() => import('@pages/button/ButtonPage'));
 const Checkbox = lazy(() => import('@pages/checkbox/Checkbox'));
 const CodePage = lazy(() => import('@pages/code-page/CodePage'));

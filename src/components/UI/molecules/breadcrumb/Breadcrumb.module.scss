@@ -1,0 +1,36 @@
+.breadcrumb {
+  .breadcrumb__item {
+    // display: inline-flex;
+
+    > a {
+      color: var(--primary-500);
+
+      &:hover {
+        text-decoration: underline;
+        color: var(--primary-700);
+      }
+    }
+
+    &:last-child {
+      a {
+        color: inherit;
+        cursor: default;
+
+        &:hover {
+          text-decoration: none;
+          color: inherit;
+        }
+      }
+
+    }
+
+    span {
+      padding: 0 8px;
+    }
+  }
+
+  .breadcrumb__list {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}

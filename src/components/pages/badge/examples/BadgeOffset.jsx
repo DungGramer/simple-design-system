@@ -1,4 +1,4 @@
-import Badge from '@atoms/badge/Badge';
+import Badge from '@molecules/badge/Badge';
 
 const BadgeOffset = () => {
   return (

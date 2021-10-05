@@ -6,4 +6,8 @@
   path {
     stroke: var(--font-color);
   }
+
+  > svg {
+    width: unset !important;
+  }
 }
