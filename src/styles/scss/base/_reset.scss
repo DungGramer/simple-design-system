@@ -103,6 +103,10 @@ a:hover {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
+}
 
 /**
  * Media
@@ -209,4 +213,57 @@ code:not([class]) {
   background-color: var(--background-code-color);
   border-radius: 3px;
   border: thin solid var(--gray-200);
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+
+[type=button],[type=reset],[type=submit],button {
+  appearance: button;
+}
+
+input[type=date],input[type=datetime-local],input[type=month],input[type=time] {
+  appearance: listbox;
+}
+
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  appearance: none;
+}
+
+[type=search]::-webkit-search-decoration {
+  appearance: none;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  appearance: button;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit
+}
+
+output {
+  display: inline-block
+}
+
+summary {
+  display: list-item;
+  cursor: pointer
+}
+
+template {
+  display: none
+}
+
+[hidden] {
+  display: none!important;
 }

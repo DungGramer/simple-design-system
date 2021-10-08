@@ -13,17 +13,17 @@ const Breadcrumb = ({ children, separator }) => {
     <BreadcrumbContext.Provider value={{
       separator
     }}>
-      <nav>
-        <ol>{children}</ol>
+      <nav className={styles['breadcrumb']}>
+        <ol className={styles['breadcrumb-list']}>{children}</ol>
       </nav>
     </BreadcrumbContext.Provider>
   );
 };
 
-const BreadcrumbItem = ({ children, href }) => {
+const BreadcrumbItem = ({ children, href, active }) => {
   const { separator } = useBreadcrumbContext();
   return (
-    <li className={styles.breadcrumbItem}>
+    <li className={`${styles['breadcrumb-item']} ${active ? styles['active'] : ''}`}>
       <a href={href}>{children}</a>
       <span className={styles.separator}>{separator}</span>
     </li>

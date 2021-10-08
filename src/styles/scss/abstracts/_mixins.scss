@@ -180,8 +180,7 @@
   width: $width;
   @if $height == false {
     height: $width;
-  }
-  @else {
+  } @else {
     height: $height;
   }
 }
@@ -263,5 +262,37 @@
   }
   &::-webkit-input-placeholder {
     @content;
+  }
+}
+
+@mixin gap($row: 0, $column: false) {
+  @if $column == false {
+    @supports (not (translate: none)) {
+      margin-left: calc(-1 * #{$row});
+      margin-top: calc(-1 * #{$row});
+
+      & > * {
+        margin-left: $row;
+        margin-top: $row;
+      }
+    }
+
+    @supports (gap: 10px) and (display: flex) and (translate: none) {
+      gap: $row;
+    }
+  } @else {
+    @supports (not (translate: none)) {
+      margin-left: calc(-1 * #{$column});
+      margin-top: calc(-1 * #{$row});
+
+      & > * {
+        margin-left: $column;
+        margin-top: $row;
+      }
+    }
+
+    @supports (gap: 10px) and (display: flex) and (translate: none) {
+      gap: $row $column;
+    }
   }
 }
