@@ -93,5 +93,13 @@ export const vi = {
   'The direction of the badge': 'Hướng của badge',
   'The position of the badge': 'Toạ độ của badge',
 
-
+  // Breadcrumb
+  breadcrumb: {
+    title: 'Breadcrumb',
+    description: "Breadcrumbs là một hệ thống điều hướng được sử dụng để hiển thị vị trí của người dùng trong một trang web hoặc ứng dụng.",
+  },
+  'Contains child elements including the Breadcrumb.Item.': 'Chứa phần tử con bao gồm các Breadcrumb.Item.',
+  'The separator between Breadcrumb.Item elements.': 'Dấu phân cách giữa các phần tử Breadcrumb.Item.',
+  'The content of the Breadcrumb': 'Nội dung của Breadcrumb',
+  'Target of hyperlink': 'Đường dẫn liên kết đến trang đó',
 };

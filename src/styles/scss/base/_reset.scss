@@ -267,3 +267,7 @@ template {
 [hidden] {
   display: none!important;
 }
+
+a, area, button, [role=button], input:not([type=range]), label, select, summary, textarea {
+  touch-action: manipulation;
+}

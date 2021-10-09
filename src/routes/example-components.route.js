@@ -2,6 +2,7 @@ import * as Avatar from '@pages/avatar/examples';
 import * as Button from '@pages/button/examples';
 import * as Banner from '@pages/banner/examples';
 import * as Badge from '@pages/badge/examples';
+import * as Breadcrumb from '@pages/breadcrumb/examples';
 
 
 const pathExample = {
@@ -102,6 +103,23 @@ const pathExample = {
       component: Badge.BadgeSize,
       path: require('!!raw-loader!@pages/badge/examples/BadgeSize').default,
     },
+  ],
+  breadcrumb: [
+    {
+      heading: 'Basic',
+      component: Breadcrumb.BreadcrumbBasic,
+      path: require('!!raw-loader!@pages/breadcrumb/examples/BreadcrumbBasic').default,
+    },
+    {
+      heading: 'Icon',
+      component: Breadcrumb.BreadcrumbIcon,
+      path: require('!!raw-loader!@pages/breadcrumb/examples/BreadcrumbIcon').default,
+    },
+    {
+      heading: 'Separator',
+      component: Breadcrumb.BreadcrumbSeparator,
+      path: require('!!raw-loader!@pages/breadcrumb/examples/BreadcrumbSeparator').default,
+    }
   ]
 }
 

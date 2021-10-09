@@ -1,17 +1,26 @@
-import './Breadcrumb.module';
-import PropTypes from 'prop-types';
-import Breadcrumb from '@molecules/breadcrumb/Breadcrumb';
+import { Example } from './Example';
+import { API } from './API';
+import { Usage } from './Usage';
+import { useTranslation } from 'react-i18next';
+import Tabs from '@molecules/tabs/Tabs';
 
-function BreadcrumbPage(props) {
-  return <div>
-    <Breadcrumb>
-      <Breadcrumb.Item href="#">Home</Breadcrumb.Item>
-      <Breadcrumb.Item href="#">Library</Breadcrumb.Item>
-      <Breadcrumb.Item active>Data</Breadcrumb.Item>
-    </Breadcrumb>
-  </div>;
+const BreadcrumbPage = ({}) => {
+  const { t } = useTranslation();
+
+  return (
+    <div>
+      <h1>{t('breadcrumb.title')}</h1>
+      <p>{t('breadcrumb.description')}</p>
+
+      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+        <Example />
+        <API />
+        <Usage />
+      </Tabs>
+    </div>
+  );
 }
 
-Breadcrumb.propTypes = {};
+BreadcrumbPage.propTypes = {};
 
 export default BreadcrumbPage;

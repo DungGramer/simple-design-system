@@ -4,12 +4,15 @@
     flex-wrap: wrap;
 
     .breadcrumb-item {
-      > a {
-        color: var(--primary-500);
+      color: var(--black-400);
+      > a[href] {
+        transition: color 0.25s;
+        transition-timing-function: ease-in;
 
         &:hover {
           text-decoration: underline;
-          color: var(--primary-700);
+          color: var(--primary-500);
+          transition-timing-function: ease-out;
         }
       }
 
@@ -18,25 +21,11 @@
       }
 
       &:last-child {
-        a {
-          color: inherit;
-          cursor: default;
-
-          &:hover {
-            text-decoration: none;
-            color: inherit;
-          }
-        }
+        color: inherit;
 
         span {
           display: none;
         }
-      }
-
-      &.active {
-        user-select: none;
-        touch-action: none;
-        pointer-events: none;
       }
     }
   }

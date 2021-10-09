@@ -46,4 +46,10 @@ export const en = {
     description: 'Small numerical value or status descriptor for UI elements.',
   },
 
+  // Breadcrumb
+  breadcrumb: {
+    title: 'Breadcrumb',
+    description:"Breadcrumbs are a navigation system used to show a user's location in a site or app.",
+  },
+
 };
