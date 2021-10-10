@@ -3,6 +3,7 @@ import * as Button from '@pages/button/examples';
 import * as Banner from '@pages/banner/examples';
 import * as Badge from '@pages/badge/examples';
 import * as Breadcrumb from '@pages/breadcrumb/examples';
+import * as Checkbox from '@pages/checkbox/examples';
 
 
 const pathExample = {
@@ -119,6 +120,28 @@ const pathExample = {
       heading: 'Separator',
       component: Breadcrumb.BreadcrumbSeparator,
       path: require('!!raw-loader!@pages/breadcrumb/examples/BreadcrumbSeparator').default,
+    }
+  ],
+  checkbox: [
+    {
+      heading: 'Basic',
+      component: Checkbox.CheckboxBasic,
+      path: require('!!raw-loader!@pages/checkbox/examples/CheckboxBasic').default,
+    },
+    {
+      heading: 'Disabled',
+      component: Checkbox.CheckboxDisabled,
+      path: require('!!raw-loader!@pages/checkbox/examples/CheckboxDisabled').default,
+    },
+    {
+      heading: 'Controller',
+      component: Checkbox.CheckboxController,
+      path: require('!!raw-loader!@pages/checkbox/examples/CheckboxController').default,
+    },
+    {
+      heading: 'Size',
+      component: Checkbox.CheckboxSize,
+      path: require('!!raw-loader!@pages/checkbox/examples/CheckboxSize').default,
     }
   ]
 }

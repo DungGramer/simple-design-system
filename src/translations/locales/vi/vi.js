@@ -102,4 +102,16 @@ export const vi = {
   'The separator between Breadcrumb.Item elements.': 'Dấu phân cách giữa các phần tử Breadcrumb.Item.',
   'The content of the Breadcrumb': 'Nội dung của Breadcrumb',
   'Target of hyperlink': 'Đường dẫn liên kết đến trang đó',
+
+  // Checkbox
+  checkbox: {
+    title: 'Checkbox',
+    description: 'Checkbox cho phép người dùng chọn một hoặc nhiều tùy chọn.',
+  },
+  'Id assigned to checkbox': 'Id được gán cho checkbox',
+  'Content of the checkbox': 'Nội dung của checkbox',
+  'The size of the checkbox': 'Kích thước của checkbox',
+  'The checked state of the checkbox': 'Trạng thái được chọn của checkbox',
+  'The function to call when the checkbox is clicked': 'Hàm được gọi khi checkbox được nhấp',
+
 };

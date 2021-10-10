@@ -52,4 +52,10 @@ export const en = {
     description:"Breadcrumbs are a navigation system used to show a user's location in a site or app.",
   },
 
+  // Checkbox
+  checkbox: {
+    title: 'Checkbox',
+    description: 'A checkbox is an input control that allows a user to select one or more options from a number of choices.',
+  },
+
 };

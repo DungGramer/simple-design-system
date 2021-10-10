@@ -5,7 +5,7 @@ const Badge = lazy(() => import('@pages/badge/BadgePage'));
 const Banner = lazy(() => import('@pages/banner/BannerPage'));
 const Breadcrumb = lazy(() => import('@pages/breadcrumb/BreadcrumbPage'));
 const Button = lazy(() => import('@pages/button/ButtonPage'));
-const Checkbox = lazy(() => import('@pages/checkbox/Checkbox'));
+const Checkbox = lazy(() => import('@pages/checkbox/CheckboxPage'));
 const CodePage = lazy(() => import('@pages/code-page/CodePage'));
 const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenu'));
 const Flag = lazy(() => import('@pages/flag/Flag'));
