@@ -6,9 +6,8 @@ const Banner = lazy(() => import('@pages/banner/BannerPage'));
 const Breadcrumb = lazy(() => import('@pages/breadcrumb/BreadcrumbPage'));
 const Button = lazy(() => import('@pages/button/ButtonPage'));
 const Checkbox = lazy(() => import('@pages/checkbox/CheckboxPage'));
-const CodePage = lazy(() => import('@pages/code-page/CodePage'));
 const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenu'));
-const Flag = lazy(() => import('@pages/flag/Flag'));
+const Flag = lazy(() => import('@pages/flag/FlagPage'));
 const ImagePage = lazy(() => import('@pages/image-page/ImagePage'));
 const InlineMessage = lazy(() => import('@pages/inline-message/InlineMessage'));
 const Lozenge = lazy(() => import('@pages/lozenge/Lozenge'));
@@ -63,11 +62,6 @@ const components = [
     title: 'Checkbox',
     path: `${basePath}/checkbox`,
     component: Checkbox,
-  },
-  {
-    title: 'Code',
-    path: `${basePath}/code`,
-    component: CodePage,
   },
   {
     title: 'Dropdown menu',

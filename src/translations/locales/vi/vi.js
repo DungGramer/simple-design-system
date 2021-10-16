@@ -114,4 +114,14 @@ export const vi = {
   'The checked state of the checkbox': 'Trạng thái được chọn của checkbox',
   'The function to call when the checkbox is clicked': 'Hàm được gọi khi checkbox được nhấp',
 
+  // Flag
+  flag: {
+    title: 'Flag',
+    description: 'Flag được sử dụng để xác nhận, cảnh báo và xác nhận yêu cầu tương tác người dùng tối thiểu.',
+  },
+  'The bold text shown at the top of the flag': 'Văn bản in đậm được hiển thị ở đầu của flag',
+  'The secondary content shown below the flag title': 'Nội dung phụ được hiển thị dưới tiêu đề của flag',
+  'Array of clickable actions to be shown at the bottom of the flag': 'Mảng các hành động clickable được hiển thị dưới của flag',
+  'Visual style to be used for the flag': 'Kiểu hiển thị để sử dụng cho flag',
+  'array attributes of <a> tag': 'mảng thuộc tính của thẻ <a>',
 };

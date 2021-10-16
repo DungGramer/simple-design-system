@@ -1,0 +1,92 @@
+$colors: (
+  'warning': (
+    'background': var(--warning-color),
+    'color': var(--font-color),
+  ),
+  success: (
+    'background': var(--success-color),
+    'color': var(--font-color-invert),
+  ),
+  error: (
+    'background': var(--error-color),
+    'color': var(--font-color-invert),
+  ),
+);
+
+.flag {
+  display: inline-flex;
+  align-items: center;
+  width: 384px;
+  box-shadow: var(--shadow-l);
+  padding: 1rem 24px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+
+  @each $appearance, $value in $colors {
+    &.#{$appearance} {
+      background-color: map-get($value, 'background');
+      color: map-get($value, 'color');
+
+      a {
+        color: map-get($value, 'color');
+        padding: 4px 8px;
+        position: relative;
+
+        &[href]:hover {
+          color: unset;
+
+        }
+
+        &::after {
+          @include position-abs(0);
+          background-color: currentColor;
+          opacity: 0.1;
+          border-radius: 4px;
+        }
+        &:active::after {
+          opacity: 0.2;
+        }
+      }
+    }
+  }
+}
+
+.flag-content {
+  padding-left: 16px;
+
+  .flag-title {
+    // white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 600;
+  }
+
+  .flag-description {
+    overflow-wrap: break-word;
+    overflow: auto;
+    max-height: 100px;
+    margin: 0;
+  }
+}
+
+.flag-action {
+  padding-top: 0.5rem;
+
+  a {
+    color: var(--primary-500);
+    font-weight: 500;
+    cursor: pointer;
+
+    &[href]:hover {
+      color: var(--primary-600);
+      text-decoration: underline;
+    }
+
+    & + a {
+      margin-left: 1rem;
+    }
+  }
+}
+
+.flag-icon {
+  align-self: start;
+}

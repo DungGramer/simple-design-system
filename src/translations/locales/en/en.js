@@ -58,4 +58,10 @@ export const en = {
     description: 'A checkbox is an input control that allows a user to select one or more options from a number of choices.',
   },
 
+  // Flag
+  flag: {
+    title: 'Flag',
+    description: 'A flag is used for confirmations, alerts, and acknowledgments that require minimal user interaction.',
+  }
+
 };

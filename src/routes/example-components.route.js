@@ -4,6 +4,7 @@ import * as Banner from '@pages/banner/examples';
 import * as Badge from '@pages/badge/examples';
 import * as Breadcrumb from '@pages/breadcrumb/examples';
 import * as Checkbox from '@pages/checkbox/examples';
+import * as Flag from '@pages/flag/examples';
 
 
 const pathExample = {
@@ -142,6 +143,23 @@ const pathExample = {
       heading: 'Size',
       component: Checkbox.CheckboxSize,
       path: require('!!raw-loader!@pages/checkbox/examples/CheckboxSize').default,
+    }
+  ],
+  flag: [
+    {
+      heading: 'Basic',
+      component: Flag.FlagBasic,
+      path: require('!!raw-loader!@pages/flag/examples/FlagBasic').default,
+    },
+    {
+      heading: 'Appearance',
+      component: Flag.FlagAppearance,
+      path: require('!!raw-loader!@pages/flag/examples/FlagAppearance').default,
+    },
+    {
+      heading: 'Actions',
+      component: Flag.FlagActions,
+      path: require('!!raw-loader!@pages/flag/examples/FlagActions').default,
     }
   ]
 }
