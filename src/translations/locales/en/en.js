@@ -62,6 +62,18 @@ export const en = {
   flag: {
     title: 'Flag',
     description: 'A flag is used for confirmations, alerts, and acknowledgments that require minimal user interaction.',
-  }
+  },
+
+  // Image
+  image: {
+    title: 'Image',
+    description: 'Image is used to display image.',
+  },
+
+  // Lozenge
+  lozenge: {
+    title: 'Lozenge',
+    description: "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
+  },
 
 };

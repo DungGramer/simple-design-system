@@ -57,11 +57,7 @@ export const API = () => {
 	return (
 		<div>
 			<h3>{t('API')}</h3>
-			<p>
-				{t(
-					'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, consectetur'
-				)}
-			</p>
+			<h4>{t('<"${fileName}" />')}</h4>
 
 			<TableAPI data={data} />
 		</div>

@@ -1,6 +1,6 @@
 import splitUnit from '~/constants/splitUnit';
 
-export function picsumURL(width = 48, height = 48, id = Math.floor(Math.random() * 100)) {
+export const picsumURL = (width = 48, height = 48, id = Math.floor(Math.random() * 100)) => {
   return 'http://picsum.photos/' + width + '/' + (height || width) + (id && '?' + id );
 }
 

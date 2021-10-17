@@ -26,9 +26,9 @@ export const vi = {
   Usage: 'Sử dụng',
 
   dropdown: {
-    title: 'Menu thả xuống',
+    title: 'Dropdown',
     description:
-      'Menu thả xuống hiển thị danh sách các hành động hoặc tùy chọn cho người dùng.',
+      'Dropdown hiển thị danh sách các hành động hoặc tùy chọn cho người dùng.',
   },
 
   // Avatar
@@ -124,4 +124,27 @@ export const vi = {
   'Array of clickable actions to be shown at the bottom of the flag': 'Mảng các hành động clickable được hiển thị dưới của flag',
   'Visual style to be used for the flag': 'Kiểu hiển thị để sử dụng cho flag',
   'array attributes of <a> tag': 'mảng thuộc tính của thẻ <a>',
+
+  // Image
+  image: {
+    title: 'Image',
+    description: 'Image được sử dụng để hiển thị hình ảnh.',
+  },
+  'The source of the image.': 'Nguồn của hình ảnh.',
+  'The alternative text of the image.': 'Nội dung mô tả của hình ảnh.',
+  'Whether the image should be lazy loaded.': 'Hình ảnh có thể được tải nhanh hay không.',
+  'The type of the image.': 'Loại của hình ảnh.',
+  'The decoding of the image.': 'Giải mã của hình ảnh.',
+  'The source set of the image.': 'Nguồn của hình ảnh.',
+  'The aspect ratio of the image.': 'Tỷ lệ khung hình ảnh.',
+
+  // Lozenge
+  lozenge: {
+    title: 'Lozenge',
+    description: 'Một lozenge là một chỉ báo trực quan được sử dụng để làm nổi bật trạng thái của một mục để nhận dạng nhanh.',
+  },
+  'Elements to be rendered inside the lozenge': 'Các phần tử được hiển thị trong lozenge',
+  'The appearance of the lozenge': 'Kiểu hiển thị của lozenge',
+  'Determines whether to apply the bold style or not': 'Xác định có phải áp dụng kiểu in đậm hay không',
+  'max-width of lozenge container': 'chiều rộng tối đa của lozenge',
 };

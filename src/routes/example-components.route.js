@@ -5,6 +5,8 @@ import * as Badge from '@pages/badge/examples';
 import * as Breadcrumb from '@pages/breadcrumb/examples';
 import * as Checkbox from '@pages/checkbox/examples';
 import * as Flag from '@pages/flag/examples';
+import * as Image from '@pages/image/examples';
+import * as Lozenge from '@pages/lozenge/examples';
 
 
 const pathExample = {
@@ -160,6 +162,40 @@ const pathExample = {
       heading: 'Actions',
       component: Flag.FlagActions,
       path: require('!!raw-loader!@pages/flag/examples/FlagActions').default,
+    },
+  ],
+  image: [
+    {
+      heading: 'Basic',
+      component: Image.ImageBasic,
+      path: require('!!raw-loader!@pages/image/examples/ImageBasic').default,
+    },
+    {
+      heading: 'Lazy Loading',
+      component: Image.ImageLazy,
+      path: require('!!raw-loader!@pages/image/examples/ImageLazy').default,
+    },
+    {
+      heading: 'Srcset',
+      component: Image.ImageSrcset,
+      path: require('!!raw-loader!@pages/image/examples/ImageSrcset').default,
+    }
+  ],
+  lozenge: [
+    {
+      heading: 'Basic',
+      component: Lozenge.LozengeBasic,
+      path: require('!!raw-loader!@pages/lozenge/examples/LozengeBasic').default,
+    },
+    {
+      heading: 'Appearance',
+      component: Lozenge.LozengeAppearance,
+      path: require('!!raw-loader!@pages/lozenge/examples/LozengeAppearance').default,
+    },
+    {
+      heading: 'Max width',
+      component: Lozenge.LozengeMaxWidth,
+      path: require('!!raw-loader!@pages/lozenge/examples/LozengeMaxWidth').default,
     }
   ]
 }

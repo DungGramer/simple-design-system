@@ -7,7 +7,7 @@ import {
   splitAspectRatio,
 } from '~/constants/getAspectRatio';
 
-const convertTypeImage = type => {
+const convertTypeImage = (type) => {
   let imageType = type;
   switch (type) {
     case 'avif':
@@ -98,7 +98,7 @@ const LazyImage = () => {
           width,
           height,
           aspectRatio,
-          ref,
+          ref
         );
         setNewWidth(newWidth);
         setNewHeight(newHeight);
@@ -131,7 +131,7 @@ const LazyImage = () => {
 
 const StaticImage = () => {
   const { src, alt, width, height, type, decoding, srcset, lazy, aspectRatio } =
-    useContext(ImageContext);
+  useContext(ImageContext);
 
   return (
     <img
@@ -209,13 +209,29 @@ Image.propTypes = {
   lazy: PropTypes.bool,
   width: PropTypes.number,
   height: PropTypes.number,
-  type: PropTypes.string,
+  type: PropTypes.oneOf([
+    'avif',
+    'apng',
+    'bmp',
+    'gif',
+    'jpeg',
+    'jpg',
+    'jfif',
+    'pjpeg',
+    'pjp',
+    'png',
+    'svg',
+    'tiff',
+    'tif',
+    'ico',
+    'cur',
+    'bmp',
+  ]),
   decoding: PropTypes.oneOf(['sync', 'async']),
   srcset: PropTypes.string,
 };
 
 Image.defaultProps = {
-  alt: '',
   type: 'jpg',
 };
 
