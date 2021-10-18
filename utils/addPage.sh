@@ -34,6 +34,7 @@ if [ -d "src/components/pages/$1" ]; then
   warn "Directory already exists"
   cd "src/components/pages/$1"
 else
+  code src/routes/example-components.route.js
   cd src/components/pages/$path
   mkdir $lowerFolder
   cd $lowerFolder
@@ -119,5 +120,4 @@ const "${namePage}" = ({}) => {
 
 export default "${namePage}";" > $namePage.jsx
 
-code src/routes/example-components.route.js
 fi

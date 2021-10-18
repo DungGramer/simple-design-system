@@ -76,4 +76,9 @@ export const en = {
     description: "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
   },
 
+  // Modal
+  modal: {
+    title: 'Modal',
+    description: 'A modal dialog displays content that requires user interaction, in a layer above the page.',
+  },
 };

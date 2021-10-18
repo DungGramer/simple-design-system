@@ -147,4 +147,21 @@ export const vi = {
   'The appearance of the lozenge': 'Kiểu hiển thị của lozenge',
   'Determines whether to apply the bold style or not': 'Xác định có phải áp dụng kiểu in đậm hay không',
   'max-width of lozenge container': 'chiều rộng tối đa của lozenge',
+
+  // Modal
+  modal: {
+    title: 'Modal',
+    description: 'Modal hiển thị nội dung yêu cầu tương tác của người dùng, trong một lớp phía trên trang.',
+  },
+  'Whether the modal dialog is visible or not': 'Có hiển thị hộp thoại modal hay không',
+  'Function to close the modal dialog': 'Hàm đóng hộp thoại modal',
+  'Whether the modal dialog can be closed by clicking outside of it': 'Có thể hộp thoại modal được đóng bằng cách nhấp vào ngoài nó',
+  'The content of the modal header': 'Nội dung của tiêu đề hộp thoại modal',
+  'Whether the modal header has a close button': 'Tiêu đề hộp thoại modal có có nút đóng hay không',
+  'The content of the modal body': 'Nội dung của phần thân hộp thoại modal',
+  'The content of the modal footer': 'Nội dung của phần chân hộp thoại modal',
+  'The text of the OK button': 'Văn bản của nút OK',
+  'The text of the Cancel button': 'Văn bản của nút Cancel',
+  'Specify a function that will be called when a user clicks the OK button': 'Xác định một hàm sẽ được gọi khi người dùng nhấp vào nút OK',
+  'Specify a function that will be called when a user clicks mask, close button on top right or Cancel button': 'Xác định một hàm sẽ được gọi khi người dùng nhấp vào mặt nạ, nút đóng ở phía trên bên phải hoặc nút Cancel',
 };

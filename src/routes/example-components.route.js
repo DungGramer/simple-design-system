@@ -7,6 +7,7 @@ import * as Checkbox from '@pages/checkbox/examples';
 import * as Flag from '@pages/flag/examples';
 import * as Image from '@pages/image/examples';
 import * as Lozenge from '@pages/lozenge/examples';
+import * as Modal from '@pages/modal/examples';
 
 
 const pathExample = {
@@ -196,6 +197,18 @@ const pathExample = {
       heading: 'Max width',
       component: Lozenge.LozengeMaxWidth,
       path: require('!!raw-loader!@pages/lozenge/examples/LozengeMaxWidth').default,
+    }
+  ],
+  modal: [
+    {
+      heading: 'Basic',
+      component: Modal.ModalBasic,
+      path: require('!!raw-loader!@pages/modal/examples/ModalBasic').default,
+    },
+    {
+      heading: 'Strict close',
+      component: Modal.ModalStrict,
+      path: require('!!raw-loader!@pages/modal/examples/ModalStrict').default,
     }
   ]
 }

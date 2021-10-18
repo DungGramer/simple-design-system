@@ -11,7 +11,7 @@ const Flag = lazy(() => import('@pages/flag/FlagPage'));
 const ImagePage = lazy(() => import('@pages/image/ImagePage'));
 const InlineMessage = lazy(() => import('@pages/inline-message/InlineMessage'));
 const Lozenge = lazy(() => import('@pages/lozenge/LozengePage'));
-const ModalDialog = lazy(() => import('@pages/modal-dialog/ModalDialog'));
+const ModalDialog = lazy(() => import('@pages/modal/ModalPage'));
 const Pagination = lazy(() => import('@pages/pagination/Pagination'));
 const ProgressIndicator = lazy(() => import('@pages/progress-indicator/ProgressIndicator'));
 const ProgressTracker = lazy(() => import('@pages/progress-tracker/ProgressTracker'));
