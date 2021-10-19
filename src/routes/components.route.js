@@ -12,12 +12,11 @@ const ImagePage = lazy(() => import('@pages/image/ImagePage'));
 const InlineMessage = lazy(() => import('@pages/inline-message/InlineMessage'));
 const Lozenge = lazy(() => import('@pages/lozenge/LozengePage'));
 const ModalDialog = lazy(() => import('@pages/modal/ModalPage'));
-const Pagination = lazy(() => import('@pages/pagination/Pagination'));
+const Pagination = lazy(() => import('@pages/pagination/PaginationPage'));
 const ProgressIndicator = lazy(() => import('@pages/progress-indicator/ProgressIndicator'));
 const ProgressTracker = lazy(() => import('@pages/progress-tracker/ProgressTracker'));
 const Radio = lazy(() => import('@pages/radio/Radio'));
 const Range = lazy(() => import('@pages/range/Range'));
-const SectionMessage = lazy(() => import('@pages/section-message/SectionMessage'));
 const Select = lazy(() => import('@pages/select/Select'));
 const Spinner = lazy(() => import('@pages/spinner/Spinner'));
 const Tabs = lazy(() => import('@pages/tabs/Tabs'));
@@ -117,11 +116,6 @@ const components = [
     title: 'Range',
     path: `${basePath}/range`,
     component: Range,
-  },
-  {
-    title: 'Section Message',
-    path: `${basePath}/section-message`,
-    component: SectionMessage,
   },
   {
     title: 'Select',

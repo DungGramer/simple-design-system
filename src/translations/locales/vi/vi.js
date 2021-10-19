@@ -164,4 +164,13 @@ export const vi = {
   'The text of the Cancel button': 'Văn bản của nút Cancel',
   'Specify a function that will be called when a user clicks the OK button': 'Xác định một hàm sẽ được gọi khi người dùng nhấp vào nút OK',
   'Specify a function that will be called when a user clicks mask, close button on top right or Cancel button': 'Xác định một hàm sẽ được gọi khi người dùng nhấp vào mặt nạ, nút đóng ở phía trên bên phải hoặc nút Cancel',
+
+  // Pagination
+  pagination: {
+    title: 'Pagination',
+    description: 'Pagination cho phép bạn chia lượng lớn nội dung thành các phần nhỏ hơn trên nhiều trang.',
+  },
+  'Total number of data items': 'Tổng số các mục dữ liệu',
+  'Default page size': 'Kích thước trang mặc định',
+  'Default initial page number': 'Số trang mặc định ban đầu',
 };

@@ -8,6 +8,7 @@ import * as Flag from '@pages/flag/examples';
 import * as Image from '@pages/image/examples';
 import * as Lozenge from '@pages/lozenge/examples';
 import * as Modal from '@pages/modal/examples';
+import * as Pagination from '@pages/pagination/examples';
 
 
 const pathExample = {
@@ -209,6 +210,18 @@ const pathExample = {
       heading: 'Strict close',
       component: Modal.ModalStrict,
       path: require('!!raw-loader!@pages/modal/examples/ModalStrict').default,
+    }
+  ],
+  pagination: [
+    {
+      heading: 'Basic',
+      component: Pagination.PaginationBasic,
+      path: require('!!raw-loader!@pages/pagination/examples/PaginationBasic').default,
+    },
+    {
+      heading: 'Default selected index',
+      component: Pagination.PaginationIndex,
+      path: require('!!raw-loader!@pages/pagination/examples/PaginationIndex').default,
     }
   ]
 }

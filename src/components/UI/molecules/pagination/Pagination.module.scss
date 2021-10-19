@@ -1,0 +1,61 @@
+.pagination {
+}
+
+.pageNumber {
+  list-style: none;
+  display: flex;
+
+  > li {
+    min-width: 32px;
+    height: 32px;
+    border: 1px solid #ccc;
+    border-radius: 0.25rem;
+    cursor: pointer;
+
+    vertical-align: middle;
+    text-align: center;
+    user-select: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.active, &:hover {
+      border-color: var(--primary-500);
+      color: var(--primary-500);
+    }
+
+    & + li {
+      margin-left: 0.5rem;
+    }
+
+    &.ellipsis {
+      border-color: transparent;
+      opacity: 0.25;
+      font-family: "Font Awesome 6 Pro";
+
+      &::after {
+        content: '•••';
+      }
+
+      &:hover {
+        opacity: 1;
+        color: var(--primary-500);
+      }
+    }
+
+    a {
+      padding: 0 6px;
+      display: block;
+    }
+  }
+}
+
+.ellipsis:hover.ellipsis {
+  &-next::after {
+    content: '';
+  }
+  &-prev::after {
+    content: '';
+  }
+}

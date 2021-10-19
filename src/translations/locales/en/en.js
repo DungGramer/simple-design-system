@@ -81,4 +81,10 @@ export const en = {
     title: 'Modal',
     description: 'A modal dialog displays content that requires user interaction, in a layer above the page.',
   },
+
+  // Pagination
+  pagination: {
+    title: 'Pagination',
+    description: 'Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.',
+  }
 };
