@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next';
-import TableAPI from '@templates/TableAPI/TableAPI';
+import TableAPI from '@templates/tableAPI/TableAPI';
 import CodeColumn from '@templates/tableAPI/CodeColumn';
 
 export const API = () => {
