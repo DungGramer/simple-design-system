@@ -86,5 +86,11 @@ export const en = {
   pagination: {
     title: 'Pagination',
     description: 'Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.',
-  }
+  },
+
+  // Radio
+  radio: {
+    title: 'Radio',
+    description: 'A radio input allows people to select only one option from a number of choices. Radio is generally displayed in a radio group.',
+  },
 };

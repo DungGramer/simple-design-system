@@ -15,7 +15,7 @@ const ModalDialog = lazy(() => import('@pages/modal/ModalPage'));
 const Pagination = lazy(() => import('@pages/pagination/PaginationPage'));
 const ProgressIndicator = lazy(() => import('@pages/progress-indicator/ProgressIndicator'));
 const ProgressTracker = lazy(() => import('@pages/progress-tracker/ProgressTracker'));
-const Radio = lazy(() => import('@pages/radio/Radio'));
+const Radio = lazy(() => import('@pages/radio/RadioPage'));
 const Range = lazy(() => import('@pages/range/Range'));
 const Select = lazy(() => import('@pages/select/Select'));
 const Spinner = lazy(() => import('@pages/spinner/Spinner'));

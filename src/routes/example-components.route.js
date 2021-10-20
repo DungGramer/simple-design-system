@@ -10,6 +10,7 @@ import * as Image from '@pages/image/examples';
 import * as Lozenge from '@pages/lozenge/examples';
 import * as Modal from '@pages/modal/examples';
 import * as Pagination from '@pages/pagination/examples';
+import * as Radio from '@pages/radio/examples';
 
 
 const pathExample = {
@@ -231,7 +232,34 @@ const pathExample = {
       component: Pagination.PaginationIndex,
       path: require('!!raw-loader!@pages/pagination/examples/PaginationIndex').default,
     }
-  ]
+  ],
+  radio: [
+    {
+      heading: 'Basic',
+      component: Radio.RadioBasic,
+      path: require('!!raw-loader!@pages/radio/examples/RadioBasic').default,
+    },
+    {
+      heading: 'Appearance',
+      component: Radio.RadioAppearance,
+      path: require('!!raw-loader!@pages/radio/examples/RadioAppearance').default,
+    },
+    {
+      heading: 'Disabled',
+      component: Radio.RadioDisabled,
+      path: require('!!raw-loader!@pages/radio/examples/RadioDisabled').default,
+    },
+    {
+      heading: 'Group',
+      component: Radio.RadioGroup,
+      path: require('!!raw-loader!@pages/radio/examples/RadioGroup').default,
+    },
+    {
+      heading: 'Checked',
+      component: Radio.RadioChecked,
+      path: require('!!raw-loader!@pages/radio/examples/RadioChecked').default,
+    }
+  ],
 }
 
 export default pathExample;
