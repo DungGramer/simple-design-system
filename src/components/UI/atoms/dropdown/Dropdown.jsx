@@ -83,7 +83,11 @@ Dropdown.propTypes = {
   onClick: PropTypes.func.isRequired,
   overlay: PropTypes.node.isRequired,
   parentRef: PropTypes.object.isRequired,
-  direction: PropTypes.oneOf(['right']),
+  direction: PropTypes.oneOf(['left', 'right']),
+};
+
+Dropdown.defaultProps = {
+  direction: 'left',
 };
 
 export default Dropdown;

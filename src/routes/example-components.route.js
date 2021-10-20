@@ -4,6 +4,7 @@ import * as Banner from '@pages/banner/examples';
 import * as Badge from '@pages/badge/examples';
 import * as Breadcrumb from '@pages/breadcrumb/examples';
 import * as Checkbox from '@pages/checkbox/examples';
+import * as Dropdown from '@pages/dropdown-menu/examples';
 import * as Flag from '@pages/flag/examples';
 import * as Image from '@pages/image/examples';
 import * as Lozenge from '@pages/lozenge/examples';
@@ -148,6 +149,13 @@ const pathExample = {
       component: Checkbox.CheckboxSize,
       path: require('!!raw-loader!@pages/checkbox/examples/CheckboxSize').default,
     }
+  ],
+  dropdown: [
+    {
+      heading: 'Basic',
+      component: Dropdown.DropdownBasic,
+      path: require('!!raw-loader!@pages/dropdown-menu/examples/DropdownBasic').default,
+    },
   ],
   flag: [
     {
