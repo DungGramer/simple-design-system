@@ -1,10 +1,13 @@
 import './Spinner.module';
 import PropTypes from 'prop-types';
+import Spinner from '@molecules/spinner/Spinner';
 
-function Spinner(props) {
-  return <div>Spinner</div>;
+function SpinnerPage(props) {
+  return <div>
+    <Spinner />
+  </div>;
 }
 
-Spinner.propTypes = {};
+SpinnerPage.propTypes = {};
 
-export default Spinner;
+export default SpinnerPage;

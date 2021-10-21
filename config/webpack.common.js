@@ -47,18 +47,18 @@ module.exports = {
           name: formatFileName,
         },
       },
-      {
-        test: regex.font,
-        // type: 'asset/resource',
-        loader: 'url-loader',
-        options: {
-          fallback: 'file-loader',
-          limit: sizeLimit,
-          // outputPath: 'assets/fonts',
-          name: 'assets/fonts/' + formatFileName,
-          esModule: false,
-        },
-      },
+      // {
+      //   test: regex.font,
+      //   type: 'asset/resource',
+      //   loader: 'url-loader',
+      //   options: {
+      //     fallback: 'file-loader',
+      //     limit: sizeLimit,
+      //     outputPath: 'assets/fonts',
+      //     name: 'assets/fonts/' + formatFileName,
+      //     esModule: false,
+      //   },
+      // },
       {
         test: regex.svg,
         // type: 'asset/inline', // Load svg inside HTML

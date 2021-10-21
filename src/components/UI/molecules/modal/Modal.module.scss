@@ -79,7 +79,7 @@
   &-template {
     display: flex;
     @include gap(16px);
-    justify-content: end;
+    justify-content: flex-end;
 
     @supports (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
       flex-direction: row-reverse;

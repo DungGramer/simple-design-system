@@ -1,10 +1,13 @@
 import './Range.module';
 import PropTypes from 'prop-types';
+import Range from '@molecules/range/Range';
 
-function Range(props) {
-  return <div>Range</div>;
+function RangePage(props) {
+  return <div>
+    <Range />
+  </div>;
 }
 
-Range.propTypes = {};
+RangePage.propTypes = {};
 
-export default Range;
+export default RangePage;
