@@ -7,6 +7,7 @@ import * as Checkbox from '@pages/checkbox/examples';
 import * as Divider from '@pages/divider/examples';
 import * as Dropdown from '@pages/dropdown-menu/examples';
 import * as Flag from '@pages/flag/examples';
+import * as Icon from '@pages/icon/examples';
 import * as Image from '@pages/image/examples';
 import * as Lozenge from '@pages/lozenge/examples';
 import * as Modal from '@pages/modal/examples';
@@ -199,6 +200,28 @@ const pathExample = {
       component: Flag.FlagActions,
       path: require('!!raw-loader!@pages/flag/examples/FlagActions').default,
     },
+  ],
+  icon: [
+    {
+      heading: 'Basic',
+      component: Icon.IconBasic,
+      path: require('!!raw-loader!@pages/icon/examples/IconBasic').default,
+    },
+    {
+      heading: 'Flip',
+      component: Icon.IconFlip,
+      path: require('!!raw-loader!@pages/icon/examples/IconFlip').default,
+    },
+    {
+      heading: 'Rotate',
+      component: Icon.IconRotate,
+      path: require('!!raw-loader!@pages/icon/examples/IconRotate').default,
+    },
+    {
+      heading: 'Animation',
+      component: Icon.IconAnimation,
+      path: require('!!raw-loader!@pages/icon/examples/IconAnimation').default,
+    }
   ],
   image: [
     {

@@ -9,7 +9,8 @@ const Checkbox = lazy(() => import('@pages/checkbox/CheckboxPage'));
 const Divider = lazy(() => import('@pages/divider/DividerPage'));
 const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenuPage'));
 const Flag = lazy(() => import('@pages/flag/FlagPage'));
-const ImagePage = lazy(() => import('@pages/image/ImagePage'));
+const Icon = lazy(() => import('@pages/icon/IconPage'));
+const Image = lazy(() => import('@pages/image/ImagePage'));
 // const InlineMessage = lazy(() => import('@pages/inline-message/InlineMessage'));
 const Lozenge = lazy(() => import('@pages/lozenge/LozengePage'));
 const ModalDialog = lazy(() => import('@pages/modal/ModalPage'));
@@ -25,7 +26,7 @@ const Tabs = lazy(() => import('@pages/tabs/TabsPage'));
 const Table = lazy(() => import('@pages/table/TablePage'));
 const TextArea = lazy(() => import('@pages/text-area/TextAreaPage'));
 const TextField = lazy(() => import('@pages/text-field/TextFieldPage'));
-const TogglePage = lazy(() => import('@pages/toggle/TogglePage'));
+const Toggle = lazy(() => import('@pages/toggle/TogglePage'));
 // const Tooltip = lazy(() => import('@pages/tooltip/Tooltip'));
 
 import baseURL from './base.route';
@@ -79,9 +80,14 @@ const components = [
     component: Flag,
   },
   {
+    title: 'Icon',
+    path: `${basePath}/icon`,
+    component: Icon,
+  },
+  {
     title: 'Image',
     path: `${basePath}/image`,
-    component: ImagePage,
+    component: Image,
   },
   // {
   //   title: 'Inline Message',
@@ -161,7 +167,7 @@ const components = [
   {
     title: 'Toggle',
     path: `${basePath}/toggle`,
-    component: TogglePage,
+    component: Toggle,
   },
   // {
   //   title: 'Tooltip',

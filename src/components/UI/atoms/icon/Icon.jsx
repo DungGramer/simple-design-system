@@ -46,6 +46,7 @@ Icon.propTypes = {
   rotate: PropTypes.oneOf(['90', '180', '270']),
   flip: PropTypes.oneOf(['horizontal', 'vertical', 'both']),
   animation: PropTypes.oneOf(['spin', 'pulse']),
+  type: PropTypes.oneOf(['info', 'success', 'warning', 'error']),
 };
 
 Icon.Type = IconType;

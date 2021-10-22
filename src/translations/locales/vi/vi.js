@@ -146,6 +146,18 @@ export const vi = {
   'Visual style to be used for the flag': 'Kiểu hiển thị để sử dụng cho flag',
   'array attributes of <a> tag': 'mảng thuộc tính của thẻ <a>',
 
+  // Icon
+  icon: {
+    title: 'Icon',
+    description: 'Icon là sự thể hiện trực quan của một tệp, ứng dụng hoặc hành động.',
+  },
+  'The name of the icon': 'Tên của icon',
+  'The size of the icon': 'Kích thước của icon',
+  'The color of the icon': 'Màu sắc của icon',
+  'The rotate of the icon': 'Xoay icon',
+  'The flip of the icon': 'Lật icon',
+  'The animation of the icon': 'Hiệu ứng của icon',
+
   // Image
   image: {
     title: 'Image',

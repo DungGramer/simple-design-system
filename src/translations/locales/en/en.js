@@ -70,6 +70,12 @@ export const en = {
     description: 'A flag is used for confirmations, alerts, and acknowledgments that require minimal user interaction.',
   },
 
+  // Icon
+  icon: {
+    title: 'Icon',
+    description: 'An icon is a visual representation of a file, application, or action.',
+  },
+
   // Image
   image: {
     title: 'Image',
