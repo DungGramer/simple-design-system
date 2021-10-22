@@ -11,6 +11,7 @@ import * as Lozenge from '@pages/lozenge/examples';
 import * as Modal from '@pages/modal/examples';
 import * as Pagination from '@pages/pagination/examples';
 import * as Radio from '@pages/radio/examples';
+import * as Range from '@pages/range/examples';
 
 
 const pathExample = {
@@ -260,6 +261,13 @@ const pathExample = {
       path: require('!!raw-loader!@pages/radio/examples/RadioChecked').default,
     }
   ],
+  range: [
+    {
+      heading: 'Basic',
+      component: Range.RangeBasic,
+      path: require('!!raw-loader!@pages/range/examples/RangeBasic').default,
+    }
+  ]
 }
 
 export default pathExample;

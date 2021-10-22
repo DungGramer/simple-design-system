@@ -209,4 +209,16 @@ export const vi = {
   'Should be disabled when the page loads': 'Có được vô hiệu khi trang tải lên',
   'Called when the radio button is clicked': 'Được gọi khi nút radio được nhấp',
   'Specifies the appearance of the radio button.': 'Xác định kiểu hiển thị của nút radio.',
+
+  // Range
+  range: {
+    title: 'Range',
+    description: 'Range cho phép người dùng chọn một giá trị gần đúng trên một thanh trượt'
+  },
+  'Sets the minimum value of the range.': 'Thiết lập giá trị tối thiểu của range',
+  'Sets the maximum value of the range.': 'Thiết lập giá trị tối đa của range',
+  'Sets the step value of the range.': 'Thiết lập giá trị bước của range',
+  'Sets the default value if range is not set.': 'Thiết lập giá trị mặc định nếu range không được thiết lập',
+  'Called when the range value changes.': 'Được gọi khi giá trị range thay đổi',
+  'Disables the range.': 'Vô hiệu range',
 };

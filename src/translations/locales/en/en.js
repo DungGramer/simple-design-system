@@ -93,4 +93,10 @@ export const en = {
     title: 'Radio',
     description: 'A radio input allows people to select only one option from a number of choices. Radio is generally displayed in a radio group.',
   },
+
+  // Range
+  range: {
+    title: 'Range',
+    description: 'A range lets users choose an approximate value on a slider.',
+  },
 };
