@@ -221,4 +221,13 @@ export const vi = {
   'Sets the default value if range is not set.': 'Thiết lập giá trị mặc định nếu range không được thiết lập',
   'Called when the range value changes.': 'Được gọi khi giá trị range thay đổi',
   'Disables the range.': 'Vô hiệu range',
+
+  // Tabs
+  tabs: {
+    title: 'Tabs',
+    description: 'Các tab được sử dụng để sắp xếp nội dung bằng cách nhóm các thông tin tương tự trên cùng một trang.'
+  },
+  'The children elements of the Tabs.': 'Các phần tử con của Tabs',
+  'The title of the Tabs.': 'Tiêu đề của Tabs',
+  'The default tab to be selected.': 'Tab mặc định được chọn',
 };

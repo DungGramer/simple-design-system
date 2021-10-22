@@ -99,4 +99,10 @@ export const en = {
     title: 'Range',
     description: 'A range lets users choose an approximate value on a slider.',
   },
+
+  // Tabs
+  tabs: {
+    title: 'Tabs',
+    description: 'Tabs are used to organize content by grouping similar information on the same page.',
+  }
 };

@@ -9,17 +9,17 @@ const Checkbox = lazy(() => import('@pages/checkbox/CheckboxPage'));
 const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenuPage'));
 const Flag = lazy(() => import('@pages/flag/FlagPage'));
 const ImagePage = lazy(() => import('@pages/image/ImagePage'));
-const InlineMessage = lazy(() => import('@pages/inline-message/InlineMessage'));
+// const InlineMessage = lazy(() => import('@pages/inline-message/InlineMessage'));
 const Lozenge = lazy(() => import('@pages/lozenge/LozengePage'));
 const ModalDialog = lazy(() => import('@pages/modal/ModalPage'));
 const Pagination = lazy(() => import('@pages/pagination/PaginationPage'));
-const ProgressIndicator = lazy(() => import('@pages/progress-indicator/ProgressIndicator'));
-const ProgressTracker = lazy(() => import('@pages/progress-tracker/ProgressTracker'));
+// const ProgressIndicator = lazy(() => import('@pages/progress-indicator/ProgressIndicator'));
+// const ProgressTracker = lazy(() => import('@pages/progress-tracker/ProgressTracker'));
 const Radio = lazy(() => import('@pages/radio/RadioPage'));
 const Range = lazy(() => import('@pages/range/RangePage'));
-const Select = lazy(() => import('@pages/select/Select'));
+// const Select = lazy(() => import('@pages/select/Select'));
 const Spinner = lazy(() => import('@pages/spinner/Spinner'));
-const Tabs = lazy(() => import('@pages/tabs/Tabs'));
+const Tabs = lazy(() => import('@pages/tabs/TabsPage'));
 const Tag = lazy(() => import('@pages/tag/Tag'));
 const Table = lazy(() => import('@pages/table-page/TablePage'));
 const TextArea = lazy(() => import('@pages/text-area/TextArea'));
@@ -77,11 +77,11 @@ const components = [
     path: `${basePath}/image`,
     component: ImagePage,
   },
-  {
-    title: 'Inline Message',
-    path: `${basePath}/inline-message`,
-    component: InlineMessage,
-  },
+  // {
+  //   title: 'Inline Message',
+  //   path: `${basePath}/inline-message`,
+  //   component: InlineMessage,
+  // },
   {
     title: 'Lozenge',
     path: `${basePath}/lozenge`,
@@ -97,16 +97,16 @@ const components = [
     path: `${basePath}/pagination`,
     component: Pagination,
   },
-  {
-    title: 'Progress indicator',
-    path: `${basePath}/progress-indicator`,
-    component: ProgressIndicator,
-  },
-  {
-    title: 'Progress tracker',
-    path: `${basePath}/progress-tracker`,
-    component: ProgressTracker,
-  },
+  // {
+  //   title: 'Progress indicator',
+  //   path: `${basePath}/progress-indicator`,
+  //   component: ProgressIndicator,
+  // },
+  // {
+  //   title: 'Progress tracker',
+  //   path: `${basePath}/progress-tracker`,
+  //   component: ProgressTracker,
+  // },
   {
     title: 'Radio',
     path: `${basePath}/radio`,
@@ -117,11 +117,11 @@ const components = [
     path: `${basePath}/range`,
     component: Range,
   },
-  {
-    title: 'Select',
-    path: `${basePath}/select`,
-    component: Select,
-  },
+  // {
+  //   title: 'Select',
+  //   path: `${basePath}/select`,
+  //   component: Select,
+  // },
   {
     title: 'Spinner',
     path: `${basePath}/spinner`,

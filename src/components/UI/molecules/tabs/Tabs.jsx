@@ -10,8 +10,8 @@ import boxModel from '~/constants/boxModel';
  * @param {object} children
  * @param {array} title
  */
-function Tabs({ children, title, showAll = false }) {
-  const [activeTab, setActiveTab] = useState(0);
+function Tabs({ children, title, defaultTab, showAll }) {
+  const [activeTab, setActiveTab] = useState(defaultTab);
   const [widthTab, setWidthTab] = useState(0);
   const [locationTab, setLocationTab] = useState(0);
 
@@ -76,5 +76,9 @@ Tabs.propTypes = {
   children: PropTypes.node.isRequired,
   title: PropTypes.array.isRequired,
 };
+
+Tabs.defaultProps = {
+  defaultTab: 0,
+}
 
 export default Tabs;
