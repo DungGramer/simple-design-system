@@ -261,4 +261,17 @@ export const vi = {
   'Sets the maximum height of the textarea.': 'Thiết lập chiều cao tối đa của vùng văn bản',
   'The default value of the textarea': 'Giá trị mặc định của vùng văn bản',
   'Enables native spell check on the textarea element.': 'Cho phép kiểm tra chính tả trên phần tử văn bản của textarea',
+
+  // TextField
+  textField: {
+    title: 'Text field',
+    description: 'Text field là đầu vào cho phép người dùng viết hoặc chỉnh sửa văn bản.'
+  },
+  'Name of the input element.': 'Tên của phần tử đầu vào',
+  'Placeholder text to display in the text field whenever it is empty.': 'Văn bản chứa để hiển thị trong trường văn bản khi trống',
+  'Sets maximum width of input.': 'Thiết lập chiều rộng tối đa của đầu vào',
+  'Handler called when the inputs value changes.': 'Handler được gọi khi giá trị đầu vào thay đổi',
+  'Sets maximum length of input.': 'Thiết lập chiều dài tối đa của đầu vào',
+  'Sets the field as to appear disabled, users will not be able to interact with the text field.': 'Thiết lập trường như đang ẩn, người dùng sẽ không thể thao tác với trường văn bản',
+
 };

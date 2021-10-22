@@ -124,4 +124,10 @@ export const en = {
     description: 'A text area lets users enter long form text which spans over multiple lines.',
   },
 
+  // TextField
+  textField: {
+    title: 'Text field',
+    description: 'A text field is an input that allows a user to write or edit text.',
+  },
+
 };

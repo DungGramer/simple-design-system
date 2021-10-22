@@ -16,6 +16,7 @@ import * as Tabs from '@pages/tabs/examples';
 import * as Table from '@pages/table/examples';
 import * as Spinner from '@pages/spinner/examples';
 import * as TextArea from '@pages/text-area/examples';
+import * as TextField from '@pages/text-field/examples';
 
 
 const pathExample = {
@@ -313,6 +314,18 @@ const pathExample = {
       heading: 'Resize',
       component: TextArea.TextAreaResize,
       path: require('!!raw-loader!@pages/text-area/examples/TextAreaResize').default,
+    }
+  ],
+  textField: [
+    {
+      heading: 'Basic',
+      component: TextField.TextFieldBasic,
+      path: require('!!raw-loader!@pages/text-field/examples/TextFieldBasic').default,
+    },
+    {
+      heading: 'Max length',
+      component: TextField.TextFieldMaxLength,
+      path: require('!!raw-loader!@pages/text-field/examples/TextFieldMaxLength').default,
     }
   ]
 }

@@ -23,7 +23,7 @@ const Tabs = lazy(() => import('@pages/tabs/TabsPage'));
 // const Tag = lazy(() => import('@pages/tag/Tag'));
 const Table = lazy(() => import('@pages/table/TablePage'));
 const TextArea = lazy(() => import('@pages/text-area/TextAreaPage'));
-const TextField = lazy(() => import('@pages/text-field/TextField'));
+const TextField = lazy(() => import('@pages/text-field/TextFieldPage'));
 const TogglePage = lazy(() => import('@pages/toggle-page/TogglePage'));
 const Tooltip = lazy(() => import('@pages/tooltip/Tooltip'));
 
