@@ -111,4 +111,10 @@ export const en = {
     title: 'Table',
     description: 'A table is a set of data arranged in rows and columns.',
   },
+
+  // Spinner
+  spinner: {
+    title: 'Spinner',
+    description: 'A spinner is an animated spinning icon that lets users know content is being loaded.',
+  }
 };

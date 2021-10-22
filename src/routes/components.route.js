@@ -18,7 +18,7 @@ const Pagination = lazy(() => import('@pages/pagination/PaginationPage'));
 const Radio = lazy(() => import('@pages/radio/RadioPage'));
 const Range = lazy(() => import('@pages/range/RangePage'));
 // const Select = lazy(() => import('@pages/select/Select'));
-const Spinner = lazy(() => import('@pages/spinner/Spinner'));
+const Spinner = lazy(() => import('@pages/spinner/SpinnerPage'));
 const Tabs = lazy(() => import('@pages/tabs/TabsPage'));
 const Tag = lazy(() => import('@pages/tag/Tag'));
 const Table = lazy(() => import('@pages/table/TablePage'));

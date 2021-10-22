@@ -241,4 +241,11 @@ export const vi = {
   'Elements to be rendered inside the Column': 'Các phần tử được hiển thị trong Column',
   'Header of the Column': 'Tiêu đề của Column',
   'Key of the data table': 'Key của bảng dữ liệu',
+
+  // Spinner
+  spinner: {
+    title: 'Spinner',
+    description: 'Spinner là một biểu tượng quay động cho phép người dùng biết nội dung đang được tải.'
+  },
+  'Size of the spinner.': 'Kích thước của spinner',
 };

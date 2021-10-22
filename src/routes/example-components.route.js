@@ -14,6 +14,7 @@ import * as Radio from '@pages/radio/examples';
 import * as Range from '@pages/range/examples';
 import * as Tabs from '@pages/tabs/examples';
 import * as Table from '@pages/table/examples';
+import * as Spinner from '@pages/spinner/examples';
 
 
 const pathExample = {
@@ -288,6 +289,18 @@ const pathExample = {
       component: Table.TableBasic,
       path: require('!!raw-loader!@pages/table/examples/TableBasic').default,
     },
+  ],
+  spinner: [
+    {
+      heading: 'Basic',
+      component: Spinner.SpinnerBasic,
+      path: require('!!raw-loader!@pages/spinner/examples/SpinnerBasic').default,
+    },
+    {
+      heading: 'Size',
+      component: Spinner.SpinnerSize,
+      path: require('!!raw-loader!@pages/spinner/examples/SpinnerSize').default,
+    }
   ]
 }
 
