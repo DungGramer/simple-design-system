@@ -104,5 +104,11 @@ export const en = {
   tabs: {
     title: 'Tabs',
     description: 'Tabs are used to organize content by grouping similar information on the same page.',
-  }
+  },
+
+  // Table
+  table: {
+    title: 'Table',
+    description: 'A table is a set of data arranged in rows and columns.',
+  },
 };

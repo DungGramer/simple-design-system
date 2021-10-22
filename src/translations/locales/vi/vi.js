@@ -230,4 +230,15 @@ export const vi = {
   'The children elements of the Tabs.': 'Các phần tử con của Tabs',
   'The title of the Tabs.': 'Tiêu đề của Tabs',
   'The default tab to be selected.': 'Tab mặc định được chọn',
+
+  // Table
+  table: {
+    title: 'Table',
+    description: 'Table là một tập hợp dữ liệu được sắp xếp theo hàng và cột.'
+  },
+  'Elements to be rendered inside the Table': 'Các phần tử được hiển thị trong Table',
+  'Data to be rendered inside the Table': 'Dữ liệu được hiển thị trong Table',
+  'Elements to be rendered inside the Column': 'Các phần tử được hiển thị trong Column',
+  'Header of the Column': 'Tiêu đề của Column',
+  'Key of the data table': 'Key của bảng dữ liệu',
 };

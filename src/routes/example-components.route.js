@@ -13,6 +13,7 @@ import * as Pagination from '@pages/pagination/examples';
 import * as Radio from '@pages/radio/examples';
 import * as Range from '@pages/range/examples';
 import * as Tabs from '@pages/tabs/examples';
+import * as Table from '@pages/table/examples';
 
 
 const pathExample = {
@@ -280,6 +281,13 @@ const pathExample = {
       component: Tabs.TabsControlled,
       path: require('!!raw-loader!@pages/tabs/examples/TabsControlled').default,
     }
+  ],
+  table: [
+    {
+      heading: 'Basic',
+      component: Table.TableBasic,
+      path: require('!!raw-loader!@pages/table/examples/TableBasic').default,
+    },
   ]
 }
 

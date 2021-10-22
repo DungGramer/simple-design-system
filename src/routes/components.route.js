@@ -21,7 +21,7 @@ const Range = lazy(() => import('@pages/range/RangePage'));
 const Spinner = lazy(() => import('@pages/spinner/Spinner'));
 const Tabs = lazy(() => import('@pages/tabs/TabsPage'));
 const Tag = lazy(() => import('@pages/tag/Tag'));
-const Table = lazy(() => import('@pages/table-page/TablePage'));
+const Table = lazy(() => import('@pages/table/TablePage'));
 const TextArea = lazy(() => import('@pages/text-area/TextArea'));
 const TextField = lazy(() => import('@pages/text-field/TextField'));
 const TogglePage = lazy(() => import('@pages/toggle-page/TogglePage'));
