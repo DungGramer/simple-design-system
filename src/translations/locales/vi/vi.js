@@ -248,4 +248,17 @@ export const vi = {
     description: 'Spinner là một biểu tượng quay động cho phép người dùng biết nội dung đang được tải.'
   },
   'Size of the spinner.': 'Kích thước của spinner',
+
+  // TextArea
+  textArea: {
+    title: 'Text area',
+    description: 'Một vùng văn bản cho phép người dùng nhập văn bản dạng dài kéo dài trên nhiều dòng.'
+  },
+  'Enables the resizing of the textarea': 'Cho phép thay đổi kích thước của vùng văn bản',
+  'Sets the field as uneditable, with a changed hover state.': 'Thiết lập trường như không thể chỉnh sửa, với trạng thái chọn trên đã thay đổi.',
+  'If true, prevents the value of the input from being edited.': 'Nếu được bật sẽ ngăn chặn giá trị của đầu vào được chỉnh sửa.',
+  'Set required for form that the field is part of.': 'Thiết lập bắt buộc cho mẫu mà trường này là một phần của nó.',
+  'Sets the maximum height of the textarea.': 'Thiết lập chiều cao tối đa của vùng văn bản',
+  'The default value of the textarea': 'Giá trị mặc định của vùng văn bản',
+  'Enables native spell check on the textarea element.': 'Cho phép kiểm tra chính tả trên phần tử văn bản của textarea',
 };

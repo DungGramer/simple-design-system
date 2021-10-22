@@ -20,9 +20,9 @@ const Range = lazy(() => import('@pages/range/RangePage'));
 // const Select = lazy(() => import('@pages/select/Select'));
 const Spinner = lazy(() => import('@pages/spinner/SpinnerPage'));
 const Tabs = lazy(() => import('@pages/tabs/TabsPage'));
-const Tag = lazy(() => import('@pages/tag/Tag'));
+// const Tag = lazy(() => import('@pages/tag/Tag'));
 const Table = lazy(() => import('@pages/table/TablePage'));
-const TextArea = lazy(() => import('@pages/text-area/TextArea'));
+const TextArea = lazy(() => import('@pages/text-area/TextAreaPage'));
 const TextField = lazy(() => import('@pages/text-field/TextField'));
 const TogglePage = lazy(() => import('@pages/toggle-page/TogglePage'));
 const Tooltip = lazy(() => import('@pages/tooltip/Tooltip'));
@@ -132,11 +132,11 @@ const components = [
     path: `${basePath}/tabs`,
     component: Tabs,
   },
-  {
-    title: 'Tag',
-    path: `${basePath}/tag`,
-    component: Tag,
-  },
+  // {
+  //   title: 'Tag',
+  //   path: `${basePath}/tag`,
+  //   component: Tag,
+  // },
   {
     title: 'Table',
     path: `${basePath}/Table`,

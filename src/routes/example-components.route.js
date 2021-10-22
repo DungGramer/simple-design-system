@@ -15,6 +15,7 @@ import * as Range from '@pages/range/examples';
 import * as Tabs from '@pages/tabs/examples';
 import * as Table from '@pages/table/examples';
 import * as Spinner from '@pages/spinner/examples';
+import * as TextArea from '@pages/text-area/examples';
 
 
 const pathExample = {
@@ -300,6 +301,18 @@ const pathExample = {
       heading: 'Size',
       component: Spinner.SpinnerSize,
       path: require('!!raw-loader!@pages/spinner/examples/SpinnerSize').default,
+    }
+  ],
+  textArea: [
+    {
+      heading: 'Basic',
+      component: TextArea.TextAreaBasic,
+      path: require('!!raw-loader!@pages/text-area/examples/TextAreaBasic').default,
+    },
+    {
+      heading: 'Resize',
+      component: TextArea.TextAreaResize,
+      path: require('!!raw-loader!@pages/text-area/examples/TextAreaResize').default,
     }
   ]
 }

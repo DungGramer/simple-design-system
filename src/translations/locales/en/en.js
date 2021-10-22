@@ -116,5 +116,12 @@ export const en = {
   spinner: {
     title: 'Spinner',
     description: 'A spinner is an animated spinning icon that lets users know content is being loaded.',
-  }
+  },
+
+  // TextArea
+  textArea: {
+    title: 'Text area',
+    description: 'A text area lets users enter long form text which spans over multiple lines.',
+  },
+
 };
