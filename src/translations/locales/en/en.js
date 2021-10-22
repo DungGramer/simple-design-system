@@ -130,4 +130,10 @@ export const en = {
     description: 'A text field is an input that allows a user to write or edit text.',
   },
 
+  // Toggle
+  toggle: {
+    title: 'Toggle',
+    description: 'A toggle is used to view or switch between enabled or disabled states.',
+  },
+
 };

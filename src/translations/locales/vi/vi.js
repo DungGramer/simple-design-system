@@ -274,4 +274,13 @@ export const vi = {
   'Sets maximum length of input.': 'Thiết lập chiều dài tối đa của đầu vào',
   'Sets the field as to appear disabled, users will not be able to interact with the text field.': 'Thiết lập trường như đang ẩn, người dùng sẽ không thể thao tác với trường văn bản',
 
+  // Toggle
+  toggle: {
+    title: 'Toggle',
+    description: 'Toggle được sử dụng để xem hoặc chuyển đổi giữa các trạng thái đã bật hoặc đã tắt.'
+  },
+  'Handler to be called when native click event happens internally.': 'Handler được gọi khi sự kiện click xảy ra',
+  'The value of the toggle.': 'Giá trị của toggle',
+  'The icon to be displayed when the toggle is unchecked.': 'Biểu tượng được hiển thị khi toggle được bỏ chọn',
+  'The icon to be displayed when the toggle is checked.': 'Biểu tượng được hiển thị khi toggle được chọn',
 };

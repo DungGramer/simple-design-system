@@ -1,10 +1,10 @@
 import './Tooltip.module';
 import PropTypes from 'prop-types';
 
-function Tooltip(props) {
+function TooltipPage(props) {
   return <div>Tooltip</div>;
 }
 
-Tooltip.propTypes = {};
+TooltipPage.propTypes = {};
 
-export default Tooltip;
+export default TooltipPage;

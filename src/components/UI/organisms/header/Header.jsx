@@ -28,10 +28,10 @@ const paths = [
     location: '/components',
     name: 'Components',
   },
-  {
-    location: '/blog',
-    name: 'Blog',
-  },
+  // {
+  //   location: '/blog',
+  //   name: 'Blog',
+  // },
 ];
 
 const LogoSection = ({ toggleOpen }) => (

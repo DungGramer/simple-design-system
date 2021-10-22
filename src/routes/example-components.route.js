@@ -17,6 +17,7 @@ import * as Table from '@pages/table/examples';
 import * as Spinner from '@pages/spinner/examples';
 import * as TextArea from '@pages/text-area/examples';
 import * as TextField from '@pages/text-field/examples';
+import * as Toggle from '@pages/toggle/examples';
 
 
 const pathExample = {
@@ -327,6 +328,13 @@ const pathExample = {
       component: TextField.TextFieldMaxLength,
       path: require('!!raw-loader!@pages/text-field/examples/TextFieldMaxLength').default,
     }
+  ],
+  toggle: [
+    {
+      heading: 'Basic',
+      component: Toggle.ToggleBasic,
+      path: require('!!raw-loader!@pages/toggle/examples/ToggleBasic').default,
+    },
   ]
 }
 
