@@ -58,6 +58,12 @@ export const en = {
     description: 'A checkbox is an input control that allows a user to select one or more options from a number of choices.',
   },
 
+  // Divider
+  divider: {
+    title: 'Divider',
+    description: 'A divider is a thin line that is used to separate content.',
+  },
+
   // Flag
   flag: {
     title: 'Flag',

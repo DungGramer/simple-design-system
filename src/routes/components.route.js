@@ -6,6 +6,7 @@ const Banner = lazy(() => import('@pages/banner/BannerPage'));
 const Breadcrumb = lazy(() => import('@pages/breadcrumb/BreadcrumbPage'));
 const Button = lazy(() => import('@pages/button/ButtonPage'));
 const Checkbox = lazy(() => import('@pages/checkbox/CheckboxPage'));
+const Divider = lazy(() => import('@pages/divider/DividerPage'));
 const DropdownMenu = lazy(() => import('@pages/dropdown-menu/DropdownMenuPage'));
 const Flag = lazy(() => import('@pages/flag/FlagPage'));
 const ImagePage = lazy(() => import('@pages/image/ImagePage'));
@@ -61,6 +62,11 @@ const components = [
     title: 'Checkbox',
     path: `${basePath}/checkbox`,
     component: Checkbox,
+  },
+  {
+    title: 'Divider',
+    path: `${basePath}/divider`,
+    component: Divider,
   },
   {
     title: 'Dropdown menu',

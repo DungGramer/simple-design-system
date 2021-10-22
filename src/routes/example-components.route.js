@@ -4,6 +4,7 @@ import * as Banner from '@pages/banner/examples';
 import * as Badge from '@pages/badge/examples';
 import * as Breadcrumb from '@pages/breadcrumb/examples';
 import * as Checkbox from '@pages/checkbox/examples';
+import * as Divider from '@pages/divider/examples';
 import * as Dropdown from '@pages/dropdown-menu/examples';
 import * as Flag from '@pages/flag/examples';
 import * as Image from '@pages/image/examples';
@@ -156,6 +157,23 @@ const pathExample = {
       heading: 'Size',
       component: Checkbox.CheckboxSize,
       path: require('!!raw-loader!@pages/checkbox/examples/CheckboxSize').default,
+    }
+  ],
+  divider: [
+    {
+      heading: 'Basic',
+      component: Divider.DividerBasic,
+      path: require('!!raw-loader!@pages/divider/examples/DividerBasic').default,
+    },
+    {
+      heading: 'Direction',
+      component: Divider.DividerDirection,
+      path: require('!!raw-loader!@pages/divider/examples/DividerDirection').default,
+    },
+    {
+      heading: 'Icon',
+      component: Divider.DividerIcon,
+      path: require('!!raw-loader!@pages/divider/examples/DividerIcon').default,
     }
   ],
   dropdown: [
