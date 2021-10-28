@@ -27,7 +27,7 @@ const Table = lazy(() => import('@pages/table/TablePage'));
 const TextArea = lazy(() => import('@pages/text-area/TextAreaPage'));
 const TextField = lazy(() => import('@pages/text-field/TextFieldPage'));
 const Toggle = lazy(() => import('@pages/toggle/TogglePage'));
-// const Tooltip = lazy(() => import('@pages/tooltip/Tooltip'));
+const Tooltip = lazy(() => import('@pages/tooltip/Tooltip'));
 
 import baseURL from './base.route';
 
@@ -169,11 +169,11 @@ const components = [
     path: `${basePath}/toggle`,
     component: Toggle,
   },
-  // {
-  //   title: 'Tooltip',
-  //   path: `${basePath}/tooltip`,
-  //   component: Tooltip,
-  // },
+  {
+    title: 'Tooltip',
+    path: `${basePath}/tooltip`,
+    component: Tooltip,
+  },
 ];
 
 export default components;

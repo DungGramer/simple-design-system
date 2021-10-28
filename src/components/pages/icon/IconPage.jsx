@@ -12,10 +12,10 @@ const IconPage = ({}) => {
       <h1>{t('icon.title')}</h1>
       <p>{t('icon.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );

@@ -12,10 +12,10 @@ const TextFieldPage = ({}) => {
       <h1>{t('textField.title')}</h1>
       <p>{t('textField.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );

@@ -12,10 +12,10 @@ const AvatarPage = ({}) => {
       <h1>{t('avatar.title')}</h1>
       <p>{t('avatar.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );

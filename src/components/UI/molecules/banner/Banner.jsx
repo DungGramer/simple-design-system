@@ -44,7 +44,7 @@ const IconType = ({ icon, type }) => {
 
 Banner.propTypes = {
 	icon: PropTypes.string,
-	content: PropTypes.string.isRequired,
+	children: PropTypes.node.isRequired,
 	type: PropTypes.oneOf(['warning', 'error', 'announcement']),
 };
 

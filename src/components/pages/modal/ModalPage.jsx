@@ -12,10 +12,10 @@ const ModalPage = ({}) => {
       <h1>{t('modal.title')}</h1>
       <p>{t('modal.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );

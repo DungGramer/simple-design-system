@@ -12,10 +12,10 @@ const RangePage = ({}) => {
       <h1>{t('range.title')}</h1>
       <p>{t('range.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );

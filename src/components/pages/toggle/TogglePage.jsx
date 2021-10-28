@@ -12,10 +12,10 @@ const TogglePage = ({}) => {
       <h1>{t('toggle.title')}</h1>
       <p>{t('toggle.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+         {/* <Usage /> */}
       </Tabs>
     </div>
   );

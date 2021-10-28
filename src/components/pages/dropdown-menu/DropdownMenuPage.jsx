@@ -12,10 +12,10 @@ const DropdownMenuPage = ({}) => {
       <h1>{t('dropdown.title')}</h1>
       <p>{t('dropdown.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );

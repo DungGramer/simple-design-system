@@ -12,10 +12,10 @@ const PaginationPage = ({}) => {
       <h1>{t('pagination.title')}</h1>
       <p>{t('pagination.description')}</p>
 
-      <Tabs title={[t('Examples'), t('API'), t('Usage')]}>
+      <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-        <Usage />
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );
