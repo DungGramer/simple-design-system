@@ -12,7 +12,7 @@ const { paths, regex, postCSS } = require('./untils');
 
 module.exports = merge(common, {
   mode: 'production',
-  target: ['web', 'es5'],
+  target: ['es5', 'web'],
 
   output: {
     filename: 'assets/js/[name].[contenthash:8].js',
@@ -82,7 +82,7 @@ module.exports = merge(common, {
     new CleanWebpackPlugin(),
     new CopyPlugin({
       patterns: [
-        // { from: 'public/assets/images', to: 'assets/images' },
+        { from: 'public/assets/images', to: 'assets/images' },
         // { from: 'public/favicon.ico', to: '' },
         { from: 'public/.htaccess', to: '' },
         { from: 'public/_redirects', to: '' },
@@ -102,6 +102,17 @@ module.exports = merge(common, {
 
   module: {
     rules: [
+      // {
+      //   test: regex.ts,
+      //   use: [
+      //     {
+      //       loader: 'ts-loader',
+      //       options: {
+      //         transpileOnly: true,
+      //       },
+      //     },
+      //   ],
+      // },
       {
         test: regex.css,
         exclude: regex.cssModule,
@@ -149,11 +160,36 @@ module.exports = merge(common, {
       },
     ],
   },
+  output: {
+    pathinfo: false,
+  },
   optimization: {
     minimize: true,
-    // minimizer: [new CssMinimizerPlugin()],
+    runtimeChunk: true,
+    removeAvailableModules: false,
+    removeEmptyChunks: false,
+
     splitChunks: {
+      chunks: 'all',
+      minSize: 20000,
+      minRemainingSize: 0,
+      minChunks: 1,
+      maxAsyncRequests: 30,
+      maxInitialRequests: 30,
+      enforceSizeThreshold: 50000,
+
       cacheGroups: {
+        defaultVendors: {
+          test: /[\\/]node_modules[\\/]/,
+          priority: -10,
+          reuseExistingChunk: true,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+
         styles: {
           name: 'styles',
           test: /\.css$/,

@@ -27,7 +27,7 @@ const regex = {
   svg: /\.svg$/i,
   font: /\.(woff|woff2|eot|ttf|otf)$/i,
   js: /\.(js|jsx)$/i,
-
+  ts: /\.(ts|tsx)$/i,
 };
 
 const formatFileName = '[name].[hash:8].[ext]';
