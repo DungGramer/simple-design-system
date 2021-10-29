@@ -27,6 +27,7 @@ module.exports = merge(common, {
   },
 
   plugins: [
+    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: paths.indexHTML,
       filename: 'index.html',
@@ -79,7 +80,7 @@ module.exports = merge(common, {
       ],
       publicPath: '/node_modules',
     }),
-    new CleanWebpackPlugin(),
+
     new CopyPlugin({
       patterns: [
         { from: 'public/assets/images', to: 'assets/images' },
@@ -88,6 +89,7 @@ module.exports = merge(common, {
         { from: 'public/_redirects', to: '' },
         { from: 'public/robots.txt', to: '' },
         { from: 'public/security.txt', to: '' },
+        { from: 'public/manifest.webmanifest', to: '' },
       ],
     }),
   ],
@@ -95,7 +97,7 @@ module.exports = merge(common, {
     clean: true,
     // libraryTarget: 'umd',
   },
-  devtool: 'source-map',
+  devtool: false,
 
   // Stop compilation early in production
   bail: false,
