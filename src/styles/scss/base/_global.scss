@@ -7,6 +7,12 @@
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-color) transparent;
 }
+@include isFirefox() {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) transparent;
+  }
+}
 
 // Support Chrome
 ::-webkit-scrollbar {
@@ -14,8 +20,10 @@
   height: 0.5rem;
   background: transparent;
   border-color: transparent;
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
 }
-::-webkit-scrollbar-track, ::-webkit-scrollbar-corner {
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
   background: transparent;
   border-color: transparent;
 }
@@ -31,6 +39,12 @@
 }
 ::-webkit-scrollbar-corner {
   background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  width: 0;
+  height: 0;
 }
 
 // Support Safari
@@ -61,7 +75,6 @@ html {
 .container-fluid {
   @include padding-horizontal(1.5rem);
 }
-
 
 // Sizes
 html {

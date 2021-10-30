@@ -23,6 +23,7 @@ const Sidebar = () => {
         onDrag={toggleOpen}
         condition={maxDesktop}
         dimBackground
+        disableScroll
       />
 
       <div

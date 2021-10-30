@@ -267,7 +267,7 @@
 
 @mixin gap($row: 0, $column: false) {
   @if $column == false {
-    @supports (not (translate: none)) {
+    @include isSafari() {
       margin-left: calc(-1 * #{$row});
       margin-top: calc(-1 * #{$row});
 
@@ -277,11 +277,11 @@
       }
     }
 
-    @supports (gap: 10px) and (display: flex) and (translate: none) {
+    @supports (gap: 10px) and (display: flex) {
       gap: $row;
     }
   } @else {
-    @supports (not (translate: none)) {
+    @include isSafari() {
       margin-left: calc(-1 * #{$column});
       margin-top: calc(-1 * #{$row});
 
@@ -291,8 +291,36 @@
       }
     }
 
-    @supports (gap: 10px) and (display: flex) and (translate: none) {
+    @supports (gap: 10px) and (display: flex) {
       gap: $row $column;
     }
+  }
+}
+
+/*------------------------------------*
+  # Detect Browser
+*------------------------------------*/
+
+@mixin isFirefox() {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin isSafari() {
+  @supports (not (translate: none)) {
+    @content;
+  }
+}
+
+@mixin isChrome() {
+  @supports (translate: none) {
+    @content;
+  }
+}
+
+@mixin isEdge() {
+  @supports (-ms-ime-align: auto) {
+    @content;
   }
 }

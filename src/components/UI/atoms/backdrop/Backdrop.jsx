@@ -16,10 +16,13 @@ import breakpoint from '~/constants/mediaQuery';
  *  <Backdrop isOpen={open} onClick={toggleOpen} onDrag={toggleOpen} condition={maxDesktop} dimBackground />
  */
 const Backdrop = ({ isOpen, dimBackground, onClick, onDrag, condition, zIndex, disableScroll}) => {
-  if (disableScroll && isOpen) {
-    document.body.style.overflow = 'hidden';
+  const bodyStyle = document.body.style;
+  if (condition && isOpen && disableScroll ) {
+    bodyStyle.overflow = 'hidden';
+    bodyStyle.marginRight = '0.5rem';
   } else {
-    document.body.style.overflow = 'auto';
+    bodyStyle.overflow = 'auto';
+    bodyStyle.marginRight = '0';
   }
 
   return (

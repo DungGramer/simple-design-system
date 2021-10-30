@@ -15,7 +15,6 @@ const paths = {
   fonts: resolvePath('public/fonts'),
   image: resolvePath('public/images'),
   nodeModule: resolvePath('node_modules'),
-  distFonts: resolvePath('dist/assets/fonts/'),
 };
 
 const regex = {
