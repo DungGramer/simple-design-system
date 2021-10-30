@@ -47,6 +47,30 @@
   height: 0;
 }
 
+/**
+ * Color selector
+ */
+
+::selection {
+  color: hsl(0, 0%, 99%);
+  background: hsl(209, 100%, 78%);
+}
+::-moz-selection {
+  color: hsl(0, 0%, 99%);
+  background: hsl(209, 100%, 78%);
+}
+
+@include isDarkMode() {
+  ::selection{
+    color: hsl(0, 0%, 99%);
+    background: #b25900;
+  }
+  ::-moz-selection {
+    color: hsl(0, 0%, 99%);
+    background: #b25900;
+  }
+}
+
 // Support Safari
 // ::-webkit-scrollbar-corner, ::-webkit-scrollbar-corner:horizontal, ::-webkit-scrollbar-corner:vertical {
 //   background: $gray-500;
