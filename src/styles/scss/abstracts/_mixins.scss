@@ -324,3 +324,9 @@
     @content;
   }
 }
+
+@mixin isDarkMode() {
+  html[theme="dark"] {
+    @content;
+  }
+}
