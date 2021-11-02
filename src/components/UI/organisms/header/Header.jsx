@@ -11,6 +11,7 @@ import Menu from '@atoms/menu/Menu';
 import changeLanguage from '~/translations/changeLanguage';
 import { useTranslation } from 'react-i18next';
 import ChangeThemeButton from './change-theme/ChangeTheme';
+import { HambergerMenu } from 'iconsax-react';
 
 const languages = [
   {
@@ -41,6 +42,7 @@ const LogoSection = ({ toggleOpen }) => (
     </Link>
     <ChangeThemeButton />
     <i className={`${styles.menu} far fa-bars`} onClick={toggleOpen} />
+    <HambergerMenu className={styles.menu} onClick={toggleOpen}  />
   </div>
 );
 
