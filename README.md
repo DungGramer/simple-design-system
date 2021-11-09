@@ -10,3 +10,6 @@
 + Load CSS/SCSS module
 + Minify code on Product
 + Split Webpack Dev and Product
+  
+## Analytics 
+![Alt](https://repobeats.axiom.co/api/embed/74da8760de9c5346aca4338440b53ffe2ada5020.svg "Repobeats analytics image")
