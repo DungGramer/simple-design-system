@@ -13,7 +13,7 @@ const sizeLimit = 10000;
 
 module.exports = {
   // Rules of how webpack will take our files, compile & bundle them for the browser
-  entry: ['core-js/stable', paths.indexJS],
+  entry: paths.indexJS,
 
   /// There will be one main bundle, and one file per asynchronous chunk.
   output: {
@@ -69,16 +69,19 @@ module.exports = {
       {
         test: regex.js,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            configFile: resolvePath('config/babel.config.js'),
-            cacheDirectory: true,
-            cacheCompression: false,
-            sourceMaps: true,
-            inputSourceMap: true,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              configFile: resolvePath('config/babel.config.js'),
+              cacheDirectory: true,
+              cacheCompression: false,
+              sourceMaps: true,
+              inputSourceMap: true,
+            },
           },
-        },
+
+        ],
       },
       {
         test: regex.css,
