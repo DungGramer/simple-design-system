@@ -20,12 +20,12 @@ import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 SyntaxHighlighter.registerLanguage('jsx', jsx);
 
 const CodeHighlight = ({ data, language }) => {
-	const { switchTheme } = useThemeContext();
+  const { switchTheme } = useThemeContext();
 
-	return (
-		<SyntaxHighlighter
-			style={switchTheme(materialLight, materialDark)}
-			language={language}
+  return (
+    <SyntaxHighlighter
+      style={switchTheme(materialLight, materialDark)}
+      language={language}
       customStyle={{
         margin: '0',
         padding: '0',
@@ -33,19 +33,19 @@ const CodeHighlight = ({ data, language }) => {
         background: 'none',
         paddingBottom: '1rem',
       }}
-		>
-			{data}
-		</SyntaxHighlighter>
-	);
+    >
+      {data}
+    </SyntaxHighlighter>
+  );
 };
 
 CodeHighlight.propTypes = {
-	data: PropTypes.string.isRequired,
-	language: PropTypes.string,
+  data: PropTypes.string.isRequired,
+  language: PropTypes.string,
 };
 
 CodeHighlight.defaultProps = {
-	language: 'jsx',
+  language: 'jsx',
 };
 
 export default CodeHighlight;

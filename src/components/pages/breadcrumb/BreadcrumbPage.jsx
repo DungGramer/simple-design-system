@@ -19,7 +19,7 @@ const BreadcrumbPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 BreadcrumbPage.propTypes = {};
 

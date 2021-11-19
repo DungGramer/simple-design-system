@@ -1,5 +1,3 @@
-import RangeBasic from "./RangeBasic";
+import RangeBasic from './RangeBasic';
 
-export {
-  RangeBasic,
-}
+export { RangeBasic };

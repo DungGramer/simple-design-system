@@ -1,8 +1,14 @@
 import splitUnit from '~/constants/splitUnit';
 
-export const picsumURL = (width = 48, height = 48, id = Math.floor(Math.random() * 100)) => {
-  return 'http://picsum.photos/' + width + '/' + (height || width) + (id && '?' + id );
-}
+export const picsumURL = (
+  width = 48,
+  height = 48,
+  id = Math.floor(Math.random() * 100)
+) => {
+  return (
+    'http://picsum.photos/' + width + '/' + (height || width) + (id && '?' + id)
+  );
+};
 
 function imageMockup(width, height, length) {
   const mockup = [];

@@ -36,7 +36,7 @@ i18n
       caches: ['cookie'],
     },
 
-    resources
+    resources,
   });
 
 export default i18n;

@@ -34,7 +34,7 @@ export const API = () => {
       property: <code>appearance</code>,
       description: t('Specifies the appearance of the radio button.'),
       type: <CodeColumn data={['default', 'chips']} />,
-      default: <code>default</code>
+      default: <code>default</code>,
     },
   ];
 
@@ -48,7 +48,7 @@ export const API = () => {
       property: <code>appearance</code>,
       description: t('Specifies the appearance of the radio button.'),
       type: <CodeColumn data={['default', 'chips']} />,
-      default: <code>default</code>
+      default: <code>default</code>,
     },
   ];
   return (

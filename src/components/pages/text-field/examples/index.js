@@ -1,7 +1,4 @@
-import TextFieldBasic from "./TextFieldBasic";
-import TextFieldMaxLength from "./TextFieldMaxLength";
+import TextFieldBasic from './TextFieldBasic';
+import TextFieldMaxLength from './TextFieldMaxLength';
 
-export {
-  TextFieldBasic,
-  TextFieldMaxLength
-}
+export { TextFieldBasic, TextFieldMaxLength };

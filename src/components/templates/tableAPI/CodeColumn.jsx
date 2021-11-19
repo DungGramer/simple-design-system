@@ -4,9 +4,7 @@ const CodeColumn = ({ data }) => {
     return prev;
   }, '');
 
-  return (
-    <span dangerouslySetInnerHTML={{ __html: spanData }} />
-  );
+  return <span dangerouslySetInnerHTML={{ __html: spanData }} />;
 };
 
 export default CodeColumn;

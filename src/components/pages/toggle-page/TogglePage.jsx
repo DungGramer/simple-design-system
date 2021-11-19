@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 
 function TogglePage(props) {
-    const [checked, setChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
 
-    const handleToggle = () => setChecked(!checked);
+  const handleToggle = () => setChecked(!checked);
   return (
     <div>
       <h1>Toggle</h1>

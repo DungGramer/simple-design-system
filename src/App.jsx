@@ -19,27 +19,27 @@ function App() {
 
   return (
     <>
-    <ScrollToTop />
-    <ThemeProvider>
-      <Header />
-      <main className="main-container">
-        <Sidebar />
-        <section className="main">
-          <TransitionGroup appear className="transition-group">
-            <CSSTransition
-              // nodeRef={nodeRef}
-              unmountOnExit
-              key={location.key}
-              classNames="fade"
-              timeout={{ enter: 250, exit: 0 }}
-            >
-              <Switch location={location}>
-                <Suspense fallback={<Loading />}>{Routes}</Suspense>
-              </Switch>
-            </CSSTransition>
-          </TransitionGroup>
-        </section>
-      </main>
+      <ScrollToTop />
+      <ThemeProvider>
+        <Header />
+        <main className="main-container">
+          <Sidebar />
+          <section className="main">
+            <TransitionGroup appear className="transition-group">
+              <CSSTransition
+                // nodeRef={nodeRef}
+                unmountOnExit
+                key={location.key}
+                classNames="fade"
+                timeout={{ enter: 250, exit: 0 }}
+              >
+                <Switch location={location}>
+                  <Suspense fallback={<Loading />}>{Routes}</Suspense>
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          </section>
+        </main>
       </ThemeProvider>
     </>
   );

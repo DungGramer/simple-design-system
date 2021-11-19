@@ -15,11 +15,11 @@ const TogglePage = ({}) => {
       <Tabs title={[t('Examples'), t('API')]}>
         <Example />
         <API />
-         {/* <Usage /> */}
+        {/* <Usage /> */}
       </Tabs>
     </div>
   );
-}
+};
 
 TogglePage.propTypes = {};
 

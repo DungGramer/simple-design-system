@@ -11,11 +11,11 @@ const Range = ({
   defaultValue,
   ...props
 }) => {
-  const [value, setValue] = useState(defaultValue || ((max - min) / 2));
+  const [value, setValue] = useState(defaultValue || (max - min) / 2);
 
   const handleChange = (e) => {
     // let stepX = (max - min) / step;
-    setValue((e.target.value ));
+    setValue(e.target.value);
     if (onChange) onChange();
   };
 
@@ -49,6 +49,6 @@ Range.propTypes = {
 Range.defaultProps = {
   min: 0,
   max: 100,
-}
+};
 
 export default Range;

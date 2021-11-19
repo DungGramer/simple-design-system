@@ -3,13 +3,13 @@ import TableAPI from '@templates/tableAPI/TableAPI';
 import CodeColumn from '@templates/tableAPI/CodeColumn';
 
 export const API = () => {
-	const { t } = useTranslation();
-	const data = [
-		{
-			property: <code>icon</code>,
-			description: t('The name of the icon'),
-			type: 'string',
-		},
+  const { t } = useTranslation();
+  const data = [
+    {
+      property: <code>icon</code>,
+      description: t('The name of the icon'),
+      type: 'string',
+    },
     {
       property: <code>size</code>,
       description: t('The size of the icon'),
@@ -35,13 +35,13 @@ export const API = () => {
       description: t('The animation of the icon'),
       type: <CodeColumn data={['spin', 'pulse']} />,
     },
-	];
-	return (
-		<div>
-			<h3>{t('API')}</h3>
-			<h4>{t('<Icon />')}</h4>
+  ];
+  return (
+    <div>
+      <h3>{t('API')}</h3>
+      <h4>{t('<Icon />')}</h4>
 
-			<TableAPI data={data} />
-		</div>
-	);
+      <TableAPI data={data} />
+    </div>
+  );
 };

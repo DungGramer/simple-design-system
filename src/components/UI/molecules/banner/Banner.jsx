@@ -13,43 +13,43 @@ import PropTypes from 'prop-types';
  */
 
 const Banner = ({ icon, children, type }) => {
-	return (
-		<div className={`${styles['banner']} ${styles[type]}`}>
-			<div className={styles.container}>
-				<IconType type={type} icon={icon} />
-				<p>{children}</p>
-			</div>
-		</div>
-	);
+  return (
+    <div className={`${styles['banner']} ${styles[type]}`}>
+      <div className={styles.container}>
+        <IconType type={type} icon={icon} />
+        <p>{children}</p>
+      </div>
+    </div>
+  );
 };
 
 const IconType = ({ icon, type }) => {
-	let iconClass = icon || null;
+  let iconClass = icon || null;
 
-	if (iconClass === null) {
-		switch (type) {
-			case 'error':
-				iconClass = 'fas fa-exclamation-circle';
-				break;
-			case 'warning':
-				iconClass = 'fas fa-exclamation-triangle';
-				break;
-			default:
-				iconClass = '';
-				break;
-		}
-	}
-	return <i className={iconClass} />;
+  if (iconClass === null) {
+    switch (type) {
+      case 'error':
+        iconClass = 'fas fa-exclamation-circle';
+        break;
+      case 'warning':
+        iconClass = 'fas fa-exclamation-triangle';
+        break;
+      default:
+        iconClass = '';
+        break;
+    }
+  }
+  return <i className={iconClass} />;
 };
 
 Banner.propTypes = {
-	icon: PropTypes.string,
-	children: PropTypes.node.isRequired,
-	type: PropTypes.oneOf(['warning', 'error', 'announcement']),
+  icon: PropTypes.string,
+  children: PropTypes.node.isRequired,
+  type: PropTypes.oneOf(['warning', 'error', 'announcement']),
 };
 
 Banner.defaultProps = {
-	type: 'warning',
+  type: 'warning',
 };
 
 export default Banner;

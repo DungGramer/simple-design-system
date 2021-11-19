@@ -19,7 +19,7 @@ const RadioPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 RadioPage.propTypes = {};
 

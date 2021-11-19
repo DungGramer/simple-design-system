@@ -34,14 +34,14 @@ function Tabs({ children, title, defaultTab, showAll }) {
 
     const { margin, padding } = boxModel(tab);
 
-    const location = ele => ele.getBoundingClientRect().left;
+    const location = (ele) => ele.getBoundingClientRect().left;
 
     setLocationTab(
-      location(tab) - location(baseTab) + margin.left + padding.left + 'px',
+      location(tab) - location(baseTab) + margin.left + padding.left + 'px'
     );
   };
 
-  const updateTabs = index => {
+  const updateTabs = (index) => {
     setActiveTab(index);
   };
 
@@ -79,6 +79,6 @@ Tabs.propTypes = {
 
 Tabs.defaultProps = {
   defaultTab: 0,
-}
+};
 
 export default Tabs;

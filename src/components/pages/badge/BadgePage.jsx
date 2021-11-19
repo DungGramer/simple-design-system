@@ -19,7 +19,7 @@ const BadgePage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 BadgePage.propTypes = {};
 

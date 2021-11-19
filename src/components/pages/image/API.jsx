@@ -61,7 +61,7 @@ export const API = () => {
       property: <code>aspectRatio</code>,
       description: t('The aspect ratio of the image.'),
       type: 'number',
-    }
+    },
   ];
   return (
     <div>

@@ -2,16 +2,18 @@ import { useTranslation } from 'react-i18next';
 import TableAPI from '@templates/tableAPI/TableAPI';
 
 export const API = () => {
-	const { t } = useTranslation();
-	const data = [
-		{
-			property: <code>name</code>,
-			description: t('Name of the input element.'),
-			type: 'string',
-		},
+  const { t } = useTranslation();
+  const data = [
+    {
+      property: <code>name</code>,
+      description: t('Name of the input element.'),
+      type: 'string',
+    },
     {
       property: <code>placeholder</code>,
-      description: t('Placeholder text to display in the text field whenever it is empty.'),
+      description: t(
+        'Placeholder text to display in the text field whenever it is empty.'
+      ),
       type: 'string',
     },
     {
@@ -31,7 +33,9 @@ export const API = () => {
     },
     {
       property: <code>isDisabled</code>,
-      description: t('Sets the field as to appear disabled, users will not be able to interact with the text field.'),
+      description: t(
+        'Sets the field as to appear disabled, users will not be able to interact with the text field.'
+      ),
       type: 'boolean',
     },
     {
@@ -41,16 +45,18 @@ export const API = () => {
     },
     {
       property: <code>isReadOnly</code>,
-      description: t('If true, prevents the value of the input from being edited.'),
+      description: t(
+        'If true, prevents the value of the input from being edited.'
+      ),
       type: 'boolean',
-    }
-	];
-	return (
-		<div>
-			<h3>{t('API')}</h3>
-			<h4>{t('<TextField />')}</h4>
+    },
+  ];
+  return (
+    <div>
+      <h3>{t('API')}</h3>
+      <h4>{t('<TextField />')}</h4>
 
-			<TableAPI data={data} />
-		</div>
-	);
+      <TableAPI data={data} />
+    </div>
+  );
 };

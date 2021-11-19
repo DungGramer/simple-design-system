@@ -47,16 +47,19 @@ const AvatarText = forwardRef(({ text, size, innerRef }, ref) => {
 });
 
 const Group = ({ children, size, length }) => {
-  const lengthRemaining = (length < children.length) && (children.length - length) + 1;
+  const lengthRemaining =
+    length < children.length && children.length - length + 1;
 
-  const childrenSlice = lengthRemaining ? children.slice(0, length - 1) : children;
+  const childrenSlice = lengthRemaining
+    ? children.slice(0, length - 1)
+    : children;
   const childrenRemaining = lengthRemaining && children.slice(length - 1);
 
   const avatarTextRef = useRef();
 
   return (
     <div className={`${styles['avatar-group']} ${styles[size]}`}>
-      {childrenSlice.map(child => child)}
+      {childrenSlice.map((child) => child)}
       {lengthRemaining && (
         <AvatarText
           ref={avatarTextRef}
