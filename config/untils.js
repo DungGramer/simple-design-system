@@ -1,8 +1,6 @@
 const path = require('path');
 
-
-const resolvePath = (relativePath) =>
-  path.join(__dirname, '../', relativePath);
+const resolvePath = (dir) => path.join(__dirname, '../', dir);
 
 const paths = {
   root: resolvePath(''),
