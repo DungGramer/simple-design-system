@@ -64,13 +64,14 @@ h6 {
 
 html,
 body,
-ul[class],
-ol[class],
+ul,
+ol,
 figure,
 blockquote,
 dl,
 dd {
   margin: 0;
+  padding: 0;
 }
 
 html,
@@ -90,6 +91,8 @@ ol {
 a {
   background-color: transparent; /* Remove the gray background color from active links in IE 10 */
   -webkit-text-fill-color: currentColor; /* fix color in Safari */
+  text-decoration: none;
+  color: inherit;
 }
 
 a:visited,
@@ -99,6 +102,10 @@ a:hover {
 
 a:not([class]) {
   text-decoration-skip-ink: auto;
+}
+a:not([href]) {
+  color: inherit;
+  text-decoration: none;
 }
 
 /**
@@ -196,4 +203,71 @@ for people that prefer not to see them */
 textarea {
     overflow: auto; /* 1 */
     vertical-align: top; /* 2 */
+}
+
+code:not([class]) {
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  font-size: .9em;
+  margin: 0 1px;
+  padding: 0.2em 0.4em;
+  background-color: var(--background-code-color);
+  border-radius: 3px;
+  border: thin solid var(--gray-200);
+}
+
+[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+  cursor: pointer;
+}
+
+[type=button],[type=reset],[type=submit],button {
+  appearance: button;
+}
+
+input[type=date],input[type=datetime-local],input[type=month],input[type=time] {
+  appearance: listbox;
+}
+
+[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+[type=search] {
+  outline-offset: -2px;
+  appearance: none;
+}
+
+[type=search]::-webkit-search-decoration {
+  appearance: none;
+}
+
+::-webkit-file-upload-button {
+  font: inherit;
+  appearance: button;
+}
+
+address {
+  margin-bottom: 1rem;
+  font-style: normal;
+  line-height: inherit
+}
+
+output {
+  display: inline-block
+}
+
+summary {
+  display: list-item;
+  cursor: pointer
+}
+
+template {
+  display: none
+}
+
+[hidden] {
+  display: none!important;
+}
+
+a, area, button, [role=button], input:not([type=range]), label, select, summary, textarea {
+  touch-action: manipulation;
 }

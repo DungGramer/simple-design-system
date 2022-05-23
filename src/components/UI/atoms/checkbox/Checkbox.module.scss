@@ -1,0 +1,85 @@
+.checkbox {
+  padding: 0.5em;
+  display: inline-flex;
+
+  input[type='checkbox'] {
+    display: none;
+    pointer-events: none;
+
+    & + label {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+
+      &:hover, &:focus {
+        svg {
+          stroke: var(--primary-500);
+        }
+      }
+
+      svg {
+        stroke: var(--black-400);
+        stroke-width: 5;
+        fill: white;
+        transition: stroke 0.2s ease-in;
+
+        .box {
+          stroke-dasharray: 320;
+          stroke-dashoffset: 0;
+          fill: white;
+          transition: stroke-dashoffset 0.3s linear;
+          will-change: stroke-dashoffset;
+        }
+        .check {
+          stroke-dasharray: 70;
+          stroke-dashoffset: 70;
+          fill: none;
+          transition: stroke-dashoffset 0.3s linear;
+          will-change: stroke-dashoffset;
+        }
+      }
+
+      span {
+        @include padding-horizontal(8px);
+      }
+    }
+
+    &:checked + label {
+      svg {
+        stroke: var(--primary-500);
+      }
+      .box {
+        stroke-dashoffset: 320;
+      }
+      .check {
+        stroke-dashoffset: 0;
+      }
+    }
+  }
+}
+
+.checkbox.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+
+  > label {
+    pointer-events: none;
+  }
+}
+
+$sizes: (
+  small: 16px,
+  medium: 24px,
+  large: 32px,
+  xlarge: 48px
+);
+
+.checkbox {
+  @each $size, $value in $sizes {
+    &.#{$size} {
+      svg {
+        width: $value;
+      }
+    }
+  }
+}

@@ -121,8 +121,7 @@
   padding-top: $top;
   @if $bottom == false {
     padding-bottom: $top;
-  }
-  else {
+  } @else {
     padding-bottom: $bottom;
   }
 }
@@ -131,7 +130,7 @@
   padding-left: $left;
   @if $right == false {
     padding-right: $left;
-  } else {
+  } @else {
     padding-right: $right;
   }
 }
@@ -140,7 +139,7 @@
   margin-top: $top;
   @if $bottom == false {
     margin-bottom: $top;
-  } else {
+  } @else {
     margin-bottom: $bottom;
   }
 }
@@ -149,9 +148,15 @@
   margin-left: $left;
   @if $right == false {
     margin-right: $left;
-  } else {
+  } @else {
     margin-right: $right;
   }
+}
+
+@mixin disable-action() {
+  cursor: context-menu;
+  pointer-events: none;
+  user-select: none;
 }
 
 /*
@@ -171,31 +176,41 @@
   }
 }
 
+@mixin size($width, $height: false) {
+  width: $width;
+  @if $height == false {
+    height: $width;
+  } @else {
+    height: $height;
+  }
+}
+
+@mixin absolute() {
+  position: absolute;
+  content: '';
+}
+
 @mixin position-abs($top: false, $right: false, $bottom: false, $left: false) {
   position: absolute;
+  content: '';
 
   @if ($top and $right and $bottom and $left == false) {
     top: $top;
     left: $right;
     right: $right;
     bottom: $bottom;
-  }
-
-  @else if ($top and $right and $bottom == false and $left == false) {
+  } @else if ($top and $right and $bottom == false and $left == false) {
     top: $top;
     bottom: $top;
     left: $right;
     right: $right;
-  }
-
-  @else if ($top and $right == false and $bottom == false and $left == false) {
+  } @else if ($top and $right == false and $bottom == false and $left == false)
+  {
     top: $top;
     right: $top;
     bottom: $top;
     left: $top;
-  }
-
-  @else {
+  } @else {
     top: $top;
     right: $right;
     bottom: $bottom;
@@ -211,34 +226,107 @@
 */
 
 @mixin arrow($direction: down, $size: 5px, $color: #555) {
-   width: 0;
-   height: 0;
-   @if ($direction == left) {
-      border-top: $size solid transparent;
-      border-bottom: $size solid transparent;
-      border-right: $size solid $color;
-   }
-   @else if ($direction == right) {
-      border-top: $size solid transparent;
-      border-bottom: $size solid transparent;
-      border-left: $size solid $color;
-   }
-   @else if ($direction == down) {
-      border-left: $size solid transparent;
-      border-right: $size solid transparent;
-      border-top: $size solid $color;
-   }
-   @else {
-      border-left: $size solid transparent;
-      border-right: $size solid transparent;
-      border-bottom: $size solid $color;
-   }
+  width: 0;
+  height: 0;
+  @if ($direction == left) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  } @else if ($direction == right) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  } @else if ($direction == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  } @else {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
 }
 
 @mixin input-placeholder {
-    &.placeholder { @content; }
-    &:-moz-placeholder { @content; }
-    &::-moz-placeholder { @content; }
-    &:-ms-input-placeholder { @content; }
-    &::-webkit-input-placeholder { @content; }
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin gap($row: 0, $column: false) {
+  @if $column == false {
+    @include isSafari() {
+      margin-left: calc(-1 * #{$row});
+      margin-top: calc(-1 * #{$row});
+
+      & > * {
+        margin-left: $row;
+        margin-top: $row;
+      }
+    }
+
+    @supports (gap: 10px) and (display: flex) {
+      gap: $row;
+    }
+  } @else {
+    @include isSafari() {
+      margin-left: calc(-1 * #{$column});
+      margin-top: calc(-1 * #{$row});
+
+      & > * {
+        margin-left: $column;
+        margin-top: $row;
+      }
+    }
+
+    @supports (gap: 10px) and (display: flex) {
+      gap: $row $column;
+    }
+  }
+}
+
+/*------------------------------------*
+  # Detect Browser
+*------------------------------------*/
+
+@mixin isFirefox() {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin isSafari() {
+  @supports (not (translate: none)) {
+    @content;
+  }
+}
+
+@mixin isChrome() {
+  @supports (translate: none) {
+    @content;
+  }
+}
+
+@mixin isEdge() {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+@mixin isDarkMode() {
+  html[theme="dark"] {
+    @content;
+  }
 }

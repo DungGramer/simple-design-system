@@ -1,0 +1,32 @@
+.breadcrumb {
+  .breadcrumb-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+
+    .breadcrumb-item {
+      color: var(--black-400);
+      > a[href] {
+        transition: color 0.25s;
+        transition-timing-function: ease-in;
+
+        &:hover {
+          text-decoration: underline;
+          color: var(--primary-500);
+          transition-timing-function: ease-out;
+        }
+      }
+
+      span {
+        padding: 0 8px;
+      }
+
+      &:last-child {
+        color: inherit;
+
+        span {
+          display: none;
+        }
+      }
+    }
+  }
+}

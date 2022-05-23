@@ -1,25 +1,25 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {
   paths,
   regex,
   resolvePath,
   formatFileName,
   postCSS,
-} = require('./untils');
-const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
+} = require('./utils');
+// const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';
 
-const sizeLimit = 10000;
+const sizeLimit = 10_000;
 
 module.exports = {
   // Rules of how webpack will take our files, compile & bundle them for the browser
-  entry: ['core-js/stable', paths.indexJS],
+  entry: paths.indexJS,
 
   /// There will be one main bundle, and one file per asynchronous chunk.
   output: {
     path: paths.dist,
     publicPath: '/',
+    // libraryTarget: 'commonjs2',
   },
 
   target: 'web',
@@ -49,30 +49,39 @@ module.exports = {
       },
       {
         test: regex.font,
-        // type: 'asset/resource',
+        exclude: /fontawesome/,
+        type: 'asset/resource',
         loader: 'url-loader',
         options: {
           fallback: 'file-loader',
           limit: sizeLimit,
-          // outputPath: 'assets/fonts',
-          name: 'assets/fonts/' + formatFileName,
+          outputPath: 'assets/fonts',
+          name: formatFileName,
           esModule: false,
         },
       },
       {
         test: regex.svg,
-        type: 'asset/inline', // Load svg inside HTML
+        // type: 'asset/inline', // Load svg inside HTML
+        issuer: regex.jts,
+        use: ['@svgr/webpack'],
       },
 
       {
         test: regex.js,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            configFile: resolvePath('config/babel.config.js'),
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              configFile: resolvePath('config/babel.config.js'),
+              cacheDirectory: true,
+              cacheCompression: false,
+              sourceMaps: true,
+              inputSourceMap: true,
+            },
           },
-        },
+        ],
       },
       {
         test: regex.css,
@@ -97,7 +106,6 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               importLoaders: 1,
               sourceMap: true,
               modules: {
@@ -141,7 +149,6 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               sourceMap: true,
               importLoaders: 3,
               modules: {
@@ -153,6 +160,9 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
+              additionalData:
+                '@import "~/styles/scss/abstracts/__abstracts-dir";',
+
               // Prefer `dart-sass`
               implementation: require('sass'),
               sassOptions: {
@@ -166,45 +176,17 @@ module.exports = {
   },
 
   resolve: {
-    modules: [resolvePath('node_modules'), '../src'],
-    extensions: ['*', '.js', '.jsx', '.scss'],
+    modules: [paths.src, 'node_modules'],
+    extensions: ['*', '.js', '.jsx', '.json', '.scss', '.css'],
     alias: {
-      '~': paths.root,
+      '~': paths.src,
+      '@public': resolvePath('public'),
       '@components': resolvePath('src/components'),
       '@pages': resolvePath('src/components/pages'),
       '@templates': resolvePath('src/components/templates'),
       '@atoms': resolvePath('src/components/UI/atoms'),
       '@molecules': resolvePath('src/components/UI/molecules'),
       '@organisms': resolvePath('src/components/UI/organisms'),
-    },
-  },
-
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: paths.indexHTML,
-      filename: 'index.html',
-      favicon: 'public/favicon.ico',
-    }),
-  ],
-
-  optimization: {
-    minimize: true,
-    minimizer: [new CssMinimizerPlugin()],
-    splitChunks: {
-      cacheGroups: {
-        styles: {
-          name: 'styles',
-          test: /\.css$/,
-          chunks: 'all',
-          enforce: true,
-        },
-        vendor: {
-          chunks: 'initial',
-          test: 'vendor',
-          name: 'vendor',
-          enforce: true,
-        },
-      },
     },
   },
 };

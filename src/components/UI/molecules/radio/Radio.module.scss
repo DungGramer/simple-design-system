@@ -1,0 +1,122 @@
+.radio {
+  color: var(--font-color);
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+
+  &:focus-within .label {
+    opacity: 1;
+  }
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.radio-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  input {
+    &:checked + .radio-control {
+      &::after {
+        transform: scale(0.6);
+      }
+    }
+
+    & + .radio-control::before {
+      content: '';
+      width: 0.5em;
+      height: 0.5em;
+      box-shadow: inset 0.5em 0.5em var(--primary-500);
+      border-radius: 50%;
+      transition: 0.25s transform ease-in-out;
+      transform: scale(0);
+    }
+
+    &:checked + .radio-control::before {
+      transform: scale(1);
+    }
+
+    &:focus + .radio-control {
+      box-shadow: 0 0 3px var(--primary-500);
+    }
+  }
+
+  .radio-control {
+    display: block;
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+    border: thin solid var(--secondary-500);
+
+    transform: translateY(-0em);
+
+    &::after {
+      @include position-abs(0);
+      background-color: var(--primary-500);
+      border-radius: 50%;
+      transform: scale(0);
+      transition: transform 0.25s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+    }
+  }
+}
+
+.label {
+  line-height: 1;
+  transition: 0.25s all ease-in-out;
+  opacity: 0.8;
+  padding: 0 8px;
+}
+
+/**
+ * Disabled
+ */
+.radio.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+
+  * {
+    pointer-events: none;
+  }
+
+  .radio-control {
+    border-color: var(--font-color);
+  }
+}
+
+/**
+ * Chips Radio
+ */
+
+.radio.chips {
+  --checked-color: var(--black-400);
+
+  input:checked + .label {
+    --checked-color: var(--primary-500);
+    opacity: 1;
+  }
+
+  .label {
+    padding: 8px 16px;
+    color: var(--checked-color);
+    border: thin solid var(--checked-color);
+    border-radius: 999px;
+  }
+}
+
+
+/**
+ * Radio Group
+ */
+
+.radio-group {
+  display: flex;
+  @include gap(8px);
+
+}

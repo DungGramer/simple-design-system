@@ -1,14 +1,46 @@
-@import './styles/scss/styles.scss';
+@import '~/styles/scss/styles.scss';
 
 body {
-  margin: 0;
-  font-family: OpenSans;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-  color: $primary-500;
+.main-container {
+  display: flex;
+
+  .main {
+    padding: 3rem 1.25rem;
+    width: 100%;
+
+    @include desktop {
+      width: calc(100% - var(--nav-width));
+      padding-left: 5rem;
+    }
+  }
+}
+
+.fade {
+  &-enter {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  &-enter-active {
+    opacity: 1;
+    transform: translateY(0);
+    transition: all 250ms ease-out;
+  }
+
+  &-exit {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  &-exit-active {
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: all 250ms ease-in;
+  }
+}
+
+.transition-group {
+  width: 100%;
 }

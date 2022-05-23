@@ -1,0 +1,13 @@
+.change-theme {
+  height: 35px;
+  margin-right: 3rem;
+  cursor: pointer;
+
+  path {
+    stroke: var(--font-color);
+  }
+
+  > svg {
+    width: unset !important;
+  }
+}

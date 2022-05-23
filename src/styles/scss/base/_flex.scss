@@ -1,0 +1,279 @@
+@use "sass:math";
+//Credits to : http://codepen.io/absolutholz/post/flex-box-grid-with-sass-mixins
+//for this awesome port of Kristopher Joseph's
+//awesome www.http://flexboxgrid.com/
+// https://gist.github.com/stephanrusu/268434e3a5ae86e2e4324221238a4649
+
+$columns: 12;
+$gutter-width: 30px;
+
+$viewport-layouts: (
+  'xs': (),
+  'sm': (
+    'min-width': 768px,
+    'container': (
+      720px + $gutter-width,
+    ),
+  ),
+  'md': (
+    'min-width': 992px,
+    'container': (
+      940px + $gutter-width,
+    ),
+  ),
+  'lg': (
+    'min-width': 1200px,
+    'container': (
+      1140px + $gutter-width,
+    ),
+  ),
+  'wd': (
+    'min-width': 1600px,
+    'container': (
+      1536px + $gutter-width,
+    ),
+  ),
+);
+
+@mixin clearfix {
+  &:before,
+  &:after {
+    content: '';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+@mixin grid-row($reverse: false) {
+  @include grid-row-direction($reverse);
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  margin-right: floor( math.div($gutter-width, -2));
+  margin-left: ceil( math.div($gutter-width, -2));
+}
+
+@mixin grid-row-direction($reverse: false) {
+  $direction: inherit;
+  @if ($reverse) {
+    $direction: row-reverse;
+  } @else {
+    $direction: row;
+  }
+  flex-direction: $direction;
+}
+
+@mixin grid-row-alignment-horizontal($alignment) {
+  $justify: inherit;
+
+  @if ($alignment == center) {
+    $justify: center;
+  }
+  @else if ($alignment == end) {
+    $justify: flex-end;
+  }
+  @else if ($alignment == start) {
+    $justify: flex-start;
+  }
+
+  justify-content: $justify;
+  // text-align: $alignment;
+}
+
+@mixin grid-row-alignment-vertical($alignment) {
+  $align: inherit;
+
+  @if ($alignment == middle) {
+    $align: center;
+  } @else if ($alignment == bottom) {
+    $align: flex-end;
+  } @else {
+    $align: flex-start;
+  }
+  align-items: $align;
+}
+
+@mixin grid-row-spacing($spacing) {
+  justify-content: $spacing;
+}
+
+@mixin grid-column($reverse: false) {
+  @include grid-column-direction($reverse);
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 auto;
+  min-height: 1px;
+  position: relative;
+  padding-right: floor(math.div($gutter-width, 2));
+  padding-left: ceil(math.div($gutter-width, 2));
+}
+
+@mixin grid-column-direction($reverse: false) {
+  $direction: inherit;
+
+  @if ($reverse) {
+    $direction: column-reverse;
+  } @else {
+    $direction: column;
+  }
+  flex-direction: $direction;
+}
+
+@mixin grid-column-span($columns-to-span: 12, $total-columns-in-row: 12) {
+  @if ($columns-to-span == auto) {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  } @else {
+    flex-basis: percentage(math.div($columns-to-span, $total-columns-in-row));
+    max-width: percentage(math.div($columns-to-span, $total-columns-in-row));
+  }
+}
+
+@mixin grid-column-offset($columns-to-offset, $total-columns-in-row: 12) {
+  margin-left: percentage(math.div($columns-to-offset, $total-columns-in-row));
+}
+
+@mixin grid-column-order($position) {
+  @if ($position == last) {
+    $position: 9999;
+  } @else if ($position == first) {
+    $position: -9999;
+  }
+
+  order: $position;
+}
+
+@mixin grid-column-push($columns-to-push, $total-columns-in-row: 12) {
+  left: percentage(math.div($columns-to-push, $total-columns-in-row));
+}
+
+@mixin grid-column-pull($columns-to-pull, $total-columns-in-row: 12) {
+  right: percentage(math.div($columns-to-pull, $total-columns-in-row));
+}
+
+@mixin container-fixed() {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: floor(math.div($gutter-width, 2));
+  padding-left: ceil(math.div($gutter-width, 2));
+  @include clearfix;
+}
+.container {
+  @include container-fixed;
+}
+
+.container-fluid {
+  @include container-fixed;
+}
+
+.row {
+  @include grid-row;
+}
+
+.row.reverse {
+  @include grid-row-direction(true);
+}
+
+.col.reverse {
+  @include grid-column-direction(true);
+}
+
+@mixin make-grid($key) {
+  .col-#{$key} {
+    $str: '&';
+    @for $i from 1 through $columns {
+      $str: $str + ',' + & + '-' + $i;
+    }
+
+    @at-root #{$str} {
+      @include grid-column;
+    }
+
+    & {
+      @include grid-column-span(auto);
+    }
+
+    @for $i from 1 through $columns {
+      &-#{$i} {
+        @include grid-column-span($i);
+      }
+
+      &-offset-#{$i} {
+        @include grid-column-offset($i);
+      }
+
+      &-order-#{$i} {
+        @include grid-column-order($i);
+      }
+
+      &-push-#{$i} {
+        @include grid-column-push($i);
+      }
+
+      &-pull-#{$i} {
+        @include grid-column-pull($i);
+      }
+    }
+  }
+
+  .start-#{$key} {
+    @include grid-row-alignment-horizontal(start);
+  }
+
+  .center-#{$key} {
+    @include grid-row-alignment-horizontal(center);
+  }
+
+  .end-#{$key} {
+    @include grid-row-alignment-horizontal(end);
+  }
+
+  .top-#{$key} {
+    @include grid-row-alignment-vertical(top);
+  }
+
+  .middle-#{$key} {
+    @include grid-row-alignment-vertical(middle);
+  }
+
+  .bottom-#{$key} {
+    @include grid-row-alignment-vertical(bottom);
+  }
+
+  .around-#{$key} {
+    @include grid-row-spacing(space-around);
+  }
+
+  .between-#{$key} {
+    @include grid-row-spacing(space-between);
+  }
+
+  .first-#{$key} {
+    @include grid-column-order(first);
+  }
+
+  .last-#{$key} {
+    @include grid-column-order(last);
+  }
+}
+
+@each $key, $value in $viewport-layouts {
+  @if ($key == xs) {
+    @include make-grid($key);
+  } @else {
+    $min-width: map-get($value, 'min-width');
+    $container: map-get($value, 'container');
+
+    @media screen and (min-width: $min-width) {
+      .container {
+        width: $container;
+      }
+      @include make-grid($key);
+    }
+  }
+}

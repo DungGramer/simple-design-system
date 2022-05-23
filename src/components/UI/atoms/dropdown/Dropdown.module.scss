@@ -1,0 +1,33 @@
+.dropdown {
+  // position: relative;
+}
+
+// .title {
+//   position: relative;
+// }
+
+.dropdown-container {
+  @include margin-vertical(0.5rem);
+
+  position: absolute;
+  overflow-y: auto;
+  opacity: 0;
+  z-index: 10;
+
+  border-radius: 8px;
+
+  background-color: var(--white);
+  color: var(--font-color);
+
+  box-shadow: var(--shadow-drop);
+
+  &.right {
+    right: 0;
+    text-align: right;
+  }
+
+  &.left {
+    left: 0;
+    text-align: left;
+  }
+}

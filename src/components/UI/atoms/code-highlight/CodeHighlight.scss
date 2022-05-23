@@ -1,0 +1,155 @@
+//atom-one
+// import '/node_modules/highlight.js/styles/atom-one-light.css';
+
+html,
+html[theme='light'] {
+
+  code[class*="language-"] {
+    background: none !important;
+  }
+
+  .hljs {
+    display: block;
+    overflow-x: auto;
+    padding: 0.5em;
+    color: #575f66;
+    background: #fafafa;
+  }
+
+  // .hljs-comment,
+  // .hljs-quote {
+  //   color: #a0a1a7;
+  //   font-style: italic;
+  // }
+
+  // .hljs-doctag,
+  // .hljs-keyword,
+  // .hljs-formula {
+  //   color: #a173ff;
+  // }
+
+  // .hljs-section,
+  // .hljs-name,
+  // .hljs-selector-tag,
+  // .hljs-deletion,
+  // .hljs-subst {
+  //   color: #e45649;
+  // }
+
+  // .hljs-literal {
+  //   color: #0184bb;
+  // }
+
+  // .hljs-string,
+  // .hljs-regexp,
+  // .hljs-addition,
+  // .hljs-attribute,
+  // .hljs-meta-string {
+  //   color: #a173ff;
+  // }
+
+  // .hljs-built_in,
+  // .hljs-class .hljs-title {
+  //   color: #c18401;
+  // }
+
+  // .hljs-attr,
+  // .hljs-variable,
+  // .hljs-template-variable,
+  // .hljs-type,
+  // .hljs-selector-class,
+  // .hljs-selector-attr,
+  // .hljs-selector-pseudo,
+  // .hljs-number {
+  //   color: #14b8a6;
+  // }
+
+  // .hljs-symbol,
+  // .hljs-bullet,
+  // .hljs-link,
+  // .hljs-meta,
+  // .hljs-selector-id,
+  // .hljs-title {
+  //   color: #4078f2;
+  // }
+
+  // .hljs-emphasis {
+  //   font-style: italic;
+  // }
+
+  // .hljs-strong {
+  //   font-weight: bold;
+  // }
+
+  // .hljs-link {
+  //   text-decoration: underline;
+  // }
+
+  // .hljs-function {
+  //   color: rgb(230, 180, 34);
+  // }
+}
+
+html[theme='dark'] {
+  .hljs {
+    color: #cbccc6;
+    background: #232834;
+  }
+
+  // .hljs-comment,
+  // .hljs-quote {
+  //   color: #5c6370;
+  //   font-style: italic;
+  // }
+
+  // .hljs-doctag,
+  // .hljs-keyword,
+  // .hljs-formula {
+  //   color: #a173ff;
+  // }
+
+  // .hljs-section,
+  // .hljs-name,
+  // .hljs-selector-tag,
+  // .hljs-deletion,
+  // .hljs-subst {
+  //   color: #78a9ff;
+  // }
+
+  // .hljs-literal {
+  //   color: #56b6c2;
+  // }
+
+  // .hljs-string,
+  // .hljs-regexp,
+  // .hljs-addition,
+  // .hljs-attribute,
+  // .hljs-meta-string {
+  //   color: #f29e74;
+  // }
+
+  // .hljs-built_in,
+  // .hljs-class .hljs-title {
+  //   color: #e6c07b;
+  // }
+
+  // .hljs-attr,
+  // .hljs-variable,
+  // .hljs-template-variable,
+  // .hljs-type,
+  // .hljs-selector-class,
+  // .hljs-selector-attr,
+  // .hljs-selector-pseudo,
+  // .hljs-number {
+  //   color: #9ef0f0;
+  // }
+
+  // .hljs-symbol,
+  // .hljs-bullet,
+  // .hljs-link,
+  // .hljs-meta,
+  // .hljs-selector-id,
+  // .hljs-title {
+  //   color: #61aeee;
+  // }
+}
