@@ -11,6 +11,7 @@ export const findNameComponents = (children, name) => {
 
 export const findPropsChildren = (children, name) => {
   if (Array.isArray(children)) {
-    return children.find(child => child.props[name])?.props[name];
-  } return '';
-}
+    return children.find((child) => child.props[name])?.props[name];
+  }
+  return '';
+};

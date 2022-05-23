@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function useOnScreen(
-  ref,
-  rootMargin = '0px',
-  threshold = 0.1,
-  cb = () => {},
-) {
+function useOnScreen(ref, rootMargin = '0px', threshold = 0.1, cb = () => {}) {
   const [isVisible, setIsVisible] = useState(false);
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -21,15 +16,14 @@ function useOnScreen(
       {
         rootMargin,
         threshold,
-      },
+      }
     );
     if (ref.current) {
       observer.observe(ref.current);
     }
-
   }, []);
 
   return isVisible;
-};
+}
 
 export default useOnScreen;

@@ -1,7 +1,4 @@
-import TextAreaBasic from "./TextAreaBasic";
-import TextAreaResize from "./TextAreaResize";
+import TextAreaBasic from './TextAreaBasic';
+import TextAreaResize from './TextAreaResize';
 
-export {
-  TextAreaBasic,
-  TextAreaResize
-}
+export { TextAreaBasic, TextAreaResize };

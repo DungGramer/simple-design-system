@@ -14,7 +14,6 @@ const Sidebar = () => {
   const toggleOpen = () => setOpen(!open);
   const maxDesktop = useMediaQuery(breakpoint.m_desktop);
 
-
   return (
     <aside className={`${styles.sidebar} ${openClass}`}>
       <Backdrop

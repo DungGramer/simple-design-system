@@ -52,7 +52,7 @@ const Languages = ({ t, toggleOpen }) => {
 
   const languagesDropdown = (
     <>
-      {languages.map(language => (
+      {languages.map((language) => (
         <Menu
           content={language.name}
           key={language.key}
@@ -90,7 +90,6 @@ const Header = () => {
   const [open, setOpen] = useState(false);
   const toggleOpen = () => maxDesktop && setOpen(!open);
 
-
   const maxDesktop = useMediaQuery(breakpoint.m_desktop);
 
   const { t } = useTranslation();
@@ -108,7 +107,7 @@ const Header = () => {
 
         <nav className={styles['nav-container']}>
           <ul className={`${styles['nav-list']} ${open ? styles.open : ''}`}>
-            {paths.map(path => (
+            {paths.map((path) => (
               <li key={path.name}>
                 <NavLink
                   to={path.location}
@@ -127,7 +126,7 @@ const Header = () => {
       </div>
     </header>
   );
-}
+};
 
 Header.propTypes = {};
 

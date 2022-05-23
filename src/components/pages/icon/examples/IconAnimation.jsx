@@ -1,4 +1,4 @@
-import Icon from "@atoms/icon/Icon";
+import Icon from '@atoms/icon/Icon';
 
 const IconAnimation = () => {
   return (

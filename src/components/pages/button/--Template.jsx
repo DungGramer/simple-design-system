@@ -7,8 +7,8 @@ const defaultProps = {
 /**
  * @deprecated
  */
-const ButtonTemplate = args => <Button {...defaultProps} {...args} />;
-const ButtonTemplateString = args => `<Button ${objectToProps(args)}/>`;
+const ButtonTemplate = (args) => <Button {...defaultProps} {...args} />;
+const ButtonTemplateString = (args) => `<Button ${objectToProps(args)}/>`;
 
 const type = [
   {

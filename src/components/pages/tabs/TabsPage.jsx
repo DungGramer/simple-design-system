@@ -19,7 +19,7 @@ const TabsPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 TabsPage.propTypes = {};
 

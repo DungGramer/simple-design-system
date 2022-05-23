@@ -19,7 +19,7 @@ const DropdownMenuPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 DropdownMenuPage.propTypes = {};
 

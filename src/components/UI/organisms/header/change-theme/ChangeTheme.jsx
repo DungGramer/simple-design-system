@@ -4,7 +4,7 @@ import lottie from 'lottie-web/build/player/lottie_light';
 
 import { useThemeContext } from '~/context/themeContext/themeContext';
 
-import dayNight from './animation/day-night.json'; //0 -> 9: day, 10 -> 19: night
+import dayNight from './animation/day-night.json'; // 0 -> 9: day, 10 -> 19: night
 
 const ChangeThemeButton = () => {
   const { changeTheme, switchTheme } = useThemeContext();

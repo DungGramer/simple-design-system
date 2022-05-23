@@ -1,5 +1,3 @@
-import ToggleBasic from "./ToggleBasic";
+import ToggleBasic from './ToggleBasic';
 
-export {
-  ToggleBasic
-}
+export { ToggleBasic };

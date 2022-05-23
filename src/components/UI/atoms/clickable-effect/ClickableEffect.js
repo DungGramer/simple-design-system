@@ -33,7 +33,7 @@ function createRipple(event) {
 
   setTimeout(() => {
     button.removeChild(circle);
-  }, 700); //timeout = animation-time
+  }, 700); // timeout = animation-time
 }
 
 const clickableEffect = {

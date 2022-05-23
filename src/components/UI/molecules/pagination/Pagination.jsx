@@ -92,7 +92,7 @@ const Pagination = ({ defaultCurrent, total, defaultPageSize }) => {
     setMinPageLimit(lastPage - defaultPageSize);
   };
 
-  const PageNumberItem = ({onClick, pageNum}) => (
+  const PageNumberItem = ({ onClick, pageNum }) => (
     <li
       onClick={onClick}
       className={currentPage == pageNum ? styles.active : null}
@@ -103,9 +103,7 @@ const Pagination = ({ defaultCurrent, total, defaultPageSize }) => {
 
   const renderPageNumbers = pages.map((pageNum, index) => {
     if (pageNum < maxPageLimit + 1 && pageNum > minPageLimit) {
-      return (
-        <PageNumberItem onClick={handleChange} pageNum={pageNum} />
-      );
+      return <PageNumberItem onClick={handleChange} pageNum={pageNum} />;
     }
     return null;
   });

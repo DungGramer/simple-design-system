@@ -1,6 +1,6 @@
-import splitUnit from "./splitUnit";
+import splitUnit from './splitUnit';
 
-const boxModel = ele => {
+const boxModel = (ele) => {
   const {
     borderLeftWidth,
     borderRightWidth,
@@ -46,8 +46,22 @@ const boxModel = ele => {
     size: {
       width: splitUnit(width),
       height: splitUnit(height),
-      maxWidth: splitUnit(paddingLeft) + splitUnit(paddingRight) + splitUnit(width) + splitUnit(marginLeft) + splitUnit(marginRight) + splitUnit(borderLeftWidth) + splitUnit(borderRightWidth),
-      maxHeight: splitUnit(paddingTop) + splitUnit(paddingBottom) + splitUnit(height) + splitUnit(marginTop) + splitUnit(marginBottom) + splitUnit(borderTopWidth) + splitUnit(borderBottomWidth),
+      maxWidth:
+        splitUnit(paddingLeft) +
+        splitUnit(paddingRight) +
+        splitUnit(width) +
+        splitUnit(marginLeft) +
+        splitUnit(marginRight) +
+        splitUnit(borderLeftWidth) +
+        splitUnit(borderRightWidth),
+      maxHeight:
+        splitUnit(paddingTop) +
+        splitUnit(paddingBottom) +
+        splitUnit(height) +
+        splitUnit(marginTop) +
+        splitUnit(marginBottom) +
+        splitUnit(borderTopWidth) +
+        splitUnit(borderBottomWidth),
     },
   };
 };

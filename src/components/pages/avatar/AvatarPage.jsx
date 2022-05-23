@@ -19,7 +19,7 @@ const AvatarPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 AvatarPage.propTypes = {};
 

@@ -19,7 +19,7 @@ const IconPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 IconPage.propTypes = {};
 

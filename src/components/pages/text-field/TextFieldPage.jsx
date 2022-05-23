@@ -19,7 +19,7 @@ const TextFieldPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 TextFieldPage.propTypes = {};
 

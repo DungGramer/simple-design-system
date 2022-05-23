@@ -146,7 +146,8 @@ export const vi = {
   // Divider
   divider: {
     title: 'Divider',
-    description: 'Divider là một đường mảnh được sử dụng để phân tách nội dung.',
+    description:
+      'Divider là một đường mảnh được sử dụng để phân tách nội dung.',
   },
   'Show icon in center': 'Hiển thị biểu tượng trong trung tâm',
   'Direction of divider': 'Hướng của divider',
@@ -169,7 +170,8 @@ export const vi = {
   // Icon
   icon: {
     title: 'Icon',
-    description: 'Icon là sự thể hiện trực quan của một tệp, ứng dụng hoặc hành động.',
+    description:
+      'Icon là sự thể hiện trực quan của một tệp, ứng dụng hoặc hành động.',
   },
   'The name of the icon': 'Tên của icon',
   'The size of the icon': 'Kích thước của icon',
@@ -245,27 +247,33 @@ export const vi = {
   },
   'Specifies the name of the radio button.': 'Xác định tên của nút radio.',
   'Specifies the value of the radio button.': 'Xác định giá trị của nút radio.',
-  'Should be pre-selected when the page loads': 'Có được chọn trước khi trang tải lên',
+  'Should be pre-selected when the page loads':
+    'Có được chọn trước khi trang tải lên',
   'Should be disabled when the page loads': 'Có được vô hiệu khi trang tải lên',
   'Called when the radio button is clicked': 'Được gọi khi nút radio được nhấp',
-  'Specifies the appearance of the radio button.': 'Xác định kiểu hiển thị của nút radio.',
+  'Specifies the appearance of the radio button.':
+    'Xác định kiểu hiển thị của nút radio.',
 
   // Range
   range: {
     title: 'Range',
-    description: 'Range cho phép người dùng chọn một giá trị gần đúng trên một thanh trượt'
+    description:
+      'Range cho phép người dùng chọn một giá trị gần đúng trên một thanh trượt',
   },
-  'Sets the minimum value of the range.': 'Thiết lập giá trị tối thiểu của range',
+  'Sets the minimum value of the range.':
+    'Thiết lập giá trị tối thiểu của range',
   'Sets the maximum value of the range.': 'Thiết lập giá trị tối đa của range',
   'Sets the step value of the range.': 'Thiết lập giá trị bước của range',
-  'Sets the default value if range is not set.': 'Thiết lập giá trị mặc định nếu range không được thiết lập',
+  'Sets the default value if range is not set.':
+    'Thiết lập giá trị mặc định nếu range không được thiết lập',
   'Called when the range value changes.': 'Được gọi khi giá trị range thay đổi',
   'Disables the range.': 'Vô hiệu range',
 
   // Tabs
   tabs: {
     title: 'Tabs',
-    description: 'Các tab được sử dụng để sắp xếp nội dung bằng cách nhóm các thông tin tương tự trên cùng một trang.'
+    description:
+      'Các tab được sử dụng để sắp xếp nội dung bằng cách nhóm các thông tin tương tự trên cùng một trang.',
   },
   'The children elements of the Tabs.': 'Các phần tử con của Tabs',
   'The title of the Tabs.': 'Tiêu đề của Tabs',
@@ -274,53 +282,71 @@ export const vi = {
   // Table
   table: {
     title: 'Table',
-    description: 'Table là một tập hợp dữ liệu được sắp xếp theo hàng và cột.'
+    description: 'Table là một tập hợp dữ liệu được sắp xếp theo hàng và cột.',
   },
-  'Elements to be rendered inside the Table': 'Các phần tử được hiển thị trong Table',
+  'Elements to be rendered inside the Table':
+    'Các phần tử được hiển thị trong Table',
   'Data to be rendered inside the Table': 'Dữ liệu được hiển thị trong Table',
-  'Elements to be rendered inside the Column': 'Các phần tử được hiển thị trong Column',
+  'Elements to be rendered inside the Column':
+    'Các phần tử được hiển thị trong Column',
   'Header of the Column': 'Tiêu đề của Column',
   'Key of the data table': 'Key của bảng dữ liệu',
 
   // Spinner
   spinner: {
     title: 'Spinner',
-    description: 'Spinner là một biểu tượng quay động cho phép người dùng biết nội dung đang được tải.'
+    description:
+      'Spinner là một biểu tượng quay động cho phép người dùng biết nội dung đang được tải.',
   },
   'Size of the spinner.': 'Kích thước của spinner',
 
   // TextArea
   textArea: {
     title: 'Text area',
-    description: 'Một vùng văn bản cho phép người dùng nhập văn bản dạng dài kéo dài trên nhiều dòng.'
+    description:
+      'Một vùng văn bản cho phép người dùng nhập văn bản dạng dài kéo dài trên nhiều dòng.',
   },
-  'Enables the resizing of the textarea': 'Cho phép thay đổi kích thước của vùng văn bản',
-  'Sets the field as uneditable, with a changed hover state.': 'Thiết lập trường như không thể chỉnh sửa, với trạng thái chọn trên đã thay đổi.',
-  'If true, prevents the value of the input from being edited.': 'Nếu được bật sẽ ngăn chặn giá trị của đầu vào được chỉnh sửa.',
-  'Set required for form that the field is part of.': 'Thiết lập bắt buộc cho mẫu mà trường này là một phần của nó.',
-  'Sets the maximum height of the textarea.': 'Thiết lập chiều cao tối đa của vùng văn bản',
+  'Enables the resizing of the textarea':
+    'Cho phép thay đổi kích thước của vùng văn bản',
+  'Sets the field as uneditable, with a changed hover state.':
+    'Thiết lập trường như không thể chỉnh sửa, với trạng thái chọn trên đã thay đổi.',
+  'If true, prevents the value of the input from being edited.':
+    'Nếu được bật sẽ ngăn chặn giá trị của đầu vào được chỉnh sửa.',
+  'Set required for form that the field is part of.':
+    'Thiết lập bắt buộc cho mẫu mà trường này là một phần của nó.',
+  'Sets the maximum height of the textarea.':
+    'Thiết lập chiều cao tối đa của vùng văn bản',
   'The default value of the textarea': 'Giá trị mặc định của vùng văn bản',
-  'Enables native spell check on the textarea element.': 'Cho phép kiểm tra chính tả trên phần tử văn bản của textarea',
+  'Enables native spell check on the textarea element.':
+    'Cho phép kiểm tra chính tả trên phần tử văn bản của textarea',
 
   // TextField
   textField: {
     title: 'Text field',
-    description: 'Text field là đầu vào cho phép người dùng viết hoặc chỉnh sửa văn bản.'
+    description:
+      'Text field là đầu vào cho phép người dùng viết hoặc chỉnh sửa văn bản.',
   },
   'Name of the input element.': 'Tên của phần tử đầu vào',
-  'Placeholder text to display in the text field whenever it is empty.': 'Văn bản chứa để hiển thị trong trường văn bản khi trống',
+  'Placeholder text to display in the text field whenever it is empty.':
+    'Văn bản chứa để hiển thị trong trường văn bản khi trống',
   'Sets maximum width of input.': 'Thiết lập chiều rộng tối đa của đầu vào',
-  'Handler called when the inputs value changes.': 'Handler được gọi khi giá trị đầu vào thay đổi',
+  'Handler called when the inputs value changes.':
+    'Handler được gọi khi giá trị đầu vào thay đổi',
   'Sets maximum length of input.': 'Thiết lập chiều dài tối đa của đầu vào',
-  'Sets the field as to appear disabled, users will not be able to interact with the text field.': 'Thiết lập trường như đang ẩn, người dùng sẽ không thể thao tác với trường văn bản',
+  'Sets the field as to appear disabled, users will not be able to interact with the text field.':
+    'Thiết lập trường như đang ẩn, người dùng sẽ không thể thao tác với trường văn bản',
 
   // Toggle
   toggle: {
     title: 'Toggle',
-    description: 'Toggle được sử dụng để xem hoặc chuyển đổi giữa các trạng thái đã bật hoặc đã tắt.'
+    description:
+      'Toggle được sử dụng để xem hoặc chuyển đổi giữa các trạng thái đã bật hoặc đã tắt.',
   },
-  'Handler to be called when native click event happens internally.': 'Handler được gọi khi sự kiện click xảy ra ',
+  'Handler to be called when native click event happens internally.':
+    'Handler được gọi khi sự kiện click xảy ra ',
   'The value of the toggle.': 'Giá trị của toggle',
-  'The icon to be displayed when the toggle is unchecked.': 'Biểu tượng được hiển thị khi toggle được bỏ chọn',
-  'The icon to be displayed when the toggle is checked.': 'Biểu tượng được hiển thị khi toggle được chọn',
+  'The icon to be displayed when the toggle is unchecked.':
+    'Biểu tượng được hiển thị khi toggle được bỏ chọn',
+  'The icon to be displayed when the toggle is checked.':
+    'Biểu tượng được hiển thị khi toggle được chọn',
 };

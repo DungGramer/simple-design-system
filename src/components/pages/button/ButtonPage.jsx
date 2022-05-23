@@ -19,7 +19,7 @@ const ButtonPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 ButtonPage.propTypes = {};
 

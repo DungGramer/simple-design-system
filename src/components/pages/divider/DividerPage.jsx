@@ -19,7 +19,7 @@ const DividerPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 DividerPage.propTypes = {};
 

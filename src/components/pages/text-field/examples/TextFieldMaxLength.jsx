@@ -1,4 +1,4 @@
-import TextField from "@molecules/text-field/TextField"
+import TextField from '@molecules/text-field/TextField';
 
 const TextFieldMaxLength = () => {
   return (
@@ -6,7 +6,7 @@ const TextFieldMaxLength = () => {
       <p>Max length: 10</p>
       <TextField maxLength={10} />
     </>
-  )
-}
+  );
+};
 
-export default TextFieldMaxLength
+export default TextFieldMaxLength;

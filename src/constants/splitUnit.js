@@ -1,4 +1,4 @@
-const splitUnit = value => {
+const splitUnit = (value) => {
   return parseFloat(value) || 0;
 };
 

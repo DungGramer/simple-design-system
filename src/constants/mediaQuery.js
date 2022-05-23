@@ -1,4 +1,3 @@
-
 /**
  * Breakpoint constants
  * Using the breakpoint names as keys, and the breakpoint sizes as values

@@ -1,7 +1,4 @@
-import TabsBasic from "./TabsBasic";
-import TabsControlled from "./TabsControlled";
+import TabsBasic from './TabsBasic';
+import TabsControlled from './TabsControlled';
 
-export {
-  TabsBasic,
-  TabsControlled
-}
+export { TabsBasic, TabsControlled };

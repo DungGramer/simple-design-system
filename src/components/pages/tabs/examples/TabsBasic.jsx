@@ -10,7 +10,7 @@ const TabsBasic = () => {
         <li key={index}>{item}</li>
       ))}
     </ul>
-  )
+  );
 
   return (
     <>

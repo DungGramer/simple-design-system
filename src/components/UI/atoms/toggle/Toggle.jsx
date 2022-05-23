@@ -1,7 +1,6 @@
 import styles from './Toggle.module';
 import PropTypes from 'prop-types';
 
-
 const Toggle = ({ checked, onClick }) => {
   return (
     <input

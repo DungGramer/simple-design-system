@@ -25,7 +25,7 @@ function Tab({ onClick, title, active }) {
 Tab.propTypes = {
   onClick: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
-  active: PropTypes.bool.isRequired
+  active: PropTypes.bool.isRequired,
 };
 
 export default Tab;

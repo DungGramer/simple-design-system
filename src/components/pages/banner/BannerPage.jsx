@@ -19,7 +19,7 @@ const BannerPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 BannerPage.propTypes = {};
 

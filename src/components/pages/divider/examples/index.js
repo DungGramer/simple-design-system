@@ -1,9 +1,5 @@
-import DividerBasic from "./DividerBasic";
-import DividerDirection from "./DividerDirection";
-import DividerIcon from "./DividerIcon";
+import DividerBasic from './DividerBasic';
+import DividerDirection from './DividerDirection';
+import DividerIcon from './DividerIcon';
 
-export {
-  DividerBasic,
-  DividerDirection,
-  DividerIcon
-}
+export { DividerBasic, DividerDirection, DividerIcon };

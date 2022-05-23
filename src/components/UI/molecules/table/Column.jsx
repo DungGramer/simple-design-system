@@ -1,5 +1,5 @@
 const Column = ({ children, width }) => {
-	return null;
+  return null;
 };
 
 export default Column;

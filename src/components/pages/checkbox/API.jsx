@@ -3,8 +3,8 @@ import TableAPI from '@templates/tableAPI/TableAPI';
 import CodeColumn from '@templates/tableAPI/CodeColumn';
 
 export const API = () => {
-	const { t } = useTranslation();
-	const data = [
+  const { t } = useTranslation();
+  const data = [
     {
       property: <code>id</code>,
       description: t('Id assigned to checkbox'),
@@ -15,12 +15,12 @@ export const API = () => {
       description: t('Content of the checkbox'),
       type: 'node',
     },
-		{
-			property: <code>size</code>,
-			description: t('The size of the checkbox'),
-			type: <CodeColumn data={['small', 'medium', 'large', 'xlarge']} />,
-			default: <code>small</code>,
-		},
+    {
+      property: <code>size</code>,
+      description: t('The size of the checkbox'),
+      type: <CodeColumn data={['small', 'medium', 'large', 'xlarge']} />,
+      default: <code>small</code>,
+    },
     {
       property: <code>checked</code>,
       description: t('The checked state of the checkbox'),
@@ -32,13 +32,13 @@ export const API = () => {
       description: t('The function to call when the checkbox is clicked'),
       type: <code>function</code>,
     },
-	];
-	return (
-		<div>
-			<h3>{t('API')}</h3>
-			<h4>{t('<Checkbox>')}</h4>
+  ];
+  return (
+    <div>
+      <h3>{t('API')}</h3>
+      <h4>{t('<Checkbox>')}</h4>
 
-			<TableAPI data={data} />
-		</div>
-	);
+      <TableAPI data={data} />
+    </div>
+  );
 };

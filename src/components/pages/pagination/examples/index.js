@@ -1,7 +1,4 @@
-import PaginationBasic from "./PaginationBasic";
-import PaginationIndex from "./PaginationIndex";
+import PaginationBasic from './PaginationBasic';
+import PaginationIndex from './PaginationIndex';
 
-export {
-  PaginationBasic,
-  PaginationIndex
-}
+export { PaginationBasic, PaginationIndex };

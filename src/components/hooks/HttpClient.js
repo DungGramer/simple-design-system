@@ -9,7 +9,6 @@
  * let data = await httpClient.get('/posts/1');
  */
 
-
 class HttpClient {
   constructor(baseUrl, headers) {
     this.baseUrl = baseUrl.replace(/\/$/, '');
@@ -24,7 +23,7 @@ class HttpClient {
     return new HttpClient(baseUrl, headers);
   }
 
-  getXhr () {
+  getXhr() {
     return this.xhr;
   }
 

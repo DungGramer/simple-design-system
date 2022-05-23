@@ -1,5 +1,5 @@
-import Divider from '@molecules/divider/Divider'
-import React from 'react'
+import Divider from '@molecules/divider/Divider';
+import React from 'react';
 
 const DividerDirection = () => {
   return (
@@ -7,7 +7,7 @@ const DividerDirection = () => {
       <Divider direction="horizontal" />
       <Divider direction="vertical" style={{ height: 50 }} />
     </>
-  )
-}
+  );
+};
 
-export default DividerDirection
+export default DividerDirection;
