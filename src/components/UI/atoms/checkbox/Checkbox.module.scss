@@ -1,17 +1,18 @@
 .checkbox {
-  padding: 0.5em;
   display: inline-flex;
+  padding: .5em;
 
   input[type='checkbox'] {
     display: none;
     pointer-events: none;
 
     & + label {
-      cursor: pointer;
       display: flex;
       align-items: center;
+      cursor: pointer;
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
         svg {
           stroke: var(--primary-500);
         }
@@ -19,23 +20,24 @@
 
       svg {
         stroke: var(--black-400);
-        stroke-width: 5;
         fill: white;
-        transition: stroke 0.2s ease-in;
+        transition: stroke .2s ease-in;
+        stroke-width: 5;
 
         .box {
+          will-change: stroke-dashoffset;
+          fill: white;
+          transition: stroke-dashoffset .3s linear;
           stroke-dasharray: 320;
           stroke-dashoffset: 0;
-          fill: white;
-          transition: stroke-dashoffset 0.3s linear;
-          will-change: stroke-dashoffset;
         }
+
         .check {
+          will-change: stroke-dashoffset;
+          fill: none;
+          transition: stroke-dashoffset .3s linear;
           stroke-dasharray: 70;
           stroke-dashoffset: 70;
-          fill: none;
-          transition: stroke-dashoffset 0.3s linear;
-          will-change: stroke-dashoffset;
         }
       }
 
@@ -48,9 +50,11 @@
       svg {
         stroke: var(--primary-500);
       }
+
       .box {
         stroke-dashoffset: 320;
       }
+
       .check {
         stroke-dashoffset: 0;
       }
@@ -59,8 +63,8 @@
 }
 
 .checkbox.disabled {
+  opacity: .5;
   cursor: not-allowed;
-  opacity: 0.5;
 
   > label {
     pointer-events: none;

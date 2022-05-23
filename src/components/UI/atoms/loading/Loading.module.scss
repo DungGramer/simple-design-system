@@ -1,21 +1,21 @@
 .loading {
   position: fixed;
+  z-index: map-get($zIndex, 'loading');
   top: 0;
   left: 0;
-  width: 100%;
   height: 2px;
-  z-index: 9999;
+  width: 100%;
 
   .loading__progress {
+    will-change: width;
     position: absolute;
     top: 0;
     left: 0;
-    width: 0;
     height: 2px;
+    width: 0;
     border-radius: 999px;
     background-color: var(--primary-500);
-    transition: width 0.2s ease-in-out;
     transform: translate3d(0, 0, 0);
-    will-change: width;
+    transition: width .2s ease-in-out;
   }
 }

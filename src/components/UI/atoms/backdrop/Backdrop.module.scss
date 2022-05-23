@@ -1,10 +1,10 @@
 .backdrop.open {
   position: fixed;
+  z-index: map-get($zIndex, 'back');
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  z-index: -1;
+  left: 0;
   cursor: default;
 }
 

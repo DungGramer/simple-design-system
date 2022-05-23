@@ -1,22 +1,23 @@
 .toggle-button {
-  position: relative;
-  width: 40px;
-  height: 22px;
-  margin-right: 0.5rem;
   display: inline-block;
+  position: relative;
+  height: 22px;
+  width: 40px;
+  margin-right: .5rem;
   cursor: pointer;
+
   > * {
+    display: flex;
     position: absolute;
     top: 0;
     bottom: 0;
-    font-size: 0.6rem;
-    color: white;
-    display: flex;
     align-items: center;
+    font-size: .6rem;
+    color: white;
   }
 
 
-  input[type="radio"]:checked + .toggle-status {
+  input[type='radio']:checked + .toggle-status {
     transform: translateX(100%);
   }
 }
@@ -24,17 +25,17 @@
 .icon-false {
   right: 6px;
 }
+
 .icon-true {
   left: 6px;
 }
 
 .toggle-status {
-  width: 18px;
-  height: 18px;
-  background-color: white;
-  border-radius: 50px;
-  left: 2px;
   top: 2px;
-
-  transition: transform 0.2s ease;
+  left: 2px;
+  height: 18px;
+  width: 18px;
+  border-radius: 50px;
+  background-color: white;
+  transition: transform .2s ease;
 }

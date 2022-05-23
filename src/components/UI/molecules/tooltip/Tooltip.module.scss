@@ -1,26 +1,28 @@
 .tooltip {
-  position: relative;
   display: inline-block;
+  position: relative;
   margin: 0;
   padding: 0;
   cursor: pointer;
+
   &:hover {
-    &:before {
-      opacity: 1;
+    &::before {
       visibility: visible;
+      opacity: 1;
     }
   }
-  &:before {
-    content: "";
+
+  &::before {
+    content: '';
+    visibility: hidden;
     position: absolute;
     top: 100%;
     left: 50%;
     margin-left: -5px;
-    border-width: 5px;
+    border-color: #000 transparent transparent;
     border-style: solid;
-    border-color: #000 transparent transparent transparent;
-    visibility: hidden;
+    border-width: 5px;
     opacity: 0;
-    transition: all 0.3s ease-in-out;
+    transition: all .3s ease-in-out;
   }
 }

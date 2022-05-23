@@ -3,15 +3,14 @@
 
 html,
 html[theme='light'] {
-
-  code[class*="language-"] {
+  code[class*='language-'] {
     background: none !important;
   }
 
   .hljs {
     display: block;
     overflow-x: auto;
-    padding: 0.5em;
+    padding: .5em;
     color: #575f66;
     background: #fafafa;
   }

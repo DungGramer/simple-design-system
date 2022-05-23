@@ -2,7 +2,8 @@
   from {
     opacity: 0;
     filter: blur(10px);
-}
+  }
+
   to {
     opacity: 1;
     filter: blur(0);
@@ -11,11 +12,12 @@
 
 @keyframes hiddenScrollbar {
   0% {
-    width: 0.5rem;
-    height: 0.5rem;
+    height: .5rem;
+    width: .5rem;
   }
+
   100% {
-    width: 0;
     height: 0;
+    width: 0;
   }
 }

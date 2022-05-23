@@ -1,6 +1,7 @@
 html {
   box-sizing: border-box;
 }
+
 *,
 *::before,
 *::after {
@@ -37,16 +38,13 @@ textarea:active {
 
 // Smooth scroll
 html {
-  scroll-behavior: smooth;
+  font-kerning: normal;
+  font-variant-ligatures: common-ligatures;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
-
-  -webkit-font-kerning: normal;
-  font-kerning: normal;
-
+  scroll-behavior: smooth;
+  text-rendering: optimizelegibility;
   font-feature-setting: 'kern', 'liga', '';
-  font-variant-ligatures: common-ligatures;
 }
 
 /**
@@ -89,10 +87,10 @@ ol {
  */
 
 a {
-  background-color: transparent; /* Remove the gray background color from active links in IE 10 */
-  -webkit-text-fill-color: currentColor; /* fix color in Safari */
   text-decoration: none;
   color: inherit;
+  background-color: transparent; /* Remove the gray background color from active links in IE 10 */
+  -webkit-text-fill-color: currentcolor; /* fix color in Safari */
 }
 
 a:visited,
@@ -103,9 +101,10 @@ a:hover {
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
+
 a:not([href]) {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 /**
@@ -120,8 +119,8 @@ video {
 }
 
 img {
-  display: block;
   object-fit: cover;
+  display: block;
 }
 
 /* Remove the gap between embedded content and the bottom of their containers. */
@@ -139,16 +138,17 @@ b,
 strong {
   font-weight: bold;
 }
+
 i,
 em {
   font-style: italic;
 }
 
 hr {
+  height: .1em;
   border: none;
-  height: 0.1em;
   background: #ccc;
-  background-color: rgba(0, 0, 0, 0.2);
+  background-color: rgb(0 0 0 / 20%);
 }
 
 /**
@@ -158,9 +158,11 @@ hr {
 table {
   border-collapse: collapse;
 }
+
 th {
   text-align: left;
 }
+
 td {
   vertical-align: middle;
 }
@@ -170,7 +172,7 @@ td {
  */
 
 nav ul {
-    list-style:none;
+  list-style: none;
 }
 
 /* Remove all animations and transitions
@@ -179,9 +181,9 @@ for people that prefer not to see them */
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
 }
@@ -192,7 +194,7 @@ for people that prefer not to see them */
  */
 
 [hidden] {
-    display: none;
+  display: none;
 }
 
 /**
@@ -201,73 +203,91 @@ for people that prefer not to see them */
  */
 
 textarea {
-    overflow: auto; /* 1 */
-    vertical-align: top; /* 2 */
+  vertical-align: top; /* 2 */
+  overflow: auto; /* 1 */
 }
 
 code:not([class]) {
-  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
-  font-size: .9em;
   margin: 0 1px;
-  padding: 0.2em 0.4em;
-  background-color: var(--background-code-color);
-  border-radius: 3px;
+  padding: .2em .4em;
   border: thin solid var(--gray-200);
+  border-radius: 3px;
+  font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+  font-size: .9em;
+  background-color: var(--background-code-color);
 }
 
-[type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled), button:not(:disabled) {
+[type='button']:not(:disabled),
+[type='reset']:not(:disabled),
+[type='submit']:not(:disabled),
+button:not(:disabled) {
   cursor: pointer;
 }
 
-[type=button],[type=reset],[type=submit],button {
+[type='button'],
+[type='reset'],
+[type='submit'],
+button {
   appearance: button;
 }
 
-input[type=date],input[type=datetime-local],input[type=month],input[type=time] {
+input[type='date'],
+input[type='datetime-local'],
+input[type='month'],
+input[type='time'] {
   appearance: listbox;
 }
 
-[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button {
+[type='number']::-webkit-inner-spin-button,
+[type='number']::-webkit-outer-spin-button {
   height: auto;
 }
 
-[type=search] {
-  outline-offset: -2px;
+[type='search'] {
   appearance: none;
+  outline-offset: -2px;
 }
 
-[type=search]::-webkit-search-decoration {
+[type='search']::-webkit-search-decoration {
   appearance: none;
 }
 
 ::-webkit-file-upload-button {
-  font: inherit;
   appearance: button;
+  font: inherit;
 }
 
 address {
   margin-bottom: 1rem;
   font-style: normal;
-  line-height: inherit
+  line-height: inherit;
 }
 
 output {
-  display: inline-block
+  display: inline-block;
 }
 
 summary {
   display: list-item;
-  cursor: pointer
+  cursor: pointer;
 }
 
 template {
-  display: none
+  display: none;
 }
 
 [hidden] {
-  display: none!important;
+  display: none !important;
 }
 
-a, area, button, [role=button], input:not([type=range]), label, select, summary, textarea {
+a,
+area,
+button,
+[role='button'],
+input:not([type='range']),
+label,
+select,
+summary,
+textarea {
   touch-action: manipulation;
 }

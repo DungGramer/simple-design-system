@@ -1,12 +1,13 @@
-/*------------------------------------*
+/* ------------------------------------*
   # Scrollbar
-*------------------------------------*/
+*------------------------------------ */
 
 :root {
   // Support Firefox
   scrollbar-width: thin;
   scrollbar-color: var(--scrollbar-color) transparent;
 }
+
 @include isFirefox() {
   * {
     scrollbar-width: thin;
@@ -16,35 +17,40 @@
 
 // Support Chrome
 ::-webkit-scrollbar {
-  width: 0.5rem;
-  height: 0.5rem;
-  background: transparent;
+  height: .5rem;
+  width: .5rem;
   border-color: transparent;
-  transition: width 0.2s ease-in-out, height 0.2s ease-in-out;
+  background: transparent;
+  transition: width .2s ease-in-out, height .2s ease-in-out;
 }
+
 ::-webkit-scrollbar-track,
 ::-webkit-scrollbar-corner {
-  background: transparent;
   border-color: transparent;
+  background: transparent;
 }
+
 ::-webkit-scrollbar-thumb {
-  background: var(--scrollbar-color);
   border-radius: 8px;
+  background: var(--scrollbar-color);
+
   :hover {
     background: var(--scrollbar-hover-color);
   }
 }
+
 ::-webkit-scrollbar-track {
   background: transparent;
 }
+
 ::-webkit-scrollbar-corner {
   background: transparent;
 }
 
 ::-webkit-scrollbar-button {
   display: none;
-  width: 0;
   height: 0;
+  width: 0;
 }
 
 /**
@@ -52,21 +58,13 @@
  */
 
 ::selection {
-  color: hsl(0, 0%, 99%);
-  background: hsl(209, 100%, 78%);
-}
-::-moz-selection {
-  color: hsl(0, 0%, 99%);
-  background: hsl(209, 100%, 78%);
+  color: hsl(0deg 0% 99%);
+  background: hsl(209deg 100% 78%);
 }
 
 @include isDarkMode() {
-  ::selection{
-    color: hsl(0, 0%, 99%);
-    background: #b25900;
-  }
-  ::-moz-selection {
-    color: hsl(0, 0%, 99%);
+  ::selection {
+    color: hsl(0deg 0% 99%);
     background: #b25900;
   }
 }
@@ -87,12 +85,13 @@
 
 html {
   background-color: var(--background-html);
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color .2s ease-in-out;
 }
 
 .container {
   @include padding-horizontal(2.5rem);
   @include margin-horizontal(auto);
+
   max-width: 1200px;
 }
 

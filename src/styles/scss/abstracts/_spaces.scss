@@ -1,9 +1,9 @@
-@use "sass:math";
+@use 'sass:math';
 
-$spaceamounts: (2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 160);
+$spaceAmounts: (2, 4, 8, 12, 16, 24, 32, 40, 48, 64, 80, 96, 160);
 $sides: (top, bottom, left, right); // Leave this variable alone
 
-@each $space in $spaceamounts {
+@each $space in $spaceAmounts {
   @each $side in $sides {
     .m-#{$side}-#{$space} {
       margin-#{$side}: math.div($space, 16) + rem !important;

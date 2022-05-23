@@ -1,64 +1,46 @@
 .header {
   position: sticky;
-  z-index: 20;
+  z-index: map-get($zIndex, 'header');
   top: 0;
   background-color: var(--background-menu);
   box-shadow: var(--shadow-s);
 
   > .container {
-    padding: 0 1.25rem;
-    height: 4.5rem;
-    min-height: 4.5rem;
-    max-height: 4.5rem;
-
     @include desktop {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
+
+    min-height: 4.5rem;
+    height: 4.5rem;
+    max-height: 4.5rem;
+    padding: 0 1.25rem;
   }
 }
 
 .logo {
   display: flex;
-  align-items: center;
-  padding: 0.75rem 0;
-  padding-right: 0;
   flex: 1;
+  align-items: center;
+  padding: .75rem 0;
+  padding-right: 0;
 
   > a {
     margin-right: auto;
   }
 
   .menu {
-    cursor: pointer;
-    font-size: 1.4rem;
-
     @include desktop {
       display: none;
     }
+
+    font-size: 1.4rem;
+    cursor: pointer;
   }
 }
 
 .nav-list {
-  display: none;
-  padding: 0;
-  width: max-content;
-  z-index: 10;
-  margin-left: auto;
-  background-color: var(--background-menu);
-  box-shadow: var(--shadow-ms);
-  border-radius: 0.25rem;
-  white-space: nowrap;
-  user-select: none;
-
-  &.open {
-    display: block;
-    @include desktop {
-      display: flex;
-    }
-  }
-
   @include desktop {
     display: flex;
     align-items: center;
@@ -70,47 +52,72 @@
     }
   }
 
-  > li > * {
+  display: none;
+  z-index: map-get($zIndex, 'modal');
+  width: max-content;
+  margin-left: auto;
+  padding: 0;
+  border-radius: .25rem;
+  white-space: nowrap;
+  user-select: none;
+  background-color: var(--background-menu);
+  box-shadow: var(--shadow-ms);
+  isolation: isolate;
+
+  &.open {
+    @include desktop {
+      display: flex;
+    }
+
     display: block;
-    padding: 0.5rem 1.5rem;
-    position: relative;
+  }
 
-    &:first-child {
-      padding-top: 1.25rem;
-    }
-    &:last-child {
-      padding-bottom: 1.25rem;
-    }
-
+  > li > * {
     @include desktop {
       &:first-child,
       &:last-child {
         padding: 0;
       }
     }
+
+    display: block;
+    position: relative;
+    padding: .5rem 1.5rem;
+
+    &:first-child {
+      padding-top: 1.25rem;
+    }
+
+    &:last-child {
+      padding-bottom: 1.25rem;
+    }
   }
 }
 
 .active {
-  background-color: var(--gray-100);
   @include disable-action;
+
   @include desktop {
     background-color: transparent;
   }
 
+  background-color: var(--gray-100);
+
   &::after {
     @include absolute;
-    top: 0;
-    right: 1px;
     @include size(2px, 100%);
-    background-color: var(--primary-500);
 
     @include desktop {
-      left: 0;
-      top: 190%;
       @include size(100%, 2px);
+
+      top: 190%;
+      left: 0;
       transform: translateY(-100%);
     }
+
+    top: 0;
+    right: 1px;
+    background-color: var(--primary-500);
   }
 }
 

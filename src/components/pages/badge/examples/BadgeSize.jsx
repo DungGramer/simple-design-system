@@ -1,17 +1,18 @@
 import Badge from "@molecules/badge/Badge";
+import { Folder } from "iconsax-react";
 
 const BadgeSize = () => {
   return (
     <>
       <div style={{ width: "35px" }}>
         <Badge appearance="dot" direction="top right" size="small" data={5}>
-          <i className="fad fa-square" style={{ fontSize: "1.5rem" }} />
+          <Folder />
         </Badge>
       </div>
 
       <div style={{ width: "40px" }}>
         <Badge appearance="dot" direction="top right" size="large" data={5}>
-          <i className="fad fa-square" style={{ fontSize: "40px" }} />
+          <Folder />
         </Badge>
       </div>
     </>

@@ -1,8 +1,9 @@
 .code-box {
   --border-color: var(--gray-200);
+
+  display: block;
   margin: 0 0 1rem;
   border: thin solid var(--border-color);
-  display: block;
 
   > section {
     @include padding-horizontal(24px);
@@ -10,8 +11,9 @@
   }
 
   .component {
-    border-bottom: thin solid var(--border-color);
     @include padding-vertical(2.5rem, 3rem);
+
+    border-bottom: thin solid var(--border-color);
   }
 
   .code-highlight {
@@ -23,5 +25,4 @@
       right: 0;
     }
   }
-
 }

@@ -1,18 +1,18 @@
 .tab-list-item {
   padding: 1rem 1.5rem;
-  cursor: pointer;
-  user-select: none;
   font-weight: 500;
+  user-select: none;
   color: var(--black-600);
+  cursor: pointer;
 
-  &:first-letter {
+  &::first-letter {
     text-transform: capitalize;
   }
 }
 
 .tab-list-active {
   color: var(--black-800);
+  pointer-events: none;
   transition: $tab-transition;
   transition-property: color;
-  pointer-events: none;
 }

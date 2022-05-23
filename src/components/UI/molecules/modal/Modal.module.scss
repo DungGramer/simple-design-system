@@ -1,50 +1,56 @@
 .modal {
+  display: none;
   position: fixed;
+  overflow: hidden;
+  z-index: map-get($zIndex, 'modal');
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 9999;
-  padding-bottom: 24px;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
-
-  display: none;
+  height: 100%;
+  width: 100%;
+  padding-bottom: 24px;
   opacity: 0;
 }
+
 .modal.open {
   display: flex;
   opacity: 1;
 }
+
 .modal.open .wrapper {
-  animation: openModal 0.25s ease-out;
+  animation: openModal .25s ease-out;
 }
 
 @keyframes openModal {
   0% {
-    transform: translateY(-25%);
     opacity: 0;
+    transform: translateY(-25%);
   }
+
   75% {
     transform: translateY(0);
   }
+
   100% {
     opacity: 1;
   }
 }
+
 .wrapper {
-  background-color: white;
-  border-radius: 4px;
   width: 520px;
   max-width: calc(100vw - 32px);
+  border-radius: 4px;
+  background-color: white;
 }
 
 .container {
   @include padding-horizontal(24px);
 }
 
-.header, .body, .footer {
+.header,
+.body,
+.footer {
   @include padding-vertical(16px);
 }
 
@@ -53,15 +59,15 @@
  */
 
 .header {
-  border-bottom: thin solid var(--gray-200);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-bottom: thin solid var(--gray-200);
 
   > .title {
-    font-size: 1.25rem;
     margin: 0;
     padding: 0;
+    font-size: 1.25rem;
   }
 }
 
@@ -75,14 +81,14 @@
  * Footer
  */
 .footer {
-
   &-template {
-    display: flex;
     @include gap(16px);
-    justify-content: flex-end;
 
     @supports (-webkit-max-device-pixel-ratio:1) and (min-color-index:0) {
       flex-direction: row-reverse;
     }
+
+    display: flex;
+    justify-content: flex-end;
   }
 }

@@ -9,7 +9,7 @@ const {
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';
 
-const sizeLimit = 10000;
+const sizeLimit = 10_000;
 
 module.exports = {
   // Rules of how webpack will take our files, compile & bundle them for the browser
@@ -160,7 +160,7 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               additionalData:
-                '@import "~/styles/scss/abstracts/__abstracts-dir";',
+                '@import "~/styles/scss/abstracts/_abstracts-dir";',
 
               // Prefer `dart-sass`
               implementation: require('sass'),

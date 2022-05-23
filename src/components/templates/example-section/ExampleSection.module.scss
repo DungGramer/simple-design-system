@@ -1,8 +1,9 @@
 .code-box-container {
+  @include gap(1rem);
+
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  @include gap(1rem);
 
   // & > * {
   //   width: 100%;

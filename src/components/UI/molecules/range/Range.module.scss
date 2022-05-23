@@ -1,64 +1,65 @@
 .range {
   appearance: none;
-  background: transparent none repeat scroll right center;
   height: 40px;
-  padding: 0px;
   width: 100%;
+  padding: 0;
+  background: transparent none repeat scroll right center;
 
   &::-webkit-slider-thumb {
     appearance: none;
-    margin-top: -6px;
-    background: rgb(255, 255, 255);
-    border: 2px solid transparent;
-    border-radius: 50%;
     height: 16px;
     width: 16px;
+    margin-top: -6px;
     box-sizing: border-box;
-    transition: border-color 0.2s ease-in-out 0s;
-    box-shadow: var(--primary-700) 0px 4px 8px -2px, var(--primary-700) 0px 0px 1px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: rgb(255 255 255);
+    box-shadow: var(--primary-700) 0 4px 8px -2px, var(--primary-700) 0 0 1px;
+    transition: border-color .2s ease-in-out 0s;
   }
 
   // Background
   &::-moz-range-track {
-    border-radius: 2px;
-    border: 0px none;
-    cursor: pointer;
     height: 4px;
     width: 100%;
-    transition: background-color 0.2s ease-in-out 0s;
-    background: rgb(235, 236, 240) none repeat scroll 0% 0%;
+    border: 0 none;
+    border-radius: 2px;
+    background: rgb(235 236 240) none repeat scroll 0% 0%;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out 0s;
   }
 
   &::-moz-range-progress {
-    border-radius: 2px;
-    border: 0px none;
-    cursor: pointer;
     height: 4px;
     width: 100%;
-    transition: background-color 0.2s ease-in-out 0s;
+    border: 0 none;
+    border-radius: 2px;
     background: var(--primary-500) none repeat scroll 0% 0%;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out 0s;
   }
 
   &::-moz-range-thumb {
-    background: rgb(255, 255, 255) none repeat scroll 0% 0%;
-    border: 2px solid transparent;
-    border-radius: 50%;
     height: 16px;
     width: 16px;
-    cursor: pointer;
     box-sizing: border-box;
-    transition: border-color 0.2s ease-in-out 0s;
-    box-shadow: var(--primary-700) 0px 4px 8px -2px, var(--primary-700) 0px 0px 1px;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: rgb(255 255 255) none repeat scroll 0% 0%;
+    box-shadow: var(--primary-700) 0 4px 8px -2px, var(--primary-700) 0 0 1px;
+    cursor: pointer;
+    transition: border-color .2s ease-in-out 0s;
   }
 
   &::-webkit-slider-runnable-track {
-    border-radius: 2px;
-    border: 0px;
     height: 4px;
-    cursor: pointer;
     width: 100%;
-    transition: background-color 0.2s ease-in-out 0s;
-    background: linear-gradient(var(--primary-500), var(--primary-500)) 0 / var(--range-inline-width)
+    border: 0;
+    border-radius: 2px;
+    background:
+      linear-gradient(var(--primary-500), var(--primary-500)) 0 / var(--range-inline-width)
       100% no-repeat #ebecf0;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out 0s;
   }
 }

@@ -7,16 +7,14 @@ $appearances: (
     'background': #42526e,
     'color': #fff,
   ),
-
   '.success': (
     'background': #e3fcef,
-    'color': #006644,
+    'color': #064,
   ),
   '.success.bold': (
     'background': #00875a,
     'color': #fff,
   ),
-
   '.removed': (
     'background': #ffebe6,
     'color': #bf2600,
@@ -25,7 +23,6 @@ $appearances: (
     'background': #de350b,
     'color': #fff,
   ),
-
   '.inprogress': (
     'background': #deebff,
     'color': #0747a6,
@@ -34,17 +31,14 @@ $appearances: (
     'background': #0052cc,
     'color': #fff,
   ),
-
   '.new': (
     'background': #eae6ff,
     'color': #403294,
   ),
-
   '.new.bold': (
     'background': #5243aa,
     'color': #fff,
   ),
-
   '.moved': (
     'background': #fff0b3,
     'color': #172b4d,
@@ -56,26 +50,23 @@ $appearances: (
 );
 
 .lozenge {
+  @each $appearance, $value in $appearances {
+    &#{$appearance} {
+      color: map-get($value, 'color');
+      background-color: map-get($value, 'background');
+    }
+  }
+
+  vertical-align: baseline;
   display: inline-block;
-  padding: 2px 4px 2px 4px;
   overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  border-radius: 4px;
-
   max-width: 200px;
-
-
+  padding: 2px 4px;
+  border-radius: 4px;
   font-size: 12px;
   font-weight: 700;
   line-height: 1;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   text-transform: uppercase;
-  vertical-align: baseline;
-
-  @each $appearance, $value in $appearances {
-    &#{$appearance} {
-      background-color: map-get($value, 'background');
-      color: map-get($value, 'color');
-    }
-  }
 }

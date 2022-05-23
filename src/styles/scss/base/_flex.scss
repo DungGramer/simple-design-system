@@ -1,4 +1,4 @@
-@use "sass:math";
+@use 'sass:math';
 //Credits to : http://codepen.io/absolutholz/post/flex-box-grid-with-sass-mixins
 //for this awesome port of Kristopher Joseph's
 //awesome www.http://flexboxgrid.com/
@@ -36,34 +36,39 @@ $viewport-layouts: (
 );
 
 @mixin clearfix {
-  &:before,
-  &:after {
+  &::before,
+  &::after {
     content: '';
     display: table;
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }
 
 @mixin grid-row($reverse: false) {
   @include grid-row-direction($reverse);
-  box-sizing: border-box;
+
   display: flex;
   flex: 0 1 auto;
   flex-wrap: wrap;
   margin-right: floor( math.div($gutter-width, -2));
   margin-left: ceil( math.div($gutter-width, -2));
+  box-sizing: border-box;
 }
 
 @mixin grid-row-direction($reverse: false) {
   $direction: inherit;
+
   @if ($reverse) {
     $direction: row-reverse;
-  } @else {
+  }
+
+  @else {
     $direction: row;
   }
+
   flex-direction: $direction;
 }
 
@@ -73,9 +78,11 @@ $viewport-layouts: (
   @if ($alignment == center) {
     $justify: center;
   }
+
   @else if ($alignment == end) {
     $justify: flex-end;
   }
+
   @else if ($alignment == start) {
     $justify: flex-start;
   }
@@ -89,11 +96,16 @@ $viewport-layouts: (
 
   @if ($alignment == middle) {
     $align: center;
-  } @else if ($alignment == bottom) {
+  }
+
+  @else if ($alignment == bottom) {
     $align: flex-end;
-  } @else {
+  }
+
+  @else {
     $align: flex-start;
   }
+
   align-items: $align;
 }
 
@@ -103,13 +115,14 @@ $viewport-layouts: (
 
 @mixin grid-column($reverse: false) {
   @include grid-column-direction($reverse);
-  box-sizing: border-box;
+
   display: flex;
+  position: relative;
   flex: 0 0 auto;
   min-height: 1px;
-  position: relative;
   padding-right: floor(math.div($gutter-width, 2));
   padding-left: ceil(math.div($gutter-width, 2));
+  box-sizing: border-box;
 }
 
 @mixin grid-column-direction($reverse: false) {
@@ -117,18 +130,23 @@ $viewport-layouts: (
 
   @if ($reverse) {
     $direction: column-reverse;
-  } @else {
+  }
+
+  @else {
     $direction: column;
   }
+
   flex-direction: $direction;
 }
 
 @mixin grid-column-span($columns-to-span: 12, $total-columns-in-row: 12) {
   @if ($columns-to-span == auto) {
-    flex-grow: 1;
     flex-basis: 0;
+    flex-grow: 1;
     max-width: 100%;
-  } @else {
+  }
+
+  @else {
     flex-basis: percentage(math.div($columns-to-span, $total-columns-in-row));
     max-width: percentage(math.div($columns-to-span, $total-columns-in-row));
   }
@@ -141,7 +159,9 @@ $viewport-layouts: (
 @mixin grid-column-order($position) {
   @if ($position == last) {
     $position: 9999;
-  } @else if ($position == first) {
+  }
+
+  @else if ($position == first) {
     $position: -9999;
   }
 
@@ -157,12 +177,14 @@ $viewport-layouts: (
 }
 
 @mixin container-fixed() {
+  @include clearfix;
+
   margin-right: auto;
   margin-left: auto;
   padding-right: floor(math.div($gutter-width, 2));
   padding-left: ceil(math.div($gutter-width, 2));
-  @include clearfix;
 }
+
 .container {
   @include container-fixed;
 }
@@ -186,16 +208,13 @@ $viewport-layouts: (
 @mixin make-grid($key) {
   .col-#{$key} {
     $str: '&';
+
     @for $i from 1 through $columns {
       $str: $str + ',' + & + '-' + $i;
     }
 
     @at-root #{$str} {
       @include grid-column;
-    }
-
-    & {
-      @include grid-column-span(auto);
     }
 
     @for $i from 1 through $columns {
@@ -218,6 +237,10 @@ $viewport-layouts: (
       &-pull-#{$i} {
         @include grid-column-pull($i);
       }
+    }
+
+    & {
+      @include grid-column-span(auto);
     }
   }
 
@@ -265,15 +288,18 @@ $viewport-layouts: (
 @each $key, $value in $viewport-layouts {
   @if ($key == xs) {
     @include make-grid($key);
-  } @else {
+  }
+
+  @else {
     $min-width: map-get($value, 'min-width');
     $container: map-get($value, 'container');
 
     @media screen and (min-width: $min-width) {
+      @include make-grid($key);
+
       .container {
         width: $container;
       }
-      @include make-grid($key);
     }
   }
 }
