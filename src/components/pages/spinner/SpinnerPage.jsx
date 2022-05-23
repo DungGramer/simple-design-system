@@ -19,7 +19,7 @@ const SpinnerPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 SpinnerPage.propTypes = {};
 

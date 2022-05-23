@@ -7,21 +7,24 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackCdnPlugin = require('webpack-cdn-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
-const { paths, regex, postCSS } = require('./untils');
+const { paths, regex, postCSS } = require('./utils');
 
-module.exports = merge(common, {
+const webpackConfig = merge(common, {
   mode: 'production',
   target: ['es5', 'web'],
 
   output: {
     filename: 'assets/js/[name].[contenthash:8].js',
+    clean: true,
+    pathinfo: false,
+    // libraryTarget: 'umd',
   },
 
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    'react-router': 'ReactRouter',
     'react-router-dom': 'ReactRouterDOM',
     'lottie-web': 'Lottie',
   },
@@ -63,11 +66,6 @@ module.exports = merge(common, {
           path: 'umd/react-dom.production.min.js',
         },
         {
-          name: 'react-router',
-          var: 'ReactRouter',
-          path: 'umd/react-router.min.js',
-        },
-        {
           name: 'react-router-dom',
           var: 'ReactRouterDOM',
           path: 'umd/react-router-dom.min.js',
@@ -93,10 +91,6 @@ module.exports = merge(common, {
       ],
     }),
   ],
-  output: {
-    clean: true,
-    // libraryTarget: 'umd',
-  },
   devtool: false,
 
   // Stop compilation early in production
@@ -162,23 +156,33 @@ module.exports = merge(common, {
       },
     ],
   },
-  output: {
-    pathinfo: false,
-  },
   optimization: {
     minimize: true,
     runtimeChunk: true,
     removeAvailableModules: false,
     removeEmptyChunks: false,
 
+    minimizer: [
+      new TerserPlugin({
+        // minify: TerserPlugin.uglifyJsMinify,
+        parallel: true,
+        terserOptions: {
+          ecma: 5,
+          output: {
+            comments: false,
+          },
+        },
+      }),
+    ],
+
     splitChunks: {
       chunks: 'all',
-      minSize: 20000,
+      minSize: 20_000,
       minRemainingSize: 0,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
-      enforceSizeThreshold: 50000,
+      enforceSizeThreshold: 50_000,
 
       cacheGroups: {
         defaultVendors: {
@@ -208,3 +212,13 @@ module.exports = merge(common, {
     },
   },
 });
+
+// Analyze the library file sizes
+const showBundleAnalyzer = process.env.ANALYZER === 'true';
+
+if (showBundleAnalyzer) {
+  const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+  webpackConfig.plugins.push(new BundleAnalyzerPlugin());
+}
+
+module.exports = webpackConfig;

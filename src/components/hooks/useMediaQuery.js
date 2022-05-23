@@ -9,7 +9,7 @@ import breakpoint from '~/constants/mediaQuery';
  * let maxDesktop = useMediaQuery(breakpoint.m_desktop);
  **/
 
-const useMediaQuery = query => {
+const useMediaQuery = (query) => {
   const [matches, setMatches] = useState(false);
 
   useEffect(() => {

@@ -1,6 +1,6 @@
-import i18n from "./i18n";
+import i18n from './i18n';
 
-const changeLanguage = language => {
+const changeLanguage = (language) => {
   i18n.changeLanguage(language);
 };
 

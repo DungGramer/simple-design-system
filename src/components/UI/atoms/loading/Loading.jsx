@@ -7,8 +7,8 @@ const Loading = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setInterNumber(prevNumber => prevNumber / 1.3);
-      setProgress(progress => progress + interNumber);
+      setInterNumber((prevNumber) => prevNumber / 1.3);
+      setProgress((progress) => progress + interNumber);
     }, 200);
 
     return () => clearInterval(timer);

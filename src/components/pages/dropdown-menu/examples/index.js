@@ -1,5 +1,3 @@
-import DropdownBasic from "./DropdownBasic";
+import DropdownBasic from './DropdownBasic';
 
-export {
-  DropdownBasic
-}
+export { DropdownBasic };

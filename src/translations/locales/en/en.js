@@ -37,7 +37,8 @@ export const en = {
   // Banner
   banner: {
     title: 'Banner',
-    description: 'A banner displays a prominent message at the top of the screen.',
+    description:
+      'A banner displays a prominent message at the top of the screen.',
   },
 
   // Badge
@@ -49,13 +50,15 @@ export const en = {
   // Breadcrumb
   breadcrumb: {
     title: 'Breadcrumb',
-    description:"Breadcrumbs are a navigation system used to show a user's location in a site or app.",
+    description:
+      "Breadcrumbs are a navigation system used to show a user's location in a site or app.",
   },
 
   // Checkbox
   checkbox: {
     title: 'Checkbox',
-    description: 'A checkbox is an input control that allows a user to select one or more options from a number of choices.',
+    description:
+      'A checkbox is an input control that allows a user to select one or more options from a number of choices.',
   },
 
   // Divider
@@ -67,13 +70,15 @@ export const en = {
   // Flag
   flag: {
     title: 'Flag',
-    description: 'A flag is used for confirmations, alerts, and acknowledgments that require minimal user interaction.',
+    description:
+      'A flag is used for confirmations, alerts, and acknowledgments that require minimal user interaction.',
   },
 
   // Icon
   icon: {
     title: 'Icon',
-    description: 'An icon is a visual representation of a file, application, or action.',
+    description:
+      'An icon is a visual representation of a file, application, or action.',
   },
 
   // Image
@@ -85,25 +90,29 @@ export const en = {
   // Lozenge
   lozenge: {
     title: 'Lozenge',
-    description: "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
+    description:
+      "A lozenge is a visual indicator used to highlight an item's status for quick recognition.",
   },
 
   // Modal
   modal: {
     title: 'Modal',
-    description: 'A modal dialog displays content that requires user interaction, in a layer above the page.',
+    description:
+      'A modal dialog displays content that requires user interaction, in a layer above the page.',
   },
 
   // Pagination
   pagination: {
     title: 'Pagination',
-    description: 'Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.',
+    description:
+      'Pagination allows you to divide large amounts of content into smaller chunks across multiple pages.',
   },
 
   // Radio
   radio: {
     title: 'Radio',
-    description: 'A radio input allows people to select only one option from a number of choices. Radio is generally displayed in a radio group.',
+    description:
+      'A radio input allows people to select only one option from a number of choices. Radio is generally displayed in a radio group.',
   },
 
   // Range
@@ -115,7 +124,8 @@ export const en = {
   // Tabs
   tabs: {
     title: 'Tabs',
-    description: 'Tabs are used to organize content by grouping similar information on the same page.',
+    description:
+      'Tabs are used to organize content by grouping similar information on the same page.',
   },
 
   // Table
@@ -127,25 +137,28 @@ export const en = {
   // Spinner
   spinner: {
     title: 'Spinner',
-    description: 'A spinner is an animated spinning icon that lets users know content is being loaded.',
+    description:
+      'A spinner is an animated spinning icon that lets users know content is being loaded.',
   },
 
   // TextArea
   textArea: {
     title: 'Text area',
-    description: 'A text area lets users enter long form text which spans over multiple lines.',
+    description:
+      'A text area lets users enter long form text which spans over multiple lines.',
   },
 
   // TextField
   textField: {
     title: 'Text field',
-    description: 'A text field is an input that allows a user to write or edit text.',
+    description:
+      'A text field is an input that allows a user to write or edit text.',
   },
 
   // Toggle
   toggle: {
     title: 'Toggle',
-    description: 'A toggle is used to view or switch between enabled or disabled states.',
+    description:
+      'A toggle is used to view or switch between enabled or disabled states.',
   },
-
 };

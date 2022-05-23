@@ -1,4 +1,4 @@
-import boxModel from "./boxModel";
+import boxModel from './boxModel';
 
 const getLocation = (ref) => {
   const { size } = boxModel(ref.current);
@@ -7,11 +7,10 @@ const getLocation = (ref) => {
 
   if (ref.current) {
     const heightHeader = document.getElementById('header').clientHeight;
-    const {innerHeight, innerWidth} = window;
+    const { innerHeight, innerWidth } = window;
 
     const { top, left, bottom, right, x, y } =
       ref.current.getBoundingClientRect();
-
 
     return {
       x,

@@ -19,7 +19,7 @@ const LozengePage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 LozengePage.propTypes = {};
 

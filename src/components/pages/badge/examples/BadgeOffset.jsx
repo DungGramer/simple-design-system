@@ -10,7 +10,7 @@ const BadgeOffset = () => {
         </Badge>
       </div>
     </>
-  )
-}
+  );
+};
 
 export default BadgeOffset;

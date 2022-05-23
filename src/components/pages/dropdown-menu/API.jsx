@@ -2,8 +2,8 @@ import { useTranslation } from 'react-i18next';
 import TableAPI from '@templates/tableAPI/TableAPI';
 
 export const API = () => {
-	const { t } = useTranslation();
-	const data = [
+  const { t } = useTranslation();
+  const data = [
     {
       property: <code>parentRef</code>,
       description: t('The reference of the parent element'),
@@ -30,14 +30,14 @@ export const API = () => {
       description: t('The direction of the dropdown'),
       type: 'String',
       default: 'left',
-    }
+    },
   ];
-	return (
-		<div>
-			<h3>{t('API')}</h3>
-			<h4>{t('<DropdownMenu />')}</h4>
+  return (
+    <div>
+      <h3>{t('API')}</h3>
+      <h4>{t('<DropdownMenu />')}</h4>
 
-			<TableAPI data={data} />
-		</div>
-	);
+      <TableAPI data={data} />
+    </div>
+  );
 };

@@ -19,7 +19,7 @@ const TextAreaPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 TextAreaPage.propTypes = {};
 

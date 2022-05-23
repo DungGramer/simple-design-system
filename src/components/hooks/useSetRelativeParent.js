@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 
-
 /**
  * Set position Relative to the parent element
  * @param {Ref} childRef - The child ref element

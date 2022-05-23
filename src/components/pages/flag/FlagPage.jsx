@@ -19,7 +19,7 @@ const FlagPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 FlagPage.propTypes = {};
 

@@ -19,7 +19,7 @@ const ModalPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 ModalPage.propTypes = {};
 

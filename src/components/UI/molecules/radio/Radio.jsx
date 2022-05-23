@@ -66,7 +66,13 @@ const RadioGroup = ({ name, children, onChange, appearance }) => {
     <div className={styles['radio-group']}>
       {children.map((radio, index) => {
         return (
-          <Radio key={index} name={name} appearance={appearance} onChange={onChange} {...radio.props}>
+          <Radio
+            key={index}
+            name={name}
+            appearance={appearance}
+            onChange={onChange}
+            {...radio.props}
+          >
             {radio.props.children}
           </Radio>
         );

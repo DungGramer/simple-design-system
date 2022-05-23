@@ -131,7 +131,7 @@ const LazyImage = () => {
 
 const StaticImage = () => {
   const { src, alt, width, height, type, decoding, srcset, lazy, aspectRatio } =
-  useContext(ImageContext);
+    useContext(ImageContext);
 
   return (
     <img

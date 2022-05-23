@@ -2,14 +2,14 @@ import { useTranslation } from 'react-i18next';
 import TableAPI from '@templates/tableAPI/TableAPI';
 
 export const API = () => {
-	const { t } = useTranslation();
-	const data = [
-		{
-			property: <code>min</code>,
-			description: t('Sets the minimum value of the range.'),
-			type: 'number',
+  const { t } = useTranslation();
+  const data = [
+    {
+      property: <code>min</code>,
+      description: t('Sets the minimum value of the range.'),
+      type: 'number',
       default: '0',
-		},
+    },
     {
       property: <code>max</code>,
       description: t('Sets the maximum value of the range.'),
@@ -36,14 +36,14 @@ export const API = () => {
       property: <code>disabled</code>,
       description: t('Disables the range.'),
       type: 'boolean',
-    }
-	];
-	return (
-		<div>
-			<h3>{t('API')}</h3>
-			<h4>{t('<Range />')}</h4>
+    },
+  ];
+  return (
+    <div>
+      <h3>{t('API')}</h3>
+      <h4>{t('<Range />')}</h4>
 
-			<TableAPI data={data} />
-		</div>
-	);
+      <TableAPI data={data} />
+    </div>
+  );
 };

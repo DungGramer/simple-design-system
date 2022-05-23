@@ -19,7 +19,7 @@ const PaginationPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 PaginationPage.propTypes = {};
 

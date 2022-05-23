@@ -1,8 +1,6 @@
 const path = require('path');
 
-
-const resolvePath = (relativePath) =>
-  path.join(__dirname, '../', relativePath);
+const resolvePath = (dir) => path.join(__dirname, '../', dir);
 
 const paths = {
   root: resolvePath(''),
@@ -28,6 +26,7 @@ const regex = {
   font: /\.(woff|woff2|eot|ttf|otf)$/i,
   js: /\.(js|jsx)$/i,
   ts: /\.(ts|tsx)$/i,
+  jts: /\.[jt]sx?$/,
 };
 
 const formatFileName = '[name].[hash:8].[ext]';

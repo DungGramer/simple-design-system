@@ -32,7 +32,6 @@ const Menu = ({ content, icon, href, to, onClick }) => {
     return <i className={`${icon}`} />;
   };
 
-
   return (
     <li className={styles['menu']}>
       <Wrapper>

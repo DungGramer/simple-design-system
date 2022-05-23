@@ -49,7 +49,7 @@ export const API = () => {
       property: <code>children</code>,
       description: t('The content of the modal footer'),
       type: 'node',
-    }
+    },
   ];
 
   const modalFooterTemplate = [
@@ -65,15 +65,19 @@ export const API = () => {
     },
     {
       property: <code>onOk</code>,
-      description: t('Specify a function that will be called when a user clicks the OK button'),
+      description: t(
+        'Specify a function that will be called when a user clicks the OK button'
+      ),
       type: 'function',
     },
     {
       property: <code>onCancel</code>,
-      description: t('Specify a function that will be called when a user clicks mask, close button on top right or Cancel button'),
+      description: t(
+        'Specify a function that will be called when a user clicks mask, close button on top right or Cancel button'
+      ),
       type: 'function',
-    }
-  ]
+    },
+  ];
   return (
     <div>
       <h3>{t('API')}</h3>

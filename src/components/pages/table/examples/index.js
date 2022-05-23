@@ -1,5 +1,3 @@
-import TableBasic from "./TableBasic";
+import TableBasic from './TableBasic';
 
-export {
-  TableBasic
-}
+export { TableBasic };

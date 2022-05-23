@@ -19,7 +19,7 @@ const CheckboxPage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 CheckboxPage.propTypes = {};
 

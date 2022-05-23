@@ -19,7 +19,7 @@ const RangePage = ({}) => {
       </Tabs>
     </div>
   );
-}
+};
 
 RangePage.propTypes = {};
 

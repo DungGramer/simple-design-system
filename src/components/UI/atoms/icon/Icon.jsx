@@ -1,7 +1,16 @@
 import styles from './Icon.module';
 import PropTypes from 'prop-types';
 
-const Icon = ({ icon, color, size, rotate, flip, animation, fullWidth, cursor }) => {
+const Icon = ({
+  icon,
+  color,
+  size,
+  rotate,
+  flip,
+  animation,
+  fullWidth,
+  cursor,
+}) => {
   return (
     <i
       className={`${icon} ${styles['icon']} ${

@@ -1,5 +1,5 @@
-import Badge from "@molecules/badge/Badge";
-import { Flag } from "iconsax-react";
+import Badge from '@molecules/badge/Badge';
+import { Flag } from 'iconsax-react';
 
 const BadgeOverflow = () => {
   return <>

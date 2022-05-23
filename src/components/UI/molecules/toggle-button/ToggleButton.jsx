@@ -20,5 +20,4 @@ ToggleButton.propTypes = {
   iconTrue: PropTypes.string,
 };
 
-
 export default ToggleButton;
