@@ -7,7 +7,7 @@ const smp = new SpeedMeasurePlugin();
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
-const { paths, regex, resolvePath } = require('./untils.js');
+const { paths, regex, resolvePath } = require('./utils.js');
 const port = process.env.PORT || 3090;
 
 module.exports = merge(common, {
@@ -15,20 +15,21 @@ module.exports = merge(common, {
   devtool: 'eval',
   output: {
     filename: '[name].[contenthash:8].js',
+    publicPath: '/'
   },
   // webpack 5 comes with devServer which loads in development mode
   devServer: {
     port,
-    watchOptions: {
-      ignored: /node_modules/,
-    },
     historyApiFallback: true,
     open: true,
     compress: true,
-    hot: true,
 
-    contentBase: paths.public,
-    watchContentBase: true,
+    static: {
+      directory: paths.public,
+      watch: {
+        ignored: /node_modules/,
+      },
+    },
 
     // injectClient: true,
   },
@@ -66,6 +67,4 @@ module.exports = merge(common, {
     new webpack.HotModuleReplacementPlugin(),
     new ReactRefreshWebpackPlugin(),
   ],
-
-  output: { publicPath: '/' },
 });

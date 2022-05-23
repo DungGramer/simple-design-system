@@ -26,6 +26,7 @@ const regex = {
   font: /\.(woff|woff2|eot|ttf|otf)$/i,
   js: /\.(js|jsx)$/i,
   ts: /\.(ts|tsx)$/i,
+  jts: /\.[jt]sx?$/,
 };
 
 const formatFileName = '[name].[hash:8].[ext]';

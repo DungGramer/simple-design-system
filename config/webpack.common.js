@@ -4,12 +4,12 @@ const {
   resolvePath,
   formatFileName,
   postCSS,
-} = require('./untils');
+} = require('./utils');
 // const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';
 
-const sizeLimit = 10000;
+const sizeLimit = 10_000;
 
 module.exports = {
   // Rules of how webpack will take our files, compile & bundle them for the browser
@@ -63,7 +63,8 @@ module.exports = {
       {
         test: regex.svg,
         // type: 'asset/inline', // Load svg inside HTML
-        use: ['@svgr/webpack?-svgo,+titleProp,+ref![path]'],
+        issuer: regex.jts,
+        use: ['@svgr/webpack'],
       },
 
       {
@@ -80,7 +81,6 @@ module.exports = {
               inputSourceMap: true,
             },
           },
-
         ],
       },
       {
@@ -106,7 +106,6 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               importLoaders: 1,
               sourceMap: true,
               modules: {
@@ -150,7 +149,6 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: true,
               sourceMap: true,
               importLoaders: 3,
               modules: {

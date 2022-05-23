@@ -9,7 +9,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackCdnPlugin = require('webpack-cdn-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const { paths, regex, postCSS } = require('./untils');
+const { paths, regex, postCSS } = require('./utils');
 
 const webpackConfig = merge(common, {
   mode: 'production',
@@ -177,12 +177,12 @@ const webpackConfig = merge(common, {
 
     splitChunks: {
       chunks: 'all',
-      minSize: 20000,
+      minSize: 20_000,
       minRemainingSize: 0,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
-      enforceSizeThreshold: 50000,
+      enforceSizeThreshold: 50_000,
 
       cacheGroups: {
         defaultVendors: {
@@ -214,11 +214,10 @@ const webpackConfig = merge(common, {
 });
 
 // Analyze the library file sizes
-const showBundleAnalyzer = process.env.ANALYZER.trim() === 'true';
+const showBundleAnalyzer = process.env.ANALYZER === 'true';
 
 if (showBundleAnalyzer) {
-  const BundleAnalyzerPlugin =
-    require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+  const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
   webpackConfig.plugins.push(new BundleAnalyzerPlugin());
 }
 
