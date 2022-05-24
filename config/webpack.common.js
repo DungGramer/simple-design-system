@@ -160,8 +160,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData:
-                '@import "~/styles/scss/abstracts/_abstracts-dir";',
+              additionalData: '@import "~/styles/abstracts/_abstracts-dir";',
 
               // Prefer `dart-sass`
               implementation: require('sass'),

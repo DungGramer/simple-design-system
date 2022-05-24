@@ -1,18 +1,18 @@
 import Badge from '@molecules/badge/Badge';
-import { Folder } from 'iconsax-react';
+import { FaFolder } from 'react-icons/fa';
 
 const BadgeSize = () => {
   return (
     <>
       <div style={{ width: '35px' }}>
         <Badge appearance="dot" direction="top right" size="small" data={5}>
-          <Folder />
+          <FaFolder />
         </Badge>
       </div>
 
       <div style={{ width: '40px' }}>
         <Badge appearance="dot" direction="top right" size="large" data={5}>
-          <Folder />
+          <FaFolder />
         </Badge>
       </div>
     </>

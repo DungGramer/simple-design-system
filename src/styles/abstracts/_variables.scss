@@ -2,9 +2,9 @@ $font-base: 16;
 
 // Transition
 
-$tab-transition: 500ms cubic-bezier(0.35, 0, 0.25, 1);
+$tab-transition: 500ms cubic-bezier(.35, 0, .25, 1);
 
-$color-transition: 0.2s ease-in-out;
+$color-transition: .2s ease-in-out;
 
 $zIndex: (
   'back': -1,

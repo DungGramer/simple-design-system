@@ -6,16 +6,16 @@
   box-shadow: var(--shadow-s);
 
   > .container {
+    min-height: 4.5rem;
+    height: 4.5rem;
+    max-height: 4.5rem;
+    padding: 0 1.25rem;
+
     @include desktop {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-
-    min-height: 4.5rem;
-    height: 4.5rem;
-    max-height: 4.5rem;
-    padding: 0 1.25rem;
   }
 }
 
@@ -31,27 +31,16 @@
   }
 
   .menu {
+    font-size: 1.4rem;
+    cursor: pointer;
+
     @include desktop {
       display: none;
     }
-
-    font-size: 1.4rem;
-    cursor: pointer;
   }
 }
 
 .nav-list {
-  @include desktop {
-    display: flex;
-    align-items: center;
-    margin: 0;
-    box-shadow: none;
-
-    > li + li {
-      margin-left: 3rem;
-    }
-  }
-
   display: none;
   z-index: map-get($zIndex, 'modal');
   width: max-content;
@@ -65,21 +54,25 @@
   isolation: isolate;
 
   &.open {
+    display: block;
+
     @include desktop {
       display: flex;
     }
+  }
 
-    display: block;
+  @include desktop {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    box-shadow: none;
+
+    > li + li {
+      margin-left: 3rem;
+    }
   }
 
   > li > * {
-    @include desktop {
-      &:first-child,
-      &:last-child {
-        padding: 0;
-      }
-    }
-
     display: block;
     position: relative;
     padding: .5rem 1.5rem;
@@ -91,33 +84,42 @@
     &:last-child {
       padding-bottom: 1.25rem;
     }
+
+    @include desktop {
+      &:first-child,
+      &:last-child {
+        padding: 0;
+      }
+    }
   }
 }
 
 .active {
+  background-color: var(--gray-100);
+
   @include disable-action;
 
   @include desktop {
     background-color: transparent;
   }
 
-  background-color: var(--gray-100);
-
   &::after {
     @include absolute;
-    @include size(2px, 100%);
-
-    @include desktop {
-      @include size(100%, 2px);
-
-      top: 190%;
-      left: 0;
-      transform: translateY(-100%);
-    }
 
     top: 0;
     right: 1px;
+
+    @include size(2px, 100%);
+
     background-color: var(--primary-500);
+
+    @include desktop {
+      top: 190%;
+      left: 0;
+      transform: translateY(-100%);
+
+      @include size(100%, 2px);
+    }
   }
 }
 
