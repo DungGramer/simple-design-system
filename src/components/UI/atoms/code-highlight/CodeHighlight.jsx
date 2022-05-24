@@ -5,7 +5,6 @@ import jsx from 'react-syntax-highlighter/dist/esm/languages/prism/jsx';
 import { materialLight } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { useThemeContext } from '~/context/themeContext/themeContext';
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/a11y-dark';
 
 /**
  *  Highlight code on the page
@@ -30,7 +29,7 @@ const CodeHighlight = ({ data, language }) => {
         margin: '0',
         padding: '0',
         border: 'none',
-        background: 'none',
+        background: 'transparent',
         paddingBottom: '1rem',
       }}
     >
