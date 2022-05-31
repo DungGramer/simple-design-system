@@ -47,19 +47,19 @@ module.exports = {
           name: formatFileName,
         },
       },
-      {
-        test: regex.font,
-        exclude: /fontawesome/,
-        type: 'asset/resource',
-        loader: 'url-loader',
-        options: {
-          fallback: 'file-loader',
-          limit: sizeLimit,
-          outputPath: 'assets/fonts',
-          name: formatFileName,
-          esModule: false,
-        },
-      },
+      // {
+      //   test: regex.font,
+      //   exclude: /fontawesome/,
+      //   type: 'asset/resource',
+      //   loader: 'url-loader',
+      //   options: {
+      //     fallback: 'file-loader',
+      //     limit: sizeLimit,
+      //     outputPath: 'assets/fonts',
+      //     name: formatFileName,
+      //     esModule: false,
+      //   },
+      // },
       {
         test: regex.svg,
         // type: 'asset/inline', // Load svg inside HTML
@@ -160,8 +160,7 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              additionalData:
-                '@import "~/styles/scss/abstracts/__abstracts-dir";',
+              additionalData: '@import "~/styles/abstracts/_abstracts-dir";',
 
               // Prefer `dart-sass`
               implementation: require('sass'),

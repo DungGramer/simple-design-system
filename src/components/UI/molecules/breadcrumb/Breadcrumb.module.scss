@@ -5,8 +5,9 @@
 
     .breadcrumb-item {
       color: var(--black-400);
+
       > a[href] {
-        transition: color 0.25s;
+        transition: color .25s;
         transition-timing-function: ease-in;
 
         &:hover {

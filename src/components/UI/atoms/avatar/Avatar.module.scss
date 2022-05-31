@@ -1,12 +1,13 @@
 .avatar {
-  position: relative;
   display: inline-block;
+  position: relative;
 }
 
 // appearance
 .circle img {
   border-radius: 50%;
 }
+
 .square img {
   border-radius: 4px;
 }
@@ -27,11 +28,11 @@ $status: (
 
 .status {
   position: absolute;
-  bottom: -1px;
   right: -1px;
+  bottom: -1px;
+  border-color: var(--background-html);
   border-radius: 50%;
   border-style: solid;
-  border-color: var(--background-html);
   transition: $color-transition;
   transition-property: border-color;
 }
@@ -49,18 +50,18 @@ $sizes: (
 
 @each $size, $value in $sizes {
   .avatar.#{$size} {
-    width: #{$value};
     height: #{$value};
+    width: #{$value};
 
     > img {
-      width: #{$value};
       height: #{$value};
+      width: #{$value};
     }
 
     > .status {
-      width: #{calc(#{$value} - 60%)};
       height: #{calc(#{$value} - 60%)};
-      border-width: #{calc(#{$value} * 0.05)};
+      width: #{calc(#{$value} - 60%)};
+      border-width: #{calc(#{$value} * .05)};
     }
   }
 }
@@ -75,41 +76,42 @@ $sizes: (
 
 .avatar-text {
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  background-color: var(--background-image-color);
-  color: var(--text-color);
+  align-items: center;
   user-select: none;
+  color: var(--text-color);
+  background-color: var(--background-image-color);
 }
 
 @each $size, $value in $sizes {
   .avatar-group.#{$size} {
     > .avatar,
-    > .avatar img, .avatar-text {
+    > .avatar img,
+    .avatar-text {
       height: #{$value};
       width: #{$value};
       border-radius: 50%;
+      font-size: #{calc(#{$value} * .3)};
       cursor: pointer;
-      font-size: #{calc(#{$value} * 0.3)};
     }
 
     > .avatar img {
-      border: #{calc(#{$value} * 0.05)} solid var(--background-html);
+      border: #{calc(#{$value} * .05)} solid var(--background-html);
       transition: $color-transition;
       transition-property: border-color;
 
       &:hover {
         position: relative;
-        z-index: 1;
+        z-index: map-get($zIndex, 'base');
       }
     }
 
     > * + * {
-      margin-left: #{calc(#{$value} * -0.25)};
+      margin-left: #{calc(#{$value} * -.25)};
     }
   }
 }
 
-ul .avatar{
+ul .avatar {
   display: block;
 }

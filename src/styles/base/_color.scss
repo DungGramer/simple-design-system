@@ -1,0 +1,284 @@
+/* ------------------------------------*
+  # Light Theme
+*------------------------------------ */
+
+// Root Color
+
+html,
+html[theme='light'] {
+  --primary-100: hsl(210deg 100% 96%);
+  --primary-200: hsl(209deg 100% 91%);
+  --primary-300: hsl(209deg 100% 78%);
+  --primary-400: hsl(210deg 100% 65%);
+  --primary-500: hsl(210deg 100% 56%);
+  --primary-600: hsl(210deg 79% 39%);
+  --primary-700: hsl(209deg 79% 22%);
+  --primary-800: hsl(209deg 79% 11%);
+  --primary-900: hsl(210deg 77% 5%);
+
+  // Secondary
+  --secondary-100: hsl(220deg 100% 95%);
+  --secondary-200: hsl(220deg 96% 90%);
+  --secondary-300: hsl(220deg 96% 81%);
+  --secondary-400: hsl(220deg 97% 72%);
+  --secondary-500: hsl(220deg 97% 53%);
+  --secondary-600: hsl(220deg 88% 32%);
+  --secondary-700: hsl(220deg 87% 21%);
+  --secondary-800: hsl(220deg 89% 10%);
+  --secondary-900: hsl(222deg 85% 5%);
+
+  // Tertiary
+  --tertiary-100: hsl(246deg 100% 96%);
+  --tertiary-200: hsl(246deg 95% 92%);
+  --tertiary-300: hsl(246deg 95% 85%);
+  --tertiary-400: hsl(247deg 96% 73%);
+  --tertiary-500: hsl(247deg 96% 62%);
+  --tertiary-600: hsl(246deg 59% 43%);
+  --tertiary-700: hsl(246deg 59% 25%);
+  --tertiary-800: hsl(246deg 59% 12%);
+  --tertiary-900: hsl(246deg 61% 6%);
+
+  // Gray
+  --gray-50: hsl(0deg 0% 99%);
+  --gray-100: hsl(0deg 0% 96%);
+  --gray-200: hsl(0deg 0% 93%);
+  --gray-300: hsl(0deg 0% 88%);
+  --gray-400: hsl(0deg 0% 74%);
+  --gray-500: hsl(0deg 0% 62%);
+  --gray-600: hsl(0deg 0% 46%);
+  --gray-700: hsl(0deg 0% 38%);
+  --gray-800: hsl(0deg 0% 26%);
+  --gray-900: hsl(0deg 0% 20%);
+  --black: hsl(0deg 0% 13%);
+
+  // White
+  --white: hsl(0deg 0% 100%);
+  --white-900: hsl(0deg 0% 100% / 90%);
+  --white-800: hsl(0deg 0% 100% / 80%);
+  --white-700: hsl(0deg 0% 100% / 70%);
+  --white-600: hsl(0deg 0% 100% / 60%);
+  --white-500: hsl(0deg 0% 100% / 50%);
+  --white-400: hsl(0deg 0% 100% / 40%);
+  --white-300: hsl(0deg 0% 100% / 30%);
+  --white-200: hsl(0deg 0% 100% / 20%);
+  --white-100: hsl(0deg 0% 100% / 10%);
+  --white-50: hsl(0deg 0% 100% / 5%);
+
+  // Black
+  --black-900: hsl(0deg 0% 0% / 90%);
+  --black-800: hsl(0deg 0% 0% / 80%);
+  --black-700: hsl(0deg 0% 0% / 70%);
+  --black-600: hsl(0deg 0% 0% / 60%);
+  --black-500: hsl(0deg 0% 0% / 50%);
+  --black-400: hsl(0deg 0% 0% / 40%);
+  --black-300: hsl(0deg 0% 0% / 30%);
+  --black-200: hsl(0deg 0% 0% / 20%);
+  --black-100: hsl(0deg 0% 0% / 10%);
+  --black-50: hsl(0deg 0% 0% / 5%);
+  --success-color: #065f46;
+  --success-color-background: #d1fae5;
+  --warning-color: hsl(39deg 100% 61%);
+  --warning-color-background: hsl(39deg 100% 61% / 10%);
+  --error-color: hsl(347deg 82% 48%);
+  --error-color-background: hsl(347deg 82% 48% / 10%);
+  --info-color: hsl(188deg 78% 41%);
+  --info-color-background: hsl(188deg 78% 41% / 10%);
+
+
+  // Font
+  --font-color: var(--black-800);
+  --font-color-invert: var(--white);
+  --background-html: #fff;
+  --background-menu: #fff;
+  --background-image-color: hsl(220deg 16% 96%);
+  --background-code-color: hsl(200deg 12% 95%);
+  --scrollbar-color: var(--gray-500);
+  --scrollbar-hover-color: var(--gray-600);
+
+  /* ------------------------------------*
+    # Shadow
+  *------------------------------------ */
+
+
+  --shadow-ms: 0 2px 8px #f0f1f2;
+  --shadow-s: 0 1px 2px rgb(24 24 24 / 7%);
+  --shadow: 0 1px 3px rgb(24 24 24 / 10%), 0 1px 2px rgb(24 24 24 / 6%);
+  --shadow-m: 0 4px 6px -1px rgb(24 24 24 / 10%), 0 2px 4px -1px rgb(24 24 24 / 6%);
+  --shadow-l: 0 4px 6px -2px rgb(24 24 24 / 6%), 0 10px 15px -3px rgb(24 24 24 / 10%);
+  --shadow-xl: 0 10px 10px -5px rgb(24 24 24 / 6%), 0 20px 25px -5px rgb(24 24 24 / 10%);
+  --shadow-xxl: 0 4px 6px -2px rgb(24 24 24 / 6%), 0 25px 50px -12px rgb(24 24 24 / 25%);
+  --shadow-drop: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+
+
+  /* ------------------------------------*
+    # Border
+  *------------------------------------ */
+
+  --border-color: thin solid --gray-100;
+
+
+  /* ------------------------------------*
+    # Table
+  *------------------------------------ */
+
+  --border-color: #eee;
+  --tr-color: #f5f5f5;
+  --tr-mobile-color: #f2f2f2;
+
+
+  /* ------------------------------------*
+    # Gradients
+  *------------------------------------ */
+
+  --vanusa: linear-gradient(270deg, #89216b 0%, #da4453 100%);
+  --purpink: linear-gradient(270deg, #7f00ff 0%, #e100ff 100%);
+  --warm-flame: linear-gradient(270deg, #ff9a9e 0%, #fad0c4 100%);
+  --night-fade: linear-gradient(270deg, #a18cd1 0%, #fbc2eb 100%);
+  --ripe-malinka: linear-gradient(270deg, #a18cd1 0%, #fbc2eb 100%);
+  --siblime-light: linear-gradient(270deg, #6a82fb 0%, #fc5c7d 100%);
+  --plum-plate: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+  --ocean-view: linear-gradient(270deg, #3f2b96 0%, #a8c0ff 100%);
+  --delicate: linear-gradient(270deg, #d3cce3 0%, #e9e4f0 100%);
+  --dull-days: linear-gradient(270deg, #c9d6ff 0%, #e2e2e2 100%);
+  --loupe-fiesta: linear-gradient(270deg, #105efb 0%, #199afb 100%);
+  --miami-shore: linear-gradient(270deg, #5d45f9 0%, #267deb 100%);
+  --lawrencium: linear-gradient(270deg, #24243e 0%, #0f0c29 100%);
+  --scooter: linear-gradient(270deg, #5b86e5 0%, #36d1dc 100%);
+  --juicy-peach: linear-gradient(90deg, #ffecd2 0%, #fcb69f 100%);
+  --new-york: linear-gradient(270deg, #ace0f9 0%, #fff1eb 100%);
+  --sandy-bleue: linear-gradient(270deg, #ffe8b7 0%, #b8d8ff 100%);
+  --winter-neva: linear-gradient(270deg, #a1c4fd 0%, #c2e9fb 100%);
+  --orange-fun: linear-gradient(270deg, #fc4a1a 0%, #f7b733 100%);
+  --sunny-morning: linear-gradient(90deg, #f7ce68 0%, #fbab7e 100%);
+  --light-mist: linear-gradient(270deg, #e8e8e8 0%, #fff 100%);
+  --quepal: linear-gradient(270deg, #38ef7d 0%, #11998e 100%);
+  --soft-grass: linear-gradient(90deg, #deecdd 0%, #c1dfc4 100%);
+  --happy-people: linear-gradient(270deg, #96c93d 0%, #00b09b 100%);
+  --dark-bottom-shade: linear-gradient(180deg, rgb(48 48 48 / .01%) 1.22%, rgb(48 48 48 / 85%) 100%);
+  --dark-top-shade: linear-gradient(180deg, rgb(48 48 48 / 85%) 1.22%, rgb(48 48 48 / .01%) 100%);
+  --light-bottom-shade: linear-gradient(180deg, rgb(255 255 255 / .01%) 1.22%, rgb(255 255 255 / 85%) 100%);
+  --light-top-shade: linear-gradient(180deg, rgb(255 255 255 / 85%) 1.22%, rgb(255 255 255 / .01%) 100%);
+}
+
+
+/* ------------------------------------*
+  # Dark Theme
+*------------------------------------ */
+
+// Root Color
+
+html[theme='dark'] {
+  --primary-100: #{invert(hsl(210deg 100% 96%), 100%)};
+  --primary-200: #{invert(hsl(209deg 100% 91%), 100%)};
+  --primary-300: #{invert(hsl(209deg 100% 78%), 100%)};
+  --primary-400: #{invert(hsl(210deg 100% 65%), 100%)};
+  --primary-500: #{invert(hsl(210deg 100% 56%), 100%)};
+  --primary-600: #{invert(hsl(210deg 79% 39%), 100%)};
+  --primary-700: #{invert(hsl(209deg 79% 22%), 100%)};
+  --primary-800: #{invert(hsl(209deg 79% 11%), 100%)};
+  --primary-900: #{invert(hsl(210deg 77% 5%), 100%)};
+
+  // Secondary
+  --secondary-100: #{invert(hsl(220deg 100% 95%), 100%)};
+  --secondary-200: #{invert(hsl(220deg 96% 90%), 100%)};
+  --secondary-300: #{invert(hsl(220deg 96% 81%), 100%)};
+  --secondary-400: #{invert(hsl(220deg 97% 72%), 100%)};
+  --secondary-500: #{invert(hsl(220deg 97% 53%), 100%)};
+  --secondary-600: #{invert(hsl(220deg 88% 32%), 100%)};
+  --secondary-700: #{invert(hsl(220deg 87% 21%), 100%)};
+  --secondary-800: #{invert(hsl(220deg 89% 10%), 100%)};
+  --secondary-900: #{invert(hsl(222deg 85% 5%), 100%)};
+
+  // Tertiary
+  --tertiary-100: #{invert(hsl(246deg 100% 96%), 100%)};
+  --tertiary-200: #{invert(hsl(246deg 95% 92%), 100%)};
+  --tertiary-300: #{invert(hsl(246deg 95% 85%), 100%)};
+  --tertiary-400: #{invert(hsl(247deg 96% 73%), 100%)};
+  --tertiary-500: #{invert(hsl(247deg 96% 62%), 100%)};
+  --tertiary-600: #{invert(hsl(246deg 59% 43%), 100%)};
+  --tertiary-700: #{invert(hsl(246deg 59% 25%), 100%)};
+  --tertiary-800: #{invert(hsl(246deg 59% 12%), 100%)};
+  --tertiary-900: #{invert(hsl(246deg 61% 6%), 100%)};
+
+  // Gray
+  --gray-50: #{invert(hsl(0deg 0% 99%), 100%)};
+  --gray-100: #{invert(hsl(0deg 0% 96%), 100%)};
+  --gray-200: #{invert(hsl(0deg 0% 93%), 100%)};
+  --gray-300: #{invert(hsl(0deg 0% 88%), 100%)};
+  --gray-400: #{invert(hsl(0deg 0% 74%), 100%)};
+  --gray-500: #{invert(hsl(0deg 0% 62%), 100%)};
+  --gray-600: #{invert(hsl(0deg 0% 46%), 100%)};
+  --gray-700: #{invert(hsl(0deg 0% 38%), 100%)};
+  --gray-800: #{invert(hsl(0deg 0% 26%), 100%)};
+  --gray-900: #{invert(hsl(0deg 0% 20%), 100%)};
+  --black: #{invert(hsl(0deg 0% 13%), 100%)};
+
+  // White
+  --white: #{invert(hsl(0deg 0% 100%), 100%)};
+  --white-900: #{invert(hsl(0deg 0% 100% / 90%), 100%)};
+  --white-800: #{invert(hsl(0deg 0% 100% / 80%), 100%)};
+  --white-700: #{invert(hsl(0deg 0% 100% / 70%), 100%)};
+  --white-600: #{invert(hsl(0deg 0% 100% / 60%), 100%)};
+  --white-500: #{invert(hsl(0deg 0% 100% / 50%), 100%)};
+  --white-400: #{invert(hsl(0deg 0% 100% / 40%), 100%)};
+  --white-300: #{invert(hsl(0deg 0% 100% / 30%), 100%)};
+  --white-200: #{invert(hsl(0deg 0% 100% / 20%), 100%)};
+  --white-100: #{invert(hsl(0deg 0% 100% / 10%), 100%)};
+  --white-50: #{invert(hsl(0deg 0% 100% / 5%), 100%)};
+
+  // Black
+  --black-900: #{invert(hsl(0deg 0% 0% / 90%), 100%)};
+  --black-800: #{invert(hsl(0deg 0% 0% / 80%), 100%)};
+  --black-700: #{invert(hsl(0deg 0% 0% / 70%), 100%)};
+  --black-600: #{invert(hsl(0deg 0% 0% / 60%), 100%)};
+  --black-500: #{invert(hsl(0deg 0% 0% / 50%), 100%)};
+  --black-400: #{invert(hsl(0deg 0% 0% / 40%), 100%)};
+  --black-300: #{invert(hsl(0deg 0% 0% / 30%), 100%)};
+  --black-200: #{invert(hsl(0deg 0% 0% / 20%), 100%)};
+  --black-100: #{invert(hsl(0deg 0% 0% / 10%), 100%)};
+  --black-50: #{invert(hsl(0deg 0% 0% / 5%), 100%)};
+
+
+  // --success-color: #D1FAE5;
+  --success-color-background: #065f46;
+
+  // Font
+  --font-color: #fff;
+  --font-color-invert: var(--black-800);
+  --background-html: #1d1c2a;
+  --background-menu: #222433;
+  --background-image-color: hsl(195deg 6% 12%);
+  --background-code-color: #{invert(hsl(200deg 12% 95%), 100%)};
+
+
+  /* ------------------------------------*
+    # Shadow
+  *------------------------------------ */
+
+
+  --shadow-ms: 0 2px 8px #f0f1f2, 100%;
+  --shadow-s: 0 1px 2px rgb(24 24 24 / 7%), 100%;
+  --shadow: 0 1px 3px rgb(24 24 24 / 10%), 0 1px 2px rgb(24 24 24 / 6%), 100%;
+  --shadow-m: 0 4px 6px -1px rgb(24 24 24 / 10%), 0 2px 4px -1px rgb(24 24 24 / 6%), 100%;
+  --shadow-l: 0 4px 6px -2px rgb(24 24 24 / 6%), 0 10px 15px -3px rgb(24 24 24 / 10%), 100%;
+  --shadow-xl: 0 10px 10px -5px rgb(24 24 24 / 6%), 0 20px 25px -5px rgb(24 24 24 / 10%);
+  --shadow-xxl: 0 4px 6px -2px rgb(24 24 24 / 6%), 0 25px 50px -12px rgb(24 24 24 / 25%);
+  --shadow-drop: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d, 100%;
+
+
+  /* ------------------------------------*
+    # Border
+  *------------------------------------ */
+
+  --border-color: var(--gray-100);
+
+
+  /* ------------------------------------*
+    # Table
+  *------------------------------------ */
+
+  --border-color: #333;
+  --tr-color: #444;
+  --tr-mobile-color: #333;
+}
+

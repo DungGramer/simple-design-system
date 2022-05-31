@@ -11,6 +11,7 @@ import Menu from '@atoms/menu/Menu';
 import changeLanguage from '~/translations/changeLanguage';
 import { useTranslation } from 'react-i18next';
 import ChangeThemeButton from './change-theme/ChangeTheme';
+import { FaBars } from 'react-icons/fa';
 
 const languages = [
   {
@@ -41,6 +42,7 @@ const LogoSection = ({ toggleOpen }) => (
     </Link>
     <ChangeThemeButton />
     <i className={`${styles.menu} far fa-bars`} onClick={toggleOpen} />
+    <FaBars className={styles.menu} onClick={toggleOpen}  />
   </div>
 );
 

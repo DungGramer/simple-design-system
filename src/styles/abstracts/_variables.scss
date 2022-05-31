@@ -1,0 +1,28 @@
+$font-base: 16;
+
+// Transition
+
+$tab-transition: 500ms cubic-bezier(.35, 0, .25, 1);
+
+$color-transition: .2s ease-in-out;
+
+$zIndex: (
+  'back': -1,
+  'base': 1,
+  'modal': 10,
+  'overlay': 20,
+  'dropdown': 30,
+  'popup': 40,
+  'tooltip': 50,
+  'notification': 60,
+  'dialog': 70,
+  'loading': 80,
+  'sticky': 90,
+  'fixed': 100,
+  'sidebar': 110,
+  'header': 120,
+  'footer': 130,
+  'app': 140,
+  'mask': 150,
+  'disabled': 160,
+);

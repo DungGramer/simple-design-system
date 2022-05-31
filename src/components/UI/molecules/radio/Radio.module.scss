@@ -1,7 +1,7 @@
 .radio {
-  color: var(--font-color);
   display: inline-flex;
   align-items: center;
+  color: var(--font-color);
   cursor: pointer;
 
   &:focus-within .label {
@@ -9,34 +9,34 @@
   }
 
   input {
-    opacity: 0;
-    width: 0;
     height: 0;
+    width: 0;
     margin: 0;
     padding: 0;
+    opacity: 0;
   }
 }
 
 .radio-input {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 
   input {
     &:checked + .radio-control {
       &::after {
-        transform: scale(0.6);
+        transform: scale(.6);
       }
     }
 
     & + .radio-control::before {
       content: '';
-      width: 0.5em;
-      height: 0.5em;
-      box-shadow: inset 0.5em 0.5em var(--primary-500);
+      height: .5em;
+      width: .5em;
       border-radius: 50%;
-      transition: 0.25s transform ease-in-out;
+      box-shadow: inset .5em .5em var(--primary-500);
       transform: scale(0);
+      transition: .25s transform ease-in-out;
     }
 
     &:checked + .radio-control::before {
@@ -50,35 +50,35 @@
 
   .radio-control {
     display: block;
-    width: 1em;
     height: 1em;
-    border-radius: 50%;
+    width: 1em;
     border: thin solid var(--secondary-500);
-
-    transform: translateY(-0em);
+    border-radius: 50%;
+    transform: translateY(-0);
 
     &::after {
       @include position-abs(0);
-      background-color: var(--primary-500);
+
       border-radius: 50%;
+      background-color: var(--primary-500);
       transform: scale(0);
-      transition: transform 0.25s cubic-bezier(0.78, 0.14, 0.15, 0.86);
+      transition: transform .25s cubic-bezier(.78, .14, .15, .86);
     }
   }
 }
 
 .label {
-  line-height: 1;
-  transition: 0.25s all ease-in-out;
-  opacity: 0.8;
   padding: 0 8px;
+  line-height: 1;
+  opacity: .8;
+  transition: .25s all ease-in-out;
 }
 
 /**
  * Disabled
  */
 .radio.disabled {
-  opacity: 0.5;
+  opacity: .5;
   cursor: not-allowed;
 
   * {
@@ -99,14 +99,15 @@
 
   input:checked + .label {
     --checked-color: var(--primary-500);
+
     opacity: 1;
   }
 
   .label {
     padding: 8px 16px;
-    color: var(--checked-color);
     border: thin solid var(--checked-color);
     border-radius: 999px;
+    color: var(--checked-color);
   }
 }
 
@@ -116,7 +117,7 @@
  */
 
 .radio-group {
-  display: flex;
   @include gap(8px);
 
+  display: flex;
 }

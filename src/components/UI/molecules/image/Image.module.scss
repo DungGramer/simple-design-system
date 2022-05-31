@@ -1,16 +1,17 @@
 picture {
+  display: block;
   min-width: 100%;
   max-width: 100%;
-  display: block;
 }
+
 picture .img {
   opacity: 0;
   // animation: fade-loading 0.3s forwards ease-out;
 }
 
 .img {
-  user-select: none;
   width: 100%;
+  user-select: none;
   background-color: var(--gray-300);
 }
 
@@ -19,7 +20,7 @@ picture .img {
 }
 
 svg {
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
 }

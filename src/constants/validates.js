@@ -17,7 +17,7 @@ export const isEmail = (str) => {
   if (!str) return str;
 
   const pattern =
-    /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return pattern.test(str);
 };
 
@@ -29,56 +29,56 @@ export const isPhoneVN = (str) => {
   return pattern.test(str);
 };
 
-export const isFalsy = (value) => {
-  if (Boolean(value) === false) {
-    return true;
-  }
+// export const isFalsy = (value) => {
+//   if (Boolean(value) === false) {
+//     return true;
+//   }
 
-  if (typeof value === 'string' && value.trim() === '') {
-    return true;
-  }
-  if (Array.isArray(value) && value.length === 0) {
-    return true;
-  }
+//   if (typeof value === 'string' && value.trim() === '') {
+//     return true;
+//   }
+//   if (Array.isArray(value) && value.length === 0) {
+//     return true;
+//   }
 
-  if (typeof value === 'object' && Object.keys(value).length === 0) {
-    return true;
-  }
+//   if (typeof value === 'object' && Object.keys(value).length === 0) {
+//     return true;
+//   }
 
-  const falsy = [
-    undefined,
-    'undefined',
-    null,
-    'null',
-    false,
-    'false',
-    '',
-    0,
-    -0,
-    '0',
-    '0.0',
-    0n,
-    NaN,
-    'NaN',
-    ' ',
-    '\t',
-    '\n',
-    '\r',
-    '\f',
-    '\v',
-    '\u00A0',
-    '\u2028',
-    '\u2029',
-    '\uFEFF',
-    '\u200B',
-    '\u180E',
-  ];
-  if (falsy.includes(value)) {
-    return true;
-  }
+//   const falsy = [
+//     undefined,
+//     'undefined',
+//     null,
+//     'null',
+//     false,
+//     'false',
+//     '',
+//     0,
+//     -0,
+//     '0',
+//     '0.0',
+//     0n,
+//     NaN,
+//     'NaN',
+//     ' ',
+//     '\t',
+//     '\n',
+//     '\r',
+//     '\f',
+//     '\v',
+//     '\u00A0',
+//     '\u2028',
+//     '\u2029',
+//     '\uFEFF',
+//     '\u200B',
+//     '\u180E',
+//   ];
+//   if (falsy.includes(value)) {
+//     return true;
+//   }
 
-  return false;
-};
+//   return false;
+// };
 
 export const isTruthy = (value) => {
   return !isFalsy(value);

@@ -1,8 +1,8 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
-const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
-const smp = new SpeedMeasurePlugin();
+// const SpeedMeasurePlugin = require('speed-measure-webpack-plugin');
+// const smp = new SpeedMeasurePlugin();
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -15,7 +15,7 @@ module.exports = merge(common, {
   devtool: 'eval',
   output: {
     filename: '[name].[contenthash:8].js',
-    publicPath: '/'
+    publicPath: '/',
   },
   // webpack 5 comes with devServer which loads in development mode
   devServer: {

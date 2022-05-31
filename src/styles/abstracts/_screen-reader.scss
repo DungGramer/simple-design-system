@@ -1,0 +1,25 @@
+// Only display content to screen readers
+
+@mixin sr-only() {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+@mixin sr-only-focusable() {
+  &:active,
+  &:focus {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    height: auto;
+    width: auto;
+    white-space: normal;
+  }
+}

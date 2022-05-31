@@ -14,7 +14,7 @@ import PropTypes from 'prop-types';
 
 const Banner = ({ icon, children, type }) => {
   return (
-    <div className={`${styles['banner']} ${styles[type]}`}>
+    <div className={`${styles.banner} ${styles[type]}`}>
       <div className={styles.container}>
         <IconType type={type} icon={icon} />
         <p>{children}</p>

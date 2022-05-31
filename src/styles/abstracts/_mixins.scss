@@ -1,0 +1,368 @@
+/* ------------------------------------*
+  # Flex
+*------------------------------------ */
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center;
+
+  flex-direction: column;
+}
+
+@mixin flex-center-ver {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center-hor {
+  display: flex;
+  justify-content: center;
+}
+
+/* ------------------------------------*
+  # Border-radius
+*------------------------------------ */
+
+@mixin border-top-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-left-radius: valid-radius($radius);
+    border-top-right-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-bottom-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-bottom-right-radius: valid-radius($radius);
+    border-bottom-left-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-left-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-right-radius: valid-radius($radius);
+    border-bottom-right-radius: valid-radius($radius);
+  }
+}
+
+@mixin border-right-radius($radius: $border-radius) {
+  @if $enable-rounded {
+    border-top-right-radius: valid-radius($radius);
+    border-bottom-right-radius: valid-radius($radius);
+  }
+}
+
+/* ------------------------------------*
+  # Background
+*------------------------------------ */
+
+@mixin cover-background($image-src) {
+  background-image: url($image-src);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ------------------------------------*
+  # Until
+*------------------------------------ */
+
+/**
+  * aspect-ratio polyfill
+  *
+*/
+@mixin responsive-ratio($x, $y) {
+  padding-top: ($y / $x) * 100 + '%';
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+  content: $content;
+  display: $display;
+  position: $pos;
+}
+
+@mixin truncate($line) {
+  display: box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: $line;
+  -webkit-box-orient: vertical;
+}
+
+@mixin prefix($prop, $value) {
+  -webkit-#{$prop}: #{$value};
+  -moz-#{$prop}: #{$value};
+  -ms-#{$prop}: #{$value};
+  -o-#{$prop}: #{$value};
+  #{$prop}: #{$value};
+}
+
+@mixin keyframes($name) {
+  @keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin padding-vertical($top, $bottom: false) {
+  @if $bottom == false {
+    padding-bottom: $top;
+  }
+
+  @else {
+    padding-bottom: $bottom;
+  }
+
+  padding-top: $top;
+}
+
+@mixin padding-horizontal($left, $right: false) {
+  @if $right == false {
+    padding-right: $left;
+  }
+
+  @else {
+    padding-right: $right;
+  }
+
+  padding-left: $left;
+}
+
+@mixin margin-vertical($top, $bottom: false) {
+  @if $bottom == false {
+    margin-bottom: $top;
+  }
+
+  @else {
+    margin-bottom: $bottom;
+  }
+
+  margin-top: $top;
+}
+
+@mixin margin-horizontal($left, $right: false) {
+  @if $right == false {
+    margin-right: $left;
+  }
+
+  @else {
+    margin-right: $right;
+  }
+
+  margin-left: $left;
+}
+
+@mixin disable-action() {
+  user-select: none;
+  cursor: context-menu;
+  pointer-events: none;
+}
+
+/*
+ * Using for Retina Screen - x2 Image
+ background: url("my-image.png") no-repeat;
+ @include retina-image("my-image2x.png", 1000px, 500px);
+*/
+
+@mixin retina-image($image, $width, $height) {
+  @media (minpixel-ratio: 1.3),
+    (minpixel-ratio: 2.6/2),
+    (min-device-pixel-ratio: 1.3),
+    (min-device-pixel-ratio: 1.3),
+    (min-resolution: 1.3dppx) {
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+
+@mixin size($width, $height: false) {
+  @if $height == false {
+    height: $width;
+  }
+
+  @else {
+    height: $height;
+  }
+
+  width: $width;
+}
+
+@mixin absolute() {
+  content: '';
+  position: absolute;
+}
+
+@mixin position-abs($top: false, $right: false, $bottom: false, $left: false) {
+  @if ($top and $right and $bottom and $left == false) {
+    top: $top;
+    left: $right;
+    right: $right;
+    bottom: $bottom;
+  }
+
+  @else if ($top and $right and $bottom == false and $left == false) {
+    top: $top;
+    bottom: $top;
+    left: $right;
+    right: $right;
+  }
+
+  @else if ($top and $right == false and $bottom == false and $left == false) {
+    top: $top;
+    right: $top;
+    bottom: $top;
+    left: $top;
+  }
+
+  @else {
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+  }
+
+  content: '';
+  position: absolute;
+}
+
+/*
+ * Arrow with border
+ * @param {down|up|left|right} $direction
+ * @param {Number} $size
+ * @param {HEX} $color
+*/
+
+@mixin arrow($direction: down, $size: 5px, $color: #555) {
+  @if ($direction == left) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-right: $size solid $color;
+  }
+
+  @else if ($direction == right) {
+    border-top: $size solid transparent;
+    border-bottom: $size solid transparent;
+    border-left: $size solid $color;
+  }
+
+  @else if ($direction == down) {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-top: $size solid $color;
+  }
+
+  @else {
+    border-left: $size solid transparent;
+    border-right: $size solid transparent;
+    border-bottom: $size solid $color;
+  }
+
+  height: 0;
+  width: 0;
+}
+
+@mixin input-placeholder {
+  &.placeholder {
+    @content;
+  }
+
+  &:placeholder {
+    @content;
+  }
+
+  &::placeholder {
+    @content;
+  }
+
+  &:input-placeholder {
+    @content;
+  }
+
+  &::input-placeholder {
+    @content;
+  }
+}
+
+@mixin gap($row: 0, $column: false) {
+  @if $column == false {
+    @include isSafari() {
+      margin-top: calc(-1 * #{$row});
+      margin-left: calc(-1 * #{$row});
+
+      & > * {
+        margin-top: $row;
+        margin-left: $row;
+      }
+    }
+
+    @supports (gap: 10px) and (display: flex) {
+      gap: $row;
+    }
+  }
+
+  @else {
+    @include isSafari() {
+      margin-top: calc(-1 * #{$row});
+      margin-left: calc(-1 * #{$column});
+
+      & > * {
+        margin-top: $row;
+        margin-left: $column;
+      }
+    }
+
+    @supports (gap: 10px) and (display: flex) {
+      gap: $row $column;
+    }
+  }
+}
+
+/* ------------------------------------*
+  # Detect Browser
+*------------------------------------ */
+
+@mixin isFirefox() {
+  @-moz-document url-prefix() {
+    @content;
+  }
+}
+
+@mixin isSafari() {
+  @supports (not (translate: none)) {
+    @content;
+  }
+}
+
+@mixin isChrome() {
+  @supports (translate: none) {
+    @content;
+  }
+}
+
+@mixin isEdge() {
+  @supports (-ms-ime-align: auto) {
+    @content;
+  }
+}
+
+@mixin isDarkMode() {
+  html[theme='dark'] {
+    @content;
+  }
+}

@@ -1,0 +1,23 @@
+@keyframes fade-loading {
+  from {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes hiddenScrollbar {
+  0% {
+    height: .5rem;
+    width: .5rem;
+  }
+
+  100% {
+    height: 0;
+    width: 0;
+  }
+}

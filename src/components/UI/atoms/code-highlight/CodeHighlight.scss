@@ -1,20 +1,21 @@
 //atom-one
 // import '/node_modules/highlight.js/styles/atom-one-light.css';
 
+code[class*='language-'] {
+  background: none !important;
+}
+
 html,
 html[theme='light'] {
 
-  code[class*="language-"] {
-    background: none !important;
-  }
 
-  .hljs {
-    display: block;
-    overflow-x: auto;
-    padding: 0.5em;
-    color: #575f66;
-    background: #fafafa;
-  }
+  // .hljs {
+  //   display: block;
+  //   overflow-x: auto;
+  //   padding: .5em;
+  //   color: #575f66;
+  //   background: #fafafa;
+  // }
 
   // .hljs-comment,
   // .hljs-quote {

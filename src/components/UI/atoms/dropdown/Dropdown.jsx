@@ -40,7 +40,7 @@ const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction }) => {
 
       if (spaceTop > spaceBottom) {
         dropdownStyle.top = 'auto';
-        dropdownStyle.bottom = `calc(100% + ${size.maxHeight}px)`;
+        dropdownStyle.bottom = `100%`;
         dropdownStyle.maxHeight = `${spaceTop - 20}px`;
       } else {
         dropdownStyle.top = '100%';

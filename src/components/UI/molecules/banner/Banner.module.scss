@@ -1,35 +1,36 @@
 .banner {
-	font-weight: 500;
-	border-radius: 4px;
   max-width: 100%;
+  border-radius: 4px;
+  font-weight: 500;
 
-	&.warning {
-		background-color: var(--warning-color);
-	}
+  &.warning {
+    background-color: var(--warning-color);
+  }
+
   &.error {
+    color: var(--font-color-invert);
     background-color: var(--error-color);
-    color: var(--font-color-invert);
   }
+
   &.announcement {
-    background-color: var(--info-color);
     color: var(--font-color-invert);
+    background-color: var(--info-color);
   }
 
-	.container {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		padding: 12px;
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
 
-		p {
+    p {
+      overflow: hidden;
+      flex: 0 1 auto;
       margin: 0;
-			padding: 4px;
-			padding-left: 8px;
-			flex: 0 1 auto;
-
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-		}
-	}
+      padding: 4px;
+      padding-left: 8px;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
 }

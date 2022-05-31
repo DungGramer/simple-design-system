@@ -1,0 +1,112 @@
+/* ------------------------------------*
+  # Scrollbar
+*------------------------------------ */
+
+:root {
+  // Support Firefox
+  scrollbar-width: thin;
+  scrollbar-color: var(--scrollbar-color) transparent;
+}
+
+@include isFirefox() {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-color) transparent;
+  }
+}
+
+// Support Chrome
+::-webkit-scrollbar {
+  height: .5rem;
+  width: .5rem;
+  border-color: transparent;
+  background: transparent;
+  transition: width .2s ease-in-out, height .2s ease-in-out;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  border-color: transparent;
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: var(--scrollbar-color);
+
+  :hover {
+    background: var(--scrollbar-hover-color);
+  }
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+::-webkit-scrollbar-button {
+  display: none;
+  height: 0;
+  width: 0;
+}
+
+/**
+ * Color selector
+ */
+
+::selection {
+  color: hsl(0deg 0% 99%);
+  background: hsl(209deg 100% 78%);
+}
+
+@include isDarkMode() {
+  ::selection {
+    color: hsl(0deg 0% 99%);
+    background: #b25900;
+  }
+}
+
+// Support Safari
+// ::-webkit-scrollbar-corner, ::-webkit-scrollbar-corner:horizontal, ::-webkit-scrollbar-corner:vertical {
+//   background: $gray-500;
+// }
+
+// body[theme='dark'] {
+//   &::-webkit-scrollbar-thumb {
+//     background: $gray-700;
+//     &:hover {
+//       background: $gray-500;
+//     }
+//   }
+// }
+
+html {
+  background-color: var(--background-html);
+  transition: background-color .2s ease-in-out;
+}
+
+.container {
+  @include padding-horizontal(2.5rem);
+  @include margin-horizontal(auto);
+
+  max-width: 1200px;
+}
+
+.container-fluid {
+  @include padding-horizontal(1.5rem);
+}
+
+// Sizes
+html {
+  --xxsmall: 16px;
+  --xsmall: 20px;
+  --small: 24px;
+  --medium: 32px;
+  --large: 40px;
+  --xlarge: 96px;
+  --xxlarge: 128px;
+  --nav-width: 17rem;
+}
