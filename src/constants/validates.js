@@ -17,7 +17,7 @@ export const isEmail = (str) => {
   if (!str) return str;
 
   const pattern =
-    /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return pattern.test(str);
 };
 
@@ -80,9 +80,9 @@ export const isPhoneVN = (str) => {
 //   return false;
 // };
 
-export const isTruthy = (value) => {
-  return !isFalsy(value);
-};
+// export const isTruthy = (value) => {
+//   return !isFalsy(value);
+// };
 
 export const isApple = () => {
   return [
