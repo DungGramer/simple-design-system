@@ -47,26 +47,16 @@ module.exports = {
           name: formatFileName,
         },
       },
-      // {
-      //   test: regex.font,
-      //   exclude: /fontawesome/,
-      //   type: 'asset/resource',
-      //   loader: 'url-loader',
-      //   options: {
-      //     fallback: 'file-loader',
-      //     limit: sizeLimit,
-      //     outputPath: 'assets/fonts',
-      //     name: formatFileName,
-      //     esModule: false,
-      //   },
-      // },
       {
         test: regex.svg,
         // type: 'asset/inline', // Load svg inside HTML
-        issuer: regex.jts,
-        use: ['@svgr/webpack'],
+        // issuer: regex.jts,
+        // use: ['@svgr/webpack'],
+        loader: 'react-svg-loader',
+        options: {
+          jsx: true, // true outputs JSX tags
+        },
       },
-
       {
         test: regex.js,
         exclude: /node_modules/,
@@ -131,13 +121,6 @@ module.exports = {
           postCSS,
           {
             loader: 'sass-loader',
-            options: {
-              // Prefer `dart-sass`
-              implementation: require('sass'),
-              sassOptions: {
-                fiber: false,
-              },
-            },
           },
         ],
         sideEffects: true,
@@ -176,7 +159,7 @@ module.exports = {
 
   resolve: {
     modules: [paths.src, 'node_modules'],
-    extensions: ['*', '.js', '.jsx', '.json', '.scss', '.css'],
+    extensions: ['.js', '.jsx', '.json', '.scss', '.css'],
     alias: {
       '~': paths.src,
       '@public': resolvePath('public'),

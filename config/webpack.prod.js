@@ -9,11 +9,76 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const WebpackCdnPlugin = require('webpack-cdn-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
-const { paths, regex, postCSS } = require('./utils');
+const { paths, regex, postCSS, resolvePath } = require('./utils');
 
 const webpackConfig = merge(common, {
   mode: 'production',
   target: ['es5', 'web'],
+  devtool: false,
+
+  // Stop compilation early in production
+  bail: false,
+
+  module: {
+    rules: [
+      // {
+      //   test: regex.ts,
+      //   use: [
+      //     {
+      //       loader: 'ts-loader',
+      //       options: {
+      //         transpileOnly: true,
+      //       },
+      //     },
+      //   ],
+      // },
+      {
+        test: regex.css,
+        exclude: regex.cssModule,
+        use: [MiniCssExtractPlugin.loader, 'css-loader', postCSS],
+      },
+      {
+        test: regex.cssModule,
+        exclude: regex.css,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: false,
+            },
+          },
+          postCSS,
+        ],
+      },
+      {
+        test: regex.sass,
+        exclude: regex.sassModule,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          postCSS,
+          'sass-loader',
+        ],
+        sideEffects: true,
+      },
+      {
+        test: regex.sassModule,
+        exclude: regex.sass,
+        use: [
+          MiniCssExtractPlugin.loader,
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: false,
+            },
+          },
+          postCSS,
+          'sass-loader',
+        ],
+      },
+    ],
+  },
 
   output: {
     filename: 'assets/js/[name].[contenthash:8].js',
@@ -85,71 +150,7 @@ const webpackConfig = merge(common, {
       ],
     }),
   ],
-  devtool: false,
 
-  // Stop compilation early in production
-  bail: false,
-
-  module: {
-    rules: [
-      // {
-      //   test: regex.ts,
-      //   use: [
-      //     {
-      //       loader: 'ts-loader',
-      //       options: {
-      //         transpileOnly: true,
-      //       },
-      //     },
-      //   ],
-      // },
-      {
-        test: regex.css,
-        exclude: regex.cssModule,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', postCSS],
-      },
-      {
-        test: regex.cssModule,
-        exclude: regex.css,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: false,
-            },
-          },
-          postCSS,
-        ],
-      },
-      {
-        test: regex.sass,
-        exclude: regex.sassModule,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          postCSS,
-          'sass-loader',
-        ],
-        sideEffects: true,
-      },
-      {
-        test: regex.sassModule,
-        exclude: regex.sass,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              sourceMap: false,
-            },
-          },
-          postCSS,
-          'sass-loader',
-        ],
-      },
-    ],
-  },
   optimization: {
     minimize: true,
     runtimeChunk: true,
@@ -158,14 +159,14 @@ const webpackConfig = merge(common, {
 
     minimizer: [
       new TerserPlugin({
-        // minify: TerserPlugin.uglifyJsMinify,
-        parallel: true,
-        terserOptions: {
-          ecma: 5,
-          output: {
-            comments: false,
-          },
-        },
+        minify: TerserPlugin.swcMinify,
+        // parallel: 4,
+        // terserOptions: {
+        //   ecma: 5,
+        //   output: {
+        //     comments: false,
+        //   },
+        // },
       }),
     ],
 
