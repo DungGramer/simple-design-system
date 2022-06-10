@@ -1,10 +1,11 @@
 import styles from './ChangeTheme.module';
-import { memo, useEffect, useRef, useState } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import lottie from 'lottie-web/build/player/lottie_light';
 
 import { useThemeContext } from '~/context/themeContext/themeContext';
 
 import dayNight from './animation/day-night.json'; // 0 -> 9: day, 10 -> 19: night
+import { onEnter } from '~/helpers/onEnter';
 
 const ChangeThemeButton = () => {
   const { changeTheme, switchTheme } = useThemeContext();
@@ -27,6 +28,7 @@ const ChangeThemeButton = () => {
     lottie.goToAndStop(switchTheme(0, 9), true, 'day-night');
 
     return () => anim.current?.destroy();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleClick = () => {
@@ -41,8 +43,10 @@ const ChangeThemeButton = () => {
 
   return (
     <div
+      tabIndex={0}
       ref={iconRef}
       onClick={handleClick}
+      onKeyDown={(e) => onEnter(e, handleClick)}
       className={styles['change-theme']}
     />
   );

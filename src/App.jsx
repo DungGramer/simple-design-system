@@ -24,7 +24,7 @@ function App() {
         <Header />
         <main className="main-container">
           <Sidebar />
-          <section className="main">
+          <section id="main">
             <TransitionGroup appear className="transition-group">
               <CSSTransition
                 // nodeRef={nodeRef}

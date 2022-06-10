@@ -126,3 +126,18 @@
 .language {
   cursor: pointer;
 }
+
+.skip-nav-link {
+  will-change: transform;
+  position: absolute;
+  left: 96px;
+  padding: 0 1rem;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transform: translateY(-200%);
+  transition: transform .2s ease-in-out;
+
+  &:focus-within {
+    transform: translateY(0);
+  }
+}

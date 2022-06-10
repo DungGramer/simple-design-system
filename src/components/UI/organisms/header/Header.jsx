@@ -12,6 +12,8 @@ import changeLanguage from '~/translations/changeLanguage';
 import { useTranslation } from 'react-i18next';
 import ChangeThemeButton from './change-theme/ChangeTheme';
 import { FaBars } from 'react-icons/fa';
+import { onEnter } from '~/helpers/onEnter';
+import { t } from 'i18next';
 
 const languages = [
   {
@@ -40,9 +42,14 @@ const LogoSection = ({ toggleOpen }) => (
     <Link to="/">
       <Logo width="50" height="50" />
     </Link>
+
+    <a className={styles['skip-nav-link']} href="#main">
+      {t('Skip navigation')}
+    </a>
+
     <ChangeThemeButton />
     <i className={`${styles.menu} far fa-bars`} onClick={toggleOpen} />
-    <FaBars className={styles.menu} onClick={toggleOpen}  />
+    <FaBars className={styles.menu} onClick={toggleOpen} />
   </div>
 );
 
@@ -63,6 +70,13 @@ const Languages = ({ t, toggleOpen }) => {
             toggleOpenLang();
             toggleOpen();
           }}
+          onKeyDown={(e) =>
+            onEnter(e, () => {
+              changeLanguage(language.key);
+              toggleOpenLang();
+              toggleOpen();
+            })
+          }
         />
       ))}
     </>
@@ -74,6 +88,8 @@ const Languages = ({ t, toggleOpen }) => {
         className={styles.language}
         ref={languageRef}
         onClick={() => setOpenLang(!openLang)}
+        onKeyDown={(e) => onEnter(e, () => setOpenLang(!openLang))}
+        tabIndex="0"
       >
         {t('Language')}
       </span>

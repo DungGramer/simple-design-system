@@ -15,14 +15,18 @@ import { isURL } from '~/constants/validates';
  * <Menu content="Home" to="/">
  * */
 
-const Menu = ({ content, icon, href, to, onClick }) => {
+const Menu = ({ content, icon, href, to, ...props }) => {
   const Wrapper = () => {
     if (to) {
       return <Link to={to}>{content}</Link>;
     } else if (href) {
       return <a href={href}>{content}</a>;
     }
-    return <span onClick={onClick}>{content}</span>;
+    return (
+      <span tabIndex={0} {...props}>
+        {content}
+      </span>
+    );
   };
 
   const Icon = () => {
@@ -33,10 +37,10 @@ const Menu = ({ content, icon, href, to, onClick }) => {
   };
 
   return (
-    <li className={styles['menu']}>
+    <li className={styles.menu}>
       <Wrapper>
         {icon && <Icon />}
-        {content && <span>{content}</span>}
+        {content && <span tabIndex={0}>{content}</span>}
       </Wrapper>
     </li>
   );
