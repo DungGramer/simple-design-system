@@ -48,8 +48,12 @@ const LogoSection = ({ toggleOpen }) => (
     </a>
 
     <ChangeThemeButton />
-    <i className={`${styles.menu} far fa-bars`} onClick={toggleOpen} />
-    <FaBars className={styles.menu} onClick={toggleOpen} />
+    <FaBars
+      tabIndex={0}
+      className={styles.menu}
+      onClick={toggleOpen}
+      onKeyDown={(e) => onEnter(e, toggleOpen)}
+    />
   </div>
 );
 
@@ -147,5 +151,14 @@ const Header = () => {
 };
 
 Header.propTypes = {};
+
+LogoSection.propTypes = {
+  toggleOpen: PropTypes.func.isRequired,
+};
+
+Languages.propTypes = {
+  t: PropTypes.func.isRequired,
+  toggleOpen: PropTypes.func.isRequired,
+};
 
 export default memo(Header);

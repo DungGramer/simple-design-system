@@ -18,15 +18,21 @@ $zIndex: map-get($zIndex, 'sidebar');
 
   & ul {
     @include desktop {
+      visibility: visible;
       overflow-y: unset;
       height: unset;
     }
 
+    visibility: hidden;
     overflow-y: auto;
     z-index: $zIndex + 1;
     height: 100vh;
     background-color: inherit;
     isolation: isolate;
+  }
+
+  &.open ul {
+    visibility: visible;
   }
 
   &.open {
