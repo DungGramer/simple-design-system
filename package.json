@@ -27,7 +27,8 @@
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
     "serve": "serve -s ./dist/",
     "start": "webpack serve --open --config ./config/webpack.dev.js",
-    "test:es-check": "es-check es5 dist/assets/js/*.js"
+    "test:es-check": "es-check es5 dist/assets/js/*.js",
+    "ngrok": "ngrok http 3090 --host-header=\"localhost:3090\""
   },
   "browserslist": [
     ">= 5%",

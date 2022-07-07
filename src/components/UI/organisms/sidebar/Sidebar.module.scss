@@ -11,6 +11,8 @@ $zIndex: map-get($zIndex, 'sidebar');
   position: fixed;
   overflow: visible;
   z-index: $zIndex;
+  // top: 2.5rem;
+  bottom: 0;
   width: 0;
   border-right: thin solid var(--gray-100);
   background-color: var(--background-menu);
@@ -24,9 +26,14 @@ $zIndex: map-get($zIndex, 'sidebar');
     }
 
     visibility: hidden;
+    // position: absolute;
     overflow-y: auto;
     z-index: $zIndex + 1;
-    height: 100vh;
+    bottom: 0;
+    height: calc((100vh - 4.5rem) + env(safe-area-inset-bottom));
+    width: 100%;
+    // padding-bottom: calc(1rem + constant(safe-area-inset-bottom));
+    // padding-bottom: calc(1rem + env(safe-area-inset-bottom));
     background-color: inherit;
     isolation: isolate;
   }
@@ -43,7 +50,7 @@ $zIndex: map-get($zIndex, 'sidebar');
   .nav-item {
     display: block;
     padding: .5rem 1.25rem .5rem 2rem;
-    user-select: none;
+    -webkit-user-select: none;
 
     &:hover,
     &.active {
@@ -74,7 +81,7 @@ $zIndex: map-get($zIndex, 'sidebar');
   position: fixed;
   z-index: $zIndex;
   right: 20px;
-  bottom: 20px;
+  bottom: calc(20px + env(safe-area-inset-bottom));
   justify-content: center;
   align-items: center;
   padding: 1.5rem;
