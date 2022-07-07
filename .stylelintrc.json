@@ -2,7 +2,6 @@
   "extends": ["stylelint-config-standard", "stylelint-config-recommended-scss"],
   "defaultSeverity": "warning",
   "plugins": ["stylelint-order", "stylelint-scss"],
-  "customSyntax": "postcss-scss",
   "ignoreFiles": [
     "*/**/*.css",
     "node_modules/**",
@@ -30,22 +29,13 @@
       }
     ],
     "function-parentheses-space-inside": null,
-    "property-no-vendor-prefix": [
-      true,
-      {
-        "severity": "warning",
-        "message": "property vendor prefixes are added by autoprefixer, if you project uses it."
-      }
-    ],
+
+    "property-no-vendor-prefix": null,
+    "selector-no-vendor-prefix": null,
+    "value-no-vendor-prefix": null,
+
     "value-list-comma-space-after": "always-single-line",
     "value-list-comma-newline-after": "always-multi-line",
-    "value-no-vendor-prefix": [
-      true,
-      {
-        "severity": "warning",
-        "message": "value vendor prefixes are added by autoprefixer, if you project uses it."
-      }
-    ],
     "string-quotes": "single",
     "number-leading-zero": [
       "never",
@@ -207,7 +197,6 @@
             "overflow-y",
             "vertical-align",
 
-
             "box-sizing",
             "width",
             "height",
@@ -226,7 +215,6 @@
             "padding-left",
             "padding-right",
             "padding-top",
-
 
             "-ms-writing-mode",
             "break-after",
