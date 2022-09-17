@@ -2,7 +2,8 @@
   "compilerOptions": {
     "baseUrl": ".",
     "sourceMap": true,
-    "jsx": "react",
+    "checkJs": true,
+    "jsx": "preserve",
     "moduleResolution": "node",
     "outDir": "dist",
 
@@ -18,9 +19,19 @@
       "@components/*": ["src/components/*"],
       "@public/*": ["public/*"],
       "~/*": ["src/*"]
-    }
+    },
+    "plugins": [
+      {
+        "name": "typescript-plugin-css-modules",
+        "options": {
+          "customMatcher": "\\.module\\.css$",
+          "camelCase": true,
+          "devMode": true
+        }
+      }
+    ]
   },
-  "include": ["src/**/*"],
+  "include": ["src/types/*", "declaration.d.ts"],
 
   //Add any build/compiled folders here to stop vscode searching those
   "exclude": ["node_modules", "dist"],

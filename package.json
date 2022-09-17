@@ -1,34 +1,41 @@
 {
   "name": "simple-design-system",
   "version": "1.0.0",
-  "description": "Custom build React with webpack",
-  "main": "./src/index.js",
-  "homepage": ".",
-  "scripts": {
-    "start": "webpack serve --open --config ./config/webpack.dev.js",
-    "build": "webpack --color --progress --config ./config/webpack.prod.js",
-    "bs": "webpack --color --progress --config ./config/webpack.prod.js && serve -s ./dist/",
-    "analytics": "set ANALYZER=true&& webpack --color --progress --config ./config/webpack.prod.js",
-    "lint": "eslint --ext js,jsx,ts,tsx src/",
-    "lint:fix": "eslint --fix --ext js,jsx,ts,tsx src/",
-    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
-    "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc",
-    "serve": "serve -s ./dist/",
-    "test:es-check": "es-check es5 dist/assets/js/*.js",
-    "clean": "rimraf dist/ node_modules/ package-lock.json && npm cache clean"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DungGramer/react-boilerplate.git"
-  },
+  "description": "A simple design system custom build with React and Webpack",
   "keywords": [
     "react"
   ],
-  "author": "DungGramer",
-  "license": "ISC",
+  "homepage": ".",
   "bugs": {
-    "url": "https://github.com/DungGramer/react-boilerplate/issues"
+    "url": "https://github.com/DungGramer/simple-design-system/issues"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DungGramer/simple-design-system.git"
+  },
+  "license": "ISC",
+  "author": "DungGramer",
+  "main": "./src/index.js",
+  "scripts": {
+    "analytics": "set ANALYZER=true&& webpack --color --progress --config ./config/webpack.prod.js",
+    "bs": "webpack --color --progress --config ./config/webpack.prod.js && serve -s ./dist/",
+    "build": "webpack --color --progress --config ./config/webpack.prod.js",
+    "clean": "rimraf dist/ node_modules/ package-lock.json yarn.lock && yarn cache clean",
+    "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./config/.prettierrc",
+    "lint": "eslint --ext js,jsx,ts,tsx src/",
+    "lint:fix": "eslint --fix --ext js,jsx,ts,tsx src/",
+    "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
+    "serve": "serve -s ./dist/",
+    "start": "webpack serve --open --config ./config/webpack.dev.js",
+    "test:es-check": "es-check es5 dist/assets/js/*.js"
+  },
+  "browserslist": [
+    ">= 5%",
+    "last 2 versions",
+    "not ie < 11",
+    "not op_mini all",
+    "not dead"
+  ],
   "dependencies": {
     "core-js": "^3.22.6",
     "lottie-web": "^5.9.4",
@@ -44,6 +51,7 @@
     "@babel/plugin-transform-runtime": "^7.18.0",
     "@babel/preset-env": "^7.18.0",
     "@babel/preset-react": "^7.17.12",
+    "@dunggramer/prettier": "^2.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@svgr/webpack": "^6.2.1",
     "@types/react-syntax-highlighter": "^15.5.1",
@@ -67,7 +75,6 @@
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "node-sass": "^7.0.1",
     "postcss": "^8.4.14",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^7.0.0",
@@ -100,12 +107,5 @@
   },
   "optionalDependencies": {
     "fsevents": "^2.3.2"
-  },
-  "browserslist": [
-    ">= 5%",
-    "last 2 versions",
-    "not ie < 11",
-    "not op_mini all",
-    "not dead"
-  ]
+  }
 }
