@@ -18,6 +18,7 @@ $zIndex: map-get($zIndex, 'sidebar');
   background-color: var(--background-menu);
   transition: width .3s ease-in-out;
 
+
   & ul {
     @include desktop {
       visibility: visible;
@@ -30,10 +31,9 @@ $zIndex: map-get($zIndex, 'sidebar');
     overflow-y: auto;
     z-index: $zIndex + 1;
     bottom: 0;
-    height: calc((100vh - 4.5rem) + env(safe-area-inset-bottom));
+    // height: clamp(calc(var(--footer-gap) - var(--header-height)), 100%, calc(100vh - var(--header-height)));
+    height: 100%;
     width: 100%;
-    // padding-bottom: calc(1rem + constant(safe-area-inset-bottom));
-    // padding-bottom: calc(1rem + env(safe-area-inset-bottom));
     background-color: inherit;
     isolation: isolate;
   }
@@ -43,6 +43,7 @@ $zIndex: map-get($zIndex, 'sidebar');
   }
 
   &.open {
+    top: var(--header-height);
     width: 17rem;
   }
 

@@ -176,4 +176,6 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-
+# HTTPS certificates
+config/localhost+2-key.pem
+config/localhost+2.pem

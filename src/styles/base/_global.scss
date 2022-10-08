@@ -100,7 +100,7 @@ html {
 }
 
 // Sizes
-html {
+:root {
   --xxsmall: 16px;
   --xsmall: 20px;
   --small: 24px;
@@ -110,3 +110,19 @@ html {
   --xxlarge: 128px;
   --nav-width: 17rem;
 }
+
+:root {
+  --sat: calc(1px + env(safe-area-inset-top, 20px));
+  --sab: calc(1px + env(safe-area-inset-bottom, 20px));
+  --sal: calc(1px + env(safe-area-inset-left, 20px));
+  --sar: calc(1px + env(safe-area-inset-right, 20px));
+}
+
+:root {
+  --header-height: 4.5rem;
+}
+
+// html,
+// body {
+//   -webkit-overflow-scrolling: touch;
+// }

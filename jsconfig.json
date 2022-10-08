@@ -20,18 +20,18 @@
       "@public/*": ["public/*"],
       "~/*": ["src/*"]
     },
-    "plugins": [
-      {
-        "name": "typescript-plugin-css-modules",
-        "options": {
-          "customMatcher": "\\.module\\.css$",
-          "camelCase": true,
-          "devMode": true
-        }
-      }
-    ]
+    // "plugins": [
+    //   {
+    //     "name": "typescript-plugin-css-modules",
+    //     "options": {
+    //       "customMatcher": "\\.module\\.css$",
+    //       "camelCase": true,
+    //       "devMode": true
+    //     }
+    //   }
+    // ]
   },
-  "include": ["src/types/*", "declaration.d.ts"],
+  "include": ["src/*", "src/types/index.d.ts"],
 
   //Add any build/compiled folders here to stop vscode searching those
   "exclude": ["node_modules", "dist"],

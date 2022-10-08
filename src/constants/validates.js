@@ -80,19 +80,20 @@ export const isPhoneVN = (str) => {
 //   return false;
 // };
 
-export const isTruthy = (value) => {
-  return !isFalsy(value);
-};
+// export const isTruthy = (value) => {
+//   return !isFalsy(value);
+// };
 
 export const isApple = () => {
+  const iphone = ['iPhone', 'iPhone Simulator'];
+  const ipad = ['iPad', 'iPad Simulator'];
+  const ipod = ['iPod', 'iPod Simulator'];
+  const ios = [...iphone, ...ipad, ...ipod];
+  const macos = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
+
   return [
-    'iPad Simulator',
-    'iPad',
-    'iPhone Simulator',
-    'iPhone',
-    'iPod Simulator',
-    'iPod',
-    'Macintosh',
+    ...ios,
+    ...macos,
   ].includes(navigator.platform);
 };
 
