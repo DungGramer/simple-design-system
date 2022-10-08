@@ -24,7 +24,6 @@ const Sidebar = () => {
         dimBackground
         disableScroll
       />
-
       <div
         role="button"
         className={`${styles['aside-burger']} ${openClass}`}
@@ -32,16 +31,12 @@ const Sidebar = () => {
         aria-expanded="false"
         onClick={toggleOpen}
       >
-        <div className={styles['icon-menu']} aria-hidden="true"></div>
+        <div className={styles['icon-menu']} aria-hidden="true" />
       </div>
-      <ul onClick={toggleOpen}>
+      <ul onClick={toggleOpen} className={styles['aside-list']}>
         {components.map(({ title, path }) => (
           <li key={title}>
-            <NavLink
-              className={styles['nav-item']}
-              to={path}
-              activeClassName={styles.active}
-            >
+            <NavLink className={styles['nav-item']} to={path} activeClassName={styles.active}>
               {title}
             </NavLink>
           </li>

@@ -17,16 +17,18 @@
   "author": "DungGramer",
   "main": "./src/index.js",
   "scripts": {
-    "analytics": "set ANALYZER=true&& webpack --color --progress --config ./config/webpack.prod.js",
-    "bs": "webpack --color --progress --config ./config/webpack.prod.js && serve -s ./dist/",
+    "analytics": "ANALYZER=true yarn build",
+    "bs": "yarn build && yarn serve",
     "build": "webpack --color --progress --config ./config/webpack.prod.js",
     "clean": "rimraf dist/ node_modules/ package-lock.json yarn.lock && yarn cache clean",
     "format": "prettier --write \"./**/*.{js,jsx,ts,tsx,css,md,json}\" --config ./config/.prettierrc",
     "lint": "eslint --ext js,jsx,ts,tsx src/",
     "lint:fix": "eslint --fix --ext js,jsx,ts,tsx src/",
     "lint:style": "stylelint --fix \"src/**/*.{css,scss}\"",
+    "ngrok": "ngrok http 3090 --host-header=\"localhost:3090\"",
     "serve": "serve -s ./dist/",
     "start": "webpack serve --open --config ./config/webpack.dev.js",
+    "start:https": "HTTPS=true yarn start",
     "test:es-check": "es-check es5 dist/assets/js/*.js"
   },
   "browserslist": [
