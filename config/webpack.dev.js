@@ -18,7 +18,7 @@ const https = process.env.HTTPS === 'true' && {
 
 module.exports = merge(common, {
   mode: 'development',
-  devtool: 'eval',
+  devtool: 'source-map',
   output: {
     filename: '[name].[contenthash:8].js',
     publicPath: '/',

@@ -8,17 +8,21 @@ import boxModel from '~/constants/boxModel';
 /**
  * DropDown
  * @memberof atoms
- * @param {HTMLElement} overlay - The list of items to be displayed
- * @param {HTMLElement} parentRef - The parent element to be used for positioning
- * @param {Boolean} isOpen - Whether the dropdown is open or not
- * @param {Function} onClick - The callback function to be called when the dropdown is clicked
+ *
+ * @param {Object} props
+ * @param {HTMLElement} props.overlay - The list of items to be displayed
+ * @param {HTMLElement} props.parentRef - The parent element to be used for positioning
+ * @param {Boolean} props.isOpen - Whether the dropdown is open or not
+ * @param {Function} props.onClick - The callback function to be called when the dropdown is clicked
+ * @param {String} props.direction - The direction of the dropdown
+ * @param {String} props.maxHeight - The max height of the dropdown
  *
  * @example
  * <Dropdown parentRef={btnRef} overlay={menu} onClick={toggleOpen} isOpen={open} />
  *
  * */
 
-const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction }) => {
+const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction, maxHeight }) => {
   const dropdownRef = useRef();
 
   const setVisible = () => {
@@ -41,11 +45,11 @@ const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction }) => {
       if (spaceTop > spaceBottom) {
         dropdownStyle.top = 'auto';
         dropdownStyle.bottom = `100%`;
-        dropdownStyle.maxHeight = `${spaceTop - 20}px`;
+        dropdownStyle.maxHeight = `min(${spaceTop - 20}px, ${maxHeight})`;
       } else {
         dropdownStyle.top = '100%';
         dropdownStyle.bottom = 'auto';
-        dropdownStyle.maxHeight = `${spaceBottom - 20}px`;
+        dropdownStyle.maxHeight = `min(${spaceBottom - 20}px, ${maxHeight})`;
       }
     }
   };
@@ -84,10 +88,12 @@ Dropdown.propTypes = {
   overlay: PropTypes.node.isRequired,
   parentRef: PropTypes.object.isRequired,
   direction: PropTypes.oneOf(['left', 'right']),
+  maxHeight: PropTypes.string,
 };
 
 Dropdown.defaultProps = {
   direction: 'left',
+  maxHeight: '500px',
 };
 
 export default Dropdown;

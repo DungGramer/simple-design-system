@@ -2,7 +2,7 @@
   display: none;
   position: fixed;
   overflow: hidden;
-  z-index: map-get($zIndex, 'modal');
+  z-index: map-get($zIndex, 'mask');
   top: 0;
   left: 0;
   justify-content: center;

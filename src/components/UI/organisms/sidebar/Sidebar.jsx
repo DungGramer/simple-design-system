@@ -36,7 +36,10 @@ const Sidebar = () => {
       <ul onClick={toggleOpen} className={styles['aside-list']}>
         {components.map(({ title, path }) => (
           <li key={title}>
-            <NavLink className={styles['nav-item']} to={path} activeClassName={styles.active}>
+            <NavLink
+              to={path}
+              className={(navData) => `${styles['nav-item']} ${navData.isActive ? styles.active : ''}`}
+            >
               {title}
             </NavLink>
           </li>

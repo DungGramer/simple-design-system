@@ -1,25 +1,26 @@
-import styles from './Icon.module';
 import PropTypes from 'prop-types';
+import { IconContext } from 'react-icons';
+import {
+  FaCheckCircle,
+  FaExclamationCircle, FaInfoCircle,
+  FaTimesCircle
+} from 'react-icons/fa';
+import styles from './Icon.module';
 
-const Icon = ({
-  icon,
-  color,
-  size,
-  rotate,
-  flip,
-  animation,
-  fullWidth,
-  cursor,
-}) => {
+const Icon = ({ icon, color, size, rotate, flip, animation, cursor, attr, className }) => {
   return (
-    <i
-      className={`${icon} ${styles['icon']} ${
-        rotate ? `fa-rotate-${rotate}` : ''
-      } ${flip ? `fa-flip-${flip}` : ''} ${
-        animation ? `fa-${animation}` : ''
-      } ${fullWidth ? 'fa-fw' : ''} `}
-      style={{ color, fontSize: size, cursor }}
-    />
+    <IconContext.Provider
+      value={{
+        className: `${styles['icon']} ${rotate ? styles[`rotate-${rotate}`] : ''} ${
+          flip ? styles[`flip-${flip}`] : ''
+        } ${animation ? styles[`animation-${animation}`] : ''} ${className || ''}`,
+        style: { color, fontSize: size, cursor },
+        attr,
+        color,
+      }}
+    >
+      {icon}
+    </IconContext.Provider>
   );
 };
 
@@ -32,29 +33,38 @@ const IconType = ({ color, size, rotate, flip, animation, type }) => {
     warning: 'var(--font-color)',
     info: 'var(--info-color)',
   };
-  const typeIcon = {
-    info: 'fas fa-info-circle',
-    success: 'fas fa-check-circle',
-    warning: 'fas fa-exclamation-triangle',
-    error: 'fas fa-times',
+  const TypeIcon = {
+    info: <FaInfoCircle />,
+    success: <FaCheckCircle />,
+    warning: <FaExclamationCircle />,
+    error: <FaTimesCircle />,
   };
 
   return (
-    <i
-      className={`${typeIcon[type]} fa-fw ${styles['icon']} ${
-        rotate ? `fa-rotate-${rotate}` : ''
-      } ${flip ? `fa-flip-${flip}` : ''} ${
-        animation ? `fa-${animation}` : ''
-      } `}
-      style={{ color: color || colorType[type], fontSize: size }}
+    <Icon
+      icon={TypeIcon[type]}
+      color={color || colorType[type]}
+      size={size}
+      rotate={rotate}
+      flip={flip}
+      animation={animation}
     />
   );
 };
 
 Icon.propTypes = {
-  rotate: PropTypes.oneOf(['90', '180', '270']),
+  icon: PropTypes.node.isRequired,
+  color: PropTypes.string,
+  size: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  rotate: PropTypes.oneOf(['90', '180', '270', 90, 180, 270]),
   flip: PropTypes.oneOf(['horizontal', 'vertical', 'both']),
-  animation: PropTypes.oneOf(['spin', 'pulse']),
+  animation: PropTypes.oneOf(['spin', 'spin-pulse', 'fade', 'beat', 'bounce']),
+  cursor: PropTypes.string,
+  attr: PropTypes.object,
+  className: PropTypes.string,
+};
+
+IconType.propTypes = {
   type: PropTypes.oneOf(['info', 'success', 'warning', 'error']),
 };
 

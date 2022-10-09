@@ -1,9 +1,10 @@
 import Banner from '@molecules/banner/Banner';
+import { FaDizzy } from 'react-icons/fa';
 
 const BannerIcon = () => {
   return (
     <>
-      <Banner icon="fad fa-dice-d4">Banner with icon</Banner>
+      <Banner icon={<FaDizzy />}>Banner with icon</Banner>
     </>
   );
 };

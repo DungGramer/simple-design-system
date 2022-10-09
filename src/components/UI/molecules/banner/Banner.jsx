@@ -1,12 +1,14 @@
 import styles from './Banner.module';
 import PropTypes from 'prop-types';
+import { FaBullhorn, FaExclamationCircle, FaExclamationTriangle } from 'react-icons/fa';
 
 /**
  * Banner displays a message to the user.
  *
- * @param {string} icon - icon class name
- * @param {string} children - text to display
- * @param {string} type - type of banner
+ * @param {Object} props
+ * @param {Element} [props.icon] - icon class name
+ * @param {string} props.children - text to display
+ * @param {string} props.type - type of banner
  *
  * @example
  * <Banner type="error">Error goes here</Banner>
@@ -24,26 +26,29 @@ const Banner = ({ icon, children, type }) => {
 };
 
 const IconType = ({ icon, type }) => {
-  let iconClass = icon || null;
+  let IconClass = icon;
 
-  if (iconClass === null) {
+  if (IconClass === undefined) {
     switch (type) {
       case 'error':
-        iconClass = 'fas fa-exclamation-circle';
+        IconClass = <FaExclamationCircle />;
         break;
       case 'warning':
-        iconClass = 'fas fa-exclamation-triangle';
+        IconClass = <FaExclamationTriangle />;
+        break;
+      case 'announcement':
+        IconClass = <FaBullhorn />;
         break;
       default:
-        iconClass = '';
+        IconClass = '';
         break;
     }
   }
-  return <i className={iconClass} />;
+  return <>{IconClass}</>;
 };
 
 Banner.propTypes = {
-  icon: PropTypes.string,
+  icon: PropTypes.node,
   children: PropTypes.node.isRequired,
   type: PropTypes.oneOf(['warning', 'error', 'announcement']),
 };

@@ -1,6 +1,7 @@
 import styles from './Spinner.module';
 import PropTypes from 'prop-types';
 import Icon from '@atoms/icon/Icon';
+import { ImSpinner8 } from 'react-icons/im';
 
 const sizeConverter = (size) => {
   if (typeof size === 'number') return size;
@@ -25,7 +26,7 @@ const Spinner = ({ size }) => {
   return (
     <div className={styles['spinner']}>
       <Icon
-        icon="fas fa-spinner-third"
+        icon={<ImSpinner8 />}
         animation="spin"
         size={sizeConverter(size)}
       />

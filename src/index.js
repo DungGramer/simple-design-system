@@ -1,17 +1,19 @@
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
 
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 
+import { StrictMode } from 'react';
 import App from './App';
 
-ReactDOM.render(
-  <React.StrictMode>
+const container = document.getElementById('app');
+const root = createRoot(container);
+
+root.render(
+  <StrictMode>
     <BrowserRouter>
       <App />
     </BrowserRouter>
-  </React.StrictMode>,
-  document.getElementById('app')
+  </StrictMode>
 );

@@ -3,7 +3,7 @@
     "baseUrl": ".",
     "sourceMap": true,
     "checkJs": true,
-    "jsx": "preserve",
+    "jsx": "react-jsx",
     "moduleResolution": "node",
     "outDir": "dist",
 

@@ -4,7 +4,7 @@ const TextAreaResize = () => {
   return (
     <>
       <p>Auto</p>
-      <TextArea resize="auto" />
+      <TextArea />
       <p>None</p>
       <TextArea resize="none" />
       <p>Vertical</p>

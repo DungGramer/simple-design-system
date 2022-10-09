@@ -1,23 +1,21 @@
-import { Redirect, Route, Switch } from 'react-router-dom';
+import { Navigate, Route, Routes, useRoutes } from 'react-router-dom';
 import components from './components.route';
+import withRoutes from './withRoutes';
 
-const Routes = (
-  <Switch>
-    <Route
-      exact
-      path="/"
-      component={() => <Redirect to="/components/avatar" />}
-    />
-    {components.map((route) => (
-      <Route
-        key={route.path}
-        exact
-        path={route.path}
-        component={route.component}
-      />
-    ))}
-    <Route path="*" component={() => <Redirect to="/" />} />
-  </Switch>
-);
+// const RoutersMap = () => useRoutes(withRoutes(components));
 
-export default Routes;
+const RoutersMap = () => {
+  const routes = withRoutes(components);
+
+  return (
+    <Routes>
+      {routes.map((route) => (
+        <Route key={route.path} {...route} />
+      ))}
+      <Route index element={<Navigate to="/components/avatar" />} />
+      <Route path="*" element={<Navigate replace to="/components/avatar" />} />
+    </Routes>
+  );
+};
+
+export default RoutersMap;

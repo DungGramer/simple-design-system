@@ -14,9 +14,13 @@
     min-width: 32px;
     border: 1px solid #ccc;
     border-radius: .25rem;
-    user-select: none;
+    -webkit-user-select: none;
     text-align: center;
     cursor: pointer;
+
+    & + li {
+      margin-left: .5rem;
+    }
 
     &.active,
     &:hover {
@@ -24,18 +28,9 @@
       color: var(--primary-500);
     }
 
-    & + li {
-      margin-left: .5rem;
-    }
-
     &.ellipsis {
       border-color: transparent;
-      font-family: 'Font Awesome 6 Pro';
       opacity: .25;
-
-      &::after {
-        content: '•••';
-      }
 
       &:hover {
         opacity: 1;
@@ -50,12 +45,20 @@
   }
 }
 
-.ellipsis:hover.ellipsis {
-  &-next::after {
-    content: '';
+.ellipsis {
+  .next,
+  .prev {
+    display: none;
+  }
+}
+
+.ellipsis:hover {
+  .next,
+  .prev {
+    display: block;
   }
 
-  &-prev::after {
-    content: '';
+  .dot {
+    display: none;
   }
 }
