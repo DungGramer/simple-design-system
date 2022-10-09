@@ -41,6 +41,7 @@ const ChipsRadio = ({
   disabled,
   appearance,
   onChange,
+  defaultChecked,
   ...rest
 }) => {
   return (
@@ -82,10 +83,11 @@ const RadioGroup = ({ name, children, onChange, appearance }) => {
 };
 
 Radio.propTypes = {
-  name: PropTypes.string.isRequired,
+  name: PropTypes.string,
   children: PropTypes.node.isRequired,
   disabled: PropTypes.bool,
   appearance: PropTypes.oneOf(['chips']),
+  defaultChecked: PropTypes.bool,
   onChange: PropTypes.func,
 };
 

@@ -37,25 +37,29 @@ const paths = [
   // },
 ];
 
-const LogoSection = ({ toggleOpen }) => (
-  <div className={styles.logo}>
-    <Link to="/">
-      <Logo width="50" height="50" />
-    </Link>
+const LogoSection = ({ toggleOpen }) => {
+  const { t } = useTranslation();
 
-    <a className={styles['skip-nav-link']} href="#main">
-      {t('Skip navigation')}
-    </a>
+  return (
+    <div className={styles.logo}>
+      <Link to="/">
+        <Logo width="50" height="50" />
+      </Link>
 
-    <ChangeThemeButton />
-    <FaBars
-      tabIndex={0}
-      className={styles.menu}
-      onClick={toggleOpen}
-      onKeyDown={(e) => onEnter(e, toggleOpen)}
-    />
-  </div>
-);
+      <a className={styles['skip-nav-link']} href="#main">
+        {t('Skip navigation')}
+      </a>
+
+      <ChangeThemeButton />
+      <FaBars
+        tabIndex={0}
+        className={styles.menu}
+        onClick={toggleOpen}
+        onKeyDown={(e) => onEnter(e, toggleOpen)}
+      />
+    </div>
+  );
+};
 
 const Languages = ({ t, toggleOpen }) => {
   const languageRef = useRef(null);
@@ -118,12 +122,7 @@ const Header = () => {
 
   return (
     <header id="header" className={styles.header}>
-      <Backdrop
-        isOpen={open}
-        onClick={toggleOpen}
-        onDrag={toggleOpen}
-        condition={maxDesktop}
-      />
+      <Backdrop isOpen={open} onClick={toggleOpen} onDrag={toggleOpen} condition={maxDesktop} />
       <div className={styles.container}>
         <LogoSection toggleOpen={toggleOpen} />
 
@@ -134,7 +133,8 @@ const Header = () => {
                 <NavLink
                   to={path.location}
                   onClick={toggleOpen}
-                  activeClassName={styles.active}
+                  // activeClassName={styles.active}
+                  className={(navData) => navData.isActive ? styles.active: ''}
                 >
                   {t(path.name)}
                 </NavLink>

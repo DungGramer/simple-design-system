@@ -43,7 +43,7 @@ const Checkbox = ({
 
 Checkbox.propTypes = {
   size: PropTypes.oneOf(['small', 'medium', 'large', 'xlarge']),
-  id: PropTypes.string.isRequired,
+  id: PropTypes.string,
   disabled: PropTypes.bool,
   children: PropTypes.node,
 };

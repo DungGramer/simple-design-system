@@ -25,7 +25,6 @@ const webpackConfig = merge(common, {
   externals: {
     react: 'React',
     'react-dom': 'ReactDOM',
-    'react-router-dom': 'ReactRouterDOM',
     'lottie-web': 'Lottie',
   },
 
@@ -64,11 +63,6 @@ const webpackConfig = merge(common, {
           name: 'react-dom',
           var: 'ReactDOM',
           path: 'umd/react-dom.production.min.js',
-        },
-        {
-          name: 'react-router-dom',
-          var: 'ReactRouterDOM',
-          path: 'umd/react-router-dom.min.js',
         },
         {
           name: 'lottie-web',

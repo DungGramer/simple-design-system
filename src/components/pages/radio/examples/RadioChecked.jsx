@@ -3,7 +3,7 @@ import Radio from '@molecules/radio/Radio';
 const RadioChecked = () => {
   return (
     <>
-      <Radio name="capital" value="hanoi" checked>
+      <Radio name="capital" value="hanoi" defaultChecked>
         Hà Nội
       </Radio>
     </>

@@ -349,4 +349,5 @@ export const vi = {
     'Biểu tượng được hiển thị khi toggle được bỏ chọn',
   'The icon to be displayed when the toggle is checked.':
     'Biểu tượng được hiển thị khi toggle được chọn',
+  'Skip navigation': 'Bỏ qua điều hướng',
 };

@@ -1,12 +1,13 @@
 import Icon from '@atoms/icon/Icon';
+import { FaHorse } from 'react-icons/fa';
 
 const IconRotate = () => {
   return (
     <>
-      <Icon icon="far fa-horse" />
-      <Icon icon="far fa-horse" rotate={90} />
-      <Icon icon="far fa-horse" rotate={180} />
-      <Icon icon="far fa-horse" rotate={270} />
+      <Icon icon={<FaHorse />} />
+      <Icon icon={<FaHorse />} rotate={90} />
+      <Icon icon={<FaHorse />} rotate={180} />
+      <Icon icon={<FaHorse />} rotate={270} />
     </>
   );
 };

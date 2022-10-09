@@ -3,6 +3,13 @@ import PropTypes from 'prop-types';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Icon from '@atoms/icon/Icon';
+import {
+  FaAngleDoubleLeft,
+  FaAngleDoubleRight,
+  FaChevronLeft,
+  FaChevronRight,
+  FaEllipsisH,
+} from 'react-icons/fa';
 
 // const renderData = (data) => {
 //   return (
@@ -24,7 +31,6 @@ const Pagination = ({ defaultCurrent, total, defaultPageSize }) => {
   const [minPageLimit, setMinPageLimit] = useState(0);
 
   const totalPages = Math.ceil(total / itemPerPage);
-  console.log(`📕 totalPages - 27:Pagination.jsx \n`, totalPages);
   const pages = Array.from({ length: totalPages }, (v, i) => i + 1);
 
   const firstPage = pages.shift();
@@ -93,10 +99,7 @@ const Pagination = ({ defaultCurrent, total, defaultPageSize }) => {
   };
 
   const PageNumberItem = ({ onClick, pageNum }) => (
-    <li
-      onClick={onClick}
-      className={currentPage == pageNum ? styles.active : null}
-    >
+    <li onClick={onClick} className={currentPage == pageNum ? styles.active : null}>
       <a rel="nofollow">{pageNum}</a>
     </li>
   );
@@ -114,27 +117,37 @@ const Pagination = ({ defaultCurrent, total, defaultPageSize }) => {
       <ul className={styles.pageNumber}>
         {currentPage !== firstPage && (
           <li onClick={handlePrev}>
-            <Icon icon="fas fa-chevron-left" cursor="pointer" size={16} />
+            <Icon icon={<FaChevronLeft />} cursor="pointer" size="16px" />
           </li>
         )}
         <PageNumberItem onClick={handleMoveFirst} pageNum={firstPage} />
         {minPageLimit >= 1 && (
-          <li
-            onClick={handleBackward}
-            className={`${styles.ellipsis} ${styles['ellipsis-prev']}`}
-          />
+          <li onClick={handleBackward} className={`${styles.ellipsis} ${styles['ellipsis-prev']}`}>
+            <Icon icon={<FaEllipsisH />} cursor="pointer" size="16px" className={styles['dot']} />
+            <Icon
+              icon={<FaAngleDoubleLeft />}
+              cursor="pointer"
+              size="16px"
+              className={styles.next}
+            />
+          </li>
         )}
         {renderPageNumbers}
         {pages.length > maxPageLimit && (
-          <li
-            onClick={handleForward}
-            className={`${styles.ellipsis} ${styles['ellipsis-next']}`}
-          />
+          <li onClick={handleForward} className={`${styles.ellipsis} ${styles['ellipsis-next']}`}>
+            <Icon icon={<FaEllipsisH />} cursor="pointer" size="16px" className={styles['dot']} />
+            <Icon
+              icon={<FaAngleDoubleRight />}
+              cursor="pointer"
+              size="16px"
+              className={styles.next}
+            />
+          </li>
         )}
         <PageNumberItem onClick={handleMoveLast} pageNum={lastPage} />
         {currentPage !== lastPage && (
           <li onClick={handleNext}>
-            <Icon icon="fas fa-chevron-right" cursor="pointer" size={16} />
+            <Icon icon={<FaChevronRight />} cursor="pointer" size="16px" />
           </li>
         )}
       </ul>

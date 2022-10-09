@@ -26,7 +26,7 @@ const TextArea = ({
 };
 
 TextArea.propTypes = {
-  resize: PropTypes.oneOf(['none', 'both', 'horizontal', 'vertical']),
+  resize: PropTypes.oneOf(['none', 'both', 'horizontal', 'vertical', 'auto']),
   isDisabled: PropTypes.bool,
   isReadOnly: PropTypes.bool,
   isRequired: PropTypes.bool,

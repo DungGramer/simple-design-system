@@ -2,27 +2,20 @@ import styles from './Badge.module';
 import PropTypes from 'prop-types';
 import { spaceToDash } from '~/constants/converter';
 import { useEffect, useRef } from 'react';
-
 /**
  * Badge component
- * @param {string} appearance - Appearance of the badge
- * @param {node} children - Content of the badge
- * @param {string} max - Max number of characters to show
- * @param {string} size - Size of the badge
- * @param {string} icon - The class name of the icon
- * @param {string} direction - The direction of the badge
- * @param {array} offset - The position of the badge
+ *
+ * @param {Object} props
+ * @param {string} props.appearance - Appearance of the badge
+ * @param {Node} props.children - Content of the badge
+ * @param {number} props.max - Max number of characters to show
+ * @param {string} props.size - Size of the badge
+ * @param {string} props.icon - The class name of the icon
+ * @param {string} props.direction - The direction of the badge
+ * @param {array} props.offset - The position of the badge
+ * @param {string|number} props.data - The data of the badge
  */
-function Badge({
-  children,
-  appearance,
-  max,
-  size,
-  icon,
-  direction,
-  offset,
-  data,
-}) {
+function Badge({ children, appearance, max, size, icon, direction, offset, data }) {
   const prefix = switchPrefix(appearance);
   const suffix = max < Number(data) ? `${max}+` : data;
 
@@ -45,13 +38,13 @@ function Badge({
     <div className={styles['badge-container']}>
       <span
         ref={badgeRef}
-        className={`${styles[appearance]} ${styles.badge || ''} ${
-          styles[size] || ''
-        } ${styles[direction] || ''} ${styles[spaceToDash(direction)] || ''}`}
+        className={`${styles[appearance]} ${styles.badge || ''} ${styles[size] || ''} ${
+          styles[direction] || ''
+        } ${styles[spaceToDash(direction)] || ''}`}
       >
         {icon || prefix} {suffix}
       </span>
-      {children}
+      <>{children}</>
     </div>
   );
 }
@@ -111,8 +104,8 @@ Badge.propTypes = {
     'bottom left',
     'left-bottom',
     'left bottom',
-  ]).isRequired,
-  offset: PropTypes.arrayOf(PropTypes.number, PropTypes.number),
+  ]),
+  offset: PropTypes.oneOfType([PropTypes.array, PropTypes.string]),
 };
 
 Badge.defaultProps = {

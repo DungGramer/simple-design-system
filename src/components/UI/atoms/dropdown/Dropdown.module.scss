@@ -12,6 +12,7 @@
   position: absolute;
   overflow-y: auto;
   z-index: map-get($zIndex, 'dropdown');
+  max-height: 200px;
   border-radius: 8px;
   opacity: 0;
   color: var(--font-color);

@@ -1,12 +1,13 @@
 import Icon from '@atoms/icon/Icon';
+import { FaBiking } from 'react-icons/fa';
 
 const IconFlip = () => {
   return (
     <>
-      <Icon icon="fas fa-biking" />
-      <Icon icon="fas fa-biking" flip="horizontal" />
-      <Icon icon="fas fa-biking" flip="vertical" />
-      <Icon icon="fas fa-biking" flip="both" />
+      <Icon icon={<FaBiking />} />
+      <Icon icon={<FaBiking />} flip="horizontal" />
+      <Icon icon={<FaBiking />} flip="vertical" />
+      <Icon icon={<FaBiking />} flip="both" />
     </>
   );
 };
