@@ -8,6 +8,7 @@ const {
 // const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';
+const swcConfig = require(paths.swcConfig);
 
 const sizeLimit = 10_000;
 
@@ -61,16 +62,20 @@ module.exports = {
         test: regex.js,
         exclude: /node_modules/,
         use: [
+          // {
+          //   loader: 'babel-loader',
+          //   options: {
+          //     configFile: resolvePath('config/babel.config.js'),
+          //     cacheDirectory: true,
+          //     cacheCompression: false,
+          //     sourceMaps: true,
+          //     inputSourceMap: true,
+          //   },
+          // },
           {
-            loader: 'babel-loader',
-            options: {
-              configFile: resolvePath('config/babel.config.js'),
-              cacheDirectory: true,
-              cacheCompression: false,
-              sourceMaps: true,
-              inputSourceMap: true,
-            },
-          },
+            loader: "swc-loader",
+            options: swcConfig,
+          }
         ],
       },
       {

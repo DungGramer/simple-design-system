@@ -13,6 +13,7 @@ const paths = {
   fonts: resolvePath('public/fonts'),
   image: resolvePath('public/images'),
   nodeModule: resolvePath('node_modules'),
+  swcConfig: resolvePath('config/swc.config.js'),
 };
 
 const regex = {
