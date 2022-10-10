@@ -10,6 +10,7 @@ const WebpackCdnPlugin = require('webpack-cdn-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 
 const { paths, regex, postCSS } = require('./utils');
+const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const webpackConfig = merge(common, {
   mode: 'production',
@@ -150,6 +151,16 @@ const webpackConfig = merge(common, {
       },
     ],
   },
+  cache: {
+    type: 'filesystem',
+    allowCollectingMemory: true,
+    compression: 'gzip',
+    profile: true,
+    store: 'pack',
+  },
+  experiments: {
+		lazyCompilation: true
+	},
   optimization: {
     minimize: true,
     runtimeChunk: true,
@@ -159,7 +170,7 @@ const webpackConfig = merge(common, {
     minimizer: [
       new TerserPlugin({
         // minify: TerserPlugin.uglifyJsMinify,
-        parallel: true,
+        parallel: false,
         terserOptions: {
           ecma: 5,
           output: {
@@ -167,6 +178,7 @@ const webpackConfig = merge(common, {
           },
         },
       }),
+      new CssMinimizerPlugin()
     ],
 
     splitChunks: {
