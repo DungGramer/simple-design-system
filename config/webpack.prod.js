@@ -1,3 +1,4 @@
+const webpack = require("webpack");
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -30,6 +31,21 @@ const webpackConfig = merge(common, {
   },
 
   plugins: [
+    new webpack.DefinePlugin({
+			"process.env.NODE_ENV": JSON.stringify("production"),
+			"process.env.VERSION": JSON.stringify(require("../package.json").version)
+		}),
+    /* new BrotliPlugin({
+      asset: '[path].br[query]',
+      test: /\.(js|css|html|svg)$/,
+      threshold: 10240,
+      minRatio: 0.8,
+    }), */
+    /* new CompressionPlugin({
+			asset: "[path].gzip[query]",
+			algorithm: "gzip",
+			test: /\.(js|css)$/
+		}), */
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: paths.indexHTML,
@@ -126,12 +142,7 @@ const webpackConfig = merge(common, {
       {
         test: regex.sass,
         exclude: regex.sassModule,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          postCSS,
-          'sass-loader',
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', postCSS, 'sass-loader'],
         sideEffects: true,
       },
       {
@@ -151,6 +162,10 @@ const webpackConfig = merge(common, {
       },
     ],
   },
+  performance: {
+    maxEntrypointSize: 512000,
+    maxAssetSize: 512000,
+  },
   cache: {
     type: 'filesystem',
     allowCollectingMemory: true,
@@ -158,14 +173,13 @@ const webpackConfig = merge(common, {
     profile: true,
     store: 'pack',
   },
-  experiments: {
-		lazyCompilation: true
-	},
   optimization: {
     minimize: true,
     runtimeChunk: true,
     removeAvailableModules: false,
     removeEmptyChunks: false,
+    sideEffects: true,
+    usedExports: true,
 
     minimizer: [
       new TerserPlugin({
@@ -178,7 +192,7 @@ const webpackConfig = merge(common, {
           },
         },
       }),
-      new CssMinimizerPlugin()
+      new CssMinimizerPlugin(),
     ],
 
     splitChunks: {
@@ -195,6 +209,11 @@ const webpackConfig = merge(common, {
           test: /[\\/]node_modules[\\/]/,
           priority: -10,
           reuseExistingChunk: true,
+        },
+        commons: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all',
         },
         default: {
           minChunks: 2,
@@ -216,6 +235,38 @@ const webpackConfig = merge(common, {
         },
       },
     },
+  },
+
+  stats: {
+    all: false,
+    assets: true,
+    assetsSort: '!size',
+    builtAt: true,
+    cached: true,
+    cachedAssets: true,
+    children: false,
+    chunks: true,
+    chunkGroups: true,
+    chunkModules: false,
+    chunkOrigins: true,
+    colors: true,
+    depth: true,
+    entrypoints: true,
+    env: true,
+    errors: true,
+    errorDetails: true,
+    hash: true,
+    modules: false,
+    moduleTrace: true,
+    performance: true,
+    providedExports: false,
+    publicPath: true,
+    reasons: true,
+    source: false,
+    timings: true,
+    usedExports: false,
+    version: true,
+    warnings: true,
   },
 });
 
