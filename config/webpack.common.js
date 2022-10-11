@@ -63,8 +63,12 @@ module.exports = {
       {
         test: regex.svg,
         // type: 'asset/inline', // Load svg inside HTML
-        issuer: regex.jts,
-        use: ['@svgr/webpack'],
+        // issuer: regex.jts,
+        // use: ['@svgr/webpack'],
+        loader: 'react-svg-loader',
+        options: {
+          jsx: true, // true outputs JSX tags
+        },
       },
 
       {

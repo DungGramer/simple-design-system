@@ -1,6 +1,6 @@
 import styles from './Header.module';
 import PropTypes from 'prop-types';
-import Logo from '@public/assets/images/logo.svg';
+import Logo from '-!react-svg-loader!@public/assets/images/logo.svg';
 import { Link, NavLink } from 'react-router-dom';
 import { memo, useRef, useState } from 'react';
 import Backdrop from '@atoms/backdrop/Backdrop';

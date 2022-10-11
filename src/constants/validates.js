@@ -17,7 +17,7 @@ export const isEmail = (str) => {
   if (!str) return str;
 
   const pattern =
-    /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    /^(([^<>()\\[\]\\.,;:\s@"]+(\.[^<>()\\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return pattern.test(str);
 };
 
@@ -91,10 +91,7 @@ export const isApple = () => {
   const ios = [...iphone, ...ipad, ...ipod];
   const macos = ['Macintosh', 'MacIntel', 'MacPPC', 'Mac68K'];
 
-  return [
-    ...ios,
-    ...macos,
-  ].includes(navigator.platform);
+  return [...ios, ...macos].includes(navigator.platform);
 };
 
 /**
@@ -123,7 +120,5 @@ export const detectIOSVersion = () => {
 };
 
 export const isMobile = () => {
-  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-    navigator.userAgent
-  );
+  return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
 };
