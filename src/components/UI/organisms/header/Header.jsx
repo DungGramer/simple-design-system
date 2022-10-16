@@ -134,7 +134,7 @@ const Header = () => {
                   to={path.location}
                   onClick={toggleOpen}
                   // activeClassName={styles.active}
-                  className={(navData) => navData.isActive ? styles.active: ''}
+                  className={(navData) => (navData.isActive ? styles.active : '')}
                 >
                   {t(path.name)}
                 </NavLink>

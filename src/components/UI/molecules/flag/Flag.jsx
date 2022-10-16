@@ -23,9 +23,7 @@ const Flag = ({ appearance, description, title, actions }) => {
 
       <div className={styles['flag-content']}>
         <span className={styles['flag-title']}>{title}</span>
-        {description && (
-          <p className={styles['flag-description']}>{description}</p>
-        )}
+        {description && <p className={styles['flag-description']}>{description}</p>}
         {actions && (
           <div className={styles['flag-actions']}>
             <FlagAction actions={actions} />

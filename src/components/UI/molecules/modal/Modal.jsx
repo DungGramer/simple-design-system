@@ -18,12 +18,7 @@ const Modal = ({ children, visible, handleClose, strictClose }) => {
         {strictClose ? (
           <Backdrop dimBackground isOpen={visible} />
         ) : (
-          <Backdrop
-            isOpen={visible}
-            onClick={handleClose}
-            onDrag={handleClose}
-            dimBackground
-          />
+          <Backdrop isOpen={visible} onClick={handleClose} onDrag={handleClose} dimBackground />
         )}
         <div className={styles.wrapper}>
           <div className={styles.container}>{children}</div>
@@ -62,12 +57,7 @@ const ModalFooter = ({ children, onOk, onCancel, okText, cancelText }) => {
         className={styles.cancelButton}
         title={cancelText}
       />
-      <Button
-        onClick={onOk}
-        className={styles.okButton}
-        title={okText}
-        type="primary"
-      />
+      <Button onClick={onOk} className={styles.okButton} title={okText} type="primary" />
     </div>
   );
 };

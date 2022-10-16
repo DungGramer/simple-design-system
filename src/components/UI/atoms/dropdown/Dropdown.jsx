@@ -71,10 +71,7 @@ const Dropdown = ({ overlay, parentRef, isOpen, onClick, direction, maxHeight })
     <div className={styles['dropdown']}>
       <Backdrop isOpen={isOpen} onClick={onClick} onDrag={onClick} zIndex={1} />
       {isOpen && (
-        <ul
-          ref={dropdownRef}
-          className={`${styles['dropdown-container']} ${styles[direction]} `}
-        >
+        <ul ref={dropdownRef} className={`${styles['dropdown-container']} ${styles[direction]} `}>
           {overlay}
         </ul>
       )}

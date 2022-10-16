@@ -2,15 +2,7 @@ import styles from './Range.module';
 import PropTypes from 'prop-types';
 import { useState } from 'react';
 
-const Range = ({
-  min,
-  max,
-  step,
-  onChange,
-  disabled,
-  defaultValue,
-  ...props
-}) => {
+const Range = ({ min, max, step, onChange, disabled, defaultValue, ...props }) => {
   const [value, setValue] = useState(defaultValue || (max - min) / 2);
 
   const handleChange = (e) => {

@@ -17,9 +17,7 @@ export const API = () => {
     },
     {
       property: <code>actions</code>,
-      description: t(
-        'Array of clickable actions to be shown at the bottom of the flag'
-      ),
+      description: t('Array of clickable actions to be shown at the bottom of the flag'),
       type: t('array attributes of <a> tag'),
     },
     {

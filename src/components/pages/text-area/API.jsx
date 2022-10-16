@@ -13,16 +13,12 @@ export const API = () => {
     },
     {
       property: <code>isDisabled</code>,
-      description: t(
-        'Sets the field as uneditable, with a changed hover state.'
-      ),
+      description: t('Sets the field as uneditable, with a changed hover state.'),
       type: <code>boolean</code>,
     },
     {
       property: <code>isReadOnly</code>,
-      description: t(
-        'If true, prevents the value of the input from being edited.'
-      ),
+      description: t('If true, prevents the value of the input from being edited.'),
       type: <code>boolean</code>,
     },
     {

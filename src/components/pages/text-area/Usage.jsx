@@ -6,11 +6,7 @@ export const Usage = () => {
   return (
     <div>
       <h3>{t('Usage')}</h3>
-      <p>
-        {t(
-          'Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, consectetur?'
-        )}
-      </p>
+      <p>{t('Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, consectetur?')}</p>
     </div>
   );
 };

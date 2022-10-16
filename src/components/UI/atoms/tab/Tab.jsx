@@ -12,9 +12,7 @@ import PropTypes from 'prop-types';
 function Tab({ onClick, title, active, onKeyDown }) {
   return (
     <li
-      className={`${styles['tab-list-item']} ${
-        active ? styles['tab-list-active'] : ''
-      }`}
+      className={`${styles['tab-list-item']} ${active ? styles['tab-list-active'] : ''}`}
       onClick={onClick}
       onKeyDown={onKeyDown}
       tabIndex="0"

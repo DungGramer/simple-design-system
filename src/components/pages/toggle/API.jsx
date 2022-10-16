@@ -6,9 +6,7 @@ export const API = () => {
   const data = [
     {
       property: <code>onClick</code>,
-      description: t(
-        'Handler to be called when native click event happens internally.'
-      ),
+      description: t('Handler to be called when native click event happens internally.'),
       type: 'function',
     },
     {

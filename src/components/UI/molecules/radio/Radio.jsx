@@ -16,18 +16,10 @@ const Radio = ({ name, children, disabled, appearance, onChange, ...rest }) => {
     );
   return (
     <label
-      className={`${styles['radio']} ${styles[appearance]} ${
-        disabled ? styles['disabled'] : ''
-      }`}
+      className={`${styles['radio']} ${styles[appearance]} ${disabled ? styles['disabled'] : ''}`}
     >
       <span className={styles['radio-input']}>
-        <input
-          type="radio"
-          name={name}
-          onChange={onChange}
-          disabled={disabled}
-          {...rest}
-        />
+        <input type="radio" name={name} onChange={onChange} disabled={disabled} {...rest} />
         <span className={styles['radio-control']} />
       </span>
       <span className={styles.label}>{children}</span>
@@ -46,17 +38,9 @@ const ChipsRadio = ({
 }) => {
   return (
     <label
-      className={`${styles['radio']} ${styles[appearance]} ${
-        disabled ? styles['disabled'] : ''
-      }`}
+      className={`${styles['radio']} ${styles[appearance]} ${disabled ? styles['disabled'] : ''}`}
     >
-      <input
-        type="radio"
-        name={name}
-        onChange={onChange}
-        disabled={disabled}
-        {...rest}
-      />
+      <input type="radio" name={name} onChange={onChange} disabled={disabled} {...rest} />
       <span className={styles.label}>{children}</span>
     </label>
   );

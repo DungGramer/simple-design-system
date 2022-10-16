@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 const Divider = ({ icon, direction, ...props }) => {
   return (
     <hr
-      className={`${styles['divider']} ${styles[direction]} ${
-        icon ? `${styles.icon}` : ''
-      }`}
+      className={`${styles['divider']} ${styles[direction]} ${icon ? `${styles.icon}` : ''}`}
       {...props}
     />
   );

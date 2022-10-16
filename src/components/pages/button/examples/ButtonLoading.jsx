@@ -22,11 +22,7 @@ const ButtonLoading = () => {
         type="primary"
         icon="fas fa-search"
       />
-      <Button
-        title="Click me"
-        loading={isLoading2}
-        onClick={() => handleClick(setIsLoading2)}
-      />
+      <Button title="Click me" loading={isLoading2} onClick={() => handleClick(setIsLoading2)} />
       <Button
         icon="fas fa-search"
         loading={isLoading3}

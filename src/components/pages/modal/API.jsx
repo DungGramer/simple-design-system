@@ -16,9 +16,7 @@ export const API = () => {
     },
     {
       property: <code>strictClose</code>,
-      description: t(
-        'Whether the modal dialog can be closed by clicking outside of it'
-      ),
+      description: t('Whether the modal dialog can be closed by clicking outside of it'),
       type: 'boolean',
     },
   ];
@@ -65,9 +63,7 @@ export const API = () => {
     },
     {
       property: <code>onOk</code>,
-      description: t(
-        'Specify a function that will be called when a user clicks the OK button'
-      ),
+      description: t('Specify a function that will be called when a user clicks the OK button'),
       type: 'function',
     },
     {

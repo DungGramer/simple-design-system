@@ -4,9 +4,7 @@ import PropTypes from 'prop-types';
 const Lozenge = ({ appearance, children, maxWidth, isBold }) => {
   return (
     <span
-      className={`${styles['lozenge']} ${styles[appearance]} ${
-        isBold ? styles.bold : ''
-      }`}
+      className={`${styles['lozenge']} ${styles[appearance]} ${isBold ? styles.bold : ''}`}
       style={{ maxWidth }}
     >
       {children}
@@ -15,13 +13,7 @@ const Lozenge = ({ appearance, children, maxWidth, isBold }) => {
 };
 
 Lozenge.propTypes = {
-  appearance: PropTypes.oneOf([
-    'success',
-    'removed',
-    'inprogress',
-    'new',
-    'moved',
-  ]),
+  appearance: PropTypes.oneOf(['success', 'removed', 'inprogress', 'new', 'moved']),
   children: PropTypes.node.isRequired,
   maxWidth: PropTypes.number,
   isBold: PropTypes.bool,

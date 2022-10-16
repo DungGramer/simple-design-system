@@ -47,8 +47,7 @@ export const vi = {
 
   dropdown: {
     title: 'Dropdown',
-    description:
-      'Dropdown hiển thị danh sách các hành động hoặc tùy chọn cho người dùng.',
+    description: 'Dropdown hiển thị danh sách các hành động hoặc tùy chọn cho người dùng.',
   },
 
   // Avatar
@@ -59,10 +58,8 @@ export const vi = {
   // Avatar API
   'Indicates the shape of the avatar': 'Chỉ ra hình dạng của avatar',
   'Defines the size of the avatar': 'Xác định kích thước của avatar',
-  "Indicates a user's online status":
-    'Chỉ ra trạng thái trực tuyến của người dùng',
-  'Defines the number of avatars you want show':
-    'Xác định số lượng avatar bạn muốn hiển thị',
+  "Indicates a user's online status": 'Chỉ ra trạng thái trực tuyến của người dùng',
+  'Defines the number of avatars you want show': 'Xác định số lượng avatar bạn muốn hiển thị',
 
   // Button
   Button: 'Button',
@@ -82,15 +79,13 @@ export const vi = {
   'The size of the button': 'Kích thước của button',
   'Disabled state of button': 'Trạng thái không hoạt động của button',
   'Whether the button is loading': 'Khi button đang tải',
-  'The callback function when the button is clicked':
-    'Hàm gọi lại khi button được nhấn',
+  'The callback function when the button is clicked': 'Hàm gọi lại khi button được nhấn',
   // Button Usage
   'Buttons are triggers for events or actions. They’re commonly used as part of larger components or patterns such as forms or modal dialogs.':
     'Các button là các trigger cho các sự kiện hoặc hành động. Nó được dùng thường xuyên như một phần của các thành phần hoặc mẫu như form hoặc hộp thoại modal.',
   'Buttons are typically used to perform actions that are not directly related to the content of the page. For example, a button can be used to open a modal dialog or to trigger an action on a form.':
     'Các button thường được dùng để thực hiện các hành động không liên quan đến nội dung của trang. Ví dụ, một button có thể được sử dụng để mở hộp thoại modal hoặc gọi lại một hành động trên một form.',
-  'move users through a sequence of screens':
-    'di chuyển người dùng qua một chuỗi màn hình',
+  'move users through a sequence of screens': 'di chuyển người dùng qua một chuỗi màn hình',
   'perform an action': 'thực hiện một hành động',
   'open a modal dialog': 'mở một hộp thoại modal',
   'submit a form': 'gửi một form',
@@ -101,8 +96,7 @@ export const vi = {
     description: 'Banner hiển thị thông báo nổi bật ở đầu màn hình.',
   },
   'Content to be shown': 'Nội dung sẽ được hiển thị',
-  'Visual style to be used for the banner':
-    'Kiểu hiển thị để sử dụng cho banner',
+  'Visual style to be used for the banner': 'Kiểu hiển thị để sử dụng cho banner',
   'Show icon of banner': 'Hiển thị biểu tượng của banner',
 
   // Badge
@@ -140,14 +134,12 @@ export const vi = {
   'Content of the checkbox': 'Nội dung của checkbox',
   'The size of the checkbox': 'Kích thước của checkbox',
   'The checked state of the checkbox': 'Trạng thái được chọn của checkbox',
-  'The function to call when the checkbox is clicked':
-    'Hàm được gọi khi checkbox được nhấp',
+  'The function to call when the checkbox is clicked': 'Hàm được gọi khi checkbox được nhấp',
 
   // Divider
   divider: {
     title: 'Divider',
-    description:
-      'Divider là một đường mảnh được sử dụng để phân tách nội dung.',
+    description: 'Divider là một đường mảnh được sử dụng để phân tách nội dung.',
   },
   'Show icon in center': 'Hiển thị biểu tượng trong trung tâm',
   'Direction of divider': 'Hướng của divider',
@@ -158,8 +150,7 @@ export const vi = {
     description:
       'Flag được sử dụng để xác nhận, cảnh báo và xác nhận yêu cầu tương tác người dùng tối thiểu.',
   },
-  'The bold text shown at the top of the flag':
-    'Văn bản in đậm được hiển thị ở đầu của flag',
+  'The bold text shown at the top of the flag': 'Văn bản in đậm được hiển thị ở đầu của flag',
   'The secondary content shown below the flag title':
     'Nội dung phụ được hiển thị dưới tiêu đề của flag',
   'Array of clickable actions to be shown at the bottom of the flag':
@@ -170,8 +161,7 @@ export const vi = {
   // Icon
   icon: {
     title: 'Icon',
-    description:
-      'Icon là sự thể hiện trực quan của một tệp, ứng dụng hoặc hành động.',
+    description: 'Icon là sự thể hiện trực quan của một tệp, ứng dụng hoặc hành động.',
   },
   'The name of the icon': 'Tên của icon',
   'The size of the icon': 'Kích thước của icon',
@@ -187,8 +177,7 @@ export const vi = {
   },
   'The source of the image.': 'Nguồn của hình ảnh.',
   'The alternative text of the image.': 'Nội dung mô tả của hình ảnh.',
-  'Whether the image should be lazy loaded.':
-    'Hình ảnh có thể được tải nhanh hay không.',
+  'Whether the image should be lazy loaded.': 'Hình ảnh có thể được tải nhanh hay không.',
   'The type of the image.': 'Loại của hình ảnh.',
   'The decoding of the image.': 'Giải mã của hình ảnh.',
   'The source set of the image.': 'Nguồn của hình ảnh.',
@@ -200,8 +189,7 @@ export const vi = {
     description:
       'Một lozenge là một chỉ báo trực quan được sử dụng để làm nổi bật trạng thái của một mục để nhận dạng nhanh.',
   },
-  'Elements to be rendered inside the lozenge':
-    'Các phần tử được hiển thị trong lozenge',
+  'Elements to be rendered inside the lozenge': 'Các phần tử được hiển thị trong lozenge',
   'The appearance of the lozenge': 'Kiểu hiển thị của lozenge',
   'Determines whether to apply the bold style or not':
     'Xác định có phải áp dụng kiểu in đậm hay không',
@@ -213,14 +201,12 @@ export const vi = {
     description:
       'Modal hiển thị nội dung yêu cầu tương tác của người dùng, trong một lớp phía trên trang.',
   },
-  'Whether the modal dialog is visible or not':
-    'Có hiển thị hộp thoại modal hay không',
+  'Whether the modal dialog is visible or not': 'Có hiển thị hộp thoại modal hay không',
   'Function to close the modal dialog': 'Hàm đóng hộp thoại modal',
   'Whether the modal dialog can be closed by clicking outside of it':
     'Có thể hộp thoại modal được đóng bằng cách nhấp vào ngoài nó',
   'The content of the modal header': 'Nội dung của tiêu đề hộp thoại modal',
-  'Whether the modal header has a close button':
-    'Tiêu đề hộp thoại modal có có nút đóng hay không',
+  'Whether the modal header has a close button': 'Tiêu đề hộp thoại modal có có nút đóng hay không',
   'The content of the modal body': 'Nội dung của phần thân hộp thoại modal',
   'The content of the modal footer': 'Nội dung của phần chân hộp thoại modal',
   'The text of the OK button': 'Văn bản của nút OK',
@@ -247,21 +233,17 @@ export const vi = {
   },
   'Specifies the name of the radio button.': 'Xác định tên của nút radio.',
   'Specifies the value of the radio button.': 'Xác định giá trị của nút radio.',
-  'Should be pre-selected when the page loads':
-    'Có được chọn trước khi trang tải lên',
+  'Should be pre-selected when the page loads': 'Có được chọn trước khi trang tải lên',
   'Should be disabled when the page loads': 'Có được vô hiệu khi trang tải lên',
   'Called when the radio button is clicked': 'Được gọi khi nút radio được nhấp',
-  'Specifies the appearance of the radio button.':
-    'Xác định kiểu hiển thị của nút radio.',
+  'Specifies the appearance of the radio button.': 'Xác định kiểu hiển thị của nút radio.',
 
   // Range
   range: {
     title: 'Range',
-    description:
-      'Range cho phép người dùng chọn một giá trị gần đúng trên một thanh trượt',
+    description: 'Range cho phép người dùng chọn một giá trị gần đúng trên một thanh trượt',
   },
-  'Sets the minimum value of the range.':
-    'Thiết lập giá trị tối thiểu của range',
+  'Sets the minimum value of the range.': 'Thiết lập giá trị tối thiểu của range',
   'Sets the maximum value of the range.': 'Thiết lập giá trị tối đa của range',
   'Sets the step value of the range.': 'Thiết lập giá trị bước của range',
   'Sets the default value if range is not set.':
@@ -284,11 +266,9 @@ export const vi = {
     title: 'Table',
     description: 'Table là một tập hợp dữ liệu được sắp xếp theo hàng và cột.',
   },
-  'Elements to be rendered inside the Table':
-    'Các phần tử được hiển thị trong Table',
+  'Elements to be rendered inside the Table': 'Các phần tử được hiển thị trong Table',
   'Data to be rendered inside the Table': 'Dữ liệu được hiển thị trong Table',
-  'Elements to be rendered inside the Column':
-    'Các phần tử được hiển thị trong Column',
+  'Elements to be rendered inside the Column': 'Các phần tử được hiển thị trong Column',
   'Header of the Column': 'Tiêu đề của Column',
   'Key of the data table': 'Key của bảng dữ liệu',
 
@@ -306,16 +286,14 @@ export const vi = {
     description:
       'Một vùng văn bản cho phép người dùng nhập văn bản dạng dài kéo dài trên nhiều dòng.',
   },
-  'Enables the resizing of the textarea':
-    'Cho phép thay đổi kích thước của vùng văn bản',
+  'Enables the resizing of the textarea': 'Cho phép thay đổi kích thước của vùng văn bản',
   'Sets the field as uneditable, with a changed hover state.':
     'Thiết lập trường như không thể chỉnh sửa, với trạng thái chọn trên đã thay đổi.',
   'If true, prevents the value of the input from being edited.':
     'Nếu được bật sẽ ngăn chặn giá trị của đầu vào được chỉnh sửa.',
   'Set required for form that the field is part of.':
     'Thiết lập bắt buộc cho mẫu mà trường này là một phần của nó.',
-  'Sets the maximum height of the textarea.':
-    'Thiết lập chiều cao tối đa của vùng văn bản',
+  'Sets the maximum height of the textarea.': 'Thiết lập chiều cao tối đa của vùng văn bản',
   'The default value of the textarea': 'Giá trị mặc định của vùng văn bản',
   'Enables native spell check on the textarea element.':
     'Cho phép kiểm tra chính tả trên phần tử văn bản của textarea',
@@ -323,15 +301,13 @@ export const vi = {
   // TextField
   textField: {
     title: 'Text field',
-    description:
-      'Text field là đầu vào cho phép người dùng viết hoặc chỉnh sửa văn bản.',
+    description: 'Text field là đầu vào cho phép người dùng viết hoặc chỉnh sửa văn bản.',
   },
   'Name of the input element.': 'Tên của phần tử đầu vào',
   'Placeholder text to display in the text field whenever it is empty.':
     'Văn bản chứa để hiển thị trong trường văn bản khi trống',
   'Sets maximum width of input.': 'Thiết lập chiều rộng tối đa của đầu vào',
-  'Handler called when the inputs value changes.':
-    'Handler được gọi khi giá trị đầu vào thay đổi',
+  'Handler called when the inputs value changes.': 'Handler được gọi khi giá trị đầu vào thay đổi',
   'Sets maximum length of input.': 'Thiết lập chiều dài tối đa của đầu vào',
   'Sets the field as to appear disabled, users will not be able to interact with the text field.':
     'Thiết lập trường như đang ẩn, người dùng sẽ không thể thao tác với trường văn bản',

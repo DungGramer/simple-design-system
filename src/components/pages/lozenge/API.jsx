@@ -13,11 +13,7 @@ export const API = () => {
     {
       property: <code>appearance</code>,
       description: t('The appearance of the lozenge'),
-      type: (
-        <CodeColumn
-          data={['success', 'removed', 'inprogress', 'new', 'moved']}
-        />
-      ),
+      type: <CodeColumn data={['success', 'removed', 'inprogress', 'new', 'moved']} />,
     },
     {
       property: <code>isBold</code>,

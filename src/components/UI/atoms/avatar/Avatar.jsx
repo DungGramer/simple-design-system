@@ -7,21 +7,13 @@ import useToggle from '@components/hooks/useToggle';
 const Avatar = ({ appearance, src, size, status }) => {
   const Status = () => (
     <>
-      {status && (
-        <i
-          className={`${
-            status && `${styles.status} ${styles['status-' + status]}`
-          }`}
-        />
-      )}
+      {status && <i className={`${status && `${styles.status} ${styles['status-' + status]}`}`} />}
     </>
   );
 
   return (
     <>
-      <div
-        className={`${styles['avatar']} ${styles[appearance]} ${styles[size]}`}
-      >
+      <div className={`${styles['avatar']} ${styles[appearance]} ${styles[size]}`}>
         <Status />
         <img src={src} />
       </div>
@@ -47,12 +39,9 @@ const AvatarText = forwardRef(({ text, size, innerRef }, ref) => {
 });
 
 const Group = ({ children, size, length }) => {
-  const lengthRemaining =
-    length < children.length && children.length - length + 1;
+  const lengthRemaining = length < children.length && children.length - length + 1;
 
-  const childrenSlice = lengthRemaining
-    ? children.slice(0, length - 1)
-    : children;
+  const childrenSlice = lengthRemaining ? children.slice(0, length - 1) : children;
   const childrenRemaining = lengthRemaining && children.slice(length - 1);
 
   const avatarTextRef = useRef();
@@ -61,11 +50,7 @@ const Group = ({ children, size, length }) => {
     <div className={`${styles['avatar-group']} ${styles[size]}`}>
       {childrenSlice.map((child) => child)}
       {lengthRemaining && (
-        <AvatarText
-          ref={avatarTextRef}
-          text={`+${lengthRemaining}`}
-          size={size}
-        />
+        <AvatarText ref={avatarTextRef} text={`+${lengthRemaining}`} size={size} />
       )}
     </div>
   );
@@ -73,14 +58,7 @@ const Group = ({ children, size, length }) => {
 
 Avatar.propTypes = {
   appearance: PropTypes.oneOf(['square', 'circle']),
-  size: PropTypes.oneOf([
-    'xsmall',
-    'small',
-    'medium',
-    'large',
-    'xlarge',
-    'xxlarge',
-  ]),
+  size: PropTypes.oneOf(['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']),
   status: PropTypes.oneOf(['online', 'offline', 'busy']),
   src: PropTypes.oneOfType([PropTypes.string, PropTypes.func]).isRequired,
 };

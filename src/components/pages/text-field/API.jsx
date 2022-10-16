@@ -11,9 +11,7 @@ export const API = () => {
     },
     {
       property: <code>placeholder</code>,
-      description: t(
-        'Placeholder text to display in the text field whenever it is empty.'
-      ),
+      description: t('Placeholder text to display in the text field whenever it is empty.'),
       type: 'string',
     },
     {
@@ -45,9 +43,7 @@ export const API = () => {
     },
     {
       property: <code>isReadOnly</code>,
-      description: t(
-        'If true, prevents the value of the input from being edited.'
-      ),
+      description: t('If true, prevents the value of the input from being edited.'),
       type: 'boolean',
     },
   ];

@@ -1071,10 +1071,10 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@dunggramer/prettier@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@dunggramer/prettier/-/prettier-3.0.1.tgz#613df8967bec7b6b0710a675c76a67d8af775fc3"
-  integrity sha512-9Y93X2VZTKUeRKFTQdU+uru5Q8/ROU7cU9bY7BdEBXtwtRMKDeyRGMiC9qQdgo3wdbwHxaBLM1Alg2cqWK8bnw==
+"@dunggramer/prettier@^4.0.1":
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/@dunggramer/prettier/-/prettier-4.0.1.tgz#9d2f6b28c68b7954655c5c62ce9b4d5c71c717ae"
+  integrity sha512-4zgZOJtfeCET0jZKUFMK+mjQq8Rtjc+YNfah/7beRvV+NhGRRuzmSq+R6xnf7rhs6Ew6ydXG/zwgERkNNcxJWg==
 
 "@eslint/eslintrc@^1.3.2":
   version "1.3.2"

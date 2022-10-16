@@ -15,8 +15,7 @@ export const en = {
 
   dropdown: {
     title: 'Dropdown menu',
-    description:
-      'A dropdown menu displays a list of actions or options to a user.',
+    description: 'A dropdown menu displays a list of actions or options to a user.',
   },
 
   // Avatar
@@ -30,15 +29,13 @@ export const en = {
   Buttons: 'Buttons',
   button: {
     title: 'Button',
-    description:
-      'A button triggers an event or action. They let users know what will happen next.',
+    description: 'A button triggers an event or action. They let users know what will happen next.',
   },
 
   // Banner
   banner: {
     title: 'Banner',
-    description:
-      'A banner displays a prominent message at the top of the screen.',
+    description: 'A banner displays a prominent message at the top of the screen.',
   },
 
   // Badge
@@ -77,8 +74,7 @@ export const en = {
   // Icon
   icon: {
     title: 'Icon',
-    description:
-      'An icon is a visual representation of a file, application, or action.',
+    description: 'An icon is a visual representation of a file, application, or action.',
   },
 
   // Image
@@ -144,21 +140,18 @@ export const en = {
   // TextArea
   textArea: {
     title: 'Text area',
-    description:
-      'A text area lets users enter long form text which spans over multiple lines.',
+    description: 'A text area lets users enter long form text which spans over multiple lines.',
   },
 
   // TextField
   textField: {
     title: 'Text field',
-    description:
-      'A text field is an input that allows a user to write or edit text.',
+    description: 'A text field is an input that allows a user to write or edit text.',
   },
 
   // Toggle
   toggle: {
     title: 'Toggle',
-    description:
-      'A toggle is used to view or switch between enabled or disabled states.',
+    description: 'A toggle is used to view or switch between enabled or disabled states.',
   },
 };

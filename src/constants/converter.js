@@ -7,9 +7,7 @@ export const spaceToDash = (str) => {
 
 export const convertSize = (size) => {
   // get value on CSS variable
-  return getComputedStyle(document.documentElement).getPropertyValue(
-    `--${size || 'medium'}`
-  );
+  return getComputedStyle(document.documentElement).getPropertyValue(`--${size || 'medium'}`);
 };
 
 export const removeDiacritics = (str) => {
@@ -33,8 +31,7 @@ export const removeDiacritics = (str) => {
     },
     {
       base: 'C',
-      letters:
-        /[\u0043\u24B8\uFF23\u0106\u0108\u010A\u010C\u00C7\u1E08\u0187\u023B\uA73E]/g,
+      letters: /[\u0043\u24B8\uFF23\u0106\u0108\u010A\u010C\u00C7\u1E08\u0187\u023B\uA73E]/g,
     },
     {
       base: 'D',
@@ -98,8 +95,7 @@ export const removeDiacritics = (str) => {
     { base: 'OU', letters: /[\u0222]/g },
     {
       base: 'P',
-      letters:
-        /[\u0050\u24C5\uFF30\u1E54\u1E56\u01A4\u2C63\uA750\uA752\uA754]/g,
+      letters: /[\u0050\u24C5\uFF30\u1E54\u1E56\u01A4\u2C63\uA750\uA752\uA754]/g,
     },
     { base: 'Q', letters: /[\u0051\u24C6\uFF31\uA756\uA758\u024A]/g },
     {
@@ -130,8 +126,7 @@ export const removeDiacritics = (str) => {
     { base: 'VY', letters: /[\uA760]/g },
     {
       base: 'W',
-      letters:
-        /[\u0057\u24CC\uFF37\u1E80\u1E82\u0174\u1E86\u1E84\u1E88\u2C72]/g,
+      letters: /[\u0057\u24CC\uFF37\u1E80\u1E82\u0174\u1E86\u1E84\u1E88\u2C72]/g,
     },
     { base: 'X', letters: /[\u0058\u24CD\uFF38\u1E8A\u1E8C]/g },
     {
@@ -161,8 +156,7 @@ export const removeDiacritics = (str) => {
     },
     {
       base: 'c',
-      letters:
-        /[\u0063\u24D2\uFF43\u0107\u0109\u010B\u010D\u00E7\u1E09\u0188\u023C\uA73F\u2184]/g,
+      letters: /[\u0063\u24D2\uFF43\u0107\u0109\u010B\u010D\u00E7\u1E09\u0188\u023C\uA73F\u2184]/g,
     },
     {
       base: 'd',
@@ -224,8 +218,7 @@ export const removeDiacritics = (str) => {
     { base: 'oo', letters: /[\uA74F]/g },
     {
       base: 'p',
-      letters:
-        /[\u0070\u24DF\uFF50\u1E55\u1E57\u01A5\u1D7D\uA751\uA753\uA755]/g,
+      letters: /[\u0070\u24DF\uFF50\u1E55\u1E57\u01A5\u1D7D\uA751\uA753\uA755]/g,
     },
     { base: 'q', letters: /[\u0071\u24E0\uFF51\u024B\uA757\uA759]/g },
     {
@@ -256,8 +249,7 @@ export const removeDiacritics = (str) => {
     { base: 'vy', letters: /[\uA761]/g },
     {
       base: 'w',
-      letters:
-        /[\u0077\u24E6\uFF57\u1E81\u1E83\u0175\u1E87\u1E85\u1E98\u1E89\u2C73]/g,
+      letters: /[\u0077\u24E6\uFF57\u1E81\u1E83\u0175\u1E87\u1E85\u1E98\u1E89\u2C73]/g,
     },
     { base: 'x', letters: /[\u0078\u24E7\uFF58\u1E8B\u1E8D]/g },
     {

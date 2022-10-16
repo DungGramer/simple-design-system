@@ -5,29 +5,16 @@ import { forwardRef } from 'react';
 
 const Button = forwardRef(
   (
-    {
-      title,
-      type,
-      icon,
-      size,
-      loading,
-      block,
-      danger,
-      shape,
-      disabled,
-      onClick,
-      href,
-      children,
-    },
+    { title, type, icon, size, loading, block, danger, shape, disabled, onClick, href, children },
     ref
   ) => {
     const Component = href ? 'a' : 'button';
     return (
       <Component
         ref={ref}
-        className={`${styles['button']} ${styles[type]} ${styles[shape]} ${
-          styles[size]
-        } ${disabled ? styles.disabled : ''} ${loading ? styles.loading : ''}`}
+        className={`${styles['button']} ${styles[type]} ${styles[shape]} ${styles[size]} ${
+          disabled ? styles.disabled : ''
+        } ${loading ? styles.loading : ''}`}
         onClick={onClick}
         href={href}
       >

@@ -38,7 +38,9 @@ const Sidebar = () => {
           <li key={title}>
             <NavLink
               to={path}
-              className={(navData) => `${styles['nav-item']} ${navData.isActive ? styles.active : ''}`}
+              className={(navData) =>
+                `${styles['nav-item']} ${navData.isActive ? styles.active : ''}`
+              }
             >
               {title}
             </NavLink>

@@ -48,11 +48,7 @@ export const API = () => {
     {
       property: <code>direction</code>,
       description: t('The direction of the badge'),
-      type: (
-        <CodeColumn
-          data={['left-top', 'top-right', 'right-bottom', 'bottom-left']}
-        />
-      ),
+      type: <CodeColumn data={['left-top', 'top-right', 'right-bottom', 'bottom-left']} />,
     },
     {
       property: <code>offset</code>,

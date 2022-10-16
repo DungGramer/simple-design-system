@@ -1,4 +1,4 @@
 {
   "prettier.configPath": "config/.prettierrc",
-  "prettier.ignorePath": ".gitignore",
+  "prettier.ignorePath": ".gitignore"
 }

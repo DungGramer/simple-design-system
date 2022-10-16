@@ -25,11 +25,7 @@ const sizeConverter = (size) => {
 const Spinner = ({ size }) => {
   return (
     <div className={styles['spinner']}>
-      <Icon
-        icon={<ImSpinner8 />}
-        animation="spin"
-        size={sizeConverter(size)}
-      />
+      <Icon icon={<ImSpinner8 />} animation="spin" size={sizeConverter(size)} />
     </div>
   );
 };

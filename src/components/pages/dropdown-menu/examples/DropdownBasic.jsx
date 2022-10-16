@@ -20,12 +20,7 @@ const DropdownBasic = () => {
     <>
       <Button ref={btnRef} onClick={toggleOpen}>
         <span>Click me</span>
-        <Dropdown
-          parentRef={btnRef}
-          overlay={menu}
-          onClick={toggleOpen}
-          isOpen={open}
-        />
+        <Dropdown parentRef={btnRef} overlay={menu} onClick={toggleOpen} isOpen={open} />
       </Button>
     </>
   );

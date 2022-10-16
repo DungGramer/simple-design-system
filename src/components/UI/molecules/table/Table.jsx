@@ -26,9 +26,7 @@ const Table = ({ children, data, size = 'medium' }) => {
     });
   });
 
-  columnsData = columnsData.filter(
-    (row) => row.children && delete row.children
-  );
+  columnsData = columnsData.filter((row) => row.children && delete row.children);
 
   return (
     <TableContext.Provider value={{ data, columnsData }}>

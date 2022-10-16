@@ -8,12 +8,7 @@ const CheckboxController = () => {
 
   return (
     <>
-      <Checkbox
-        id="controller"
-        checked={checked}
-        onClick={onChange}
-        onChange={onChange}
-      >
+      <Checkbox id="controller" checked={checked} onClick={onChange} onChange={onChange}>
         Checkbox: {checked ? 'checked' : 'unchecked'}
       </Checkbox>
     </>

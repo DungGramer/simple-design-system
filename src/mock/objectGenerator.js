@@ -12,8 +12,7 @@ export const objectGenerator = (keys, length, random = false) => {
     let temp = {};
     for (let item of keys) {
       if (random) {
-        temp[item] =
-          object[item][Math.floor(Math.random() * object[item].length)];
+        temp[item] = object[item][Math.floor(Math.random() * object[item].length)];
       } else {
         temp[item] = object[item][i];
       }

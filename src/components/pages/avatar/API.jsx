@@ -15,11 +15,7 @@ export const API = () => {
     {
       property: <code>size</code>,
       description: t('Defines the size of the avatar'),
-      type: (
-        <CodeColumn
-          data={['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']}
-        />
-      ),
+      type: <CodeColumn data={['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']} />,
       default: <code>medium</code>,
     },
     {
@@ -33,11 +29,7 @@ export const API = () => {
     {
       property: <code>size</code>,
       description: t('Defines the size of the avatar'),
-      type: (
-        <CodeColumn
-          data={['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']}
-        />
-      ),
+      type: <CodeColumn data={['xsmall', 'small', 'medium', 'large', 'xlarge', 'xxlarge']} />,
       default: <code>medium</code>,
     },
     {

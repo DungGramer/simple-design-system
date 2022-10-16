@@ -2,6 +2,10 @@
   "name": "simple-design-system",
   "version": "1.0.0",
   "description": "A simple design system custom build with React and Webpack",
+  "private": true,
+  "workspaces": [
+    "src/components/UI/molecules/*"
+  ],
   "keywords": [
     "react"
   ],
@@ -53,7 +57,7 @@
     "@babel/plugin-transform-runtime": "^7.18.0",
     "@babel/preset-env": "^7.18.0",
     "@babel/preset-react": "^7.17.12",
-    "@dunggramer/prettier": "^3.0.1",
+    "@dunggramer/prettier": "^4.0.1",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.7",
     "@types/react-syntax-highlighter": "^15.5.1",
     "autoprefixer": "^10.4.7",

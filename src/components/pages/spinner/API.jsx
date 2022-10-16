@@ -8,9 +8,7 @@ export const API = () => {
     {
       property: <code>size</code>,
       description: t('Size of the spinner.'),
-      type: (
-        <CodeColumn data={['xsmall', 'small', 'medium', 'large', 'xlarge']} />
-      ),
+      type: <CodeColumn data={['xsmall', 'small', 'medium', 'large', 'xlarge']} />,
       default: <code>small</code>,
     },
   ];

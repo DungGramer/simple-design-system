@@ -59,9 +59,4 @@ function setWidthHeightAspectRatio(width, height, aspectRatio, ref) {
   return [width, height];
 }
 
-export {
-  splitAspectRatio,
-  setHeightAspectRatio,
-  setWidthAspectRatio,
-  setWidthHeightAspectRatio,
-};
+export { splitAspectRatio, setHeightAspectRatio, setWidthAspectRatio, setWidthHeightAspectRatio };

@@ -9,9 +9,7 @@ const ExampleSection = ({ item }) => {
     <section>
       <h3>{t(`${item.heading}`)}</h3>
       <CodeBox
-        component={
-          <div className={styles['code-box-container']}>{item.component()}</div>
-        }
+        component={<div className={styles['code-box-container']}>{item.component()}</div>}
         data={item.path}
       />
     </section>

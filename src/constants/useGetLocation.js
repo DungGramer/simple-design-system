@@ -9,8 +9,7 @@ const getLocation = (ref) => {
     const heightHeader = document.getElementById('header').clientHeight;
     const { innerHeight, innerWidth } = window;
 
-    const { top, left, bottom, right, x, y } =
-      ref.current.getBoundingClientRect();
+    const { top, left, bottom, right, x, y } = ref.current.getBoundingClientRect();
 
     return {
       x,

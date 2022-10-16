@@ -14,7 +14,7 @@ const port = process.env.PORT || 3090;
 const https = process.env.HTTPS === 'true' && {
   key: fs.readFileSync('./config/localhost+2-key.pem'),
   cert: fs.readFileSync('./config/localhost+2.pem'),
-}
+};
 
 module.exports = merge(common, {
   mode: 'development',
@@ -27,14 +27,14 @@ module.exports = merge(common, {
   devServer: {
     port,
     historyApiFallback: true,
-    allowedHosts: "all",
+    allowedHosts: 'all',
     open: true,
     compress: true,
     headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept'
+      'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
     },
-    ...({ https }),
+    ...{ https },
 
     static: {
       directory: paths.public,

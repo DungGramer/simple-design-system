@@ -44,7 +44,7 @@ class DateTime {
     Nanosecond: /(n|nn|nnn|\%N)/g,
     AMPM: /(a|\%P|\%p)/g,
     TimeZone: /(Z|\%z|\%Z)/g,
-    DateTime: /(\%c|\%F|\%D|\%T|\%r|\%R)/g
+    DateTime: /(\%c|\%F|\%D|\%T|\%r|\%R)/g,
   };
 
   abbreviations = [
@@ -1098,8 +1098,7 @@ class DateTime {
 
   getMonth(format) {
     let monthNumber = this.date.getMonth() + 1;
-    let monthNumberWithZero =
-      monthNumber < 10 ? `0${monthNumber}` : monthNumber;
+    let monthNumberWithZero = monthNumber < 10 ? `0${monthNumber}` : monthNumber;
     let monthStringLong = this.date.toLocaleString('default', {
       month: 'long',
     });
@@ -1180,11 +1179,7 @@ class DateTime {
 
   getDayOfYear(format) {
     let dayOfYear = Math.ceil(
-      (this.date - new Date(this.date.getFullYear(), 0, 0)) /
-        1000 /
-        60 /
-        60 /
-        24,
+      (this.date - new Date(this.date.getFullYear(), 0, 0)) / 1000 / 60 / 60 / 24
     );
     switch (format) {
       case '%j':
@@ -1266,11 +1261,7 @@ class DateTime {
   getMillisecond(format) {
     let millisecond = this.date.getMilliseconds();
     let millisecondWithZero =
-      millisecond < 10
-        ? `00${millisecond}`
-        : millisecond < 100
-        ? `0${millisecond}`
-        : millisecond;
+      millisecond < 10 ? `00${millisecond}` : millisecond < 100 ? `0${millisecond}` : millisecond;
 
     switch (format) {
       case 'S':
@@ -1290,11 +1281,7 @@ class DateTime {
   getNanosecond(format) {
     let nanoSecond = this.date.getMilliseconds();
     let nanoSecondWithZero =
-      nanoSecond < 10
-        ? `00${nanoSecond}`
-        : nanoSecond < 100
-        ? `0${nanoSecond}`
-        : nanoSecond;
+      nanoSecond < 10 ? `00${nanoSecond}` : nanoSecond < 100 ? `0${nanoSecond}` : nanoSecond;
 
     switch (format) {
       case 'n':
@@ -1343,8 +1330,7 @@ class DateTime {
       .trim();
 
     let timeZoneShort = this.abbreviations.find(
-      abbreviation =>
-        abbreviation.name === timeZoneString && abbreviation.utc === GMTFormat,
+      (abbreviation) => abbreviation.name === timeZoneString && abbreviation.utc === GMTFormat
     );
 
     switch (format) {
@@ -1385,7 +1371,15 @@ class DateTime {
         return this.getHour('HH') + ':' + this.getMinute('mm') + ':' + this.getSecond('ss');
       case '%r':
         // 11:59:59 PM
-        return this.getHour('hh') + ':' + this.getMinute('mm') + ':' + this.getSecond('ss') + ' ' + this.getAMPM('a');
+        return (
+          this.getHour('hh') +
+          ':' +
+          this.getMinute('mm') +
+          ':' +
+          this.getSecond('ss') +
+          ' ' +
+          this.getAMPM('a')
+        );
       case '%R':
         // 11:59 PM
         return this.getHour('hh') + ':' + this.getMinute('mm') + ' ' + this.getAMPM('a');

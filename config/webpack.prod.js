@@ -1,4 +1,4 @@
-const webpack = require("webpack");
+const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 
@@ -32,9 +32,9 @@ const webpackConfig = merge(common, {
 
   plugins: [
     new webpack.DefinePlugin({
-			"process.env.NODE_ENV": JSON.stringify("production"),
-			"process.env.VERSION": JSON.stringify(require("../package.json").version)
-		}),
+      'process.env.NODE_ENV': JSON.stringify('production'),
+      'process.env.VERSION': JSON.stringify(require('../package.json').version),
+    }),
     /* new BrotliPlugin({
       asset: '[path].br[query]',
       test: /\.(js|css|html|svg)$/,

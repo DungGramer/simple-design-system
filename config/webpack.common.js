@@ -1,10 +1,4 @@
-const {
-  paths,
-  regex,
-  resolvePath,
-  formatFileName,
-  postCSS,
-} = require('./utils');
+const { paths, regex, resolvePath, formatFileName, postCSS } = require('./utils');
 // const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 
 const moduleClassName = '[name]__[local]--[hash:base64:5]';

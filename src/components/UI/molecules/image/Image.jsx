@@ -2,10 +2,7 @@ import styles from './Image.module';
 import PropTypes from 'prop-types';
 import { createContext, useContext, useEffect, useRef, useState } from 'react';
 import useOnScreen from '@components/hooks/useOnScreen';
-import {
-  setWidthHeightAspectRatio,
-  splitAspectRatio,
-} from '~/constants/getAspectRatio';
+import { setWidthHeightAspectRatio, splitAspectRatio } from '~/constants/getAspectRatio';
 
 const convertTypeImage = (type) => {
   let imageType = type;
@@ -56,24 +53,13 @@ const convertTypeImage = (type) => {
 
 const ImageContext = createContext();
 
-const isIntersectionObserverSupported =
-  typeof IntersectionObserver !== 'undefined';
+const isIntersectionObserverSupported = typeof IntersectionObserver !== 'undefined';
 
 const supportAspectRatio = CSS.supports('--aspect-ratio', '1:1');
 
 const LazyImage = () => {
-  const {
-    src,
-    alt,
-    width,
-    height,
-    type,
-    decoding,
-    lazy,
-    srcset,
-    aspectRatio,
-    supportAspectRatio,
-  } = useContext(ImageContext);
+  const { src, alt, width, height, type, decoding, lazy, srcset, aspectRatio, supportAspectRatio } =
+    useContext(ImageContext);
   const [newWidth, setNewWidth] = useState(width);
   const [newHeight, setNewHeight] = useState(height);
   const ref = useRef(null);
@@ -94,12 +80,7 @@ const LazyImage = () => {
   if (aspectRatio && supportAspectRatio) {
     useEffect(() => {
       const setHeight = () => {
-        const [newWidth, newHeight] = setWidthHeightAspectRatio(
-          width,
-          height,
-          aspectRatio,
-          ref
-        );
+        const [newWidth, newHeight] = setWidthHeightAspectRatio(width, height, aspectRatio, ref);
         setNewWidth(newWidth);
         setNewHeight(newHeight);
       };
@@ -165,17 +146,7 @@ const AspectRatioPicture = () => {
   );
 };
 
-const Image = ({
-  src,
-  alt,
-  lazy,
-  width,
-  height,
-  type,
-  decoding,
-  srcset,
-  aspectRatio,
-}) => {
+const Image = ({ src, alt, lazy, width, height, type, decoding, srcset, aspectRatio }) => {
   return (
     <ImageContext.Provider
       value={{

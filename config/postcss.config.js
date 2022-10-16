@@ -5,9 +5,5 @@ const postcssNormalize = require('postcss-normalize');
 module.exports = {
   syntax: 'postcss-scss',
   parser: 'postcss-scss',
-  plugins: [
-    autoprefixer({ grid: 'autoplace' }),
-    flexBugsFixes(),
-    postcssNormalize(),
-  ],
+  plugins: [autoprefixer({ grid: 'autoplace' }), flexBugsFixes(), postcssNormalize()],
 };

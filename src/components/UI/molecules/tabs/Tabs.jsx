@@ -42,9 +42,7 @@ function Tabs({ children, title, defaultTab, showAll }) {
 
       const location = (ele) => ele.getBoundingClientRect().left;
 
-      setLocationTab(
-        `${location(tab) - location(baseTab) + margin.left + padding.left}px`
-      );
+      setLocationTab(`${location(tab) - location(baseTab) + margin.left + padding.left}px`);
     };
 
     getWidthTab();
@@ -63,10 +61,7 @@ function Tabs({ children, title, defaultTab, showAll }) {
             title={item}
           />
         ))}
-        <div
-          className={styles['tabs-ink-bar']}
-          style={{ width: widthTab, left: locationTab }}
-        />
+        <div className={styles['tabs-ink-bar']} style={{ width: widthTab, left: locationTab }} />
       </ul>
 
       <section className={styles['tab-content']}>{children[activeTab]}</section>

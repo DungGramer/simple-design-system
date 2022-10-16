@@ -1,10 +1,6 @@
 import PropTypes from 'prop-types';
 import { IconContext } from 'react-icons';
-import {
-  FaCheckCircle,
-  FaExclamationCircle, FaInfoCircle,
-  FaTimesCircle
-} from 'react-icons/fa';
+import { FaCheckCircle, FaExclamationCircle, FaInfoCircle, FaTimesCircle } from 'react-icons/fa';
 import styles from './Icon.module';
 
 const Icon = ({ icon, color, size, rotate, flip, animation, cursor, attr, className }) => {

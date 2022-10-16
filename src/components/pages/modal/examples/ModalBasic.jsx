@@ -13,10 +13,7 @@ const ModalBasic = () => {
       <Modal visible={isOpen} handleClose={closeModal}>
         <Modal.Header closeButton>Confirm Navigation</Modal.Header>
         <Modal.Body>
-          <p>
-            You haven't finished your post yet. Do you want to leave without
-            finishing?
-          </p>
+          <p>You haven't finished your post yet. Do you want to leave without finishing?</p>
           <p>Are you sure you want to leave this page?</p>
         </Modal.Body>
         <Modal.Footer

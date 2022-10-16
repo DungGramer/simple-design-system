@@ -16,10 +16,7 @@ const Loading = () => {
 
   return (
     <div className={styles.loading}>
-      <div
-        className={styles['loading__progress']}
-        style={{ width: `${progress}%` }}
-      />
+      <div className={styles['loading__progress']} style={{ width: `${progress}%` }} />
     </div>
   );
 };
