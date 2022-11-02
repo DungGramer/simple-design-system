@@ -81,7 +81,7 @@
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
     "mini-css-extract-plugin": "^2.6.0",
-    "nx": "^15.0.5",
+    "nx": "15.0.5",
     "postcss": "^8.4.14",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^7.0.0",
@@ -111,7 +111,8 @@
     "webpack-cdn-plugin": "^3.3.1",
     "webpack-cli": "^4.9.2",
     "webpack-dev-server": "^4.9.0",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "@nrwl/nx-cloud": "latest"
   },
   "optionalDependencies": {
     "es-check": "^7.0.1",

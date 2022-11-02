@@ -21,5 +21,8 @@
   },
   "publishConfig": {
     "access": "public"
+  },
+  "scripts": {
+    "build": "webpack --color --progress --config ./config/webpack.prod.js"
   }
 }
