@@ -31,7 +31,7 @@
     //   }
     // ]
   },
-  "include": ["src/*", "src/types/index.d.ts"],
+  "include": ["src/*", "src/types/index.d.ts", "src/packages"],
 
   //Add any build/compiled folders here to stop vscode searching those
   "exclude": ["node_modules", "dist"],

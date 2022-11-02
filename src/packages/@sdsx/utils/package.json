@@ -1,0 +1,25 @@
+{
+  "name": "@sdsx/utils",
+  "version": "1.0.0",
+  "description": "Utils UI components in React",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/main.js",
+  "module": "dist/module.js",
+  "types": "dist/types.d.ts",
+  "source": "src/index.js",
+  "files": [
+    "dist",
+    "src"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DungGramer/simple-design-system.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

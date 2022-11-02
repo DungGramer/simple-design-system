@@ -4,7 +4,7 @@
   "description": "A simple design system custom build with React and Webpack",
   "private": true,
   "workspaces": [
-    "src/components/UI/molecules/*"
+    "src/packages/**/*"
   ],
   "keywords": [
     "react"
@@ -81,6 +81,7 @@
     "i18next-browser-languagedetector": "^6.1.4",
     "i18next-http-backend": "^1.4.0",
     "mini-css-extract-plugin": "^2.6.0",
+    "nx": "^15.0.5",
     "postcss": "^8.4.14",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-loader": "^7.0.0",

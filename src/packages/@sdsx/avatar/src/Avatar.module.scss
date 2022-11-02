@@ -1,0 +1,117 @@
+.avatar {
+  display: inline-block;
+  position: relative;
+}
+
+// appearance
+.circle img {
+  border-radius: 50%;
+}
+
+.square img {
+  border-radius: 4px;
+}
+
+// Status
+
+$status: (
+  online: #4caf50,
+  offline: #9e9e9e,
+  busy: #f44336,
+);
+
+@each $item, $value in $status {
+  .status-#{$item} {
+    background-color: $value;
+  }
+}
+
+.status {
+  position: absolute;
+  right: -1px;
+  bottom: -1px;
+  border-color: var(--background-html);
+  border-radius: 50%;
+  border-style: solid;
+  transition: $color-transition;
+  transition-property: border-color;
+}
+
+// Get size variables CSS to SCSS
+$sizes: (
+  xxsmall: var(--xxsmall),
+  xsmall: var(--xsmall),
+  small: var(--small),
+  medium: var(--medium),
+  large: var(--large),
+  xlarge: var(--xlarge),
+  xxlarge: var(--xxlarge),
+);
+
+@each $size, $value in $sizes {
+  .avatar.#{$size} {
+    height: #{$value};
+    width: #{$value};
+
+    > img {
+      height: #{$value};
+      width: #{$value};
+    }
+
+    > .status {
+      height: #{calc(#{$value} - 60%)};
+      width: #{calc(#{$value} - 60%)};
+      border-width: #{calc(#{$value} * .05)};
+    }
+  }
+}
+
+/**
+ * Avatar Group
+ */
+
+.avatar-group {
+  display: inline-flex;
+}
+
+.avatar-text {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  color: var(--text-color);
+  background-color: var(--background-image-color);
+}
+
+@each $size, $value in $sizes {
+  .avatar-group.#{$size} {
+    > .avatar,
+    > .avatar img,
+    .avatar-text {
+      height: #{$value};
+      width: #{$value};
+      border-radius: 50%;
+      font-size: #{calc(#{$value} * .3)};
+      cursor: pointer;
+    }
+
+    > .avatar img {
+      border: #{calc(#{$value} * .05)} solid var(--background-html);
+      transition: $color-transition;
+      transition-property: border-color;
+
+      &:hover {
+        position: relative;
+        z-index: map-get($zIndex, 'base');
+      }
+    }
+
+    > * + * {
+      margin-left: #{calc(#{$value} * -.25)};
+    }
+  }
+}
+
+ul .avatar {
+  display: block;
+}
