@@ -21,7 +21,7 @@
   "author": "DungGramer",
   "main": "./src/index.js",
   "scripts": {
-    "analytics": "ANALYZER=true yarn build",
+    "analytics": "cross-env ANALYZER=true yarn build",
     "bs": "yarn build && yarn serve",
     "build": "webpack --color --progress --config ./config/webpack.prod.js",
     "clean": "rimraf dist/ node_modules/ package-lock.json yarn.lock && yarn cache clean",
@@ -32,7 +32,7 @@
     "ngrok": "ngrok http 3090 --host-header=\"localhost:3090\"",
     "serve": "serve -s ./dist/",
     "start": "webpack serve --open --config ./config/webpack.dev.js",
-    "start:https": "HTTPS=true yarn start",
+    "start:https": "cross-env HTTPS=true yarn start",
     "test:es-check": "es-check es5 dist/assets/js/*.js"
   },
   "browserslist": [
@@ -66,6 +66,7 @@
     "browserslist": "^4.21.4",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^9.1.0",
+    "cross-env": "^7.0.3",
     "css-loader": "^6.7.1",
     "css-minimizer-webpack-plugin": "^4.0.0",
     "dotenv": "^16.0.1",
